@@ -1,0 +1,6411 @@
+{
+  "name": "random-2",
+  "input": {
+    "format": "worldview-core",
+    "version": "0.1",
+    "name": "random-2",
+    "statements": [
+      {
+        "id": "s0",
+        "text": "Roads roads",
+        "mode": "is"
+      },
+      {
+        "id": "s1",
+        "text": "Drive night slippery night.",
+        "mode": "ought"
+      },
+      {
+        "id": "s2",
+        "text": "Late stars late!",
+        "mode": "ought"
+      },
+      {
+        "id": "s3",
+        "text": "Cold coffee cold drive.",
+        "mode": "is"
+      },
+      {
+        "id": "s4",
+        "text": "Coffee slowly late late!",
+        "mode": "is"
+      },
+      {
+        "id": "s5",
+        "text": "Wet slippery slippery rain wet slowly.",
+        "mode": "is"
+      },
+      {
+        "id": "s6",
+        "text": "Cold slowly cold stars cold wet",
+        "mode": "is"
+      },
+      {
+        "id": "s7",
+        "text": "Slowly night slowly slowly coffee wet",
+        "mode": "ought"
+      },
+      {
+        "id": "s8",
+        "text": "Stars cold slippery coffee drive",
+        "mode": "ought"
+      },
+      {
+        "id": "s9",
+        "text": "Slowly stars coffee coffee slowly night!",
+        "mode": "ought"
+      },
+      {
+        "id": "s10",
+        "text": "Coffee stars slippery slowly visible.",
+        "mode": "ought"
+      },
+      {
+        "id": "s11",
+        "text": "Coffee drive drive visible!",
+        "mode": "ought"
+      },
+      {
+        "id": "s12",
+        "text": "Cold stars night night late drive!",
+        "mode": "is"
+      },
+      {
+        "id": "s13",
+        "text": "Cold slowly stars night roads",
+        "mode": "ought"
+      },
+      {
+        "id": "s14",
+        "text": "Slippery visible.",
+        "mode": "is"
+      },
+      {
+        "id": "s15",
+        "text": "Stars rain drive night slippery stars.",
+        "mode": "ought"
+      },
+      {
+        "id": "s16",
+        "text": "Drive slippery slippery.",
+        "mode": "is"
+      },
+      {
+        "id": "s17",
+        "text": "Rain slowly",
+        "mode": "is"
+      },
+      {
+        "id": "s18",
+        "text": "Stars rain roads.",
+        "mode": "is"
+      },
+      {
+        "id": "s19",
+        "text": "Rain visible.",
+        "mode": "is"
+      },
+      {
+        "id": "s20",
+        "text": "Wet wet visible wet!",
+        "mode": "ought"
+      },
+      {
+        "id": "s21",
+        "text": "Late night.",
+        "mode": "is"
+      },
+      {
+        "id": "s22",
+        "text": "Rain rain slowly!",
+        "mode": "ought"
+      },
+      {
+        "id": "s23",
+        "text": "Drive slowly",
+        "mode": "is"
+      },
+      {
+        "id": "s24",
+        "text": "Coffee cold night visible.",
+        "mode": "is"
+      }
+    ],
+    "arguments": [
+      {
+        "id": "a0",
+        "premises": [
+          "s19",
+          "s22"
+        ],
+        "conclusions": [
+          "s15"
+        ],
+        "justification": "justification 1"
+      },
+      {
+        "id": "a1",
+        "premises": [],
+        "conclusions": [
+          "s3"
+        ],
+        "justification": "justification 0"
+      },
+      {
+        "id": "a2",
+        "premises": [
+          "s4",
+          "s16"
+        ],
+        "conclusions": [
+          "s15",
+          "s16"
+        ],
+        "justification": "justification 2"
+      },
+      {
+        "id": "a3",
+        "premises": [
+          "s10"
+        ],
+        "conclusions": [
+          "s8"
+        ],
+        "justification": "justification 4"
+      },
+      {
+        "id": "a4",
+        "premises": [
+          "s20",
+          "s0"
+        ],
+        "conclusions": [
+          "s21"
+        ],
+        "justification": "justification 0"
+      },
+      {
+        "id": "a5",
+        "premises": [
+          "s1"
+        ],
+        "conclusions": [
+          "s5"
+        ],
+        "justification": "justification 1"
+      },
+      {
+        "id": "a6",
+        "premises": [],
+        "conclusions": [
+          "s20",
+          "s7"
+        ],
+        "justification": "justification 4"
+      },
+      {
+        "id": "a7",
+        "premises": [
+          "s1",
+          "s7",
+          "s22"
+        ],
+        "conclusions": [
+          "s2",
+          "s8"
+        ],
+        "justification": "justification 0"
+      },
+      {
+        "id": "a8",
+        "premises": [
+          "s7",
+          "s19"
+        ],
+        "conclusions": [
+          "s8"
+        ],
+        "justification": "justification 5"
+      },
+      {
+        "id": "a9",
+        "premises": [
+          "s8",
+          "s16"
+        ],
+        "conclusions": [
+          "s4"
+        ],
+        "justification": "justification 0"
+      },
+      {
+        "id": "a10",
+        "premises": [
+          "s13",
+          "s5"
+        ],
+        "conclusions": [
+          "s16"
+        ],
+        "justification": "justification 5"
+      },
+      {
+        "id": "a11",
+        "premises": [],
+        "conclusions": [
+          "s3"
+        ],
+        "justification": "justification 0"
+      },
+      {
+        "id": "a12",
+        "premises": [],
+        "conclusions": [
+          "s24"
+        ],
+        "justification": "justification 1"
+      },
+      {
+        "id": "a13",
+        "premises": [],
+        "conclusions": [
+          "s0"
+        ],
+        "justification": "justification 4"
+      },
+      {
+        "id": "a14",
+        "premises": [
+          "s14",
+          "s9",
+          "s17"
+        ],
+        "conclusions": [
+          "s6",
+          "s21"
+        ],
+        "justification": "justification 1"
+      },
+      {
+        "id": "a15",
+        "premises": [
+          "s13",
+          "s16",
+          "s0"
+        ],
+        "conclusions": [
+          "s13"
+        ],
+        "justification": "justification 4"
+      },
+      {
+        "id": "a16",
+        "premises": [
+          "s5",
+          "s3"
+        ],
+        "conclusions": [
+          "s11",
+          "s0"
+        ],
+        "justification": "justification 4"
+      },
+      {
+        "id": "a17",
+        "premises": [],
+        "conclusions": [
+          "s9"
+        ],
+        "justification": "justification 5"
+      },
+      {
+        "id": "a18",
+        "premises": [
+          "s9"
+        ],
+        "conclusions": [
+          "s21"
+        ],
+        "justification": "justification 3"
+      },
+      {
+        "id": "a19",
+        "premises": [],
+        "conclusions": [
+          "s9"
+        ],
+        "justification": "justification 1"
+      },
+      {
+        "id": "a20",
+        "premises": [
+          "s0",
+          "s14",
+          "s1"
+        ],
+        "conclusions": [
+          "s20",
+          "s15"
+        ],
+        "justification": "justification 3"
+      },
+      {
+        "id": "a21",
+        "premises": [
+          "s18"
+        ],
+        "conclusions": [
+          "s0"
+        ],
+        "justification": "justification 2"
+      },
+      {
+        "id": "a22",
+        "premises": [],
+        "conclusions": [
+          "s9"
+        ],
+        "justification": "justification 5"
+      },
+      {
+        "id": "a23",
+        "premises": [],
+        "conclusions": [
+          "s24"
+        ],
+        "justification": "justification 3"
+      },
+      {
+        "id": "a24",
+        "premises": [
+          "s3"
+        ],
+        "conclusions": [
+          "s12"
+        ],
+        "justification": "justification 5"
+      },
+      {
+        "id": "a25",
+        "premises": [
+          "s4",
+          "s24"
+        ],
+        "conclusions": [
+          "s12"
+        ],
+        "justification": "justification 0"
+      },
+      {
+        "id": "a26",
+        "premises": [
+          "s3"
+        ],
+        "conclusions": [
+          "s2"
+        ],
+        "justification": "justification 4"
+      },
+      {
+        "id": "a27",
+        "premises": [
+          "s20"
+        ],
+        "conclusions": [
+          "s6",
+          "s22"
+        ],
+        "justification": "justification 0"
+      },
+      {
+        "id": "a28",
+        "premises": [],
+        "conclusions": [
+          "s24",
+          "s1"
+        ],
+        "justification": "justification 5"
+      },
+      {
+        "id": "a29",
+        "premises": [
+          "s15",
+          "s9",
+          "s11"
+        ],
+        "conclusions": [
+          "s4",
+          "s11"
+        ],
+        "justification": "justification 2"
+      }
+    ]
+  },
+  "expected": {
+    "valid": true,
+    "ids": {
+      "statements": [
+        {
+          "id": "s0",
+          "prop_id": "eac571d856dd817d796a0a0396f5594cf4265cf55615776118f668963d040a0b",
+          "just_id": "df48b2b979f2cd68ad161601fe3c8c8e57d5d048e546d9640510b5b520e715b3"
+        },
+        {
+          "id": "s1",
+          "prop_id": "dba21b2e30d13336e3b3871bc2999d201eb9b5d6e621c838e3c0d3963ce8c387",
+          "just_id": "652ec81bb27728358794c7a4a0a121714b5998295647764322360cf54dc36713"
+        },
+        {
+          "id": "s2",
+          "prop_id": "8c98f3dc27f3be2bc2bb580dff6f2ae319d6846cd0b993b61058e724b4ca3787",
+          "just_id": "7be90598962751fb957288b9c2c560a444aaab95dae4aa123d3ff58ec1e4bd2b"
+        },
+        {
+          "id": "s3",
+          "prop_id": "507e592a07541900b8a63d008045bf77f953caf502231f684aaf242edcd13eb4",
+          "just_id": "3eecd15b8791e1d8d8f705c09e4e976ba9e81b4f77bcf23e847d0231f09a0aff"
+        },
+        {
+          "id": "s4",
+          "prop_id": "36bd93cf5e52758ebe9985259422357e2b2ba86b54b898922661c2e568bc6c49",
+          "just_id": "cdad1d22c46f6ee45215c60933e7edda9d53dc0bb5eff9a89c102d71f1ea0d3f",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        },
+        {
+          "id": "s5",
+          "prop_id": "6a2ac35f7be92a568ed8cae5884dae3f7da30e62d1b7535dd62ac3f53a548c85",
+          "just_id": "a75ec3c98e9c2bfffe20a3fcd944c48840cc977d25527c9c41d3bf62effeed45"
+        },
+        {
+          "id": "s6",
+          "prop_id": "7188b252e75a68ef1eedefca1fd0a913211c8251cbe7cff541122f2d72c8c9c0",
+          "just_id": "48c89d7d0643a5150377e48db0c134cbbdd26643d15b33edeb0d776ad5e14c4d"
+        },
+        {
+          "id": "s7",
+          "prop_id": "e7222086194ffba61ac208a0480d76b1292b922f438d07b61e85dd60fc3d4946",
+          "just_id": "3c7e68cc1ecc8c1f52ae81aa5c6360d843e628e8b5874c1637d3fb31bec86533"
+        },
+        {
+          "id": "s8",
+          "prop_id": "7aef78a0788420976f736cf0a20316150940521ddb19913c6f1de47ebbdd2c29",
+          "just_id": "59cadeed7fe7c11bd655458e07b2801ec39e0d8737e214bbe4c4e90bbc01e82a"
+        },
+        {
+          "id": "s9",
+          "prop_id": "f886bb0d5be32c5808f7b76dc61e5bffa5e5acf23e9780bded55842aa9fc2940",
+          "just_id": "121e8a0e8951155020851b479e80c107b6fc6de183cfcc62bf6ea2e226b2f392"
+        },
+        {
+          "id": "s10",
+          "prop_id": "7cec03ce2442e41b375ae35e3be6afe761cbacb5ffd00d349890c2deec67a8e4",
+          "just_id": "54cbe65dacb1661b1de420ae155fdd4a09928dbd75c8f8d3cae1abb6c14fc108"
+        },
+        {
+          "id": "s11",
+          "prop_id": "7057756c74fc0ce9e2931ceb15a9165bb265b7fce2b94bb2cb07c0d4ea67f010",
+          "just_id": "67d9e70789b240280f2e053ee5d68433add9a87be99b28ed2f56fbe7fac94486",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        },
+        {
+          "id": "s12",
+          "prop_id": "f5ccc42e7f574651b808514e81b1e4f47d0155ab608aaef61066f8dc49a4f8d6",
+          "just_id": "0632c4b4ea4c4d941ac415f4d5d6d179df876986c62a132a6c3f6808e434f226"
+        },
+        {
+          "id": "s13",
+          "prop_id": "b3566a9510de1bd197bf0e4b1920d43b303019a6370916ef81d364193cdfd484",
+          "just_id": "58b9a582ea2ffce26089be5fbbd55070f208389a98e17ea8f04c3ea19bd17e3d",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        },
+        {
+          "id": "s14",
+          "prop_id": "a4f7894cc19a2ecb99a846a59a0403ed63f80e7e402a98357d3c4a0059f40036",
+          "just_id": "77789a96705dbf5ce5455275b508e9cd55f1ab98563be1cd269ff7d02fcf767a"
+        },
+        {
+          "id": "s15",
+          "prop_id": "8a44fa7ae17ddc889786f82cab699421888d874c6953fe23db7b7f260a3dc8b8",
+          "just_id": "b16c6b21e49bc1dd78804dd97e02187699d23286ef88db38321c4692966d7906",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        },
+        {
+          "id": "s16",
+          "prop_id": "1de903fa0027a88e3b95051e076333d3bdf87e3cebb70b7e3c9b48a892c28171",
+          "just_id": "2a1c185ca370715aaa033f4df3b91af388f33a68adea60cd9b89923f3cf00df2",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        },
+        {
+          "id": "s17",
+          "prop_id": "7aedda8a52a8af68abccbe7abe9d07af6284944efb66413440bb39fd7935add1",
+          "just_id": "88cc2f3471f480064e7688d26c2d5fa61eaba2f668b9360bd9bc16a55a4d4e02"
+        },
+        {
+          "id": "s18",
+          "prop_id": "4ade7f4e5559772e83deb7f81248610da7fbbd6f083b12e4e5b331d7e0f60a60",
+          "just_id": "aa7e5859ee6b9a8e68f707629dc4883e262b609e01261b6fc62d1bf567642bc5"
+        },
+        {
+          "id": "s19",
+          "prop_id": "2a945ef22c1314d9bfd8d3b880dbc301a505dcb1ee5639fad3a486243108dc65",
+          "just_id": "83be0f1f2ee32eac6686322c3a847c211b3524bb6012fc47e6032883e7dc483d"
+        },
+        {
+          "id": "s20",
+          "prop_id": "94d66c7953a99527a4f68613e6bd21c2156cb6f9d79bd7e9ed80941f5303ffba",
+          "just_id": "8552cfdb334bd2ba563294c90d0190d494adbbcd11ca35e586c5d3e5c58d69c3"
+        },
+        {
+          "id": "s21",
+          "prop_id": "8be7463138abae0179424850a10630c34dffd576fa8475cf20b653c37ca35481",
+          "just_id": "d377eee7a7ad74baea401f9bf489dd0dee00d3f4d38d099c0e6604fbce960b1b"
+        },
+        {
+          "id": "s22",
+          "prop_id": "cf767cbaee23f8af6d4c613c73d5bc5651d66ce54de3cb58a024e09fdb522e62",
+          "just_id": "7c6267b82addde2032bd1322f09c6f10c6f3c75bf07857adbe3573a5bdcd0186"
+        },
+        {
+          "id": "s23",
+          "prop_id": "ed5923f881a459040ee9c6bd21b1cc61373356e792b8fd1ab9c67ecdfe08df21",
+          "just_id": "92cd5172af947f32b3ad0f56d0646b96968a29952847c14e9133d84a2ea24374"
+        },
+        {
+          "id": "s24",
+          "prop_id": "0e0b475809d5f42e598b36bd68528f7f983d5d831a78d9fd069d95f2a86f2aee",
+          "just_id": "d24911ac5bcf6c695f8059df5589a7c67ba17e9eec1229a351c4f6dd7955b6ec"
+        }
+      ],
+      "arguments": [
+        {
+          "id": "a0",
+          "arg_hash": "ca9d92f5546a620e0f816170e804d15cd5ee6d7b87d45ddb09a62871417409b2"
+        },
+        {
+          "id": "a1",
+          "arg_hash": "74e8cf487eb528f00530fe50085609d8b7c8be48b058272c1dc55c69d1b074f3"
+        },
+        {
+          "id": "a2",
+          "arg_hash": "83ed771dbe2fe3af8dcf46552e617d398a7361e04041e0567a588bb1f0cdd488"
+        },
+        {
+          "id": "a3",
+          "arg_hash": "65503769d69352087ea0265fafaff85776e7ce7782467b85def32293a7f9b18a"
+        },
+        {
+          "id": "a4",
+          "arg_hash": "76c5865a586d3672925a51e777f92005c8f6eb8b675617232536ba2443b6b472"
+        },
+        {
+          "id": "a5",
+          "arg_hash": "ab530ade8e9244440ad6f49c3950fd83f0ce2959d23e990f9830aee1c6f5c522"
+        },
+        {
+          "id": "a6",
+          "arg_hash": "d39d122328bbce698bd8c593cc085a73b048b3ac153aa4c0374b8b89d2ffc53d"
+        },
+        {
+          "id": "a7",
+          "arg_hash": "339d0d50c784c4c4569a6410fc448a692de7020956958c5c3cab0d6c40d6467b"
+        },
+        {
+          "id": "a8",
+          "arg_hash": "37e8c0051892f2bc30fdd6f0840198f76d30ae4ec884d7653d154c3542b50f65"
+        },
+        {
+          "id": "a9",
+          "arg_hash": "b369b53b19df9a5261d7ae80cec4e3cdf1f0fb9084c19fec2a6641eb900cd881"
+        },
+        {
+          "id": "a10",
+          "arg_hash": "e1f1a2d9c1b1a285ba23ab038746ad37055d02cdaf38740448e4c191372c41b2"
+        },
+        {
+          "id": "a11",
+          "arg_hash": "74e8cf487eb528f00530fe50085609d8b7c8be48b058272c1dc55c69d1b074f3"
+        },
+        {
+          "id": "a12",
+          "arg_hash": "5a70647eb919743ab87f9481a8f6492db72bea16b8207aed5f62cef861bdd006"
+        },
+        {
+          "id": "a13",
+          "arg_hash": "def36065b5fc6b0323389f95bd24b70ae77995f594fa1afa1b1d0fea4d30a39e"
+        },
+        {
+          "id": "a14",
+          "arg_hash": "ff389d9223079107a693298bc19aa51c6ee0f6d663c992158176892e3124113c"
+        },
+        {
+          "id": "a15",
+          "arg_hash": "a39afdf48cd936e1a4445e5c7688a87979872ef1d7d05933d4f1b0cf2be41df3"
+        },
+        {
+          "id": "a16",
+          "arg_hash": "5297452cbc32a862d869d524f07ec73ade48bd0375b679d5597d317439ba1d43"
+        },
+        {
+          "id": "a17",
+          "arg_hash": "7e31618d30916b9bc16de65d6d61c7df348797872648d25e839de9e48bac5c1c"
+        },
+        {
+          "id": "a18",
+          "arg_hash": "ba5a602cf37a3f9cb153ac4be53beead01560aef6d4065a5743a042eee47cd5c"
+        },
+        {
+          "id": "a19",
+          "arg_hash": "6f1d9e913b8266bff5863862d8bb9b6f28663834a04536789d81f333e80c2148"
+        },
+        {
+          "id": "a20",
+          "arg_hash": "66b0d885008578377718e0e6aa81c5890bc542c2987c0ecfcde25c7ccdf9b254"
+        },
+        {
+          "id": "a21",
+          "arg_hash": "16198b05ce9fb61d0a2ef9dd6ed3005425c1136fa535f0519c3a18eecc4038b8"
+        },
+        {
+          "id": "a22",
+          "arg_hash": "7e31618d30916b9bc16de65d6d61c7df348797872648d25e839de9e48bac5c1c"
+        },
+        {
+          "id": "a23",
+          "arg_hash": "e0b440b8a5df2ccdd048018d4046ede2ddd21be4c4d29b0e048c2824a448f26a"
+        },
+        {
+          "id": "a24",
+          "arg_hash": "83060ff6b63aaa6bf182b50c9b1dd37be4f830f887070f5c14733eea2b1ae3bb"
+        },
+        {
+          "id": "a25",
+          "arg_hash": "e3d4fab1354b6e924feff2d4a4727a767d7d94c12d0146f791fda4ae9aabca14"
+        },
+        {
+          "id": "a26",
+          "arg_hash": "a41e8568c3b8a31dc1e4fbb908f7f695060550907824042e9f3b085618aa2750"
+        },
+        {
+          "id": "a27",
+          "arg_hash": "ef9af365a352837093ccf80b33b096b91fca40e14f3ff67a0e27500e6155d6ca"
+        },
+        {
+          "id": "a28",
+          "arg_hash": "ba4db64e38b091704fb721f78522d824c637bd70a2667f744d9a9e88868706d6"
+        },
+        {
+          "id": "a29",
+          "arg_hash": "1cedf95d4fc6fc0668c4cab7d19d86ba3d0c5c912bb3e763f05a2aaff4ae987a"
+        }
+      ]
+    },
+    "foundations": [
+      {
+        "id": "s10",
+        "text": "Coffee stars slippery slowly visible.",
+        "mode": "ought"
+      },
+      {
+        "id": "s14",
+        "text": "Slippery visible.",
+        "mode": "is"
+      },
+      {
+        "id": "s17",
+        "text": "Rain slowly",
+        "mode": "is"
+      },
+      {
+        "id": "s18",
+        "text": "Stars rain roads.",
+        "mode": "is"
+      },
+      {
+        "id": "s19",
+        "text": "Rain visible.",
+        "mode": "is"
+      },
+      {
+        "id": "s23",
+        "text": "Drive slowly",
+        "mode": "is"
+      }
+    ],
+    "sccs": [
+      {
+        "members": [
+          "s4",
+          "s11",
+          "s13",
+          "s15",
+          "s16"
+        ],
+        "self_loops": [
+          "s11",
+          "s13",
+          "s16"
+        ],
+        "internal_arguments": [
+          "a2"
+        ],
+        "boundary_arguments": [
+          "a0",
+          "a9",
+          "a10",
+          "a15",
+          "a16",
+          "a20",
+          "a25",
+          "a29"
+        ]
+      }
+    ],
+    "well_founded": {
+      "foundations": [
+        "s10",
+        "s14",
+        "s17",
+        "s18",
+        "s19",
+        "s23"
+      ],
+      "grounded": [
+        "s0",
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6",
+        "s7",
+        "s8",
+        "s9",
+        "s10",
+        "s11",
+        "s12",
+        "s14",
+        "s15",
+        "s17",
+        "s18",
+        "s19",
+        "s20",
+        "s21",
+        "s22",
+        "s23",
+        "s24"
+      ],
+      "ungrounded": [
+        "s13",
+        "s16"
+      ]
+    },
+    "rests_on": {
+      "s0": {
+        "statement": "s0",
+        "text": "Roads roads",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s1",
+            "s3",
+            "s5",
+            "s18"
+          ],
+          "arguments": [
+            "a1",
+            "a5",
+            "a11",
+            "a13",
+            "a16",
+            "a21",
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s0",
+          "text": "Roads roads",
+          "arguments": [
+            {
+              "argument": "a13",
+              "co_conclusions": [],
+              "premises": []
+            },
+            {
+              "argument": "a16",
+              "co_conclusions": [
+                "s11"
+              ],
+              "premises": [
+                {
+                  "statement": "s5",
+                  "text": "Wet slippery slippery rain wet slowly.",
+                  "arguments": [
+                    {
+                      "argument": "a5",
+                      "co_conclusions": [],
+                      "premises": [
+                        {
+                          "statement": "s1",
+                          "text": "Drive night slippery night.",
+                          "arguments": [
+                            {
+                              "argument": "a28",
+                              "co_conclusions": [
+                                "s24"
+                              ],
+                              "premises": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "statement": "s3",
+                  "text": "Cold coffee cold drive.",
+                  "arguments": [
+                    {
+                      "argument": "a1",
+                      "co_conclusions": [],
+                      "premises": []
+                    },
+                    {
+                      "argument": "a11",
+                      "co_conclusions": [],
+                      "premises": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "argument": "a21",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s18",
+                  "text": "Stars rain roads.",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s1": {
+        "statement": "s1",
+        "text": "Drive night slippery night.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": [
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s1",
+          "text": "Drive night slippery night.",
+          "arguments": [
+            {
+              "argument": "a28",
+              "co_conclusions": [
+                "s24"
+              ],
+              "premises": []
+            }
+          ]
+        }
+      },
+      "s2": {
+        "statement": "s2",
+        "text": "Late stars late!",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s0",
+            "s1",
+            "s3",
+            "s5",
+            "s7",
+            "s14",
+            "s18",
+            "s20",
+            "s22"
+          ],
+          "arguments": [
+            "a1",
+            "a5",
+            "a6",
+            "a7",
+            "a11",
+            "a13",
+            "a16",
+            "a20",
+            "a21",
+            "a26",
+            "a27",
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s2",
+          "text": "Late stars late!",
+          "arguments": [
+            {
+              "argument": "a7",
+              "co_conclusions": [
+                "s8"
+              ],
+              "premises": [
+                {
+                  "statement": "s1",
+                  "text": "Drive night slippery night.",
+                  "arguments": [
+                    {
+                      "argument": "a28",
+                      "co_conclusions": [
+                        "s24"
+                      ],
+                      "premises": []
+                    }
+                  ]
+                },
+                {
+                  "statement": "s7",
+                  "text": "Slowly night slowly slowly coffee wet",
+                  "arguments": [
+                    {
+                      "argument": "a6",
+                      "co_conclusions": [
+                        "s20"
+                      ],
+                      "premises": []
+                    }
+                  ]
+                },
+                {
+                  "statement": "s22",
+                  "text": "Rain rain slowly!",
+                  "arguments": [
+                    {
+                      "argument": "a27",
+                      "co_conclusions": [
+                        "s6"
+                      ],
+                      "premises": [
+                        {
+                          "statement": "s20",
+                          "text": "Wet wet visible wet!",
+                          "arguments": [
+                            {
+                              "argument": "a6",
+                              "co_conclusions": [
+                                "s7"
+                              ],
+                              "premises": []
+                            },
+                            {
+                              "argument": "a20",
+                              "co_conclusions": [
+                                "s15"
+                              ],
+                              "premises": [
+                                {
+                                  "statement": "s0",
+                                  "text": "Roads roads",
+                                  "arguments": [
+                                    {
+                                      "argument": "a13",
+                                      "co_conclusions": [],
+                                      "premises": []
+                                    },
+                                    {
+                                      "argument": "a16",
+                                      "co_conclusions": [
+                                        "s11"
+                                      ],
+                                      "premises": [
+                                        {
+                                          "statement": "s5",
+                                          "text": "Wet slippery slippery rain wet slowly.",
+                                          "arguments": [
+                                            {
+                                              "argument": "a5",
+                                              "co_conclusions": [],
+                                              "premises": [
+                                                {
+                                                  "statement": "s1",
+                                                  "text": "Drive night slippery night.",
+                                                  "seen": true
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "statement": "s3",
+                                          "text": "Cold coffee cold drive.",
+                                          "arguments": [
+                                            {
+                                              "argument": "a1",
+                                              "co_conclusions": [],
+                                              "premises": []
+                                            },
+                                            {
+                                              "argument": "a11",
+                                              "co_conclusions": [],
+                                              "premises": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "argument": "a21",
+                                      "co_conclusions": [],
+                                      "premises": [
+                                        {
+                                          "statement": "s18",
+                                          "text": "Stars rain roads.",
+                                          "arguments": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "statement": "s14",
+                                  "text": "Slippery visible.",
+                                  "arguments": []
+                                },
+                                {
+                                  "statement": "s1",
+                                  "text": "Drive night slippery night.",
+                                  "seen": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "argument": "a26",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s3",
+                  "text": "Cold coffee cold drive.",
+                  "seen": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s3": {
+        "statement": "s3",
+        "text": "Cold coffee cold drive.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": [
+            "a1",
+            "a11"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s3",
+          "text": "Cold coffee cold drive.",
+          "arguments": [
+            {
+              "argument": "a1",
+              "co_conclusions": [],
+              "premises": []
+            },
+            {
+              "argument": "a11",
+              "co_conclusions": [],
+              "premises": []
+            }
+          ]
+        }
+      },
+      "s22": {
+        "statement": "s22",
+        "text": "Rain rain slowly!",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s0",
+            "s1",
+            "s3",
+            "s5",
+            "s14",
+            "s18",
+            "s20"
+          ],
+          "arguments": [
+            "a1",
+            "a5",
+            "a6",
+            "a11",
+            "a13",
+            "a16",
+            "a20",
+            "a21",
+            "a27",
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s22",
+          "text": "Rain rain slowly!",
+          "arguments": [
+            {
+              "argument": "a27",
+              "co_conclusions": [
+                "s6"
+              ],
+              "premises": [
+                {
+                  "statement": "s20",
+                  "text": "Wet wet visible wet!",
+                  "arguments": [
+                    {
+                      "argument": "a6",
+                      "co_conclusions": [
+                        "s7"
+                      ],
+                      "premises": []
+                    },
+                    {
+                      "argument": "a20",
+                      "co_conclusions": [
+                        "s15"
+                      ],
+                      "premises": [
+                        {
+                          "statement": "s0",
+                          "text": "Roads roads",
+                          "arguments": [
+                            {
+                              "argument": "a13",
+                              "co_conclusions": [],
+                              "premises": []
+                            },
+                            {
+                              "argument": "a16",
+                              "co_conclusions": [
+                                "s11"
+                              ],
+                              "premises": [
+                                {
+                                  "statement": "s5",
+                                  "text": "Wet slippery slippery rain wet slowly.",
+                                  "arguments": [
+                                    {
+                                      "argument": "a5",
+                                      "co_conclusions": [],
+                                      "premises": [
+                                        {
+                                          "statement": "s1",
+                                          "text": "Drive night slippery night.",
+                                          "arguments": [
+                                            {
+                                              "argument": "a28",
+                                              "co_conclusions": [
+                                                "s24"
+                                              ],
+                                              "premises": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "statement": "s3",
+                                  "text": "Cold coffee cold drive.",
+                                  "arguments": [
+                                    {
+                                      "argument": "a1",
+                                      "co_conclusions": [],
+                                      "premises": []
+                                    },
+                                    {
+                                      "argument": "a11",
+                                      "co_conclusions": [],
+                                      "premises": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "argument": "a21",
+                              "co_conclusions": [],
+                              "premises": [
+                                {
+                                  "statement": "s18",
+                                  "text": "Stars rain roads.",
+                                  "arguments": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "statement": "s14",
+                          "text": "Slippery visible.",
+                          "arguments": []
+                        },
+                        {
+                          "statement": "s1",
+                          "text": "Drive night slippery night.",
+                          "seen": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s23": {
+        "statement": "s23",
+        "text": "Drive slowly",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s23",
+          "text": "Drive slowly",
+          "arguments": []
+        }
+      },
+      "s24": {
+        "statement": "s24",
+        "text": "Coffee cold night visible.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": [
+            "a12",
+            "a23",
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s24",
+          "text": "Coffee cold night visible.",
+          "arguments": [
+            {
+              "argument": "a12",
+              "co_conclusions": [],
+              "premises": []
+            },
+            {
+              "argument": "a23",
+              "co_conclusions": [],
+              "premises": []
+            },
+            {
+              "argument": "a28",
+              "co_conclusions": [
+                "s1"
+              ],
+              "premises": []
+            }
+          ]
+        }
+      }
+    },
+    "supports": {
+      "s0": {
+        "statement": "s0",
+        "text": "Roads roads",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s2",
+            "s4",
+            "s6",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16",
+            "s20",
+            "s21",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a2",
+            "a4",
+            "a7",
+            "a9",
+            "a10",
+            "a15",
+            "a20",
+            "a25",
+            "a27",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s0",
+          "text": "Roads roads",
+          "arguments": [
+            {
+              "argument": "a4",
+              "co_premises": [
+                "s20"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s21",
+                  "text": "Late night.",
+                  "arguments": []
+                }
+              ]
+            },
+            {
+              "argument": "a15",
+              "co_premises": [
+                "s13",
+                "s16"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s13",
+                  "text": "Cold slowly stars night roads",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "a10",
+                      "co_premises": [
+                        "s5"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "s16",
+                          "text": "Drive slippery slippery.",
+                          "scc": [
+                            "s4",
+                            "s11",
+                            "s13",
+                            "s15",
+                            "s16"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "a2",
+                              "co_premises": [
+                                "s4"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s15",
+                                  "text": "Stars rain drive night slippery stars.",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "arguments": [
+                                    {
+                                      "argument": "a29",
+                                      "co_premises": [
+                                        "s9",
+                                        "s11"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s4",
+                                          "text": "Coffee slowly late late!",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "arguments": [
+                                            {
+                                              "argument": "a2",
+                                              "co_premises": [
+                                                "s16"
+                                              ],
+                                              "conclusions": [
+                                                {
+                                                  "statement": "s15",
+                                                  "text": "Stars rain drive night slippery stars.",
+                                                  "scc": [
+                                                    "s4",
+                                                    "s11",
+                                                    "s13",
+                                                    "s15",
+                                                    "s16"
+                                                  ],
+                                                  "seen": true
+                                                },
+                                                {
+                                                  "statement": "s16",
+                                                  "text": "Drive slippery slippery.",
+                                                  "scc": [
+                                                    "s4",
+                                                    "s11",
+                                                    "s13",
+                                                    "s15",
+                                                    "s16"
+                                                  ],
+                                                  "seen": true
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "argument": "a25",
+                                              "co_premises": [
+                                                "s24"
+                                              ],
+                                              "conclusions": [
+                                                {
+                                                  "statement": "s12",
+                                                  "text": "Cold stars night night late drive!",
+                                                  "arguments": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "statement": "s11",
+                                          "text": "Coffee drive drive visible!",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "arguments": [
+                                            {
+                                              "argument": "a29",
+                                              "co_premises": [
+                                                "s15",
+                                                "s9"
+                                              ],
+                                              "conclusions": [
+                                                {
+                                                  "statement": "s4",
+                                                  "text": "Coffee slowly late late!",
+                                                  "scc": [
+                                                    "s4",
+                                                    "s11",
+                                                    "s13",
+                                                    "s15",
+                                                    "s16"
+                                                  ],
+                                                  "seen": true
+                                                },
+                                                {
+                                                  "statement": "s11",
+                                                  "text": "Coffee drive drive visible!",
+                                                  "scc": [
+                                                    "s4",
+                                                    "s11",
+                                                    "s13",
+                                                    "s15",
+                                                    "s16"
+                                                  ],
+                                                  "seen": true
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "statement": "s16",
+                                  "text": "Drive slippery slippery.",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            },
+                            {
+                              "argument": "a9",
+                              "co_premises": [
+                                "s8"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s4",
+                                  "text": "Coffee slowly late late!",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            },
+                            {
+                              "argument": "a15",
+                              "co_premises": [
+                                "s13",
+                                "s0"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s13",
+                                  "text": "Cold slowly stars night roads",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "argument": "a15",
+                      "co_premises": [
+                        "s16",
+                        "s0"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "s13",
+                          "text": "Cold slowly stars night roads",
+                          "scc": [
+                            "s4",
+                            "s11",
+                            "s13",
+                            "s15",
+                            "s16"
+                          ],
+                          "seen": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "argument": "a20",
+              "co_premises": [
+                "s14",
+                "s1"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s20",
+                  "text": "Wet wet visible wet!",
+                  "arguments": [
+                    {
+                      "argument": "a4",
+                      "co_premises": [
+                        "s0"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "s21",
+                          "text": "Late night.",
+                          "seen": true
+                        }
+                      ]
+                    },
+                    {
+                      "argument": "a27",
+                      "co_premises": [],
+                      "conclusions": [
+                        {
+                          "statement": "s6",
+                          "text": "Cold slowly cold stars cold wet",
+                          "arguments": []
+                        },
+                        {
+                          "statement": "s22",
+                          "text": "Rain rain slowly!",
+                          "arguments": [
+                            {
+                              "argument": "a0",
+                              "co_premises": [
+                                "s19"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s15",
+                                  "text": "Stars rain drive night slippery stars.",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            },
+                            {
+                              "argument": "a7",
+                              "co_premises": [
+                                "s1",
+                                "s7"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s2",
+                                  "text": "Late stars late!",
+                                  "arguments": []
+                                },
+                                {
+                                  "statement": "s8",
+                                  "text": "Stars cold slippery coffee drive",
+                                  "arguments": [
+                                    {
+                                      "argument": "a9",
+                                      "co_premises": [
+                                        "s16"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s4",
+                                          "text": "Coffee slowly late late!",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "seen": true
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "statement": "s15",
+                  "text": "Stars rain drive night slippery stars.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "seen": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s1": {
+        "statement": "s1",
+        "text": "Drive night slippery night.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s0",
+            "s2",
+            "s4",
+            "s5",
+            "s6",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16",
+            "s20",
+            "s21",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a2",
+            "a4",
+            "a5",
+            "a7",
+            "a9",
+            "a10",
+            "a15",
+            "a16",
+            "a20",
+            "a25",
+            "a27",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s1",
+          "text": "Drive night slippery night.",
+          "arguments": [
+            {
+              "argument": "a5",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "s5",
+                  "text": "Wet slippery slippery rain wet slowly.",
+                  "arguments": [
+                    {
+                      "argument": "a10",
+                      "co_premises": [
+                        "s13"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "s16",
+                          "text": "Drive slippery slippery.",
+                          "scc": [
+                            "s4",
+                            "s11",
+                            "s13",
+                            "s15",
+                            "s16"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "a2",
+                              "co_premises": [
+                                "s4"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s15",
+                                  "text": "Stars rain drive night slippery stars.",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "arguments": [
+                                    {
+                                      "argument": "a29",
+                                      "co_premises": [
+                                        "s9",
+                                        "s11"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s4",
+                                          "text": "Coffee slowly late late!",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "arguments": [
+                                            {
+                                              "argument": "a2",
+                                              "co_premises": [
+                                                "s16"
+                                              ],
+                                              "conclusions": [
+                                                {
+                                                  "statement": "s15",
+                                                  "text": "Stars rain drive night slippery stars.",
+                                                  "scc": [
+                                                    "s4",
+                                                    "s11",
+                                                    "s13",
+                                                    "s15",
+                                                    "s16"
+                                                  ],
+                                                  "seen": true
+                                                },
+                                                {
+                                                  "statement": "s16",
+                                                  "text": "Drive slippery slippery.",
+                                                  "scc": [
+                                                    "s4",
+                                                    "s11",
+                                                    "s13",
+                                                    "s15",
+                                                    "s16"
+                                                  ],
+                                                  "seen": true
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "argument": "a25",
+                                              "co_premises": [
+                                                "s24"
+                                              ],
+                                              "conclusions": [
+                                                {
+                                                  "statement": "s12",
+                                                  "text": "Cold stars night night late drive!",
+                                                  "arguments": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "statement": "s11",
+                                          "text": "Coffee drive drive visible!",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "arguments": [
+                                            {
+                                              "argument": "a29",
+                                              "co_premises": [
+                                                "s15",
+                                                "s9"
+                                              ],
+                                              "conclusions": [
+                                                {
+                                                  "statement": "s4",
+                                                  "text": "Coffee slowly late late!",
+                                                  "scc": [
+                                                    "s4",
+                                                    "s11",
+                                                    "s13",
+                                                    "s15",
+                                                    "s16"
+                                                  ],
+                                                  "seen": true
+                                                },
+                                                {
+                                                  "statement": "s11",
+                                                  "text": "Coffee drive drive visible!",
+                                                  "scc": [
+                                                    "s4",
+                                                    "s11",
+                                                    "s13",
+                                                    "s15",
+                                                    "s16"
+                                                  ],
+                                                  "seen": true
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "statement": "s16",
+                                  "text": "Drive slippery slippery.",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            },
+                            {
+                              "argument": "a9",
+                              "co_premises": [
+                                "s8"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s4",
+                                  "text": "Coffee slowly late late!",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            },
+                            {
+                              "argument": "a15",
+                              "co_premises": [
+                                "s13",
+                                "s0"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s13",
+                                  "text": "Cold slowly stars night roads",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "arguments": [
+                                    {
+                                      "argument": "a10",
+                                      "co_premises": [
+                                        "s5"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s16",
+                                          "text": "Drive slippery slippery.",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "seen": true
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "argument": "a15",
+                                      "co_premises": [
+                                        "s16",
+                                        "s0"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s13",
+                                          "text": "Cold slowly stars night roads",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "seen": true
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "argument": "a16",
+                      "co_premises": [
+                        "s3"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "s11",
+                          "text": "Coffee drive drive visible!",
+                          "scc": [
+                            "s4",
+                            "s11",
+                            "s13",
+                            "s15",
+                            "s16"
+                          ],
+                          "seen": true
+                        },
+                        {
+                          "statement": "s0",
+                          "text": "Roads roads",
+                          "arguments": [
+                            {
+                              "argument": "a4",
+                              "co_premises": [
+                                "s20"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s21",
+                                  "text": "Late night.",
+                                  "arguments": []
+                                }
+                              ]
+                            },
+                            {
+                              "argument": "a15",
+                              "co_premises": [
+                                "s13",
+                                "s16"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s13",
+                                  "text": "Cold slowly stars night roads",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            },
+                            {
+                              "argument": "a20",
+                              "co_premises": [
+                                "s14",
+                                "s1"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s20",
+                                  "text": "Wet wet visible wet!",
+                                  "arguments": [
+                                    {
+                                      "argument": "a4",
+                                      "co_premises": [
+                                        "s0"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s21",
+                                          "text": "Late night.",
+                                          "seen": true
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "argument": "a27",
+                                      "co_premises": [],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s6",
+                                          "text": "Cold slowly cold stars cold wet",
+                                          "arguments": []
+                                        },
+                                        {
+                                          "statement": "s22",
+                                          "text": "Rain rain slowly!",
+                                          "arguments": [
+                                            {
+                                              "argument": "a0",
+                                              "co_premises": [
+                                                "s19"
+                                              ],
+                                              "conclusions": [
+                                                {
+                                                  "statement": "s15",
+                                                  "text": "Stars rain drive night slippery stars.",
+                                                  "scc": [
+                                                    "s4",
+                                                    "s11",
+                                                    "s13",
+                                                    "s15",
+                                                    "s16"
+                                                  ],
+                                                  "seen": true
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "argument": "a7",
+                                              "co_premises": [
+                                                "s1",
+                                                "s7"
+                                              ],
+                                              "conclusions": [
+                                                {
+                                                  "statement": "s2",
+                                                  "text": "Late stars late!",
+                                                  "arguments": []
+                                                },
+                                                {
+                                                  "statement": "s8",
+                                                  "text": "Stars cold slippery coffee drive",
+                                                  "arguments": [
+                                                    {
+                                                      "argument": "a9",
+                                                      "co_premises": [
+                                                        "s16"
+                                                      ],
+                                                      "conclusions": [
+                                                        {
+                                                          "statement": "s4",
+                                                          "text": "Coffee slowly late late!",
+                                                          "scc": [
+                                                            "s4",
+                                                            "s11",
+                                                            "s13",
+                                                            "s15",
+                                                            "s16"
+                                                          ],
+                                                          "seen": true
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "statement": "s15",
+                                  "text": "Stars rain drive night slippery stars.",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "argument": "a7",
+              "co_premises": [
+                "s7",
+                "s22"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s2",
+                  "text": "Late stars late!",
+                  "seen": true
+                },
+                {
+                  "statement": "s8",
+                  "text": "Stars cold slippery coffee drive",
+                  "seen": true
+                }
+              ]
+            },
+            {
+              "argument": "a20",
+              "co_premises": [
+                "s0",
+                "s14"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s20",
+                  "text": "Wet wet visible wet!",
+                  "seen": true
+                },
+                {
+                  "statement": "s15",
+                  "text": "Stars rain drive night slippery stars.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "seen": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s2": {
+        "statement": "s2",
+        "text": "Late stars late!",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s2",
+          "text": "Late stars late!",
+          "arguments": []
+        }
+      },
+      "s3": {
+        "statement": "s3",
+        "text": "Cold coffee cold drive.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s0",
+            "s2",
+            "s4",
+            "s6",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16",
+            "s20",
+            "s21",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a2",
+            "a4",
+            "a7",
+            "a9",
+            "a10",
+            "a15",
+            "a16",
+            "a20",
+            "a24",
+            "a25",
+            "a26",
+            "a27",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s3",
+          "text": "Cold coffee cold drive.",
+          "arguments": [
+            {
+              "argument": "a16",
+              "co_premises": [
+                "s5"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s11",
+                  "text": "Coffee drive drive visible!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "a29",
+                      "co_premises": [
+                        "s15",
+                        "s9"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "s4",
+                          "text": "Coffee slowly late late!",
+                          "scc": [
+                            "s4",
+                            "s11",
+                            "s13",
+                            "s15",
+                            "s16"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "a2",
+                              "co_premises": [
+                                "s16"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s15",
+                                  "text": "Stars rain drive night slippery stars.",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "arguments": [
+                                    {
+                                      "argument": "a29",
+                                      "co_premises": [
+                                        "s9",
+                                        "s11"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s4",
+                                          "text": "Coffee slowly late late!",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "seen": true
+                                        },
+                                        {
+                                          "statement": "s11",
+                                          "text": "Coffee drive drive visible!",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "seen": true
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "statement": "s16",
+                                  "text": "Drive slippery slippery.",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "arguments": [
+                                    {
+                                      "argument": "a2",
+                                      "co_premises": [
+                                        "s4"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s15",
+                                          "text": "Stars rain drive night slippery stars.",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "seen": true
+                                        },
+                                        {
+                                          "statement": "s16",
+                                          "text": "Drive slippery slippery.",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "seen": true
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "argument": "a9",
+                                      "co_premises": [
+                                        "s8"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s4",
+                                          "text": "Coffee slowly late late!",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "seen": true
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "argument": "a15",
+                                      "co_premises": [
+                                        "s13",
+                                        "s0"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s13",
+                                          "text": "Cold slowly stars night roads",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "arguments": [
+                                            {
+                                              "argument": "a10",
+                                              "co_premises": [
+                                                "s5"
+                                              ],
+                                              "conclusions": [
+                                                {
+                                                  "statement": "s16",
+                                                  "text": "Drive slippery slippery.",
+                                                  "scc": [
+                                                    "s4",
+                                                    "s11",
+                                                    "s13",
+                                                    "s15",
+                                                    "s16"
+                                                  ],
+                                                  "seen": true
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "argument": "a15",
+                                              "co_premises": [
+                                                "s16",
+                                                "s0"
+                                              ],
+                                              "conclusions": [
+                                                {
+                                                  "statement": "s13",
+                                                  "text": "Cold slowly stars night roads",
+                                                  "scc": [
+                                                    "s4",
+                                                    "s11",
+                                                    "s13",
+                                                    "s15",
+                                                    "s16"
+                                                  ],
+                                                  "seen": true
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "argument": "a25",
+                              "co_premises": [
+                                "s24"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s12",
+                                  "text": "Cold stars night night late drive!",
+                                  "arguments": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "statement": "s11",
+                          "text": "Coffee drive drive visible!",
+                          "scc": [
+                            "s4",
+                            "s11",
+                            "s13",
+                            "s15",
+                            "s16"
+                          ],
+                          "seen": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "statement": "s0",
+                  "text": "Roads roads",
+                  "arguments": [
+                    {
+                      "argument": "a4",
+                      "co_premises": [
+                        "s20"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "s21",
+                          "text": "Late night.",
+                          "arguments": []
+                        }
+                      ]
+                    },
+                    {
+                      "argument": "a15",
+                      "co_premises": [
+                        "s13",
+                        "s16"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "s13",
+                          "text": "Cold slowly stars night roads",
+                          "scc": [
+                            "s4",
+                            "s11",
+                            "s13",
+                            "s15",
+                            "s16"
+                          ],
+                          "seen": true
+                        }
+                      ]
+                    },
+                    {
+                      "argument": "a20",
+                      "co_premises": [
+                        "s14",
+                        "s1"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "s20",
+                          "text": "Wet wet visible wet!",
+                          "arguments": [
+                            {
+                              "argument": "a4",
+                              "co_premises": [
+                                "s0"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s21",
+                                  "text": "Late night.",
+                                  "seen": true
+                                }
+                              ]
+                            },
+                            {
+                              "argument": "a27",
+                              "co_premises": [],
+                              "conclusions": [
+                                {
+                                  "statement": "s6",
+                                  "text": "Cold slowly cold stars cold wet",
+                                  "arguments": []
+                                },
+                                {
+                                  "statement": "s22",
+                                  "text": "Rain rain slowly!",
+                                  "arguments": [
+                                    {
+                                      "argument": "a0",
+                                      "co_premises": [
+                                        "s19"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s15",
+                                          "text": "Stars rain drive night slippery stars.",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "seen": true
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "argument": "a7",
+                                      "co_premises": [
+                                        "s1",
+                                        "s7"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s2",
+                                          "text": "Late stars late!",
+                                          "arguments": []
+                                        },
+                                        {
+                                          "statement": "s8",
+                                          "text": "Stars cold slippery coffee drive",
+                                          "arguments": [
+                                            {
+                                              "argument": "a9",
+                                              "co_premises": [
+                                                "s16"
+                                              ],
+                                              "conclusions": [
+                                                {
+                                                  "statement": "s4",
+                                                  "text": "Coffee slowly late late!",
+                                                  "scc": [
+                                                    "s4",
+                                                    "s11",
+                                                    "s13",
+                                                    "s15",
+                                                    "s16"
+                                                  ],
+                                                  "seen": true
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "statement": "s15",
+                          "text": "Stars rain drive night slippery stars.",
+                          "scc": [
+                            "s4",
+                            "s11",
+                            "s13",
+                            "s15",
+                            "s16"
+                          ],
+                          "seen": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "argument": "a24",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "s12",
+                  "text": "Cold stars night night late drive!",
+                  "seen": true
+                }
+              ]
+            },
+            {
+              "argument": "a26",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "s2",
+                  "text": "Late stars late!",
+                  "seen": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s22": {
+        "statement": "s22",
+        "text": "Rain rain slowly!",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s2",
+            "s4",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            "a0",
+            "a2",
+            "a7",
+            "a9",
+            "a10",
+            "a15",
+            "a25",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s22",
+          "text": "Rain rain slowly!",
+          "arguments": [
+            {
+              "argument": "a0",
+              "co_premises": [
+                "s19"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s15",
+                  "text": "Stars rain drive night slippery stars.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "a29",
+                      "co_premises": [
+                        "s9",
+                        "s11"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "s4",
+                          "text": "Coffee slowly late late!",
+                          "scc": [
+                            "s4",
+                            "s11",
+                            "s13",
+                            "s15",
+                            "s16"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "a2",
+                              "co_premises": [
+                                "s16"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s15",
+                                  "text": "Stars rain drive night slippery stars.",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "seen": true
+                                },
+                                {
+                                  "statement": "s16",
+                                  "text": "Drive slippery slippery.",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "arguments": [
+                                    {
+                                      "argument": "a2",
+                                      "co_premises": [
+                                        "s4"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s15",
+                                          "text": "Stars rain drive night slippery stars.",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "seen": true
+                                        },
+                                        {
+                                          "statement": "s16",
+                                          "text": "Drive slippery slippery.",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "seen": true
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "argument": "a9",
+                                      "co_premises": [
+                                        "s8"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s4",
+                                          "text": "Coffee slowly late late!",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "seen": true
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "argument": "a15",
+                                      "co_premises": [
+                                        "s13",
+                                        "s0"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "s13",
+                                          "text": "Cold slowly stars night roads",
+                                          "scc": [
+                                            "s4",
+                                            "s11",
+                                            "s13",
+                                            "s15",
+                                            "s16"
+                                          ],
+                                          "arguments": [
+                                            {
+                                              "argument": "a10",
+                                              "co_premises": [
+                                                "s5"
+                                              ],
+                                              "conclusions": [
+                                                {
+                                                  "statement": "s16",
+                                                  "text": "Drive slippery slippery.",
+                                                  "scc": [
+                                                    "s4",
+                                                    "s11",
+                                                    "s13",
+                                                    "s15",
+                                                    "s16"
+                                                  ],
+                                                  "seen": true
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "argument": "a15",
+                                              "co_premises": [
+                                                "s16",
+                                                "s0"
+                                              ],
+                                              "conclusions": [
+                                                {
+                                                  "statement": "s13",
+                                                  "text": "Cold slowly stars night roads",
+                                                  "scc": [
+                                                    "s4",
+                                                    "s11",
+                                                    "s13",
+                                                    "s15",
+                                                    "s16"
+                                                  ],
+                                                  "seen": true
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "argument": "a25",
+                              "co_premises": [
+                                "s24"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s12",
+                                  "text": "Cold stars night night late drive!",
+                                  "arguments": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "statement": "s11",
+                          "text": "Coffee drive drive visible!",
+                          "scc": [
+                            "s4",
+                            "s11",
+                            "s13",
+                            "s15",
+                            "s16"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "a29",
+                              "co_premises": [
+                                "s15",
+                                "s9"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "s4",
+                                  "text": "Coffee slowly late late!",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "seen": true
+                                },
+                                {
+                                  "statement": "s11",
+                                  "text": "Coffee drive drive visible!",
+                                  "scc": [
+                                    "s4",
+                                    "s11",
+                                    "s13",
+                                    "s15",
+                                    "s16"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "argument": "a7",
+              "co_premises": [
+                "s1",
+                "s7"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s2",
+                  "text": "Late stars late!",
+                  "arguments": []
+                },
+                {
+                  "statement": "s8",
+                  "text": "Stars cold slippery coffee drive",
+                  "arguments": [
+                    {
+                      "argument": "a9",
+                      "co_premises": [
+                        "s16"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "s4",
+                          "text": "Coffee slowly late late!",
+                          "scc": [
+                            "s4",
+                            "s11",
+                            "s13",
+                            "s15",
+                            "s16"
+                          ],
+                          "seen": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s23": {
+        "statement": "s23",
+        "text": "Drive slowly",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s23",
+          "text": "Drive slowly",
+          "arguments": []
+        }
+      },
+      "s24": {
+        "statement": "s24",
+        "text": "Coffee cold night visible.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s12"
+          ],
+          "arguments": [
+            "a25"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s24",
+          "text": "Coffee cold night visible.",
+          "arguments": [
+            {
+              "argument": "a25",
+              "co_premises": [
+                "s4"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s12",
+                  "text": "Cold stars night night late drive!",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "rests_on_depth_1": {
+      "s0": {
+        "statement": "s0",
+        "text": "Roads roads",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s1",
+            "s3",
+            "s5",
+            "s18"
+          ],
+          "arguments": [
+            "a1",
+            "a5",
+            "a11",
+            "a13",
+            "a16",
+            "a21",
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s0",
+          "text": "Roads roads",
+          "arguments": [
+            {
+              "argument": "a13",
+              "co_conclusions": [],
+              "premises": []
+            },
+            {
+              "argument": "a16",
+              "co_conclusions": [
+                "s11"
+              ],
+              "premises": [
+                {
+                  "statement": "s5",
+                  "text": "Wet slippery slippery rain wet slowly.",
+                  "truncated": true
+                },
+                {
+                  "statement": "s3",
+                  "text": "Cold coffee cold drive.",
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a21",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s18",
+                  "text": "Stars rain roads."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s1": {
+        "statement": "s1",
+        "text": "Drive night slippery night.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": [
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s1",
+          "text": "Drive night slippery night.",
+          "arguments": [
+            {
+              "argument": "a28",
+              "co_conclusions": [
+                "s24"
+              ],
+              "premises": []
+            }
+          ]
+        }
+      },
+      "s2": {
+        "statement": "s2",
+        "text": "Late stars late!",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s0",
+            "s1",
+            "s3",
+            "s5",
+            "s7",
+            "s14",
+            "s18",
+            "s20",
+            "s22"
+          ],
+          "arguments": [
+            "a1",
+            "a5",
+            "a6",
+            "a7",
+            "a11",
+            "a13",
+            "a16",
+            "a20",
+            "a21",
+            "a26",
+            "a27",
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s2",
+          "text": "Late stars late!",
+          "arguments": [
+            {
+              "argument": "a7",
+              "co_conclusions": [
+                "s8"
+              ],
+              "premises": [
+                {
+                  "statement": "s1",
+                  "text": "Drive night slippery night.",
+                  "truncated": true
+                },
+                {
+                  "statement": "s7",
+                  "text": "Slowly night slowly slowly coffee wet",
+                  "truncated": true
+                },
+                {
+                  "statement": "s22",
+                  "text": "Rain rain slowly!",
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a26",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s3",
+                  "text": "Cold coffee cold drive.",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s3": {
+        "statement": "s3",
+        "text": "Cold coffee cold drive.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": [
+            "a1",
+            "a11"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s3",
+          "text": "Cold coffee cold drive.",
+          "arguments": [
+            {
+              "argument": "a1",
+              "co_conclusions": [],
+              "premises": []
+            },
+            {
+              "argument": "a11",
+              "co_conclusions": [],
+              "premises": []
+            }
+          ]
+        }
+      },
+      "s4": {
+        "statement": "s4",
+        "text": "Coffee slowly late late!",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s0",
+            "s1",
+            "s3",
+            "s4",
+            "s5",
+            "s7",
+            "s8",
+            "s9",
+            "s10",
+            "s11",
+            "s13",
+            "s14",
+            "s15",
+            "s16",
+            "s18",
+            "s19",
+            "s20",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a1",
+            "a2",
+            "a3",
+            "a5",
+            "a6",
+            "a7",
+            "a8",
+            "a9",
+            "a10",
+            "a11",
+            "a13",
+            "a15",
+            "a16",
+            "a17",
+            "a19",
+            "a20",
+            "a21",
+            "a22",
+            "a27",
+            "a28",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s4",
+          "text": "Coffee slowly late late!",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            {
+              "argument": "a9",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s8",
+                  "text": "Stars cold slippery coffee drive",
+                  "truncated": true
+                },
+                {
+                  "statement": "s16",
+                  "text": "Drive slippery slippery.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a29",
+              "co_conclusions": [
+                "s11"
+              ],
+              "premises": [
+                {
+                  "statement": "s15",
+                  "text": "Stars rain drive night slippery stars.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                },
+                {
+                  "statement": "s9",
+                  "text": "Slowly stars coffee coffee slowly night!",
+                  "truncated": true
+                },
+                {
+                  "statement": "s11",
+                  "text": "Coffee drive drive visible!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s5": {
+        "statement": "s5",
+        "text": "Wet slippery slippery rain wet slowly.",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s1"
+          ],
+          "arguments": [
+            "a5",
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s5",
+          "text": "Wet slippery slippery rain wet slowly.",
+          "arguments": [
+            {
+              "argument": "a5",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s1",
+                  "text": "Drive night slippery night.",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s6": {
+        "statement": "s6",
+        "text": "Cold slowly cold stars cold wet",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s0",
+            "s1",
+            "s3",
+            "s5",
+            "s9",
+            "s14",
+            "s17",
+            "s18",
+            "s20"
+          ],
+          "arguments": [
+            "a1",
+            "a5",
+            "a6",
+            "a11",
+            "a13",
+            "a14",
+            "a16",
+            "a17",
+            "a19",
+            "a20",
+            "a21",
+            "a22",
+            "a27",
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s6",
+          "text": "Cold slowly cold stars cold wet",
+          "arguments": [
+            {
+              "argument": "a14",
+              "co_conclusions": [
+                "s21"
+              ],
+              "premises": [
+                {
+                  "statement": "s14",
+                  "text": "Slippery visible."
+                },
+                {
+                  "statement": "s9",
+                  "text": "Slowly stars coffee coffee slowly night!",
+                  "truncated": true
+                },
+                {
+                  "statement": "s17",
+                  "text": "Rain slowly"
+                }
+              ]
+            },
+            {
+              "argument": "a27",
+              "co_conclusions": [
+                "s22"
+              ],
+              "premises": [
+                {
+                  "statement": "s20",
+                  "text": "Wet wet visible wet!",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s7": {
+        "statement": "s7",
+        "text": "Slowly night slowly slowly coffee wet",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": [
+            "a6"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s7",
+          "text": "Slowly night slowly slowly coffee wet",
+          "arguments": [
+            {
+              "argument": "a6",
+              "co_conclusions": [
+                "s20"
+              ],
+              "premises": []
+            }
+          ]
+        }
+      },
+      "s8": {
+        "statement": "s8",
+        "text": "Stars cold slippery coffee drive",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s0",
+            "s1",
+            "s3",
+            "s5",
+            "s7",
+            "s10",
+            "s14",
+            "s18",
+            "s19",
+            "s20",
+            "s22"
+          ],
+          "arguments": [
+            "a1",
+            "a3",
+            "a5",
+            "a6",
+            "a7",
+            "a8",
+            "a11",
+            "a13",
+            "a16",
+            "a20",
+            "a21",
+            "a27",
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s8",
+          "text": "Stars cold slippery coffee drive",
+          "arguments": [
+            {
+              "argument": "a3",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s10",
+                  "text": "Coffee stars slippery slowly visible."
+                }
+              ]
+            },
+            {
+              "argument": "a7",
+              "co_conclusions": [
+                "s2"
+              ],
+              "premises": [
+                {
+                  "statement": "s1",
+                  "text": "Drive night slippery night.",
+                  "truncated": true
+                },
+                {
+                  "statement": "s7",
+                  "text": "Slowly night slowly slowly coffee wet",
+                  "truncated": true
+                },
+                {
+                  "statement": "s22",
+                  "text": "Rain rain slowly!",
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a8",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s7",
+                  "text": "Slowly night slowly slowly coffee wet",
+                  "seen": true
+                },
+                {
+                  "statement": "s19",
+                  "text": "Rain visible."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s9": {
+        "statement": "s9",
+        "text": "Slowly stars coffee coffee slowly night!",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": [
+            "a17",
+            "a19",
+            "a22"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s9",
+          "text": "Slowly stars coffee coffee slowly night!",
+          "arguments": [
+            {
+              "argument": "a17",
+              "co_conclusions": [],
+              "premises": []
+            },
+            {
+              "argument": "a19",
+              "co_conclusions": [],
+              "premises": []
+            },
+            {
+              "argument": "a22",
+              "co_conclusions": [],
+              "premises": []
+            }
+          ]
+        }
+      },
+      "s10": {
+        "statement": "s10",
+        "text": "Coffee stars slippery slowly visible.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s10",
+          "text": "Coffee stars slippery slowly visible.",
+          "arguments": []
+        }
+      },
+      "s11": {
+        "statement": "s11",
+        "text": "Coffee drive drive visible!",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s0",
+            "s1",
+            "s3",
+            "s4",
+            "s5",
+            "s7",
+            "s8",
+            "s9",
+            "s10",
+            "s11",
+            "s13",
+            "s14",
+            "s15",
+            "s16",
+            "s18",
+            "s19",
+            "s20",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a1",
+            "a2",
+            "a3",
+            "a5",
+            "a6",
+            "a7",
+            "a8",
+            "a9",
+            "a10",
+            "a11",
+            "a13",
+            "a15",
+            "a16",
+            "a17",
+            "a19",
+            "a20",
+            "a21",
+            "a22",
+            "a27",
+            "a28",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s11",
+          "text": "Coffee drive drive visible!",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            {
+              "argument": "a16",
+              "co_conclusions": [
+                "s0"
+              ],
+              "premises": [
+                {
+                  "statement": "s5",
+                  "text": "Wet slippery slippery rain wet slowly.",
+                  "truncated": true
+                },
+                {
+                  "statement": "s3",
+                  "text": "Cold coffee cold drive.",
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a29",
+              "co_conclusions": [
+                "s4"
+              ],
+              "premises": [
+                {
+                  "statement": "s15",
+                  "text": "Stars rain drive night slippery stars.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                },
+                {
+                  "statement": "s9",
+                  "text": "Slowly stars coffee coffee slowly night!",
+                  "truncated": true
+                },
+                {
+                  "statement": "s11",
+                  "text": "Coffee drive drive visible!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "seen": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s12": {
+        "statement": "s12",
+        "text": "Cold stars night night late drive!",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s0",
+            "s1",
+            "s3",
+            "s4",
+            "s5",
+            "s7",
+            "s8",
+            "s9",
+            "s10",
+            "s11",
+            "s13",
+            "s14",
+            "s15",
+            "s16",
+            "s18",
+            "s19",
+            "s20",
+            "s22",
+            "s24"
+          ],
+          "arguments": [
+            "a0",
+            "a1",
+            "a2",
+            "a3",
+            "a5",
+            "a6",
+            "a7",
+            "a8",
+            "a9",
+            "a10",
+            "a11",
+            "a12",
+            "a13",
+            "a15",
+            "a16",
+            "a17",
+            "a19",
+            "a20",
+            "a21",
+            "a22",
+            "a23",
+            "a24",
+            "a25",
+            "a27",
+            "a28",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s12",
+          "text": "Cold stars night night late drive!",
+          "arguments": [
+            {
+              "argument": "a24",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s3",
+                  "text": "Cold coffee cold drive.",
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a25",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s4",
+                  "text": "Coffee slowly late late!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                },
+                {
+                  "statement": "s24",
+                  "text": "Coffee cold night visible.",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s13": {
+        "statement": "s13",
+        "text": "Cold slowly stars night roads",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s0",
+            "s1",
+            "s3",
+            "s4",
+            "s5",
+            "s7",
+            "s8",
+            "s9",
+            "s10",
+            "s11",
+            "s13",
+            "s14",
+            "s15",
+            "s16",
+            "s18",
+            "s19",
+            "s20",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a1",
+            "a2",
+            "a3",
+            "a5",
+            "a6",
+            "a7",
+            "a8",
+            "a9",
+            "a10",
+            "a11",
+            "a13",
+            "a15",
+            "a16",
+            "a17",
+            "a19",
+            "a20",
+            "a21",
+            "a22",
+            "a27",
+            "a28",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s13",
+          "text": "Cold slowly stars night roads",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            {
+              "argument": "a15",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s13",
+                  "text": "Cold slowly stars night roads",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "seen": true
+                },
+                {
+                  "statement": "s16",
+                  "text": "Drive slippery slippery.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                },
+                {
+                  "statement": "s0",
+                  "text": "Roads roads",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s14": {
+        "statement": "s14",
+        "text": "Slippery visible.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s14",
+          "text": "Slippery visible.",
+          "arguments": []
+        }
+      },
+      "s15": {
+        "statement": "s15",
+        "text": "Stars rain drive night slippery stars.",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s0",
+            "s1",
+            "s3",
+            "s4",
+            "s5",
+            "s7",
+            "s8",
+            "s9",
+            "s10",
+            "s11",
+            "s13",
+            "s14",
+            "s15",
+            "s16",
+            "s18",
+            "s19",
+            "s20",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a1",
+            "a2",
+            "a3",
+            "a5",
+            "a6",
+            "a7",
+            "a8",
+            "a9",
+            "a10",
+            "a11",
+            "a13",
+            "a15",
+            "a16",
+            "a17",
+            "a19",
+            "a20",
+            "a21",
+            "a22",
+            "a27",
+            "a28",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s15",
+          "text": "Stars rain drive night slippery stars.",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            {
+              "argument": "a0",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s19",
+                  "text": "Rain visible."
+                },
+                {
+                  "statement": "s22",
+                  "text": "Rain rain slowly!",
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a2",
+              "co_conclusions": [
+                "s16"
+              ],
+              "premises": [
+                {
+                  "statement": "s4",
+                  "text": "Coffee slowly late late!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                },
+                {
+                  "statement": "s16",
+                  "text": "Drive slippery slippery.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a20",
+              "co_conclusions": [
+                "s20"
+              ],
+              "premises": [
+                {
+                  "statement": "s0",
+                  "text": "Roads roads",
+                  "truncated": true
+                },
+                {
+                  "statement": "s14",
+                  "text": "Slippery visible."
+                },
+                {
+                  "statement": "s1",
+                  "text": "Drive night slippery night.",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s16": {
+        "statement": "s16",
+        "text": "Drive slippery slippery.",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s0",
+            "s1",
+            "s3",
+            "s4",
+            "s5",
+            "s7",
+            "s8",
+            "s9",
+            "s10",
+            "s11",
+            "s13",
+            "s14",
+            "s15",
+            "s16",
+            "s18",
+            "s19",
+            "s20",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a1",
+            "a2",
+            "a3",
+            "a5",
+            "a6",
+            "a7",
+            "a8",
+            "a9",
+            "a10",
+            "a11",
+            "a13",
+            "a15",
+            "a16",
+            "a17",
+            "a19",
+            "a20",
+            "a21",
+            "a22",
+            "a27",
+            "a28",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s16",
+          "text": "Drive slippery slippery.",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            {
+              "argument": "a2",
+              "co_conclusions": [
+                "s15"
+              ],
+              "premises": [
+                {
+                  "statement": "s4",
+                  "text": "Coffee slowly late late!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                },
+                {
+                  "statement": "s16",
+                  "text": "Drive slippery slippery.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "seen": true
+                }
+              ]
+            },
+            {
+              "argument": "a10",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s13",
+                  "text": "Cold slowly stars night roads",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                },
+                {
+                  "statement": "s5",
+                  "text": "Wet slippery slippery rain wet slowly.",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s17": {
+        "statement": "s17",
+        "text": "Rain slowly",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s17",
+          "text": "Rain slowly",
+          "arguments": []
+        }
+      },
+      "s18": {
+        "statement": "s18",
+        "text": "Stars rain roads.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s18",
+          "text": "Stars rain roads.",
+          "arguments": []
+        }
+      },
+      "s19": {
+        "statement": "s19",
+        "text": "Rain visible.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s19",
+          "text": "Rain visible.",
+          "arguments": []
+        }
+      },
+      "s20": {
+        "statement": "s20",
+        "text": "Wet wet visible wet!",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s0",
+            "s1",
+            "s3",
+            "s5",
+            "s14",
+            "s18"
+          ],
+          "arguments": [
+            "a1",
+            "a5",
+            "a6",
+            "a11",
+            "a13",
+            "a16",
+            "a20",
+            "a21",
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s20",
+          "text": "Wet wet visible wet!",
+          "arguments": [
+            {
+              "argument": "a6",
+              "co_conclusions": [
+                "s7"
+              ],
+              "premises": []
+            },
+            {
+              "argument": "a20",
+              "co_conclusions": [
+                "s15"
+              ],
+              "premises": [
+                {
+                  "statement": "s0",
+                  "text": "Roads roads",
+                  "truncated": true
+                },
+                {
+                  "statement": "s14",
+                  "text": "Slippery visible."
+                },
+                {
+                  "statement": "s1",
+                  "text": "Drive night slippery night.",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s21": {
+        "statement": "s21",
+        "text": "Late night.",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s0",
+            "s1",
+            "s3",
+            "s5",
+            "s9",
+            "s14",
+            "s17",
+            "s18",
+            "s20"
+          ],
+          "arguments": [
+            "a1",
+            "a4",
+            "a5",
+            "a6",
+            "a11",
+            "a13",
+            "a14",
+            "a16",
+            "a17",
+            "a18",
+            "a19",
+            "a20",
+            "a21",
+            "a22",
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s21",
+          "text": "Late night.",
+          "arguments": [
+            {
+              "argument": "a4",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s20",
+                  "text": "Wet wet visible wet!",
+                  "truncated": true
+                },
+                {
+                  "statement": "s0",
+                  "text": "Roads roads",
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a14",
+              "co_conclusions": [
+                "s6"
+              ],
+              "premises": [
+                {
+                  "statement": "s14",
+                  "text": "Slippery visible."
+                },
+                {
+                  "statement": "s9",
+                  "text": "Slowly stars coffee coffee slowly night!",
+                  "truncated": true
+                },
+                {
+                  "statement": "s17",
+                  "text": "Rain slowly"
+                }
+              ]
+            },
+            {
+              "argument": "a18",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "s9",
+                  "text": "Slowly stars coffee coffee slowly night!",
+                  "seen": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s22": {
+        "statement": "s22",
+        "text": "Rain rain slowly!",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "s0",
+            "s1",
+            "s3",
+            "s5",
+            "s14",
+            "s18",
+            "s20"
+          ],
+          "arguments": [
+            "a1",
+            "a5",
+            "a6",
+            "a11",
+            "a13",
+            "a16",
+            "a20",
+            "a21",
+            "a27",
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s22",
+          "text": "Rain rain slowly!",
+          "arguments": [
+            {
+              "argument": "a27",
+              "co_conclusions": [
+                "s6"
+              ],
+              "premises": [
+                {
+                  "statement": "s20",
+                  "text": "Wet wet visible wet!",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s23": {
+        "statement": "s23",
+        "text": "Drive slowly",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s23",
+          "text": "Drive slowly",
+          "arguments": []
+        }
+      },
+      "s24": {
+        "statement": "s24",
+        "text": "Coffee cold night visible.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": [
+            "a12",
+            "a23",
+            "a28"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s24",
+          "text": "Coffee cold night visible.",
+          "arguments": [
+            {
+              "argument": "a12",
+              "co_conclusions": [],
+              "premises": []
+            },
+            {
+              "argument": "a23",
+              "co_conclusions": [],
+              "premises": []
+            },
+            {
+              "argument": "a28",
+              "co_conclusions": [
+                "s1"
+              ],
+              "premises": []
+            }
+          ]
+        }
+      }
+    },
+    "supports_depth_1": {
+      "s0": {
+        "statement": "s0",
+        "text": "Roads roads",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s2",
+            "s4",
+            "s6",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16",
+            "s20",
+            "s21",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a2",
+            "a4",
+            "a7",
+            "a9",
+            "a10",
+            "a15",
+            "a20",
+            "a25",
+            "a27",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s0",
+          "text": "Roads roads",
+          "arguments": [
+            {
+              "argument": "a4",
+              "co_premises": [
+                "s20"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s21",
+                  "text": "Late night."
+                }
+              ]
+            },
+            {
+              "argument": "a15",
+              "co_premises": [
+                "s13",
+                "s16"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s13",
+                  "text": "Cold slowly stars night roads",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a20",
+              "co_premises": [
+                "s14",
+                "s1"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s20",
+                  "text": "Wet wet visible wet!",
+                  "truncated": true
+                },
+                {
+                  "statement": "s15",
+                  "text": "Stars rain drive night slippery stars.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s1": {
+        "statement": "s1",
+        "text": "Drive night slippery night.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s0",
+            "s2",
+            "s4",
+            "s5",
+            "s6",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16",
+            "s20",
+            "s21",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a2",
+            "a4",
+            "a5",
+            "a7",
+            "a9",
+            "a10",
+            "a15",
+            "a16",
+            "a20",
+            "a25",
+            "a27",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s1",
+          "text": "Drive night slippery night.",
+          "arguments": [
+            {
+              "argument": "a5",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "s5",
+                  "text": "Wet slippery slippery rain wet slowly.",
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a7",
+              "co_premises": [
+                "s7",
+                "s22"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s2",
+                  "text": "Late stars late!"
+                },
+                {
+                  "statement": "s8",
+                  "text": "Stars cold slippery coffee drive",
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a20",
+              "co_premises": [
+                "s0",
+                "s14"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s20",
+                  "text": "Wet wet visible wet!",
+                  "truncated": true
+                },
+                {
+                  "statement": "s15",
+                  "text": "Stars rain drive night slippery stars.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s2": {
+        "statement": "s2",
+        "text": "Late stars late!",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s2",
+          "text": "Late stars late!",
+          "arguments": []
+        }
+      },
+      "s3": {
+        "statement": "s3",
+        "text": "Cold coffee cold drive.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s0",
+            "s2",
+            "s4",
+            "s6",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16",
+            "s20",
+            "s21",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a2",
+            "a4",
+            "a7",
+            "a9",
+            "a10",
+            "a15",
+            "a16",
+            "a20",
+            "a24",
+            "a25",
+            "a26",
+            "a27",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s3",
+          "text": "Cold coffee cold drive.",
+          "arguments": [
+            {
+              "argument": "a16",
+              "co_premises": [
+                "s5"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s11",
+                  "text": "Coffee drive drive visible!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                },
+                {
+                  "statement": "s0",
+                  "text": "Roads roads",
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a24",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "s12",
+                  "text": "Cold stars night night late drive!"
+                }
+              ]
+            },
+            {
+              "argument": "a26",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "s2",
+                  "text": "Late stars late!"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s4": {
+        "statement": "s4",
+        "text": "Coffee slowly late late!",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s4",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            "a2",
+            "a9",
+            "a10",
+            "a15",
+            "a25",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s4",
+          "text": "Coffee slowly late late!",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            {
+              "argument": "a2",
+              "co_premises": [
+                "s16"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s15",
+                  "text": "Stars rain drive night slippery stars.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                },
+                {
+                  "statement": "s16",
+                  "text": "Drive slippery slippery.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a25",
+              "co_premises": [
+                "s24"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s12",
+                  "text": "Cold stars night night late drive!"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s5": {
+        "statement": "s5",
+        "text": "Wet slippery slippery rain wet slowly.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s0",
+            "s2",
+            "s4",
+            "s6",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16",
+            "s20",
+            "s21",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a2",
+            "a4",
+            "a7",
+            "a9",
+            "a10",
+            "a15",
+            "a16",
+            "a20",
+            "a25",
+            "a27",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s5",
+          "text": "Wet slippery slippery rain wet slowly.",
+          "arguments": [
+            {
+              "argument": "a10",
+              "co_premises": [
+                "s13"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s16",
+                  "text": "Drive slippery slippery.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a16",
+              "co_premises": [
+                "s3"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s11",
+                  "text": "Coffee drive drive visible!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                },
+                {
+                  "statement": "s0",
+                  "text": "Roads roads",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s6": {
+        "statement": "s6",
+        "text": "Cold slowly cold stars cold wet",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s6",
+          "text": "Cold slowly cold stars cold wet",
+          "arguments": []
+        }
+      },
+      "s7": {
+        "statement": "s7",
+        "text": "Slowly night slowly slowly coffee wet",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s2",
+            "s4",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            "a2",
+            "a7",
+            "a8",
+            "a9",
+            "a10",
+            "a15",
+            "a25",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s7",
+          "text": "Slowly night slowly slowly coffee wet",
+          "arguments": [
+            {
+              "argument": "a7",
+              "co_premises": [
+                "s1",
+                "s22"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s2",
+                  "text": "Late stars late!"
+                },
+                {
+                  "statement": "s8",
+                  "text": "Stars cold slippery coffee drive",
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a8",
+              "co_premises": [
+                "s19"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s8",
+                  "text": "Stars cold slippery coffee drive",
+                  "seen": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s8": {
+        "statement": "s8",
+        "text": "Stars cold slippery coffee drive",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s4",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            "a2",
+            "a9",
+            "a10",
+            "a15",
+            "a25",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s8",
+          "text": "Stars cold slippery coffee drive",
+          "arguments": [
+            {
+              "argument": "a9",
+              "co_premises": [
+                "s16"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s4",
+                  "text": "Coffee slowly late late!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s9": {
+        "statement": "s9",
+        "text": "Slowly stars coffee coffee slowly night!",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s4",
+            "s6",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16",
+            "s21"
+          ],
+          "arguments": [
+            "a2",
+            "a9",
+            "a10",
+            "a14",
+            "a15",
+            "a18",
+            "a25",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s9",
+          "text": "Slowly stars coffee coffee slowly night!",
+          "arguments": [
+            {
+              "argument": "a14",
+              "co_premises": [
+                "s14",
+                "s17"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s6",
+                  "text": "Cold slowly cold stars cold wet"
+                },
+                {
+                  "statement": "s21",
+                  "text": "Late night."
+                }
+              ]
+            },
+            {
+              "argument": "a18",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "s21",
+                  "text": "Late night.",
+                  "seen": true
+                }
+              ]
+            },
+            {
+              "argument": "a29",
+              "co_premises": [
+                "s15",
+                "s11"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s4",
+                  "text": "Coffee slowly late late!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                },
+                {
+                  "statement": "s11",
+                  "text": "Coffee drive drive visible!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s10": {
+        "statement": "s10",
+        "text": "Coffee stars slippery slowly visible.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s4",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            "a2",
+            "a3",
+            "a9",
+            "a10",
+            "a15",
+            "a25",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s10",
+          "text": "Coffee stars slippery slowly visible.",
+          "arguments": [
+            {
+              "argument": "a3",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "s8",
+                  "text": "Stars cold slippery coffee drive",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s11": {
+        "statement": "s11",
+        "text": "Coffee drive drive visible!",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s4",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            "a2",
+            "a9",
+            "a10",
+            "a15",
+            "a25",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s11",
+          "text": "Coffee drive drive visible!",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            {
+              "argument": "a29",
+              "co_premises": [
+                "s15",
+                "s9"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s4",
+                  "text": "Coffee slowly late late!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                },
+                {
+                  "statement": "s11",
+                  "text": "Coffee drive drive visible!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "seen": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s12": {
+        "statement": "s12",
+        "text": "Cold stars night night late drive!",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s12",
+          "text": "Cold stars night night late drive!",
+          "arguments": []
+        }
+      },
+      "s13": {
+        "statement": "s13",
+        "text": "Cold slowly stars night roads",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s4",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            "a2",
+            "a9",
+            "a10",
+            "a15",
+            "a25",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s13",
+          "text": "Cold slowly stars night roads",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            {
+              "argument": "a10",
+              "co_premises": [
+                "s5"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s16",
+                  "text": "Drive slippery slippery.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a15",
+              "co_premises": [
+                "s16",
+                "s0"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s13",
+                  "text": "Cold slowly stars night roads",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "seen": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s14": {
+        "statement": "s14",
+        "text": "Slippery visible.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s2",
+            "s4",
+            "s6",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16",
+            "s20",
+            "s21",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a2",
+            "a4",
+            "a7",
+            "a9",
+            "a10",
+            "a14",
+            "a15",
+            "a20",
+            "a25",
+            "a27",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s14",
+          "text": "Slippery visible.",
+          "arguments": [
+            {
+              "argument": "a14",
+              "co_premises": [
+                "s9",
+                "s17"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s6",
+                  "text": "Cold slowly cold stars cold wet"
+                },
+                {
+                  "statement": "s21",
+                  "text": "Late night."
+                }
+              ]
+            },
+            {
+              "argument": "a20",
+              "co_premises": [
+                "s0",
+                "s1"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s20",
+                  "text": "Wet wet visible wet!",
+                  "truncated": true
+                },
+                {
+                  "statement": "s15",
+                  "text": "Stars rain drive night slippery stars.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s15": {
+        "statement": "s15",
+        "text": "Stars rain drive night slippery stars.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s4",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            "a2",
+            "a9",
+            "a10",
+            "a15",
+            "a25",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s15",
+          "text": "Stars rain drive night slippery stars.",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            {
+              "argument": "a29",
+              "co_premises": [
+                "s9",
+                "s11"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s4",
+                  "text": "Coffee slowly late late!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                },
+                {
+                  "statement": "s11",
+                  "text": "Coffee drive drive visible!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s16": {
+        "statement": "s16",
+        "text": "Drive slippery slippery.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s4",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            "a2",
+            "a9",
+            "a10",
+            "a15",
+            "a25",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s16",
+          "text": "Drive slippery slippery.",
+          "scc": [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            {
+              "argument": "a2",
+              "co_premises": [
+                "s4"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s15",
+                  "text": "Stars rain drive night slippery stars.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                },
+                {
+                  "statement": "s16",
+                  "text": "Drive slippery slippery.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "seen": true
+                }
+              ]
+            },
+            {
+              "argument": "a9",
+              "co_premises": [
+                "s8"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s4",
+                  "text": "Coffee slowly late late!",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a15",
+              "co_premises": [
+                "s13",
+                "s0"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s13",
+                  "text": "Cold slowly stars night roads",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s17": {
+        "statement": "s17",
+        "text": "Rain slowly",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s6",
+            "s21"
+          ],
+          "arguments": [
+            "a14"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s17",
+          "text": "Rain slowly",
+          "arguments": [
+            {
+              "argument": "a14",
+              "co_premises": [
+                "s14",
+                "s9"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s6",
+                  "text": "Cold slowly cold stars cold wet"
+                },
+                {
+                  "statement": "s21",
+                  "text": "Late night."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s18": {
+        "statement": "s18",
+        "text": "Stars rain roads.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s0",
+            "s2",
+            "s4",
+            "s6",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16",
+            "s20",
+            "s21",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a2",
+            "a4",
+            "a7",
+            "a9",
+            "a10",
+            "a15",
+            "a20",
+            "a21",
+            "a25",
+            "a27",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s18",
+          "text": "Stars rain roads.",
+          "arguments": [
+            {
+              "argument": "a21",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "s0",
+                  "text": "Roads roads",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s19": {
+        "statement": "s19",
+        "text": "Rain visible.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s4",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            "a0",
+            "a2",
+            "a8",
+            "a9",
+            "a10",
+            "a15",
+            "a25",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s19",
+          "text": "Rain visible.",
+          "arguments": [
+            {
+              "argument": "a0",
+              "co_premises": [
+                "s22"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s15",
+                  "text": "Stars rain drive night slippery stars.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a8",
+              "co_premises": [
+                "s7"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s8",
+                  "text": "Stars cold slippery coffee drive",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s20": {
+        "statement": "s20",
+        "text": "Wet wet visible wet!",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s2",
+            "s4",
+            "s6",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16",
+            "s21",
+            "s22"
+          ],
+          "arguments": [
+            "a0",
+            "a2",
+            "a4",
+            "a7",
+            "a9",
+            "a10",
+            "a15",
+            "a25",
+            "a27",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s20",
+          "text": "Wet wet visible wet!",
+          "arguments": [
+            {
+              "argument": "a4",
+              "co_premises": [
+                "s0"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s21",
+                  "text": "Late night."
+                }
+              ]
+            },
+            {
+              "argument": "a27",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "s6",
+                  "text": "Cold slowly cold stars cold wet"
+                },
+                {
+                  "statement": "s22",
+                  "text": "Rain rain slowly!",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s21": {
+        "statement": "s21",
+        "text": "Late night.",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s21",
+          "text": "Late night.",
+          "arguments": []
+        }
+      },
+      "s22": {
+        "statement": "s22",
+        "text": "Rain rain slowly!",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s2",
+            "s4",
+            "s8",
+            "s11",
+            "s12",
+            "s13",
+            "s15",
+            "s16"
+          ],
+          "arguments": [
+            "a0",
+            "a2",
+            "a7",
+            "a9",
+            "a10",
+            "a15",
+            "a25",
+            "a29"
+          ]
+        },
+        "sccs": [
+          [
+            "s4",
+            "s11",
+            "s13",
+            "s15",
+            "s16"
+          ]
+        ],
+        "tree": {
+          "statement": "s22",
+          "text": "Rain rain slowly!",
+          "arguments": [
+            {
+              "argument": "a0",
+              "co_premises": [
+                "s19"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s15",
+                  "text": "Stars rain drive night slippery stars.",
+                  "scc": [
+                    "s4",
+                    "s11",
+                    "s13",
+                    "s15",
+                    "s16"
+                  ],
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "a7",
+              "co_premises": [
+                "s1",
+                "s7"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s2",
+                  "text": "Late stars late!"
+                },
+                {
+                  "statement": "s8",
+                  "text": "Stars cold slippery coffee drive",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "s23": {
+        "statement": "s23",
+        "text": "Drive slowly",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s23",
+          "text": "Drive slowly",
+          "arguments": []
+        }
+      },
+      "s24": {
+        "statement": "s24",
+        "text": "Coffee cold night visible.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "s12"
+          ],
+          "arguments": [
+            "a25"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "s24",
+          "text": "Coffee cold night visible.",
+          "arguments": [
+            {
+              "argument": "a25",
+              "co_premises": [
+                "s4"
+              ],
+              "conclusions": [
+                {
+                  "statement": "s12",
+                  "text": "Cold stars night night late drive!"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "canon": [
+    {
+      "input": "",
+      "output": ""
+    },
+    {
+      "input": "   ",
+      "output": ""
+    },
+    {
+      "input": "plain",
+      "output": "plain"
+    },
+    {
+      "input": "  leading and trailing  ",
+      "output": "leading and trailing"
+    },
+    {
+      "input": "multiple   internal\t\tspaces\nand\r\nnewlines",
+      "output": "multiple internal spaces and newlines"
+    },
+    {
+      "input": "café",
+      "output": "café"
+    },
+    {
+      "input": "café",
+      "output": "café"
+    },
+    {
+      "input": "Hello, World!",
+      "output": "Hello, World!"
+    },
+    {
+      "input": "HELLO",
+      "output": "HELLO"
+    },
+    {
+      "input": " nbsp wrapped ",
+      "output": "nbsp wrapped"
+    },
+    {
+      "input": "　ideographic space　",
+      "output": "ideographic space"
+    },
+    {
+      "input": "tab\tsep",
+      "output": "tab sep"
+    },
+    {
+      "input": "ﬁ ligature stays",
+      "output": "ﬁ ligature stays"
+    },
+    {
+      "input": "Snow ☃ 🥶",
+      "output": "Snow ☃ 🥶"
+    },
+    {
+      "input": "\u001c\u001dseparators\u001e\u001f are whitespace",
+      "output": "separators are whitespace"
+    },
+    {
+      "input": "nextline",
+      "output": "next line"
+    },
+    {
+      "input": "﻿BOM is not whitespace﻿",
+      "output": "﻿BOM is not whitespace﻿"
+    },
+    {
+      "input": "zero​width space is not whitespace",
+      "output": "zero​width space is not whitespace"
+    },
+    {
+      "input": " line paragraph",
+      "output": "line paragraph"
+    },
+    {
+      "input": "Å (decomposed) vs Å (precomposed) vs Å (angstrom sign)",
+      "output": "Å (decomposed) vs Å (precomposed) vs Å (angstrom sign)"
+    },
+    {
+      "input": "ㅏ hangul: 각 vs 각",
+      "output": "ㅏ hangul: 각 vs 각"
+    }
+  ],
+  "H": [
+    {
+      "parts": [],
+      "output": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "parts": [
+        ""
+      ],
+      "output": "643d76d2766c1c66bf6df40630304dc3b86aa16ace3849a62e16419d2ed3cce7"
+    },
+    {
+      "parts": [
+        "a"
+      ],
+      "output": "9fa1b1c0f0be70b0a0a46e93c1b2cdab5e2820551cb4eff78b59cde1ee014936"
+    },
+    {
+      "parts": [
+        "a",
+        "b"
+      ],
+      "output": "9f2b0d502d181b391c81652fdca2ccb0b747828fe438ba90c3e0092bcb39b3a4"
+    },
+    {
+      "parts": [
+        "ab"
+      ],
+      "output": "2d93aa00c0dbacac2b06f27167eaaf14df7c611746898b27b9b3dc581a8e8b33"
+    },
+    {
+      "parts": [
+        "a",
+        [
+          "b",
+          "c"
+        ]
+      ],
+      "output": "eaa91e9f47c0a9daf4ad48f322a1014314aec8586102ddcabe3dfc0a9a9e24ed"
+    },
+    {
+      "parts": [
+        "a",
+        "b",
+        "c"
+      ],
+      "output": "18054667674b42840f4905f562d3571be0a0b8364aed8196c7eeefc13045a4f4"
+    },
+    {
+      "parts": [
+        [
+          "a"
+        ],
+        [
+          "b"
+        ]
+      ],
+      "output": "309513a8941613defed42154e64914cbacea0aaebe7ee5f6990fa4cc15d32c4f"
+    },
+    {
+      "parts": [
+        [
+          "a",
+          "b"
+        ]
+      ],
+      "output": "ad16e148e4459ab3b3652a9ad52984e0dae30e2bf8d6458fdf72fb06066acc43"
+    },
+    {
+      "parts": [
+        []
+      ],
+      "output": "22c7104a73cce8a1c756cb9fc0babeebc546baa860495263112788c2175d61b5"
+    },
+    {
+      "parts": [
+        "prop",
+        "Regular physical activity improves long-term health.",
+        "is"
+      ],
+      "output": "56250f7e6c611382da8ecbefcfcae7d53464b2077c2b640e5d1c2d84dc143b3c"
+    },
+    {
+      "parts": [
+        "é",
+        [
+          "☃"
+        ]
+      ],
+      "output": "f446b3ed927a298e0938e2e10349a9c2fc626e38d27ff0e9edcaa792c1a41d72"
+    }
+  ]
+}

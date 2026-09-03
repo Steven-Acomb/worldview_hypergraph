@@ -1,0 +1,291 @@
+{
+  "name": "zero-premise",
+  "input": {
+    "format": "worldview-core",
+    "version": "0.1",
+    "statements": [
+      {
+        "id": "a",
+        "text": "A",
+        "mode": "is"
+      },
+      {
+        "id": "b",
+        "text": "B",
+        "mode": "is"
+      }
+    ],
+    "arguments": [
+      {
+        "id": "given",
+        "premises": [],
+        "conclusions": [
+          "a"
+        ],
+        "justification": "stipulated"
+      },
+      {
+        "id": "a-b",
+        "premises": [
+          "a"
+        ],
+        "conclusions": [
+          "b"
+        ],
+        "justification": "j"
+      }
+    ]
+  },
+  "expected": {
+    "valid": true,
+    "ids": {
+      "statements": [
+        {
+          "id": "a",
+          "prop_id": "5040f885c69084ab7ed5715c39e3e0110db8a1fc5a7c9faba8e5e6a8674fe4ce",
+          "just_id": "38966c81ec4fd246a8616651b42be35683741756e1b7023be079944499fb5f8a"
+        },
+        {
+          "id": "b",
+          "prop_id": "2b2d64befa8d419f2b80285b0cf32a5a6e88a25ad24ca8ed698420bcf299bb5a",
+          "just_id": "c0e119c6c60e05fe59a566375720c9ae09bee29542ef94612fc1b0e4753f56ea"
+        }
+      ],
+      "arguments": [
+        {
+          "id": "given",
+          "arg_hash": "461ff9b532c9a528a9f20e33c0cb8db2710d5c8a6fe59730a99c466bf5a356cf"
+        },
+        {
+          "id": "a-b",
+          "arg_hash": "ba536cc08394b2fdd58c33d1130af369da6b24575a7e306b38d3c6d0a31ea4ea"
+        }
+      ]
+    },
+    "foundations": [],
+    "sccs": [],
+    "well_founded": {
+      "foundations": [],
+      "grounded": [
+        "a",
+        "b"
+      ],
+      "ungrounded": []
+    },
+    "rests_on": {
+      "a": {
+        "statement": "a",
+        "text": "A",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": [
+            "given"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "a",
+          "text": "A",
+          "arguments": [
+            {
+              "argument": "given",
+              "co_conclusions": [],
+              "premises": []
+            }
+          ]
+        }
+      },
+      "b": {
+        "statement": "b",
+        "text": "B",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "a"
+          ],
+          "arguments": [
+            "given",
+            "a-b"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "b",
+          "text": "B",
+          "arguments": [
+            {
+              "argument": "a-b",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "a",
+                  "text": "A",
+                  "arguments": [
+                    {
+                      "argument": "given",
+                      "co_conclusions": [],
+                      "premises": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "supports": {
+      "a": {
+        "statement": "a",
+        "text": "A",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "b"
+          ],
+          "arguments": [
+            "a-b"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "a",
+          "text": "A",
+          "arguments": [
+            {
+              "argument": "a-b",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "b",
+                  "text": "B",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "b": {
+        "statement": "b",
+        "text": "B",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "b",
+          "text": "B",
+          "arguments": []
+        }
+      }
+    },
+    "rests_on_depth_1": {
+      "a": {
+        "statement": "a",
+        "text": "A",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": [
+            "given"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "a",
+          "text": "A",
+          "arguments": [
+            {
+              "argument": "given",
+              "co_conclusions": [],
+              "premises": []
+            }
+          ]
+        }
+      },
+      "b": {
+        "statement": "b",
+        "text": "B",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "a"
+          ],
+          "arguments": [
+            "given",
+            "a-b"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "b",
+          "text": "B",
+          "arguments": [
+            {
+              "argument": "a-b",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "a",
+                  "text": "A",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "supports_depth_1": {
+      "a": {
+        "statement": "a",
+        "text": "A",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "b"
+          ],
+          "arguments": [
+            "a-b"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "a",
+          "text": "A",
+          "arguments": [
+            {
+              "argument": "a-b",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "b",
+                  "text": "B"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "b": {
+        "statement": "b",
+        "text": "B",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "b",
+          "text": "B",
+          "arguments": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1509 @@
+{
+  "name": "cycle-edited-member",
+  "input": {
+    "format": "worldview-core",
+    "version": "0.1",
+    "name": "cycle",
+    "statements": [
+      {
+        "id": "p",
+        "text": "P",
+        "mode": "is"
+      },
+      {
+        "id": "x",
+        "text": "X",
+        "mode": "is"
+      },
+      {
+        "id": "y",
+        "text": "Y (edited)",
+        "mode": "is"
+      },
+      {
+        "id": "z",
+        "text": "Z",
+        "mode": "is"
+      },
+      {
+        "id": "q",
+        "text": "Q",
+        "mode": "is"
+      }
+    ],
+    "arguments": [
+      {
+        "id": "p-x",
+        "premises": [
+          "p"
+        ],
+        "conclusions": [
+          "x"
+        ],
+        "justification": "p gives x"
+      },
+      {
+        "id": "x-y",
+        "premises": [
+          "x"
+        ],
+        "conclusions": [
+          "y"
+        ],
+        "justification": "x gives y"
+      },
+      {
+        "id": "y-z",
+        "premises": [
+          "y"
+        ],
+        "conclusions": [
+          "z"
+        ],
+        "justification": "y gives z"
+      },
+      {
+        "id": "z-x",
+        "premises": [
+          "z"
+        ],
+        "conclusions": [
+          "x"
+        ],
+        "justification": "z gives x"
+      },
+      {
+        "id": "z-q",
+        "premises": [
+          "z"
+        ],
+        "conclusions": [
+          "q"
+        ],
+        "justification": "z gives q"
+      }
+    ]
+  },
+  "expected": {
+    "valid": true,
+    "ids": {
+      "statements": [
+        {
+          "id": "p",
+          "prop_id": "c670b9852d6e5653e978e35b05d533160de837eaa79dde6b47107b775fbfe09d",
+          "just_id": "d3dd30502232706db4ef556bea5c028d6038805908a54ec8f50630d5964b9704"
+        },
+        {
+          "id": "x",
+          "prop_id": "e60afb45ef3ef161a25ac099fb31029e63d82b53369fed601936841626559c7b",
+          "just_id": "71705a2b638503cd60dbf3708c11699ff0c06d92394c671465236f1f8b65ad95",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ]
+        },
+        {
+          "id": "y",
+          "prop_id": "f88a68946784317532ae864d8da28c28ac35517aa71c50c669626d70704c97da",
+          "just_id": "110be493876503b57ff9fc24d32e4fd975b758ea16e03928436839d82e74f138",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ]
+        },
+        {
+          "id": "z",
+          "prop_id": "7fb65e8359c6bfa866967503d8ce4af0be5142e3a8cde7a236094cc5be0e0d41",
+          "just_id": "d881a8917a297113a07a9f44e896249b37e89fd4f92187a77797e9b70a7eeae4",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ]
+        },
+        {
+          "id": "q",
+          "prop_id": "fd914ec637c2161d8a152db747778562710b7105a061f135fa2c0f1ecd236675",
+          "just_id": "dfbdd212788edc0211a7d325e6d507751d6cea9769242f2e9b7c8124e7b4154e"
+        }
+      ],
+      "arguments": [
+        {
+          "id": "p-x",
+          "arg_hash": "1eef5291525deea26fc6943066bfd466b66412227543342bcc89503e8a4c7e80"
+        },
+        {
+          "id": "x-y",
+          "arg_hash": "27b1f1df566823c7aa432d4cfc40c46db121183a42a56efbc3ffe4a2b3968ad4"
+        },
+        {
+          "id": "y-z",
+          "arg_hash": "eb117a72d8eeecdb39a1efba7018d3941e22919afdc7b605180bfc1b62993c93"
+        },
+        {
+          "id": "z-x",
+          "arg_hash": "219014981de11ab74629732bffa04159a29070aceaa87154f63cb3773ea52d2d"
+        },
+        {
+          "id": "z-q",
+          "arg_hash": "8632f4b73ca58e4ca3d82dbbdcd37f33538da0bd3703d78fde18c983b8bcd875"
+        }
+      ]
+    },
+    "foundations": [
+      {
+        "id": "p",
+        "text": "P",
+        "mode": "is"
+      }
+    ],
+    "sccs": [
+      {
+        "members": [
+          "x",
+          "y",
+          "z"
+        ],
+        "self_loops": [],
+        "internal_arguments": [
+          "x-y",
+          "y-z",
+          "z-x"
+        ],
+        "boundary_arguments": [
+          "p-x",
+          "z-q"
+        ]
+      }
+    ],
+    "well_founded": {
+      "foundations": [
+        "p"
+      ],
+      "grounded": [
+        "p",
+        "x",
+        "y",
+        "z",
+        "q"
+      ],
+      "ungrounded": []
+    },
+    "rests_on": {
+      "p": {
+        "statement": "p",
+        "text": "P",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "p",
+          "text": "P",
+          "arguments": []
+        }
+      },
+      "x": {
+        "statement": "x",
+        "text": "X",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "p",
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            "p-x",
+            "x-y",
+            "y-z",
+            "z-x"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "x",
+          "text": "X",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            {
+              "argument": "p-x",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "p",
+                  "text": "P",
+                  "arguments": []
+                }
+              ]
+            },
+            {
+              "argument": "z-x",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "z",
+                  "text": "Z",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "y-z",
+                      "co_conclusions": [],
+                      "premises": [
+                        {
+                          "statement": "y",
+                          "text": "Y (edited)",
+                          "scc": [
+                            "x",
+                            "y",
+                            "z"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "x-y",
+                              "co_conclusions": [],
+                              "premises": [
+                                {
+                                  "statement": "x",
+                                  "text": "X",
+                                  "scc": [
+                                    "x",
+                                    "y",
+                                    "z"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "y": {
+        "statement": "y",
+        "text": "Y (edited)",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "p",
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            "p-x",
+            "x-y",
+            "y-z",
+            "z-x"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "y",
+          "text": "Y (edited)",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            {
+              "argument": "x-y",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "x",
+                  "text": "X",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "p-x",
+                      "co_conclusions": [],
+                      "premises": [
+                        {
+                          "statement": "p",
+                          "text": "P",
+                          "arguments": []
+                        }
+                      ]
+                    },
+                    {
+                      "argument": "z-x",
+                      "co_conclusions": [],
+                      "premises": [
+                        {
+                          "statement": "z",
+                          "text": "Z",
+                          "scc": [
+                            "x",
+                            "y",
+                            "z"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "y-z",
+                              "co_conclusions": [],
+                              "premises": [
+                                {
+                                  "statement": "y",
+                                  "text": "Y (edited)",
+                                  "scc": [
+                                    "x",
+                                    "y",
+                                    "z"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "z": {
+        "statement": "z",
+        "text": "Z",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "p",
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            "p-x",
+            "x-y",
+            "y-z",
+            "z-x"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "z",
+          "text": "Z",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            {
+              "argument": "y-z",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "y",
+                  "text": "Y (edited)",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "x-y",
+                      "co_conclusions": [],
+                      "premises": [
+                        {
+                          "statement": "x",
+                          "text": "X",
+                          "scc": [
+                            "x",
+                            "y",
+                            "z"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "p-x",
+                              "co_conclusions": [],
+                              "premises": [
+                                {
+                                  "statement": "p",
+                                  "text": "P",
+                                  "arguments": []
+                                }
+                              ]
+                            },
+                            {
+                              "argument": "z-x",
+                              "co_conclusions": [],
+                              "premises": [
+                                {
+                                  "statement": "z",
+                                  "text": "Z",
+                                  "scc": [
+                                    "x",
+                                    "y",
+                                    "z"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "q": {
+        "statement": "q",
+        "text": "Q",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "p",
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            "p-x",
+            "x-y",
+            "y-z",
+            "z-x",
+            "z-q"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "q",
+          "text": "Q",
+          "arguments": [
+            {
+              "argument": "z-q",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "z",
+                  "text": "Z",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "y-z",
+                      "co_conclusions": [],
+                      "premises": [
+                        {
+                          "statement": "y",
+                          "text": "Y (edited)",
+                          "scc": [
+                            "x",
+                            "y",
+                            "z"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "x-y",
+                              "co_conclusions": [],
+                              "premises": [
+                                {
+                                  "statement": "x",
+                                  "text": "X",
+                                  "scc": [
+                                    "x",
+                                    "y",
+                                    "z"
+                                  ],
+                                  "arguments": [
+                                    {
+                                      "argument": "p-x",
+                                      "co_conclusions": [],
+                                      "premises": [
+                                        {
+                                          "statement": "p",
+                                          "text": "P",
+                                          "arguments": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "argument": "z-x",
+                                      "co_conclusions": [],
+                                      "premises": [
+                                        {
+                                          "statement": "z",
+                                          "text": "Z",
+                                          "scc": [
+                                            "x",
+                                            "y",
+                                            "z"
+                                          ],
+                                          "seen": true
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "supports": {
+      "p": {
+        "statement": "p",
+        "text": "P",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "x",
+            "y",
+            "z",
+            "q"
+          ],
+          "arguments": [
+            "p-x",
+            "x-y",
+            "y-z",
+            "z-x",
+            "z-q"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "p",
+          "text": "P",
+          "arguments": [
+            {
+              "argument": "p-x",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "x",
+                  "text": "X",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "x-y",
+                      "co_premises": [],
+                      "conclusions": [
+                        {
+                          "statement": "y",
+                          "text": "Y (edited)",
+                          "scc": [
+                            "x",
+                            "y",
+                            "z"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "y-z",
+                              "co_premises": [],
+                              "conclusions": [
+                                {
+                                  "statement": "z",
+                                  "text": "Z",
+                                  "scc": [
+                                    "x",
+                                    "y",
+                                    "z"
+                                  ],
+                                  "arguments": [
+                                    {
+                                      "argument": "z-x",
+                                      "co_premises": [],
+                                      "conclusions": [
+                                        {
+                                          "statement": "x",
+                                          "text": "X",
+                                          "scc": [
+                                            "x",
+                                            "y",
+                                            "z"
+                                          ],
+                                          "seen": true
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "argument": "z-q",
+                                      "co_premises": [],
+                                      "conclusions": [
+                                        {
+                                          "statement": "q",
+                                          "text": "Q",
+                                          "arguments": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "x": {
+        "statement": "x",
+        "text": "X",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "x",
+            "y",
+            "z",
+            "q"
+          ],
+          "arguments": [
+            "x-y",
+            "y-z",
+            "z-x",
+            "z-q"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "x",
+          "text": "X",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            {
+              "argument": "x-y",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "y",
+                  "text": "Y (edited)",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "y-z",
+                      "co_premises": [],
+                      "conclusions": [
+                        {
+                          "statement": "z",
+                          "text": "Z",
+                          "scc": [
+                            "x",
+                            "y",
+                            "z"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "z-x",
+                              "co_premises": [],
+                              "conclusions": [
+                                {
+                                  "statement": "x",
+                                  "text": "X",
+                                  "scc": [
+                                    "x",
+                                    "y",
+                                    "z"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            },
+                            {
+                              "argument": "z-q",
+                              "co_premises": [],
+                              "conclusions": [
+                                {
+                                  "statement": "q",
+                                  "text": "Q",
+                                  "arguments": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "y": {
+        "statement": "y",
+        "text": "Y (edited)",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "x",
+            "y",
+            "z",
+            "q"
+          ],
+          "arguments": [
+            "x-y",
+            "y-z",
+            "z-x",
+            "z-q"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "y",
+          "text": "Y (edited)",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            {
+              "argument": "y-z",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "z",
+                  "text": "Z",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "z-x",
+                      "co_premises": [],
+                      "conclusions": [
+                        {
+                          "statement": "x",
+                          "text": "X",
+                          "scc": [
+                            "x",
+                            "y",
+                            "z"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "x-y",
+                              "co_premises": [],
+                              "conclusions": [
+                                {
+                                  "statement": "y",
+                                  "text": "Y (edited)",
+                                  "scc": [
+                                    "x",
+                                    "y",
+                                    "z"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "argument": "z-q",
+                      "co_premises": [],
+                      "conclusions": [
+                        {
+                          "statement": "q",
+                          "text": "Q",
+                          "arguments": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "z": {
+        "statement": "z",
+        "text": "Z",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "x",
+            "y",
+            "z",
+            "q"
+          ],
+          "arguments": [
+            "x-y",
+            "y-z",
+            "z-x",
+            "z-q"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "z",
+          "text": "Z",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            {
+              "argument": "z-x",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "x",
+                  "text": "X",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "x-y",
+                      "co_premises": [],
+                      "conclusions": [
+                        {
+                          "statement": "y",
+                          "text": "Y (edited)",
+                          "scc": [
+                            "x",
+                            "y",
+                            "z"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "y-z",
+                              "co_premises": [],
+                              "conclusions": [
+                                {
+                                  "statement": "z",
+                                  "text": "Z",
+                                  "scc": [
+                                    "x",
+                                    "y",
+                                    "z"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "argument": "z-q",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "q",
+                  "text": "Q",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "q": {
+        "statement": "q",
+        "text": "Q",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "q",
+          "text": "Q",
+          "arguments": []
+        }
+      }
+    },
+    "rests_on_depth_1": {
+      "p": {
+        "statement": "p",
+        "text": "P",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "p",
+          "text": "P",
+          "arguments": []
+        }
+      },
+      "x": {
+        "statement": "x",
+        "text": "X",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "p",
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            "p-x",
+            "x-y",
+            "y-z",
+            "z-x"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "x",
+          "text": "X",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            {
+              "argument": "p-x",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "p",
+                  "text": "P"
+                }
+              ]
+            },
+            {
+              "argument": "z-x",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "z",
+                  "text": "Z",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "y": {
+        "statement": "y",
+        "text": "Y (edited)",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "p",
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            "p-x",
+            "x-y",
+            "y-z",
+            "z-x"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "y",
+          "text": "Y (edited)",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            {
+              "argument": "x-y",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "x",
+                  "text": "X",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "z": {
+        "statement": "z",
+        "text": "Z",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "p",
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            "p-x",
+            "x-y",
+            "y-z",
+            "z-x"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "z",
+          "text": "Z",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            {
+              "argument": "y-z",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "y",
+                  "text": "Y (edited)",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "q": {
+        "statement": "q",
+        "text": "Q",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "p",
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            "p-x",
+            "x-y",
+            "y-z",
+            "z-x",
+            "z-q"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "q",
+          "text": "Q",
+          "arguments": [
+            {
+              "argument": "z-q",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "z",
+                  "text": "Z",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "supports_depth_1": {
+      "p": {
+        "statement": "p",
+        "text": "P",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "x",
+            "y",
+            "z",
+            "q"
+          ],
+          "arguments": [
+            "p-x",
+            "x-y",
+            "y-z",
+            "z-x",
+            "z-q"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "p",
+          "text": "P",
+          "arguments": [
+            {
+              "argument": "p-x",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "x",
+                  "text": "X",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "x": {
+        "statement": "x",
+        "text": "X",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "x",
+            "y",
+            "z",
+            "q"
+          ],
+          "arguments": [
+            "x-y",
+            "y-z",
+            "z-x",
+            "z-q"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "x",
+          "text": "X",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            {
+              "argument": "x-y",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "y",
+                  "text": "Y (edited)",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "y": {
+        "statement": "y",
+        "text": "Y (edited)",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "x",
+            "y",
+            "z",
+            "q"
+          ],
+          "arguments": [
+            "x-y",
+            "y-z",
+            "z-x",
+            "z-q"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "y",
+          "text": "Y (edited)",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            {
+              "argument": "y-z",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "z",
+                  "text": "Z",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "z": {
+        "statement": "z",
+        "text": "Z",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "x",
+            "y",
+            "z",
+            "q"
+          ],
+          "arguments": [
+            "x-y",
+            "y-z",
+            "z-x",
+            "z-q"
+          ]
+        },
+        "sccs": [
+          [
+            "x",
+            "y",
+            "z"
+          ]
+        ],
+        "tree": {
+          "statement": "z",
+          "text": "Z",
+          "scc": [
+            "x",
+            "y",
+            "z"
+          ],
+          "arguments": [
+            {
+              "argument": "z-x",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "x",
+                  "text": "X",
+                  "scc": [
+                    "x",
+                    "y",
+                    "z"
+                  ],
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "z-q",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "q",
+                  "text": "Q"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "q": {
+        "statement": "q",
+        "text": "Q",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "q",
+          "text": "Q",
+          "arguments": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "empty",
+  "input": {
+    "format": "worldview-core",
+    "version": "0.1",
+    "statements": [],
+    "arguments": []
+  },
+  "expected": {
+    "valid": true,
+    "ids": {
+      "statements": [],
+      "arguments": []
+    },
+    "foundations": [],
+    "sccs": [],
+    "well_founded": {
+      "foundations": [],
+      "grounded": [],
+      "ungrounded": []
+    },
+    "rests_on": {},
+    "supports": {},
+    "rests_on_depth_1": {},
+    "supports_depth_1": {}
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "a": "chain",
+  "b": "chain-renamed",
+  "expected": {
+    "a": "chain",
+    "b": "chain-renamed",
+    "statements": {
+      "identical": [
+        {
+          "a": "a",
+          "b": "alpha",
+          "just_id": "f3f9719bf5bfc17b53fe358f854f3418132e5907e028aea157f1a45ff8e4c471"
+        },
+        {
+          "a": "b",
+          "b": "b",
+          "just_id": "d9d457651ee93b413e11e4f55636ffa4fcfc93ff3c4a47cf4e86d62f4bb92e9d"
+        },
+        {
+          "a": "c",
+          "b": "gamma",
+          "just_id": "2d363994d4779b0e725a7caf25c35f30fda23f23c98f70ece70574d908d7ec50"
+        },
+        {
+          "a": "d",
+          "b": "d",
+          "just_id": "f2be2dbe60850f6bb2c469fff3476e0571cf56c81266226e35371a8d8c09b6e6"
+        },
+        {
+          "a": "e",
+          "b": "epsilon",
+          "just_id": "fd1ff0592d49b9b530a298df2b21f5723bd24b5e02efd884e5f37c9b006c3902"
+        },
+        {
+          "a": "f",
+          "b": "f",
+          "just_id": "5c097c4a7a365919f6e2a648e82f18cd4354599c341fadd9afee59e43d6b2536"
+        }
+      ],
+      "rejustified": [],
+      "added": [],
+      "removed": []
+    },
+    "arguments": {
+      "identical": [
+        {
+          "a": "ab-c",
+          "b": "arg-ab-c",
+          "arg_hash": "166a0ca205e772241a8c9be94f5c94e621b55885f59333d7a88e20a4abc933c5"
+        },
+        {
+          "a": "cd-e",
+          "b": "arg-cd-e",
+          "arg_hash": "c9d3098e50f9d16b44751a949c89b1058c5dc0ea3ddc2943c0d7bd267c0960f2"
+        },
+        {
+          "a": "f-e",
+          "b": "arg-f-e",
+          "arg_hash": "64a0e07bbd0d2e95ec0e453b63deba44613a62d85c6cbede9daf9d1a544a4539"
+        }
+      ],
+      "added": [],
+      "removed": []
+    },
+    "summary": {
+      "statements": {
+        "identical": 6,
+        "rejustified": 0,
+        "added": 0,
+        "removed": 0
+      },
+      "arguments": {
+        "identical": 3,
+        "added": 0,
+        "removed": 0
+      }
+    }
+  }
+}

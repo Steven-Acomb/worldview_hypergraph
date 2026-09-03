@@ -1,0 +1,67 @@
+{
+  "a": "duplicate-props",
+  "b": "duplicate-props-single",
+  "expected": {
+    "a": "duplicate-props",
+    "b": "duplicate-props-single",
+    "statements": {
+      "identical": [
+        {
+          "a": "x1",
+          "b": "x",
+          "just_id": "93aa9903d25cca05d16a9904d291470f93081d881811e54d7542e859bda77d1c"
+        }
+      ],
+      "rejustified": [
+        {
+          "a": "y",
+          "b": "y",
+          "prop_id": "b4f07363fc2d26e3f7db56d266fea0b8250541db48c86e0cd015f1f93f46b551",
+          "text": "Y"
+        }
+      ],
+      "added": [],
+      "removed": [
+        {
+          "id": "x2",
+          "text": "X",
+          "mode": "is"
+        }
+      ]
+    },
+    "arguments": {
+      "identical": [
+        {
+          "a": "a",
+          "b": "a",
+          "arg_hash": "150b734f184c2e97757dfa98083ee081229647c05ac6ad574ce97064072f99a3"
+        }
+      ],
+      "added": [],
+      "removed": [
+        {
+          "id": "b",
+          "premises": [
+            "x2"
+          ],
+          "conclusions": [
+            "y"
+          ]
+        }
+      ]
+    },
+    "summary": {
+      "statements": {
+        "identical": 1,
+        "rejustified": 1,
+        "added": 0,
+        "removed": 1
+      },
+      "arguments": {
+        "identical": 1,
+        "added": 0,
+        "removed": 1
+      }
+    }
+  }
+}

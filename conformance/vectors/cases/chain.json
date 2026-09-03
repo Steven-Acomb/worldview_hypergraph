@@ -1,0 +1,875 @@
+{
+  "name": "chain",
+  "input": {
+    "format": "worldview-core",
+    "version": "0.1",
+    "name": "chain",
+    "statements": [
+      {
+        "id": "a",
+        "text": "A",
+        "mode": "is"
+      },
+      {
+        "id": "b",
+        "text": "B",
+        "mode": "is"
+      },
+      {
+        "id": "c",
+        "text": "C",
+        "mode": "is"
+      },
+      {
+        "id": "d",
+        "text": "D",
+        "mode": "is"
+      },
+      {
+        "id": "e",
+        "text": "E",
+        "mode": "ought"
+      },
+      {
+        "id": "f",
+        "text": "F",
+        "mode": "is"
+      }
+    ],
+    "arguments": [
+      {
+        "id": "ab-c",
+        "premises": [
+          "a",
+          "b"
+        ],
+        "conclusions": [
+          "c"
+        ],
+        "justification": "a and b give c"
+      },
+      {
+        "id": "cd-e",
+        "premises": [
+          "c",
+          "d"
+        ],
+        "conclusions": [
+          "e"
+        ],
+        "justification": "c and d give e"
+      },
+      {
+        "id": "f-e",
+        "premises": [
+          "f"
+        ],
+        "conclusions": [
+          "e"
+        ],
+        "justification": "f alone gives e"
+      }
+    ]
+  },
+  "expected": {
+    "valid": true,
+    "ids": {
+      "statements": [
+        {
+          "id": "a",
+          "prop_id": "5040f885c69084ab7ed5715c39e3e0110db8a1fc5a7c9faba8e5e6a8674fe4ce",
+          "just_id": "f3f9719bf5bfc17b53fe358f854f3418132e5907e028aea157f1a45ff8e4c471"
+        },
+        {
+          "id": "b",
+          "prop_id": "2b2d64befa8d419f2b80285b0cf32a5a6e88a25ad24ca8ed698420bcf299bb5a",
+          "just_id": "d9d457651ee93b413e11e4f55636ffa4fcfc93ff3c4a47cf4e86d62f4bb92e9d"
+        },
+        {
+          "id": "c",
+          "prop_id": "50cf819c49b3a871c46b5020e5e759d528802571208567474bff73a62647762d",
+          "just_id": "2d363994d4779b0e725a7caf25c35f30fda23f23c98f70ece70574d908d7ec50"
+        },
+        {
+          "id": "d",
+          "prop_id": "965e2d93960f87729eb94bb3d097da44ee43844dd1878fbc7b8f69f0c2b56e77",
+          "just_id": "f2be2dbe60850f6bb2c469fff3476e0571cf56c81266226e35371a8d8c09b6e6"
+        },
+        {
+          "id": "e",
+          "prop_id": "cfc161bee70e7d80f98a2e8a5059c2ff72b16c6771eafd094360be3960c8b95e",
+          "just_id": "fd1ff0592d49b9b530a298df2b21f5723bd24b5e02efd884e5f37c9b006c3902"
+        },
+        {
+          "id": "f",
+          "prop_id": "22b86ecbcb0a02857a8f90bf3f4055c5507d6a9712f7ace5ea94ab4a529df57b",
+          "just_id": "5c097c4a7a365919f6e2a648e82f18cd4354599c341fadd9afee59e43d6b2536"
+        }
+      ],
+      "arguments": [
+        {
+          "id": "ab-c",
+          "arg_hash": "166a0ca205e772241a8c9be94f5c94e621b55885f59333d7a88e20a4abc933c5"
+        },
+        {
+          "id": "cd-e",
+          "arg_hash": "c9d3098e50f9d16b44751a949c89b1058c5dc0ea3ddc2943c0d7bd267c0960f2"
+        },
+        {
+          "id": "f-e",
+          "arg_hash": "64a0e07bbd0d2e95ec0e453b63deba44613a62d85c6cbede9daf9d1a544a4539"
+        }
+      ]
+    },
+    "foundations": [
+      {
+        "id": "a",
+        "text": "A",
+        "mode": "is"
+      },
+      {
+        "id": "b",
+        "text": "B",
+        "mode": "is"
+      },
+      {
+        "id": "d",
+        "text": "D",
+        "mode": "is"
+      },
+      {
+        "id": "f",
+        "text": "F",
+        "mode": "is"
+      }
+    ],
+    "sccs": [],
+    "well_founded": {
+      "foundations": [
+        "a",
+        "b",
+        "d",
+        "f"
+      ],
+      "grounded": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ],
+      "ungrounded": []
+    },
+    "rests_on": {
+      "a": {
+        "statement": "a",
+        "text": "A",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "a",
+          "text": "A",
+          "arguments": []
+        }
+      },
+      "b": {
+        "statement": "b",
+        "text": "B",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "b",
+          "text": "B",
+          "arguments": []
+        }
+      },
+      "c": {
+        "statement": "c",
+        "text": "C",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "a",
+            "b"
+          ],
+          "arguments": [
+            "ab-c"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "c",
+          "text": "C",
+          "arguments": [
+            {
+              "argument": "ab-c",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "a",
+                  "text": "A",
+                  "arguments": []
+                },
+                {
+                  "statement": "b",
+                  "text": "B",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "d": {
+        "statement": "d",
+        "text": "D",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "d",
+          "text": "D",
+          "arguments": []
+        }
+      },
+      "e": {
+        "statement": "e",
+        "text": "E",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "f"
+          ],
+          "arguments": [
+            "ab-c",
+            "cd-e",
+            "f-e"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "e",
+          "text": "E",
+          "arguments": [
+            {
+              "argument": "cd-e",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "c",
+                  "text": "C",
+                  "arguments": [
+                    {
+                      "argument": "ab-c",
+                      "co_conclusions": [],
+                      "premises": [
+                        {
+                          "statement": "a",
+                          "text": "A",
+                          "arguments": []
+                        },
+                        {
+                          "statement": "b",
+                          "text": "B",
+                          "arguments": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "statement": "d",
+                  "text": "D",
+                  "arguments": []
+                }
+              ]
+            },
+            {
+              "argument": "f-e",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "f",
+                  "text": "F",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "f": {
+        "statement": "f",
+        "text": "F",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "f",
+          "text": "F",
+          "arguments": []
+        }
+      }
+    },
+    "supports": {
+      "a": {
+        "statement": "a",
+        "text": "A",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "c",
+            "e"
+          ],
+          "arguments": [
+            "ab-c",
+            "cd-e"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "a",
+          "text": "A",
+          "arguments": [
+            {
+              "argument": "ab-c",
+              "co_premises": [
+                "b"
+              ],
+              "conclusions": [
+                {
+                  "statement": "c",
+                  "text": "C",
+                  "arguments": [
+                    {
+                      "argument": "cd-e",
+                      "co_premises": [
+                        "d"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "e",
+                          "text": "E",
+                          "arguments": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "b": {
+        "statement": "b",
+        "text": "B",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "c",
+            "e"
+          ],
+          "arguments": [
+            "ab-c",
+            "cd-e"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "b",
+          "text": "B",
+          "arguments": [
+            {
+              "argument": "ab-c",
+              "co_premises": [
+                "a"
+              ],
+              "conclusions": [
+                {
+                  "statement": "c",
+                  "text": "C",
+                  "arguments": [
+                    {
+                      "argument": "cd-e",
+                      "co_premises": [
+                        "d"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "e",
+                          "text": "E",
+                          "arguments": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "c": {
+        "statement": "c",
+        "text": "C",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "e"
+          ],
+          "arguments": [
+            "cd-e"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "c",
+          "text": "C",
+          "arguments": [
+            {
+              "argument": "cd-e",
+              "co_premises": [
+                "d"
+              ],
+              "conclusions": [
+                {
+                  "statement": "e",
+                  "text": "E",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "d": {
+        "statement": "d",
+        "text": "D",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "e"
+          ],
+          "arguments": [
+            "cd-e"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "d",
+          "text": "D",
+          "arguments": [
+            {
+              "argument": "cd-e",
+              "co_premises": [
+                "c"
+              ],
+              "conclusions": [
+                {
+                  "statement": "e",
+                  "text": "E",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "e": {
+        "statement": "e",
+        "text": "E",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "e",
+          "text": "E",
+          "arguments": []
+        }
+      },
+      "f": {
+        "statement": "f",
+        "text": "F",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "e"
+          ],
+          "arguments": [
+            "f-e"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "f",
+          "text": "F",
+          "arguments": [
+            {
+              "argument": "f-e",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "e",
+                  "text": "E",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "rests_on_depth_1": {
+      "a": {
+        "statement": "a",
+        "text": "A",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "a",
+          "text": "A",
+          "arguments": []
+        }
+      },
+      "b": {
+        "statement": "b",
+        "text": "B",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "b",
+          "text": "B",
+          "arguments": []
+        }
+      },
+      "c": {
+        "statement": "c",
+        "text": "C",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "a",
+            "b"
+          ],
+          "arguments": [
+            "ab-c"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "c",
+          "text": "C",
+          "arguments": [
+            {
+              "argument": "ab-c",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "a",
+                  "text": "A"
+                },
+                {
+                  "statement": "b",
+                  "text": "B"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "d": {
+        "statement": "d",
+        "text": "D",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "d",
+          "text": "D",
+          "arguments": []
+        }
+      },
+      "e": {
+        "statement": "e",
+        "text": "E",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "f"
+          ],
+          "arguments": [
+            "ab-c",
+            "cd-e",
+            "f-e"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "e",
+          "text": "E",
+          "arguments": [
+            {
+              "argument": "cd-e",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "c",
+                  "text": "C",
+                  "truncated": true
+                },
+                {
+                  "statement": "d",
+                  "text": "D"
+                }
+              ]
+            },
+            {
+              "argument": "f-e",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "f",
+                  "text": "F"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "f": {
+        "statement": "f",
+        "text": "F",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "f",
+          "text": "F",
+          "arguments": []
+        }
+      }
+    },
+    "supports_depth_1": {
+      "a": {
+        "statement": "a",
+        "text": "A",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "c",
+            "e"
+          ],
+          "arguments": [
+            "ab-c",
+            "cd-e"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "a",
+          "text": "A",
+          "arguments": [
+            {
+              "argument": "ab-c",
+              "co_premises": [
+                "b"
+              ],
+              "conclusions": [
+                {
+                  "statement": "c",
+                  "text": "C",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "b": {
+        "statement": "b",
+        "text": "B",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "c",
+            "e"
+          ],
+          "arguments": [
+            "ab-c",
+            "cd-e"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "b",
+          "text": "B",
+          "arguments": [
+            {
+              "argument": "ab-c",
+              "co_premises": [
+                "a"
+              ],
+              "conclusions": [
+                {
+                  "statement": "c",
+                  "text": "C",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "c": {
+        "statement": "c",
+        "text": "C",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "e"
+          ],
+          "arguments": [
+            "cd-e"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "c",
+          "text": "C",
+          "arguments": [
+            {
+              "argument": "cd-e",
+              "co_premises": [
+                "d"
+              ],
+              "conclusions": [
+                {
+                  "statement": "e",
+                  "text": "E"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "d": {
+        "statement": "d",
+        "text": "D",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "e"
+          ],
+          "arguments": [
+            "cd-e"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "d",
+          "text": "D",
+          "arguments": [
+            {
+              "argument": "cd-e",
+              "co_premises": [
+                "c"
+              ],
+              "conclusions": [
+                {
+                  "statement": "e",
+                  "text": "E"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "e": {
+        "statement": "e",
+        "text": "E",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "e",
+          "text": "E",
+          "arguments": []
+        }
+      },
+      "f": {
+        "statement": "f",
+        "text": "F",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "e"
+          ],
+          "arguments": [
+            "f-e"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "f",
+          "text": "F",
+          "arguments": [
+            {
+              "argument": "f-e",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "e",
+                  "text": "E"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

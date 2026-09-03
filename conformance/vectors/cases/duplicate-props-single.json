@@ -1,0 +1,262 @@
+{
+  "name": "duplicate-props-single",
+  "input": {
+    "format": "worldview-core",
+    "version": "0.1",
+    "statements": [
+      {
+        "id": "x",
+        "text": "X",
+        "mode": "is"
+      },
+      {
+        "id": "y",
+        "text": "Y",
+        "mode": "is"
+      }
+    ],
+    "arguments": [
+      {
+        "id": "a",
+        "premises": [
+          "x"
+        ],
+        "conclusions": [
+          "y"
+        ],
+        "justification": "because"
+      }
+    ]
+  },
+  "expected": {
+    "valid": true,
+    "ids": {
+      "statements": [
+        {
+          "id": "x",
+          "prop_id": "e60afb45ef3ef161a25ac099fb31029e63d82b53369fed601936841626559c7b",
+          "just_id": "93aa9903d25cca05d16a9904d291470f93081d881811e54d7542e859bda77d1c"
+        },
+        {
+          "id": "y",
+          "prop_id": "b4f07363fc2d26e3f7db56d266fea0b8250541db48c86e0cd015f1f93f46b551",
+          "just_id": "71124b532742d9b2917e56584ad8f97a87db26428d29b1808db9e1ff86532663"
+        }
+      ],
+      "arguments": [
+        {
+          "id": "a",
+          "arg_hash": "150b734f184c2e97757dfa98083ee081229647c05ac6ad574ce97064072f99a3"
+        }
+      ]
+    },
+    "foundations": [
+      {
+        "id": "x",
+        "text": "X",
+        "mode": "is"
+      }
+    ],
+    "sccs": [],
+    "well_founded": {
+      "foundations": [
+        "x"
+      ],
+      "grounded": [
+        "x",
+        "y"
+      ],
+      "ungrounded": []
+    },
+    "rests_on": {
+      "x": {
+        "statement": "x",
+        "text": "X",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "x",
+          "text": "X",
+          "arguments": []
+        }
+      },
+      "y": {
+        "statement": "y",
+        "text": "Y",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "x"
+          ],
+          "arguments": [
+            "a"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "y",
+          "text": "Y",
+          "arguments": [
+            {
+              "argument": "a",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "x",
+                  "text": "X",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "supports": {
+      "x": {
+        "statement": "x",
+        "text": "X",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "y"
+          ],
+          "arguments": [
+            "a"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "x",
+          "text": "X",
+          "arguments": [
+            {
+              "argument": "a",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "y",
+                  "text": "Y",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "y": {
+        "statement": "y",
+        "text": "Y",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "y",
+          "text": "Y",
+          "arguments": []
+        }
+      }
+    },
+    "rests_on_depth_1": {
+      "x": {
+        "statement": "x",
+        "text": "X",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "x",
+          "text": "X",
+          "arguments": []
+        }
+      },
+      "y": {
+        "statement": "y",
+        "text": "Y",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "x"
+          ],
+          "arguments": [
+            "a"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "y",
+          "text": "Y",
+          "arguments": [
+            {
+              "argument": "a",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "x",
+                  "text": "X"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "supports_depth_1": {
+      "x": {
+        "statement": "x",
+        "text": "X",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "y"
+          ],
+          "arguments": [
+            "a"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "x",
+          "text": "X",
+          "arguments": [
+            {
+              "argument": "a",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "y",
+                  "text": "Y"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "y": {
+        "statement": "y",
+        "text": "Y",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "y",
+          "text": "Y",
+          "arguments": []
+        }
+      }
+    }
+  }
+}

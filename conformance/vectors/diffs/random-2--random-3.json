@@ -1,0 +1,1201 @@
+{
+  "a": "random-2",
+  "b": "random-3",
+  "expected": {
+    "a": "random-2",
+    "b": "random-3",
+    "statements": {
+      "identical": [],
+      "rejustified": [],
+      "added": [
+        {
+          "id": "s0",
+          "text": "Night cold wet",
+          "mode": "ought"
+        },
+        {
+          "id": "s1",
+          "text": "Stars night roads night rain",
+          "mode": "is"
+        },
+        {
+          "id": "s2",
+          "text": "Slippery slippery visible coffee cold cold",
+          "mode": "is"
+        },
+        {
+          "id": "s3",
+          "text": "Slippery stars wet!",
+          "mode": "is"
+        },
+        {
+          "id": "s4",
+          "text": "Stars roads.",
+          "mode": "ought"
+        },
+        {
+          "id": "s5",
+          "text": "Drive rain",
+          "mode": "is"
+        },
+        {
+          "id": "s6",
+          "text": "Visible late visible late late visible!",
+          "mode": "is"
+        },
+        {
+          "id": "s7",
+          "text": "Slowly roads rain.",
+          "mode": "is"
+        },
+        {
+          "id": "s8",
+          "text": "Drive stars late!",
+          "mode": "is"
+        },
+        {
+          "id": "s9",
+          "text": "Cold late night slowly cold!",
+          "mode": "is"
+        },
+        {
+          "id": "s10",
+          "text": "Slippery slowly stars rain drive night!",
+          "mode": "ought"
+        },
+        {
+          "id": "s11",
+          "text": "Visible slowly cold!",
+          "mode": "ought"
+        },
+        {
+          "id": "s12",
+          "text": "Visible stars.",
+          "mode": "ought"
+        },
+        {
+          "id": "s13",
+          "text": "Drive drive roads roads coffee stars",
+          "mode": "is"
+        },
+        {
+          "id": "s14",
+          "text": "Roads late wet rain",
+          "mode": "is"
+        },
+        {
+          "id": "s15",
+          "text": "Roads rain night night rain",
+          "mode": "ought"
+        },
+        {
+          "id": "s16",
+          "text": "Slowly cold drive cold slippery rain",
+          "mode": "is"
+        },
+        {
+          "id": "s17",
+          "text": "Roads night!",
+          "mode": "is"
+        },
+        {
+          "id": "s18",
+          "text": "Late drive night",
+          "mode": "is"
+        },
+        {
+          "id": "s19",
+          "text": "Slowly slowly",
+          "mode": "is"
+        },
+        {
+          "id": "s20",
+          "text": "Late coffee cold late stars!",
+          "mode": "ought"
+        },
+        {
+          "id": "s21",
+          "text": "Roads night cold drive late stars!",
+          "mode": "ought"
+        },
+        {
+          "id": "s22",
+          "text": "Drive late drive!",
+          "mode": "is"
+        },
+        {
+          "id": "s23",
+          "text": "Slowly rain late night slowly rain",
+          "mode": "ought"
+        },
+        {
+          "id": "s24",
+          "text": "Stars wet rain stars stars slowly",
+          "mode": "is"
+        },
+        {
+          "id": "s25",
+          "text": "Night visible drive visible",
+          "mode": "is"
+        },
+        {
+          "id": "s26",
+          "text": "Rain stars rain slowly drive stars",
+          "mode": "is"
+        },
+        {
+          "id": "s27",
+          "text": "Night slowly wet slowly wet slowly",
+          "mode": "ought"
+        },
+        {
+          "id": "s28",
+          "text": "Drive late roads rain!",
+          "mode": "ought"
+        },
+        {
+          "id": "s29",
+          "text": "Drive cold slippery!",
+          "mode": "is"
+        },
+        {
+          "id": "s30",
+          "text": "Slowly wet stars",
+          "mode": "ought"
+        },
+        {
+          "id": "s31",
+          "text": "Roads night",
+          "mode": "is"
+        },
+        {
+          "id": "s32",
+          "text": "Coffee wet roads",
+          "mode": "ought"
+        },
+        {
+          "id": "s33",
+          "text": "Night coffee drive.",
+          "mode": "is"
+        },
+        {
+          "id": "s34",
+          "text": "Cold slippery",
+          "mode": "ought"
+        },
+        {
+          "id": "s35",
+          "text": "Drive slowly stars.",
+          "mode": "ought"
+        },
+        {
+          "id": "s36",
+          "text": "Night wet late drive!",
+          "mode": "is"
+        },
+        {
+          "id": "s37",
+          "text": "Slowly stars late drive late!",
+          "mode": "is"
+        },
+        {
+          "id": "s38",
+          "text": "Late wet.",
+          "mode": "is"
+        },
+        {
+          "id": "s39",
+          "text": "Night cold late cold visible.",
+          "mode": "is"
+        }
+      ],
+      "removed": [
+        {
+          "id": "s0",
+          "text": "Roads roads",
+          "mode": "is"
+        },
+        {
+          "id": "s1",
+          "text": "Drive night slippery night.",
+          "mode": "ought"
+        },
+        {
+          "id": "s2",
+          "text": "Late stars late!",
+          "mode": "ought"
+        },
+        {
+          "id": "s3",
+          "text": "Cold coffee cold drive.",
+          "mode": "is"
+        },
+        {
+          "id": "s4",
+          "text": "Coffee slowly late late!",
+          "mode": "is"
+        },
+        {
+          "id": "s5",
+          "text": "Wet slippery slippery rain wet slowly.",
+          "mode": "is"
+        },
+        {
+          "id": "s6",
+          "text": "Cold slowly cold stars cold wet",
+          "mode": "is"
+        },
+        {
+          "id": "s7",
+          "text": "Slowly night slowly slowly coffee wet",
+          "mode": "ought"
+        },
+        {
+          "id": "s8",
+          "text": "Stars cold slippery coffee drive",
+          "mode": "ought"
+        },
+        {
+          "id": "s9",
+          "text": "Slowly stars coffee coffee slowly night!",
+          "mode": "ought"
+        },
+        {
+          "id": "s10",
+          "text": "Coffee stars slippery slowly visible.",
+          "mode": "ought"
+        },
+        {
+          "id": "s11",
+          "text": "Coffee drive drive visible!",
+          "mode": "ought"
+        },
+        {
+          "id": "s12",
+          "text": "Cold stars night night late drive!",
+          "mode": "is"
+        },
+        {
+          "id": "s13",
+          "text": "Cold slowly stars night roads",
+          "mode": "ought"
+        },
+        {
+          "id": "s14",
+          "text": "Slippery visible.",
+          "mode": "is"
+        },
+        {
+          "id": "s15",
+          "text": "Stars rain drive night slippery stars.",
+          "mode": "ought"
+        },
+        {
+          "id": "s16",
+          "text": "Drive slippery slippery.",
+          "mode": "is"
+        },
+        {
+          "id": "s17",
+          "text": "Rain slowly",
+          "mode": "is"
+        },
+        {
+          "id": "s18",
+          "text": "Stars rain roads.",
+          "mode": "is"
+        },
+        {
+          "id": "s19",
+          "text": "Rain visible.",
+          "mode": "is"
+        },
+        {
+          "id": "s20",
+          "text": "Wet wet visible wet!",
+          "mode": "ought"
+        },
+        {
+          "id": "s21",
+          "text": "Late night.",
+          "mode": "is"
+        },
+        {
+          "id": "s22",
+          "text": "Rain rain slowly!",
+          "mode": "ought"
+        },
+        {
+          "id": "s23",
+          "text": "Drive slowly",
+          "mode": "is"
+        },
+        {
+          "id": "s24",
+          "text": "Coffee cold night visible.",
+          "mode": "is"
+        }
+      ]
+    },
+    "arguments": {
+      "identical": [],
+      "added": [
+        {
+          "id": "a0",
+          "premises": [
+            "s29",
+            "s33",
+            "s18"
+          ],
+          "conclusions": [
+            "s14"
+          ]
+        },
+        {
+          "id": "a1",
+          "premises": [
+            "s18",
+            "s7"
+          ],
+          "conclusions": [
+            "s2"
+          ]
+        },
+        {
+          "id": "a2",
+          "premises": [
+            "s32",
+            "s12",
+            "s27"
+          ],
+          "conclusions": [
+            "s0"
+          ]
+        },
+        {
+          "id": "a3",
+          "premises": [
+            "s7",
+            "s10",
+            "s32"
+          ],
+          "conclusions": [
+            "s15"
+          ]
+        },
+        {
+          "id": "a4",
+          "premises": [],
+          "conclusions": [
+            "s3",
+            "s39"
+          ]
+        },
+        {
+          "id": "a5",
+          "premises": [
+            "s8"
+          ],
+          "conclusions": [
+            "s34"
+          ]
+        },
+        {
+          "id": "a6",
+          "premises": [],
+          "conclusions": [
+            "s14"
+          ]
+        },
+        {
+          "id": "a7",
+          "premises": [],
+          "conclusions": [
+            "s10"
+          ]
+        },
+        {
+          "id": "a8",
+          "premises": [
+            "s8"
+          ],
+          "conclusions": [
+            "s31"
+          ]
+        },
+        {
+          "id": "a9",
+          "premises": [
+            "s25",
+            "s3"
+          ],
+          "conclusions": [
+            "s15"
+          ]
+        },
+        {
+          "id": "a10",
+          "premises": [
+            "s33",
+            "s27"
+          ],
+          "conclusions": [
+            "s30"
+          ]
+        },
+        {
+          "id": "a11",
+          "premises": [],
+          "conclusions": [
+            "s8"
+          ]
+        },
+        {
+          "id": "a12",
+          "premises": [],
+          "conclusions": [
+            "s4"
+          ]
+        },
+        {
+          "id": "a13",
+          "premises": [],
+          "conclusions": [
+            "s32"
+          ]
+        },
+        {
+          "id": "a14",
+          "premises": [
+            "s20",
+            "s10"
+          ],
+          "conclusions": [
+            "s4"
+          ]
+        },
+        {
+          "id": "a15",
+          "premises": [
+            "s24",
+            "s37"
+          ],
+          "conclusions": [
+            "s23"
+          ]
+        },
+        {
+          "id": "a16",
+          "premises": [
+            "s21"
+          ],
+          "conclusions": [
+            "s7",
+            "s8"
+          ]
+        },
+        {
+          "id": "a17",
+          "premises": [],
+          "conclusions": [
+            "s5",
+            "s36"
+          ]
+        },
+        {
+          "id": "a18",
+          "premises": [],
+          "conclusions": [
+            "s29"
+          ]
+        },
+        {
+          "id": "a19",
+          "premises": [
+            "s34",
+            "s24",
+            "s2"
+          ],
+          "conclusions": [
+            "s3",
+            "s23"
+          ]
+        },
+        {
+          "id": "a20",
+          "premises": [
+            "s20",
+            "s26"
+          ],
+          "conclusions": [
+            "s29",
+            "s1"
+          ]
+        },
+        {
+          "id": "a21",
+          "premises": [
+            "s34"
+          ],
+          "conclusions": [
+            "s37"
+          ]
+        },
+        {
+          "id": "a22",
+          "premises": [
+            "s14",
+            "s27"
+          ],
+          "conclusions": [
+            "s1"
+          ]
+        },
+        {
+          "id": "a23",
+          "premises": [
+            "s35"
+          ],
+          "conclusions": [
+            "s7"
+          ]
+        },
+        {
+          "id": "a24",
+          "premises": [
+            "s7",
+            "s33",
+            "s24"
+          ],
+          "conclusions": [
+            "s20"
+          ]
+        },
+        {
+          "id": "a25",
+          "premises": [
+            "s6",
+            "s37"
+          ],
+          "conclusions": [
+            "s30"
+          ]
+        },
+        {
+          "id": "a26",
+          "premises": [
+            "s24"
+          ],
+          "conclusions": [
+            "s33"
+          ]
+        },
+        {
+          "id": "a27",
+          "premises": [
+            "s6",
+            "s24"
+          ],
+          "conclusions": [
+            "s1"
+          ]
+        },
+        {
+          "id": "a28",
+          "premises": [],
+          "conclusions": [
+            "s7"
+          ]
+        },
+        {
+          "id": "a29",
+          "premises": [
+            "s18",
+            "s37"
+          ],
+          "conclusions": [
+            "s5"
+          ]
+        },
+        {
+          "id": "a30",
+          "premises": [
+            "s32",
+            "s33"
+          ],
+          "conclusions": [
+            "s6"
+          ]
+        },
+        {
+          "id": "a31",
+          "premises": [
+            "s6",
+            "s35",
+            "s3"
+          ],
+          "conclusions": [
+            "s36"
+          ]
+        },
+        {
+          "id": "a32",
+          "premises": [],
+          "conclusions": [
+            "s11"
+          ]
+        },
+        {
+          "id": "a33",
+          "premises": [
+            "s29"
+          ],
+          "conclusions": [
+            "s16",
+            "s23"
+          ]
+        },
+        {
+          "id": "a34",
+          "premises": [
+            "s22",
+            "s35"
+          ],
+          "conclusions": [
+            "s5",
+            "s24"
+          ]
+        },
+        {
+          "id": "a35",
+          "premises": [
+            "s26"
+          ],
+          "conclusions": [
+            "s26"
+          ]
+        },
+        {
+          "id": "a36",
+          "premises": [
+            "s37",
+            "s33"
+          ],
+          "conclusions": [
+            "s9",
+            "s25"
+          ]
+        },
+        {
+          "id": "a37",
+          "premises": [
+            "s6"
+          ],
+          "conclusions": [
+            "s30",
+            "s33"
+          ]
+        },
+        {
+          "id": "a38",
+          "premises": [
+            "s11",
+            "s8"
+          ],
+          "conclusions": [
+            "s12"
+          ]
+        },
+        {
+          "id": "a39",
+          "premises": [
+            "s32",
+            "s20"
+          ],
+          "conclusions": [
+            "s34"
+          ]
+        },
+        {
+          "id": "a40",
+          "premises": [
+            "s26",
+            "s38",
+            "s37"
+          ],
+          "conclusions": [
+            "s13"
+          ]
+        },
+        {
+          "id": "a41",
+          "premises": [],
+          "conclusions": [
+            "s30"
+          ]
+        },
+        {
+          "id": "a42",
+          "premises": [
+            "s11"
+          ],
+          "conclusions": [
+            "s15"
+          ]
+        },
+        {
+          "id": "a43",
+          "premises": [
+            "s9",
+            "s26"
+          ],
+          "conclusions": [
+            "s38",
+            "s13"
+          ]
+        },
+        {
+          "id": "a44",
+          "premises": [
+            "s35",
+            "s1"
+          ],
+          "conclusions": [
+            "s4",
+            "s25"
+          ]
+        },
+        {
+          "id": "a45",
+          "premises": [],
+          "conclusions": [
+            "s14",
+            "s15"
+          ]
+        },
+        {
+          "id": "a46",
+          "premises": [
+            "s4",
+            "s13",
+            "s16"
+          ],
+          "conclusions": [
+            "s12"
+          ]
+        },
+        {
+          "id": "a47",
+          "premises": [
+            "s11"
+          ],
+          "conclusions": [
+            "s16"
+          ]
+        },
+        {
+          "id": "a48",
+          "premises": [],
+          "conclusions": [
+            "s11"
+          ]
+        },
+        {
+          "id": "a49",
+          "premises": [],
+          "conclusions": [
+            "s7"
+          ]
+        },
+        {
+          "id": "a50",
+          "premises": [
+            "s18"
+          ],
+          "conclusions": [
+            "s22"
+          ]
+        },
+        {
+          "id": "a51",
+          "premises": [
+            "s21",
+            "s0"
+          ],
+          "conclusions": [
+            "s21"
+          ]
+        },
+        {
+          "id": "a52",
+          "premises": [
+            "s24",
+            "s31"
+          ],
+          "conclusions": [
+            "s13"
+          ]
+        },
+        {
+          "id": "a53",
+          "premises": [
+            "s31",
+            "s25"
+          ],
+          "conclusions": [
+            "s34"
+          ]
+        },
+        {
+          "id": "a54",
+          "premises": [],
+          "conclusions": [
+            "s4"
+          ]
+        },
+        {
+          "id": "a55",
+          "premises": [
+            "s7",
+            "s28"
+          ],
+          "conclusions": [
+            "s6"
+          ]
+        },
+        {
+          "id": "a56",
+          "premises": [
+            "s23",
+            "s28",
+            "s18"
+          ],
+          "conclusions": [
+            "s6"
+          ]
+        },
+        {
+          "id": "a57",
+          "premises": [
+            "s36",
+            "s34",
+            "s33"
+          ],
+          "conclusions": [
+            "s31"
+          ]
+        },
+        {
+          "id": "a58",
+          "premises": [
+            "s3"
+          ],
+          "conclusions": [
+            "s36"
+          ]
+        },
+        {
+          "id": "a59",
+          "premises": [
+            "s9"
+          ],
+          "conclusions": [
+            "s23"
+          ]
+        }
+      ],
+      "removed": [
+        {
+          "id": "a0",
+          "premises": [
+            "s19",
+            "s22"
+          ],
+          "conclusions": [
+            "s15"
+          ]
+        },
+        {
+          "id": "a1",
+          "premises": [],
+          "conclusions": [
+            "s3"
+          ]
+        },
+        {
+          "id": "a2",
+          "premises": [
+            "s4",
+            "s16"
+          ],
+          "conclusions": [
+            "s15",
+            "s16"
+          ]
+        },
+        {
+          "id": "a3",
+          "premises": [
+            "s10"
+          ],
+          "conclusions": [
+            "s8"
+          ]
+        },
+        {
+          "id": "a4",
+          "premises": [
+            "s20",
+            "s0"
+          ],
+          "conclusions": [
+            "s21"
+          ]
+        },
+        {
+          "id": "a5",
+          "premises": [
+            "s1"
+          ],
+          "conclusions": [
+            "s5"
+          ]
+        },
+        {
+          "id": "a6",
+          "premises": [],
+          "conclusions": [
+            "s20",
+            "s7"
+          ]
+        },
+        {
+          "id": "a7",
+          "premises": [
+            "s1",
+            "s7",
+            "s22"
+          ],
+          "conclusions": [
+            "s2",
+            "s8"
+          ]
+        },
+        {
+          "id": "a8",
+          "premises": [
+            "s7",
+            "s19"
+          ],
+          "conclusions": [
+            "s8"
+          ]
+        },
+        {
+          "id": "a9",
+          "premises": [
+            "s8",
+            "s16"
+          ],
+          "conclusions": [
+            "s4"
+          ]
+        },
+        {
+          "id": "a10",
+          "premises": [
+            "s13",
+            "s5"
+          ],
+          "conclusions": [
+            "s16"
+          ]
+        },
+        {
+          "id": "a11",
+          "premises": [],
+          "conclusions": [
+            "s3"
+          ]
+        },
+        {
+          "id": "a12",
+          "premises": [],
+          "conclusions": [
+            "s24"
+          ]
+        },
+        {
+          "id": "a13",
+          "premises": [],
+          "conclusions": [
+            "s0"
+          ]
+        },
+        {
+          "id": "a14",
+          "premises": [
+            "s14",
+            "s9",
+            "s17"
+          ],
+          "conclusions": [
+            "s6",
+            "s21"
+          ]
+        },
+        {
+          "id": "a15",
+          "premises": [
+            "s13",
+            "s16",
+            "s0"
+          ],
+          "conclusions": [
+            "s13"
+          ]
+        },
+        {
+          "id": "a16",
+          "premises": [
+            "s5",
+            "s3"
+          ],
+          "conclusions": [
+            "s11",
+            "s0"
+          ]
+        },
+        {
+          "id": "a17",
+          "premises": [],
+          "conclusions": [
+            "s9"
+          ]
+        },
+        {
+          "id": "a18",
+          "premises": [
+            "s9"
+          ],
+          "conclusions": [
+            "s21"
+          ]
+        },
+        {
+          "id": "a19",
+          "premises": [],
+          "conclusions": [
+            "s9"
+          ]
+        },
+        {
+          "id": "a20",
+          "premises": [
+            "s0",
+            "s14",
+            "s1"
+          ],
+          "conclusions": [
+            "s20",
+            "s15"
+          ]
+        },
+        {
+          "id": "a21",
+          "premises": [
+            "s18"
+          ],
+          "conclusions": [
+            "s0"
+          ]
+        },
+        {
+          "id": "a22",
+          "premises": [],
+          "conclusions": [
+            "s9"
+          ]
+        },
+        {
+          "id": "a23",
+          "premises": [],
+          "conclusions": [
+            "s24"
+          ]
+        },
+        {
+          "id": "a24",
+          "premises": [
+            "s3"
+          ],
+          "conclusions": [
+            "s12"
+          ]
+        },
+        {
+          "id": "a25",
+          "premises": [
+            "s4",
+            "s24"
+          ],
+          "conclusions": [
+            "s12"
+          ]
+        },
+        {
+          "id": "a26",
+          "premises": [
+            "s3"
+          ],
+          "conclusions": [
+            "s2"
+          ]
+        },
+        {
+          "id": "a27",
+          "premises": [
+            "s20"
+          ],
+          "conclusions": [
+            "s6",
+            "s22"
+          ]
+        },
+        {
+          "id": "a28",
+          "premises": [],
+          "conclusions": [
+            "s24",
+            "s1"
+          ]
+        },
+        {
+          "id": "a29",
+          "premises": [
+            "s15",
+            "s9",
+            "s11"
+          ],
+          "conclusions": [
+            "s4",
+            "s11"
+          ]
+        }
+      ]
+    },
+    "summary": {
+      "statements": {
+        "identical": 0,
+        "rejustified": 0,
+        "added": 40,
+        "removed": 25
+      },
+      "arguments": {
+        "identical": 0,
+        "added": 60,
+        "removed": 30
+      }
+    }
+  }
+}

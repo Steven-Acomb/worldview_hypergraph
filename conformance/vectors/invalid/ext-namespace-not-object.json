@@ -1,0 +1,80 @@
+{
+  "name": "ext-namespace-not-object",
+  "input": {
+    "format": "worldview-core",
+    "version": "0.1",
+    "name": "chain",
+    "statements": [
+      {
+        "id": "a",
+        "text": "A",
+        "mode": "is"
+      },
+      {
+        "id": "b",
+        "text": "B",
+        "mode": "is"
+      },
+      {
+        "id": "c",
+        "text": "C",
+        "mode": "is"
+      },
+      {
+        "id": "d",
+        "text": "D",
+        "mode": "is"
+      },
+      {
+        "id": "e",
+        "text": "E",
+        "mode": "ought"
+      },
+      {
+        "id": "f",
+        "text": "F",
+        "mode": "is"
+      }
+    ],
+    "arguments": [
+      {
+        "id": "ab-c",
+        "premises": [
+          "a",
+          "b"
+        ],
+        "conclusions": [
+          "c"
+        ],
+        "justification": "a and b give c"
+      },
+      {
+        "id": "cd-e",
+        "premises": [
+          "c",
+          "d"
+        ],
+        "conclusions": [
+          "e"
+        ],
+        "justification": "c and d give e"
+      },
+      {
+        "id": "f-e",
+        "premises": [
+          "f"
+        ],
+        "conclusions": [
+          "e"
+        ],
+        "justification": "f alone gives e"
+      }
+    ],
+    "ext": {
+      "bayes": 1
+    }
+  },
+  "expected": {
+    "valid": false
+  }
+}

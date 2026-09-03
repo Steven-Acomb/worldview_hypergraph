@@ -1,0 +1,106 @@
+{
+  "a": "cycle",
+  "b": "cycle-edited-downstream",
+  "expected": {
+    "a": "cycle",
+    "b": "cycle-edited-downstream",
+    "statements": {
+      "identical": [
+        {
+          "a": "p",
+          "b": "p",
+          "just_id": "d3dd30502232706db4ef556bea5c028d6038805908a54ec8f50630d5964b9704"
+        },
+        {
+          "a": "x",
+          "b": "x",
+          "just_id": "319086610e780ff1404f62f9188138b1a1f60ae78d8cc5c4f553f6f20d7e263a"
+        },
+        {
+          "a": "y",
+          "b": "y",
+          "just_id": "04388e6a93e61ce76eb65fbb431497116221b6d5ced65d3bd60e6bfa384249a4"
+        },
+        {
+          "a": "z",
+          "b": "z",
+          "just_id": "a73552487302ce571b8c32a1ced34cefa15decf26db6bd16c76d7f948fea11f2"
+        }
+      ],
+      "rejustified": [],
+      "added": [
+        {
+          "id": "q",
+          "text": "Q (edited)",
+          "mode": "is"
+        }
+      ],
+      "removed": [
+        {
+          "id": "q",
+          "text": "Q",
+          "mode": "is"
+        }
+      ]
+    },
+    "arguments": {
+      "identical": [
+        {
+          "a": "p-x",
+          "b": "p-x",
+          "arg_hash": "1eef5291525deea26fc6943066bfd466b66412227543342bcc89503e8a4c7e80"
+        },
+        {
+          "a": "x-y",
+          "b": "x-y",
+          "arg_hash": "17d85e709da280c38df61fe936b82ba0656775f1d1da1cc2f1235e972c66d285"
+        },
+        {
+          "a": "y-z",
+          "b": "y-z",
+          "arg_hash": "d98e024acfd5776f1b1c50a66a1649b0058288c17d9e0e0685cf88af4c3c5a16"
+        },
+        {
+          "a": "z-x",
+          "b": "z-x",
+          "arg_hash": "958e5953ce2279b7dc518e251171fb328a80870d0e41d6592213eee4669cfd1f"
+        }
+      ],
+      "added": [
+        {
+          "id": "z-q",
+          "premises": [
+            "z"
+          ],
+          "conclusions": [
+            "q"
+          ]
+        }
+      ],
+      "removed": [
+        {
+          "id": "z-q",
+          "premises": [
+            "z"
+          ],
+          "conclusions": [
+            "q"
+          ]
+        }
+      ]
+    },
+    "summary": {
+      "statements": {
+        "identical": 4,
+        "rejustified": 0,
+        "added": 1,
+        "removed": 1
+      },
+      "arguments": {
+        "identical": 4,
+        "added": 1,
+        "removed": 1
+      }
+    }
+  }
+}

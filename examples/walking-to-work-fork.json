@@ -1,0 +1,112 @@
+{
+  "format": "worldview-core",
+  "version": "0.1",
+  "name": "Walking to work (fork)",
+  "description": "A fork of walking-to-work.json with three edits, to demonstrate diff: the rain statement was reworded, the money argument was dropped, and a new statement and argument about a bicycle were added. Everything upstream of the edits keeps its identity; everything downstream is rejustified.",
+  "statements": [
+    {
+      "id": "exercise-good",
+      "text": "Regular physical activity improves long-term health.",
+      "mode": "is"
+    },
+    {
+      "id": "walk-is-exercise",
+      "text": "Walking for thirty minutes a day counts as regular physical activity.",
+      "mode": "is"
+    },
+    {
+      "id": "health-matters",
+      "text": "I should act to protect my long-term health.",
+      "mode": "ought"
+    },
+    {
+      "id": "commute-30",
+      "text": "My commute takes about thirty minutes on foot.",
+      "mode": "is"
+    },
+    {
+      "id": "walk-commute",
+      "text": "I should walk to work.",
+      "mode": "ought"
+    },
+    {
+      "id": "car-costs",
+      "text": "Driving to work costs more than walking.",
+      "mode": "is"
+    },
+    {
+      "id": "save-money",
+      "text": "I should prefer the cheaper option when the options are otherwise equal.",
+      "mode": "ought"
+    },
+    {
+      "id": "rain-often",
+      "text": "It rains most days where I live.",
+      "mode": "is"
+    },
+    {
+      "id": "rain-unpleasant",
+      "text": "Walking in the rain without a raincoat is unpleasant.",
+      "mode": "is"
+    },
+    {
+      "id": "need-raincoat",
+      "text": "I should own a good raincoat.",
+      "mode": "ought"
+    },
+    {
+      "id": "self-knowledge",
+      "text": "My assessments of my own habits are accurate.",
+      "mode": "is"
+    },
+    {
+      "id": "habit-reports",
+      "text": "My reports about how I spend my time have matched outside observation.",
+      "mode": "is"
+    },
+    {
+      "id": "bike-faster",
+      "text": "Cycling my commute takes ten minutes.",
+      "mode": "is"
+    }
+  ],
+  "arguments": [
+    {
+      "id": "walk-for-health",
+      "premises": ["exercise-good", "walk-is-exercise", "health-matters", "commute-30"],
+      "conclusions": ["walk-commute"],
+      "justification": "If protecting my health is something I should do, and walking my commute is a form of the activity that protects it, then walking my commute is something I should do.",
+      "rule": "practical syllogism"
+    },
+    {
+      "id": "raincoat",
+      "premises": ["walk-commute", "rain-often", "rain-unpleasant"],
+      "conclusions": ["need-raincoat"],
+      "justification": "If I am going to walk regularly and it rains regularly, I will regularly be walking in the rain; a raincoat is what removes the unpleasantness of that."
+    },
+    {
+      "id": "reports-confirm-knowledge",
+      "premises": ["habit-reports"],
+      "conclusions": ["self-knowledge"],
+      "justification": "A track record of accurate self-reports is evidence that my self-assessments are accurate."
+    },
+    {
+      "id": "knowledge-vouches-reports",
+      "premises": ["self-knowledge"],
+      "conclusions": ["habit-reports"],
+      "justification": "It is my own assessment that my reports have matched observation, and my assessments of my habits are accurate."
+    },
+    {
+      "id": "commute-from-reports",
+      "premises": ["habit-reports"],
+      "conclusions": ["commute-30"],
+      "justification": "The thirty-minute figure comes from my own timing of the walk, which the track record says I can trust."
+    },
+    {
+      "id": "bike-timing",
+      "premises": ["habit-reports"],
+      "conclusions": ["bike-faster"],
+      "justification": "The ten-minute figure also comes from my own timing."
+    }
+  ]
+}

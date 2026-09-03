@@ -1,0 +1,904 @@
+{
+  "name": "unicode-and-whitespace",
+  "input": {
+    "format": "worldview-core",
+    "version": "0.1",
+    "meta": {
+      "note": "meta is ignored"
+    },
+    "ext": {
+      "bayes": {
+        "ignored": true
+      }
+    },
+    "statements": [
+      {
+        "id": "nfc",
+        "text": "café au lait",
+        "mode": "is"
+      },
+      {
+        "id": "nfd",
+        "text": "café au lait",
+        "mode": "is"
+      },
+      {
+        "id": "ws",
+        "text": "  Il   pleut\tsouvent\n ici  ",
+        "mode": "is"
+      },
+      {
+        "id": "ws2",
+        "text": "Il pleut souvent ici",
+        "mode": "is"
+      },
+      {
+        "id": "case",
+        "text": "Il Pleut Souvent Ici",
+        "mode": "is"
+      },
+      {
+        "id": "ought",
+        "text": "Il pleut souvent ici",
+        "mode": "ought"
+      },
+      {
+        "id": "emoji",
+        "text": "Snow ☃ is cold 🥶",
+        "mode": "is"
+      },
+      {
+        "id": "c",
+        "text": "Conclusion",
+        "mode": "is"
+      }
+    ],
+    "arguments": [
+      {
+        "id": "j1",
+        "premises": [
+          "nfc",
+          "ws"
+        ],
+        "conclusions": [
+          "c"
+        ],
+        "justification": "  spaced\n\n justification  "
+      },
+      {
+        "id": "j2",
+        "premises": [
+          "nfd",
+          "ws2"
+        ],
+        "conclusions": [
+          "c"
+        ],
+        "justification": "spaced justification"
+      }
+    ]
+  },
+  "expected": {
+    "valid": true,
+    "ids": {
+      "statements": [
+        {
+          "id": "nfc",
+          "prop_id": "27cbf1dfbe32fd67a655a1aab96fcac5c0dd19532dfd5c151f4ef615e7a20e61",
+          "just_id": "e9fc61886191001eafc262d3d616d50537e5ac7be74c105546c62758489edaba"
+        },
+        {
+          "id": "nfd",
+          "prop_id": "27cbf1dfbe32fd67a655a1aab96fcac5c0dd19532dfd5c151f4ef615e7a20e61",
+          "just_id": "e9fc61886191001eafc262d3d616d50537e5ac7be74c105546c62758489edaba"
+        },
+        {
+          "id": "ws",
+          "prop_id": "ec263acd2fc7a769e3736b8bd5524d884326debbc614da06d27743d47189912e",
+          "just_id": "3ad051e4164ccad06c757b18cb8bdd404bb1e59a5055336f86fd8f698221f848"
+        },
+        {
+          "id": "ws2",
+          "prop_id": "ec263acd2fc7a769e3736b8bd5524d884326debbc614da06d27743d47189912e",
+          "just_id": "3ad051e4164ccad06c757b18cb8bdd404bb1e59a5055336f86fd8f698221f848"
+        },
+        {
+          "id": "case",
+          "prop_id": "ffbb1a1fdfa3748d2f041f7e4f82e2cf751937729f1e12e92912aa758d51c58e",
+          "just_id": "9082e62907a4d9f277872a2fe48265bb0ddd6e76c0b80452878ff6646e934a35"
+        },
+        {
+          "id": "ought",
+          "prop_id": "d03fb928a5046c8781c24e9e5c34de64dc8b709113d0558dd2e49a540d589818",
+          "just_id": "c75cb5d33a7bca3da3ca36d236ce1f97ed4f8b3022f144cdee6bf6369f5f7743"
+        },
+        {
+          "id": "emoji",
+          "prop_id": "40402b1f4a8c79095d1eb94b7833231662962a40ed887bf2831dfbf56e487f00",
+          "just_id": "bed4b449c86d05cc58ef79f19764f1633db1cecea85270b12a27732ca8fd43a3"
+        },
+        {
+          "id": "c",
+          "prop_id": "6cf521f9493e62b0596854d6f262674508be4994e61cd174e916b90011cb3506",
+          "just_id": "612b1b465eab0ca006c2c1f055b6d6e147bcffa1879691e0a539695e27aed2d7"
+        }
+      ],
+      "arguments": [
+        {
+          "id": "j1",
+          "arg_hash": "23755286ac65c963ff2cf4099e23a8a944945d99819596a16b463231e7ba2417"
+        },
+        {
+          "id": "j2",
+          "arg_hash": "23755286ac65c963ff2cf4099e23a8a944945d99819596a16b463231e7ba2417"
+        }
+      ]
+    },
+    "foundations": [
+      {
+        "id": "nfc",
+        "text": "café au lait",
+        "mode": "is"
+      },
+      {
+        "id": "nfd",
+        "text": "café au lait",
+        "mode": "is"
+      },
+      {
+        "id": "ws",
+        "text": "  Il   pleut\tsouvent\n ici  ",
+        "mode": "is"
+      },
+      {
+        "id": "ws2",
+        "text": "Il pleut souvent ici",
+        "mode": "is"
+      },
+      {
+        "id": "case",
+        "text": "Il Pleut Souvent Ici",
+        "mode": "is"
+      },
+      {
+        "id": "ought",
+        "text": "Il pleut souvent ici",
+        "mode": "ought"
+      },
+      {
+        "id": "emoji",
+        "text": "Snow ☃ is cold 🥶",
+        "mode": "is"
+      }
+    ],
+    "sccs": [],
+    "well_founded": {
+      "foundations": [
+        "nfc",
+        "nfd",
+        "ws",
+        "ws2",
+        "case",
+        "ought",
+        "emoji"
+      ],
+      "grounded": [
+        "nfc",
+        "nfd",
+        "ws",
+        "ws2",
+        "case",
+        "ought",
+        "emoji",
+        "c"
+      ],
+      "ungrounded": []
+    },
+    "rests_on": {
+      "nfc": {
+        "statement": "nfc",
+        "text": "café au lait",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "nfc",
+          "text": "café au lait",
+          "arguments": []
+        }
+      },
+      "nfd": {
+        "statement": "nfd",
+        "text": "café au lait",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "nfd",
+          "text": "café au lait",
+          "arguments": []
+        }
+      },
+      "ws": {
+        "statement": "ws",
+        "text": "  Il   pleut\tsouvent\n ici  ",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "ws",
+          "text": "  Il   pleut\tsouvent\n ici  ",
+          "arguments": []
+        }
+      },
+      "ws2": {
+        "statement": "ws2",
+        "text": "Il pleut souvent ici",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "ws2",
+          "text": "Il pleut souvent ici",
+          "arguments": []
+        }
+      },
+      "case": {
+        "statement": "case",
+        "text": "Il Pleut Souvent Ici",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "case",
+          "text": "Il Pleut Souvent Ici",
+          "arguments": []
+        }
+      },
+      "ought": {
+        "statement": "ought",
+        "text": "Il pleut souvent ici",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "ought",
+          "text": "Il pleut souvent ici",
+          "arguments": []
+        }
+      },
+      "emoji": {
+        "statement": "emoji",
+        "text": "Snow ☃ is cold 🥶",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "emoji",
+          "text": "Snow ☃ is cold 🥶",
+          "arguments": []
+        }
+      },
+      "c": {
+        "statement": "c",
+        "text": "Conclusion",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "nfc",
+            "nfd",
+            "ws",
+            "ws2"
+          ],
+          "arguments": [
+            "j1",
+            "j2"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "c",
+          "text": "Conclusion",
+          "arguments": [
+            {
+              "argument": "j1",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "nfc",
+                  "text": "café au lait",
+                  "arguments": []
+                },
+                {
+                  "statement": "ws",
+                  "text": "  Il   pleut\tsouvent\n ici  ",
+                  "arguments": []
+                }
+              ]
+            },
+            {
+              "argument": "j2",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "nfd",
+                  "text": "café au lait",
+                  "arguments": []
+                },
+                {
+                  "statement": "ws2",
+                  "text": "Il pleut souvent ici",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "supports": {
+      "nfc": {
+        "statement": "nfc",
+        "text": "café au lait",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "c"
+          ],
+          "arguments": [
+            "j1"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "nfc",
+          "text": "café au lait",
+          "arguments": [
+            {
+              "argument": "j1",
+              "co_premises": [
+                "ws"
+              ],
+              "conclusions": [
+                {
+                  "statement": "c",
+                  "text": "Conclusion",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "nfd": {
+        "statement": "nfd",
+        "text": "café au lait",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "c"
+          ],
+          "arguments": [
+            "j2"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "nfd",
+          "text": "café au lait",
+          "arguments": [
+            {
+              "argument": "j2",
+              "co_premises": [
+                "ws2"
+              ],
+              "conclusions": [
+                {
+                  "statement": "c",
+                  "text": "Conclusion",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "ws": {
+        "statement": "ws",
+        "text": "  Il   pleut\tsouvent\n ici  ",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "c"
+          ],
+          "arguments": [
+            "j1"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "ws",
+          "text": "  Il   pleut\tsouvent\n ici  ",
+          "arguments": [
+            {
+              "argument": "j1",
+              "co_premises": [
+                "nfc"
+              ],
+              "conclusions": [
+                {
+                  "statement": "c",
+                  "text": "Conclusion",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "ws2": {
+        "statement": "ws2",
+        "text": "Il pleut souvent ici",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "c"
+          ],
+          "arguments": [
+            "j2"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "ws2",
+          "text": "Il pleut souvent ici",
+          "arguments": [
+            {
+              "argument": "j2",
+              "co_premises": [
+                "nfd"
+              ],
+              "conclusions": [
+                {
+                  "statement": "c",
+                  "text": "Conclusion",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "case": {
+        "statement": "case",
+        "text": "Il Pleut Souvent Ici",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "case",
+          "text": "Il Pleut Souvent Ici",
+          "arguments": []
+        }
+      },
+      "ought": {
+        "statement": "ought",
+        "text": "Il pleut souvent ici",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "ought",
+          "text": "Il pleut souvent ici",
+          "arguments": []
+        }
+      },
+      "emoji": {
+        "statement": "emoji",
+        "text": "Snow ☃ is cold 🥶",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "emoji",
+          "text": "Snow ☃ is cold 🥶",
+          "arguments": []
+        }
+      },
+      "c": {
+        "statement": "c",
+        "text": "Conclusion",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "c",
+          "text": "Conclusion",
+          "arguments": []
+        }
+      }
+    },
+    "rests_on_depth_1": {
+      "nfc": {
+        "statement": "nfc",
+        "text": "café au lait",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "nfc",
+          "text": "café au lait",
+          "arguments": []
+        }
+      },
+      "nfd": {
+        "statement": "nfd",
+        "text": "café au lait",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "nfd",
+          "text": "café au lait",
+          "arguments": []
+        }
+      },
+      "ws": {
+        "statement": "ws",
+        "text": "  Il   pleut\tsouvent\n ici  ",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "ws",
+          "text": "  Il   pleut\tsouvent\n ici  ",
+          "arguments": []
+        }
+      },
+      "ws2": {
+        "statement": "ws2",
+        "text": "Il pleut souvent ici",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "ws2",
+          "text": "Il pleut souvent ici",
+          "arguments": []
+        }
+      },
+      "case": {
+        "statement": "case",
+        "text": "Il Pleut Souvent Ici",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "case",
+          "text": "Il Pleut Souvent Ici",
+          "arguments": []
+        }
+      },
+      "ought": {
+        "statement": "ought",
+        "text": "Il pleut souvent ici",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "ought",
+          "text": "Il pleut souvent ici",
+          "arguments": []
+        }
+      },
+      "emoji": {
+        "statement": "emoji",
+        "text": "Snow ☃ is cold 🥶",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "emoji",
+          "text": "Snow ☃ is cold 🥶",
+          "arguments": []
+        }
+      },
+      "c": {
+        "statement": "c",
+        "text": "Conclusion",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "nfc",
+            "nfd",
+            "ws",
+            "ws2"
+          ],
+          "arguments": [
+            "j1",
+            "j2"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "c",
+          "text": "Conclusion",
+          "arguments": [
+            {
+              "argument": "j1",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "nfc",
+                  "text": "café au lait"
+                },
+                {
+                  "statement": "ws",
+                  "text": "  Il   pleut\tsouvent\n ici  "
+                }
+              ]
+            },
+            {
+              "argument": "j2",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "nfd",
+                  "text": "café au lait"
+                },
+                {
+                  "statement": "ws2",
+                  "text": "Il pleut souvent ici"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "supports_depth_1": {
+      "nfc": {
+        "statement": "nfc",
+        "text": "café au lait",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "c"
+          ],
+          "arguments": [
+            "j1"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "nfc",
+          "text": "café au lait",
+          "arguments": [
+            {
+              "argument": "j1",
+              "co_premises": [
+                "ws"
+              ],
+              "conclusions": [
+                {
+                  "statement": "c",
+                  "text": "Conclusion"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "nfd": {
+        "statement": "nfd",
+        "text": "café au lait",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "c"
+          ],
+          "arguments": [
+            "j2"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "nfd",
+          "text": "café au lait",
+          "arguments": [
+            {
+              "argument": "j2",
+              "co_premises": [
+                "ws2"
+              ],
+              "conclusions": [
+                {
+                  "statement": "c",
+                  "text": "Conclusion"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "ws": {
+        "statement": "ws",
+        "text": "  Il   pleut\tsouvent\n ici  ",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "c"
+          ],
+          "arguments": [
+            "j1"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "ws",
+          "text": "  Il   pleut\tsouvent\n ici  ",
+          "arguments": [
+            {
+              "argument": "j1",
+              "co_premises": [
+                "nfc"
+              ],
+              "conclusions": [
+                {
+                  "statement": "c",
+                  "text": "Conclusion"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "ws2": {
+        "statement": "ws2",
+        "text": "Il pleut souvent ici",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "c"
+          ],
+          "arguments": [
+            "j2"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "ws2",
+          "text": "Il pleut souvent ici",
+          "arguments": [
+            {
+              "argument": "j2",
+              "co_premises": [
+                "nfd"
+              ],
+              "conclusions": [
+                {
+                  "statement": "c",
+                  "text": "Conclusion"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "case": {
+        "statement": "case",
+        "text": "Il Pleut Souvent Ici",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "case",
+          "text": "Il Pleut Souvent Ici",
+          "arguments": []
+        }
+      },
+      "ought": {
+        "statement": "ought",
+        "text": "Il pleut souvent ici",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "ought",
+          "text": "Il pleut souvent ici",
+          "arguments": []
+        }
+      },
+      "emoji": {
+        "statement": "emoji",
+        "text": "Snow ☃ is cold 🥶",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "emoji",
+          "text": "Snow ☃ is cold 🥶",
+          "arguments": []
+        }
+      },
+      "c": {
+        "statement": "c",
+        "text": "Conclusion",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "c",
+          "text": "Conclusion",
+          "arguments": []
+        }
+      }
+    }
+  }
+}

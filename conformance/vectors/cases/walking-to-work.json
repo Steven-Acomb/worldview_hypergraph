@@ -1,0 +1,2408 @@
+{
+  "name": "walking-to-work",
+  "input": {
+    "format": "worldview-core",
+    "version": "0.1",
+    "name": "Walking to work",
+    "description": "A small worldview about one everyday decision. It shows the things the format can express: foundations, jointly consumed premises, two independent arguments for the same conclusion, is/ought statements, and a mutually-justifying pair of statements (a cycle).",
+    "meta": {
+      "author": "example",
+      "note": "Nothing here is claimed to be true. It is a worked example of the format."
+    },
+    "statements": [
+      {
+        "id": "exercise-good",
+        "text": "Regular physical activity improves long-term health.",
+        "mode": "is",
+        "meta": {
+          "role": "observation",
+          "source": "general medical consensus"
+        }
+      },
+      {
+        "id": "walk-is-exercise",
+        "text": "Walking for thirty minutes a day counts as regular physical activity.",
+        "mode": "is"
+      },
+      {
+        "id": "health-matters",
+        "text": "I should act to protect my long-term health.",
+        "mode": "ought",
+        "meta": {
+          "role": "axiom"
+        }
+      },
+      {
+        "id": "commute-30",
+        "text": "My commute takes about thirty minutes on foot.",
+        "mode": "is"
+      },
+      {
+        "id": "walk-commute",
+        "text": "I should walk to work.",
+        "mode": "ought"
+      },
+      {
+        "id": "car-costs",
+        "text": "Driving to work costs more than walking.",
+        "mode": "is"
+      },
+      {
+        "id": "save-money",
+        "text": "I should prefer the cheaper option when the options are otherwise equal.",
+        "mode": "ought"
+      },
+      {
+        "id": "rain-often",
+        "text": "It rains often where I live.",
+        "mode": "is"
+      },
+      {
+        "id": "rain-unpleasant",
+        "text": "Walking in the rain without a raincoat is unpleasant.",
+        "mode": "is"
+      },
+      {
+        "id": "need-raincoat",
+        "text": "I should own a good raincoat.",
+        "mode": "ought"
+      },
+      {
+        "id": "self-knowledge",
+        "text": "My assessments of my own habits are accurate.",
+        "mode": "is",
+        "meta": {
+          "note": "Part of a coherentist pair with habit-reports; neither is foundational."
+        }
+      },
+      {
+        "id": "habit-reports",
+        "text": "My reports about how I spend my time have matched outside observation.",
+        "mode": "is"
+      }
+    ],
+    "arguments": [
+      {
+        "id": "walk-for-health",
+        "premises": [
+          "exercise-good",
+          "walk-is-exercise",
+          "health-matters",
+          "commute-30"
+        ],
+        "conclusions": [
+          "walk-commute"
+        ],
+        "justification": "If protecting my health is something I should do, and walking my commute is a form of the activity that protects it, then walking my commute is something I should do.",
+        "rule": "practical syllogism"
+      },
+      {
+        "id": "walk-for-money",
+        "premises": [
+          "car-costs",
+          "save-money"
+        ],
+        "conclusions": [
+          "walk-commute"
+        ],
+        "justification": "Walking is the cheaper of two otherwise comparable ways to get to work, so the money principle selects it.",
+        "meta": {
+          "note": "An independent second argument for the same conclusion. The format never merges these."
+        }
+      },
+      {
+        "id": "raincoat",
+        "premises": [
+          "walk-commute",
+          "rain-often",
+          "rain-unpleasant"
+        ],
+        "conclusions": [
+          "need-raincoat"
+        ],
+        "justification": "If I am going to walk regularly and it rains regularly, I will regularly be walking in the rain; a raincoat is what removes the unpleasantness of that."
+      },
+      {
+        "id": "reports-confirm-knowledge",
+        "premises": [
+          "habit-reports"
+        ],
+        "conclusions": [
+          "self-knowledge"
+        ],
+        "justification": "A track record of accurate self-reports is evidence that my self-assessments are accurate."
+      },
+      {
+        "id": "knowledge-vouches-reports",
+        "premises": [
+          "self-knowledge"
+        ],
+        "conclusions": [
+          "habit-reports"
+        ],
+        "justification": "It is my own assessment that my reports have matched observation, and my assessments of my habits are accurate.",
+        "meta": {
+          "note": "Together with reports-confirm-knowledge this is a cycle. The core allows it and reports it as an SCC."
+        }
+      },
+      {
+        "id": "commute-from-reports",
+        "premises": [
+          "habit-reports"
+        ],
+        "conclusions": [
+          "commute-30"
+        ],
+        "justification": "The thirty-minute figure comes from my own timing of the walk, which the track record says I can trust."
+      }
+    ]
+  },
+  "expected": {
+    "valid": true,
+    "ids": {
+      "statements": [
+        {
+          "id": "exercise-good",
+          "prop_id": "56250f7e6c611382da8ecbefcfcae7d53464b2077c2b640e5d1c2d84dc143b3c",
+          "just_id": "84ca5d15325c990010d3084fc4413b9542c382eda8e7e4cda0ace62a85984189"
+        },
+        {
+          "id": "walk-is-exercise",
+          "prop_id": "b627fc83d033d27f83414be348d5f962461a52128ed25086fbfc4e5883b5f91b",
+          "just_id": "af66fcbc82590efc7e95240ea0de3423629842225760d454ce8f0fa51219ef17"
+        },
+        {
+          "id": "health-matters",
+          "prop_id": "be5bd6a4faaf4775e112de4dd2a2ad944e72d2b0977eb7957d813eb91267ccfe",
+          "just_id": "97ee78f91cc40d6cdbb84b0b23a6bf6c49710c6f6a1a3a36af1c3b53ded3765a"
+        },
+        {
+          "id": "commute-30",
+          "prop_id": "d908556a8a8c754e41177fe005f56aee94af80d98098175d38196df2a34b1509",
+          "just_id": "e52e0303854c60ade749d316b76d5b2495aac373294a5e10c3a472384324d57c"
+        },
+        {
+          "id": "walk-commute",
+          "prop_id": "4f8e5294d55277f27d43c0f53fbf514a40f0647db1b8a79ac7d498dd1368863a",
+          "just_id": "ea889d8232010c34fc54531a959c9a7b76e44e37ac5e0c6a615b7244a4210865"
+        },
+        {
+          "id": "car-costs",
+          "prop_id": "69ef43220927f85f384486ea4771cadd43a54b8ad9882e571c0f60018ac6b7cc",
+          "just_id": "908efad02509038325f8b2db6845baee7448241bfb50a422a9e8484ab64a4f21"
+        },
+        {
+          "id": "save-money",
+          "prop_id": "503ffcdf361991b89f8f371a8583156aa0794062c79faeb117ca2d0bb1a74c1a",
+          "just_id": "9ea2e66a72fefe2d29f0a15a5cd8410f6ae0d015e1fa2f18c45b80736270bb61"
+        },
+        {
+          "id": "rain-often",
+          "prop_id": "1dd8515245e92a95a47db302efdcb6d604404179d78e03d234360200b8794ab6",
+          "just_id": "9ccdf3a22a2926a73538360604367c01f061905285b4bced910ef4714b26c525"
+        },
+        {
+          "id": "rain-unpleasant",
+          "prop_id": "277ee1a251bf3d3fb1458b0ff7660292c993781603254579976d9031b9b8a95d",
+          "just_id": "d3ebf8a677b2c13a76d9916ff0127ac44d1b35830825bb1ab780810cf692a370"
+        },
+        {
+          "id": "need-raincoat",
+          "prop_id": "88235b5d183ceb2035ffb736c3a4765c316008b393a0b975dbc93686d31392eb",
+          "just_id": "42e763f3738fde21b61526b51f25d5648e0f3d4cccbe4ee118f12755b34baac6"
+        },
+        {
+          "id": "self-knowledge",
+          "prop_id": "7f55818c0de51cd19a576de9364eaec0129a3a2087a45afaeae378e4edcb679d",
+          "just_id": "fa54b430bc44f4ba3cb9090436eb878552f3133da12d825f095a6d62b6c089d8",
+          "scc": [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        },
+        {
+          "id": "habit-reports",
+          "prop_id": "216df64ed3cc93e602ab923cb3a66e2146cd05ad6e5a0051aaf2d26051c4ca15",
+          "just_id": "b0aac66a10b6f527cfed3d2c7d3f5d5d7e4bf5a182723e765adaa93212ea0e47",
+          "scc": [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        }
+      ],
+      "arguments": [
+        {
+          "id": "walk-for-health",
+          "arg_hash": "d2eb6e9fde8c5fe940137e08864e36cb5e3675ba9a35fad47edea22dad1cc02a"
+        },
+        {
+          "id": "walk-for-money",
+          "arg_hash": "1f302edf1a96a74d147dda376bd40352311bb4f30b87f534d26f94d785214384"
+        },
+        {
+          "id": "raincoat",
+          "arg_hash": "d66c4149d4fef9111602dcba9f80ae3aef69584cf2566d88ea64b0f76c922d67"
+        },
+        {
+          "id": "reports-confirm-knowledge",
+          "arg_hash": "235ac6e3f6e257b0832e065a74adead547d4a966a894364f30888264b64c360e"
+        },
+        {
+          "id": "knowledge-vouches-reports",
+          "arg_hash": "42cfbab2eb2983cb2f7c80af2bc6735b7b21f550ea6bc7dde24b641d17cad63b"
+        },
+        {
+          "id": "commute-from-reports",
+          "arg_hash": "9d3c460830d8ac86bb83d1b39163a3896661d85b874580456c29c9985f812f83"
+        }
+      ]
+    },
+    "foundations": [
+      {
+        "id": "exercise-good",
+        "text": "Regular physical activity improves long-term health.",
+        "mode": "is"
+      },
+      {
+        "id": "walk-is-exercise",
+        "text": "Walking for thirty minutes a day counts as regular physical activity.",
+        "mode": "is"
+      },
+      {
+        "id": "health-matters",
+        "text": "I should act to protect my long-term health.",
+        "mode": "ought"
+      },
+      {
+        "id": "car-costs",
+        "text": "Driving to work costs more than walking.",
+        "mode": "is"
+      },
+      {
+        "id": "save-money",
+        "text": "I should prefer the cheaper option when the options are otherwise equal.",
+        "mode": "ought"
+      },
+      {
+        "id": "rain-often",
+        "text": "It rains often where I live.",
+        "mode": "is"
+      },
+      {
+        "id": "rain-unpleasant",
+        "text": "Walking in the rain without a raincoat is unpleasant.",
+        "mode": "is"
+      }
+    ],
+    "sccs": [
+      {
+        "members": [
+          "self-knowledge",
+          "habit-reports"
+        ],
+        "self_loops": [],
+        "internal_arguments": [
+          "reports-confirm-knowledge",
+          "knowledge-vouches-reports"
+        ],
+        "boundary_arguments": [
+          "commute-from-reports"
+        ]
+      }
+    ],
+    "well_founded": {
+      "foundations": [
+        "exercise-good",
+        "walk-is-exercise",
+        "health-matters",
+        "car-costs",
+        "save-money",
+        "rain-often",
+        "rain-unpleasant"
+      ],
+      "grounded": [
+        "exercise-good",
+        "walk-is-exercise",
+        "health-matters",
+        "walk-commute",
+        "car-costs",
+        "save-money",
+        "rain-often",
+        "rain-unpleasant",
+        "need-raincoat"
+      ],
+      "ungrounded": [
+        "commute-30",
+        "self-knowledge",
+        "habit-reports"
+      ]
+    },
+    "rests_on": {
+      "exercise-good": {
+        "statement": "exercise-good",
+        "text": "Regular physical activity improves long-term health.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "exercise-good",
+          "text": "Regular physical activity improves long-term health.",
+          "arguments": []
+        }
+      },
+      "walk-is-exercise": {
+        "statement": "walk-is-exercise",
+        "text": "Walking for thirty minutes a day counts as regular physical activity.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "walk-is-exercise",
+          "text": "Walking for thirty minutes a day counts as regular physical activity.",
+          "arguments": []
+        }
+      },
+      "health-matters": {
+        "statement": "health-matters",
+        "text": "I should act to protect my long-term health.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "health-matters",
+          "text": "I should act to protect my long-term health.",
+          "arguments": []
+        }
+      },
+      "commute-30": {
+        "statement": "commute-30",
+        "text": "My commute takes about thirty minutes on foot.",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            "reports-confirm-knowledge",
+            "knowledge-vouches-reports",
+            "commute-from-reports"
+          ]
+        },
+        "sccs": [
+          [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        ],
+        "tree": {
+          "statement": "commute-30",
+          "text": "My commute takes about thirty minutes on foot.",
+          "arguments": [
+            {
+              "argument": "commute-from-reports",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "habit-reports",
+                  "text": "My reports about how I spend my time have matched outside observation.",
+                  "scc": [
+                    "self-knowledge",
+                    "habit-reports"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "knowledge-vouches-reports",
+                      "co_conclusions": [],
+                      "premises": [
+                        {
+                          "statement": "self-knowledge",
+                          "text": "My assessments of my own habits are accurate.",
+                          "scc": [
+                            "self-knowledge",
+                            "habit-reports"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "reports-confirm-knowledge",
+                              "co_conclusions": [],
+                              "premises": [
+                                {
+                                  "statement": "habit-reports",
+                                  "text": "My reports about how I spend my time have matched outside observation.",
+                                  "scc": [
+                                    "self-knowledge",
+                                    "habit-reports"
+                                  ],
+                                  "seen": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "walk-commute": {
+        "statement": "walk-commute",
+        "text": "I should walk to work.",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "exercise-good",
+            "walk-is-exercise",
+            "health-matters",
+            "commute-30",
+            "car-costs",
+            "save-money",
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "walk-for-money",
+            "reports-confirm-knowledge",
+            "knowledge-vouches-reports",
+            "commute-from-reports"
+          ]
+        },
+        "sccs": [
+          [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        ],
+        "tree": {
+          "statement": "walk-commute",
+          "text": "I should walk to work.",
+          "arguments": [
+            {
+              "argument": "walk-for-health",
+              "rule": "practical syllogism",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "exercise-good",
+                  "text": "Regular physical activity improves long-term health.",
+                  "arguments": []
+                },
+                {
+                  "statement": "walk-is-exercise",
+                  "text": "Walking for thirty minutes a day counts as regular physical activity.",
+                  "arguments": []
+                },
+                {
+                  "statement": "health-matters",
+                  "text": "I should act to protect my long-term health.",
+                  "arguments": []
+                },
+                {
+                  "statement": "commute-30",
+                  "text": "My commute takes about thirty minutes on foot.",
+                  "arguments": [
+                    {
+                      "argument": "commute-from-reports",
+                      "co_conclusions": [],
+                      "premises": [
+                        {
+                          "statement": "habit-reports",
+                          "text": "My reports about how I spend my time have matched outside observation.",
+                          "scc": [
+                            "self-knowledge",
+                            "habit-reports"
+                          ],
+                          "arguments": [
+                            {
+                              "argument": "knowledge-vouches-reports",
+                              "co_conclusions": [],
+                              "premises": [
+                                {
+                                  "statement": "self-knowledge",
+                                  "text": "My assessments of my own habits are accurate.",
+                                  "scc": [
+                                    "self-knowledge",
+                                    "habit-reports"
+                                  ],
+                                  "arguments": [
+                                    {
+                                      "argument": "reports-confirm-knowledge",
+                                      "co_conclusions": [],
+                                      "premises": [
+                                        {
+                                          "statement": "habit-reports",
+                                          "text": "My reports about how I spend my time have matched outside observation.",
+                                          "scc": [
+                                            "self-knowledge",
+                                            "habit-reports"
+                                          ],
+                                          "seen": true
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "argument": "walk-for-money",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "car-costs",
+                  "text": "Driving to work costs more than walking.",
+                  "arguments": []
+                },
+                {
+                  "statement": "save-money",
+                  "text": "I should prefer the cheaper option when the options are otherwise equal.",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "car-costs": {
+        "statement": "car-costs",
+        "text": "Driving to work costs more than walking.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "car-costs",
+          "text": "Driving to work costs more than walking.",
+          "arguments": []
+        }
+      },
+      "save-money": {
+        "statement": "save-money",
+        "text": "I should prefer the cheaper option when the options are otherwise equal.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "save-money",
+          "text": "I should prefer the cheaper option when the options are otherwise equal.",
+          "arguments": []
+        }
+      },
+      "rain-often": {
+        "statement": "rain-often",
+        "text": "It rains often where I live.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "rain-often",
+          "text": "It rains often where I live.",
+          "arguments": []
+        }
+      },
+      "rain-unpleasant": {
+        "statement": "rain-unpleasant",
+        "text": "Walking in the rain without a raincoat is unpleasant.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "rain-unpleasant",
+          "text": "Walking in the rain without a raincoat is unpleasant.",
+          "arguments": []
+        }
+      },
+      "need-raincoat": {
+        "statement": "need-raincoat",
+        "text": "I should own a good raincoat.",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "exercise-good",
+            "walk-is-exercise",
+            "health-matters",
+            "commute-30",
+            "walk-commute",
+            "car-costs",
+            "save-money",
+            "rain-often",
+            "rain-unpleasant",
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "walk-for-money",
+            "raincoat",
+            "reports-confirm-knowledge",
+            "knowledge-vouches-reports",
+            "commute-from-reports"
+          ]
+        },
+        "sccs": [
+          [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        ],
+        "tree": {
+          "statement": "need-raincoat",
+          "text": "I should own a good raincoat.",
+          "arguments": [
+            {
+              "argument": "raincoat",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "walk-commute",
+                  "text": "I should walk to work.",
+                  "arguments": [
+                    {
+                      "argument": "walk-for-health",
+                      "rule": "practical syllogism",
+                      "co_conclusions": [],
+                      "premises": [
+                        {
+                          "statement": "exercise-good",
+                          "text": "Regular physical activity improves long-term health.",
+                          "arguments": []
+                        },
+                        {
+                          "statement": "walk-is-exercise",
+                          "text": "Walking for thirty minutes a day counts as regular physical activity.",
+                          "arguments": []
+                        },
+                        {
+                          "statement": "health-matters",
+                          "text": "I should act to protect my long-term health.",
+                          "arguments": []
+                        },
+                        {
+                          "statement": "commute-30",
+                          "text": "My commute takes about thirty minutes on foot.",
+                          "arguments": [
+                            {
+                              "argument": "commute-from-reports",
+                              "co_conclusions": [],
+                              "premises": [
+                                {
+                                  "statement": "habit-reports",
+                                  "text": "My reports about how I spend my time have matched outside observation.",
+                                  "scc": [
+                                    "self-knowledge",
+                                    "habit-reports"
+                                  ],
+                                  "arguments": [
+                                    {
+                                      "argument": "knowledge-vouches-reports",
+                                      "co_conclusions": [],
+                                      "premises": [
+                                        {
+                                          "statement": "self-knowledge",
+                                          "text": "My assessments of my own habits are accurate.",
+                                          "scc": [
+                                            "self-knowledge",
+                                            "habit-reports"
+                                          ],
+                                          "arguments": [
+                                            {
+                                              "argument": "reports-confirm-knowledge",
+                                              "co_conclusions": [],
+                                              "premises": [
+                                                {
+                                                  "statement": "habit-reports",
+                                                  "text": "My reports about how I spend my time have matched outside observation.",
+                                                  "scc": [
+                                                    "self-knowledge",
+                                                    "habit-reports"
+                                                  ],
+                                                  "seen": true
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "argument": "walk-for-money",
+                      "co_conclusions": [],
+                      "premises": [
+                        {
+                          "statement": "car-costs",
+                          "text": "Driving to work costs more than walking.",
+                          "arguments": []
+                        },
+                        {
+                          "statement": "save-money",
+                          "text": "I should prefer the cheaper option when the options are otherwise equal.",
+                          "arguments": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "statement": "rain-often",
+                  "text": "It rains often where I live.",
+                  "arguments": []
+                },
+                {
+                  "statement": "rain-unpleasant",
+                  "text": "Walking in the rain without a raincoat is unpleasant.",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "self-knowledge": {
+        "statement": "self-knowledge",
+        "text": "My assessments of my own habits are accurate.",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            "reports-confirm-knowledge",
+            "knowledge-vouches-reports"
+          ]
+        },
+        "sccs": [
+          [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        ],
+        "tree": {
+          "statement": "self-knowledge",
+          "text": "My assessments of my own habits are accurate.",
+          "scc": [
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            {
+              "argument": "reports-confirm-knowledge",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "habit-reports",
+                  "text": "My reports about how I spend my time have matched outside observation.",
+                  "scc": [
+                    "self-knowledge",
+                    "habit-reports"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "knowledge-vouches-reports",
+                      "co_conclusions": [],
+                      "premises": [
+                        {
+                          "statement": "self-knowledge",
+                          "text": "My assessments of my own habits are accurate.",
+                          "scc": [
+                            "self-knowledge",
+                            "habit-reports"
+                          ],
+                          "seen": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "habit-reports": {
+        "statement": "habit-reports",
+        "text": "My reports about how I spend my time have matched outside observation.",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            "reports-confirm-knowledge",
+            "knowledge-vouches-reports"
+          ]
+        },
+        "sccs": [
+          [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        ],
+        "tree": {
+          "statement": "habit-reports",
+          "text": "My reports about how I spend my time have matched outside observation.",
+          "scc": [
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            {
+              "argument": "knowledge-vouches-reports",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "self-knowledge",
+                  "text": "My assessments of my own habits are accurate.",
+                  "scc": [
+                    "self-knowledge",
+                    "habit-reports"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "reports-confirm-knowledge",
+                      "co_conclusions": [],
+                      "premises": [
+                        {
+                          "statement": "habit-reports",
+                          "text": "My reports about how I spend my time have matched outside observation.",
+                          "scc": [
+                            "self-knowledge",
+                            "habit-reports"
+                          ],
+                          "seen": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "supports": {
+      "exercise-good": {
+        "statement": "exercise-good",
+        "text": "Regular physical activity improves long-term health.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "walk-commute",
+            "need-raincoat"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "exercise-good",
+          "text": "Regular physical activity improves long-term health.",
+          "arguments": [
+            {
+              "argument": "walk-for-health",
+              "rule": "practical syllogism",
+              "co_premises": [
+                "walk-is-exercise",
+                "health-matters",
+                "commute-30"
+              ],
+              "conclusions": [
+                {
+                  "statement": "walk-commute",
+                  "text": "I should walk to work.",
+                  "arguments": [
+                    {
+                      "argument": "raincoat",
+                      "co_premises": [
+                        "rain-often",
+                        "rain-unpleasant"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "need-raincoat",
+                          "text": "I should own a good raincoat.",
+                          "arguments": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "walk-is-exercise": {
+        "statement": "walk-is-exercise",
+        "text": "Walking for thirty minutes a day counts as regular physical activity.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "walk-commute",
+            "need-raincoat"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "walk-is-exercise",
+          "text": "Walking for thirty minutes a day counts as regular physical activity.",
+          "arguments": [
+            {
+              "argument": "walk-for-health",
+              "rule": "practical syllogism",
+              "co_premises": [
+                "exercise-good",
+                "health-matters",
+                "commute-30"
+              ],
+              "conclusions": [
+                {
+                  "statement": "walk-commute",
+                  "text": "I should walk to work.",
+                  "arguments": [
+                    {
+                      "argument": "raincoat",
+                      "co_premises": [
+                        "rain-often",
+                        "rain-unpleasant"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "need-raincoat",
+                          "text": "I should own a good raincoat.",
+                          "arguments": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "health-matters": {
+        "statement": "health-matters",
+        "text": "I should act to protect my long-term health.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "walk-commute",
+            "need-raincoat"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "health-matters",
+          "text": "I should act to protect my long-term health.",
+          "arguments": [
+            {
+              "argument": "walk-for-health",
+              "rule": "practical syllogism",
+              "co_premises": [
+                "exercise-good",
+                "walk-is-exercise",
+                "commute-30"
+              ],
+              "conclusions": [
+                {
+                  "statement": "walk-commute",
+                  "text": "I should walk to work.",
+                  "arguments": [
+                    {
+                      "argument": "raincoat",
+                      "co_premises": [
+                        "rain-often",
+                        "rain-unpleasant"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "need-raincoat",
+                          "text": "I should own a good raincoat.",
+                          "arguments": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "commute-30": {
+        "statement": "commute-30",
+        "text": "My commute takes about thirty minutes on foot.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "walk-commute",
+            "need-raincoat"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "commute-30",
+          "text": "My commute takes about thirty minutes on foot.",
+          "arguments": [
+            {
+              "argument": "walk-for-health",
+              "rule": "practical syllogism",
+              "co_premises": [
+                "exercise-good",
+                "walk-is-exercise",
+                "health-matters"
+              ],
+              "conclusions": [
+                {
+                  "statement": "walk-commute",
+                  "text": "I should walk to work.",
+                  "arguments": [
+                    {
+                      "argument": "raincoat",
+                      "co_premises": [
+                        "rain-often",
+                        "rain-unpleasant"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "need-raincoat",
+                          "text": "I should own a good raincoat.",
+                          "arguments": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "walk-commute": {
+        "statement": "walk-commute",
+        "text": "I should walk to work.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "need-raincoat"
+          ],
+          "arguments": [
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "walk-commute",
+          "text": "I should walk to work.",
+          "arguments": [
+            {
+              "argument": "raincoat",
+              "co_premises": [
+                "rain-often",
+                "rain-unpleasant"
+              ],
+              "conclusions": [
+                {
+                  "statement": "need-raincoat",
+                  "text": "I should own a good raincoat.",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "car-costs": {
+        "statement": "car-costs",
+        "text": "Driving to work costs more than walking.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "walk-commute",
+            "need-raincoat"
+          ],
+          "arguments": [
+            "walk-for-money",
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "car-costs",
+          "text": "Driving to work costs more than walking.",
+          "arguments": [
+            {
+              "argument": "walk-for-money",
+              "co_premises": [
+                "save-money"
+              ],
+              "conclusions": [
+                {
+                  "statement": "walk-commute",
+                  "text": "I should walk to work.",
+                  "arguments": [
+                    {
+                      "argument": "raincoat",
+                      "co_premises": [
+                        "rain-often",
+                        "rain-unpleasant"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "need-raincoat",
+                          "text": "I should own a good raincoat.",
+                          "arguments": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "save-money": {
+        "statement": "save-money",
+        "text": "I should prefer the cheaper option when the options are otherwise equal.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "walk-commute",
+            "need-raincoat"
+          ],
+          "arguments": [
+            "walk-for-money",
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "save-money",
+          "text": "I should prefer the cheaper option when the options are otherwise equal.",
+          "arguments": [
+            {
+              "argument": "walk-for-money",
+              "co_premises": [
+                "car-costs"
+              ],
+              "conclusions": [
+                {
+                  "statement": "walk-commute",
+                  "text": "I should walk to work.",
+                  "arguments": [
+                    {
+                      "argument": "raincoat",
+                      "co_premises": [
+                        "rain-often",
+                        "rain-unpleasant"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "need-raincoat",
+                          "text": "I should own a good raincoat.",
+                          "arguments": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "rain-often": {
+        "statement": "rain-often",
+        "text": "It rains often where I live.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "need-raincoat"
+          ],
+          "arguments": [
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "rain-often",
+          "text": "It rains often where I live.",
+          "arguments": [
+            {
+              "argument": "raincoat",
+              "co_premises": [
+                "walk-commute",
+                "rain-unpleasant"
+              ],
+              "conclusions": [
+                {
+                  "statement": "need-raincoat",
+                  "text": "I should own a good raincoat.",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "rain-unpleasant": {
+        "statement": "rain-unpleasant",
+        "text": "Walking in the rain without a raincoat is unpleasant.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "need-raincoat"
+          ],
+          "arguments": [
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "rain-unpleasant",
+          "text": "Walking in the rain without a raincoat is unpleasant.",
+          "arguments": [
+            {
+              "argument": "raincoat",
+              "co_premises": [
+                "walk-commute",
+                "rain-often"
+              ],
+              "conclusions": [
+                {
+                  "statement": "need-raincoat",
+                  "text": "I should own a good raincoat.",
+                  "arguments": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "need-raincoat": {
+        "statement": "need-raincoat",
+        "text": "I should own a good raincoat.",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "need-raincoat",
+          "text": "I should own a good raincoat.",
+          "arguments": []
+        }
+      },
+      "self-knowledge": {
+        "statement": "self-knowledge",
+        "text": "My assessments of my own habits are accurate.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "commute-30",
+            "walk-commute",
+            "need-raincoat",
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "raincoat",
+            "reports-confirm-knowledge",
+            "knowledge-vouches-reports",
+            "commute-from-reports"
+          ]
+        },
+        "sccs": [
+          [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        ],
+        "tree": {
+          "statement": "self-knowledge",
+          "text": "My assessments of my own habits are accurate.",
+          "scc": [
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            {
+              "argument": "knowledge-vouches-reports",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "habit-reports",
+                  "text": "My reports about how I spend my time have matched outside observation.",
+                  "scc": [
+                    "self-knowledge",
+                    "habit-reports"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "reports-confirm-knowledge",
+                      "co_premises": [],
+                      "conclusions": [
+                        {
+                          "statement": "self-knowledge",
+                          "text": "My assessments of my own habits are accurate.",
+                          "scc": [
+                            "self-knowledge",
+                            "habit-reports"
+                          ],
+                          "seen": true
+                        }
+                      ]
+                    },
+                    {
+                      "argument": "commute-from-reports",
+                      "co_premises": [],
+                      "conclusions": [
+                        {
+                          "statement": "commute-30",
+                          "text": "My commute takes about thirty minutes on foot.",
+                          "arguments": [
+                            {
+                              "argument": "walk-for-health",
+                              "rule": "practical syllogism",
+                              "co_premises": [
+                                "exercise-good",
+                                "walk-is-exercise",
+                                "health-matters"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "walk-commute",
+                                  "text": "I should walk to work.",
+                                  "arguments": [
+                                    {
+                                      "argument": "raincoat",
+                                      "co_premises": [
+                                        "rain-often",
+                                        "rain-unpleasant"
+                                      ],
+                                      "conclusions": [
+                                        {
+                                          "statement": "need-raincoat",
+                                          "text": "I should own a good raincoat.",
+                                          "arguments": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "habit-reports": {
+        "statement": "habit-reports",
+        "text": "My reports about how I spend my time have matched outside observation.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "commute-30",
+            "walk-commute",
+            "need-raincoat",
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "raincoat",
+            "reports-confirm-knowledge",
+            "knowledge-vouches-reports",
+            "commute-from-reports"
+          ]
+        },
+        "sccs": [
+          [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        ],
+        "tree": {
+          "statement": "habit-reports",
+          "text": "My reports about how I spend my time have matched outside observation.",
+          "scc": [
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            {
+              "argument": "reports-confirm-knowledge",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "self-knowledge",
+                  "text": "My assessments of my own habits are accurate.",
+                  "scc": [
+                    "self-knowledge",
+                    "habit-reports"
+                  ],
+                  "arguments": [
+                    {
+                      "argument": "knowledge-vouches-reports",
+                      "co_premises": [],
+                      "conclusions": [
+                        {
+                          "statement": "habit-reports",
+                          "text": "My reports about how I spend my time have matched outside observation.",
+                          "scc": [
+                            "self-knowledge",
+                            "habit-reports"
+                          ],
+                          "seen": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "argument": "commute-from-reports",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "commute-30",
+                  "text": "My commute takes about thirty minutes on foot.",
+                  "arguments": [
+                    {
+                      "argument": "walk-for-health",
+                      "rule": "practical syllogism",
+                      "co_premises": [
+                        "exercise-good",
+                        "walk-is-exercise",
+                        "health-matters"
+                      ],
+                      "conclusions": [
+                        {
+                          "statement": "walk-commute",
+                          "text": "I should walk to work.",
+                          "arguments": [
+                            {
+                              "argument": "raincoat",
+                              "co_premises": [
+                                "rain-often",
+                                "rain-unpleasant"
+                              ],
+                              "conclusions": [
+                                {
+                                  "statement": "need-raincoat",
+                                  "text": "I should own a good raincoat.",
+                                  "arguments": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "rests_on_depth_1": {
+      "exercise-good": {
+        "statement": "exercise-good",
+        "text": "Regular physical activity improves long-term health.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "exercise-good",
+          "text": "Regular physical activity improves long-term health.",
+          "arguments": []
+        }
+      },
+      "walk-is-exercise": {
+        "statement": "walk-is-exercise",
+        "text": "Walking for thirty minutes a day counts as regular physical activity.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "walk-is-exercise",
+          "text": "Walking for thirty minutes a day counts as regular physical activity.",
+          "arguments": []
+        }
+      },
+      "health-matters": {
+        "statement": "health-matters",
+        "text": "I should act to protect my long-term health.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "health-matters",
+          "text": "I should act to protect my long-term health.",
+          "arguments": []
+        }
+      },
+      "commute-30": {
+        "statement": "commute-30",
+        "text": "My commute takes about thirty minutes on foot.",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            "reports-confirm-knowledge",
+            "knowledge-vouches-reports",
+            "commute-from-reports"
+          ]
+        },
+        "sccs": [
+          [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        ],
+        "tree": {
+          "statement": "commute-30",
+          "text": "My commute takes about thirty minutes on foot.",
+          "arguments": [
+            {
+              "argument": "commute-from-reports",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "habit-reports",
+                  "text": "My reports about how I spend my time have matched outside observation.",
+                  "scc": [
+                    "self-knowledge",
+                    "habit-reports"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "walk-commute": {
+        "statement": "walk-commute",
+        "text": "I should walk to work.",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "exercise-good",
+            "walk-is-exercise",
+            "health-matters",
+            "commute-30",
+            "car-costs",
+            "save-money",
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "walk-for-money",
+            "reports-confirm-knowledge",
+            "knowledge-vouches-reports",
+            "commute-from-reports"
+          ]
+        },
+        "sccs": [
+          [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        ],
+        "tree": {
+          "statement": "walk-commute",
+          "text": "I should walk to work.",
+          "arguments": [
+            {
+              "argument": "walk-for-health",
+              "rule": "practical syllogism",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "exercise-good",
+                  "text": "Regular physical activity improves long-term health."
+                },
+                {
+                  "statement": "walk-is-exercise",
+                  "text": "Walking for thirty minutes a day counts as regular physical activity."
+                },
+                {
+                  "statement": "health-matters",
+                  "text": "I should act to protect my long-term health."
+                },
+                {
+                  "statement": "commute-30",
+                  "text": "My commute takes about thirty minutes on foot.",
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "walk-for-money",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "car-costs",
+                  "text": "Driving to work costs more than walking."
+                },
+                {
+                  "statement": "save-money",
+                  "text": "I should prefer the cheaper option when the options are otherwise equal."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "car-costs": {
+        "statement": "car-costs",
+        "text": "Driving to work costs more than walking.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "car-costs",
+          "text": "Driving to work costs more than walking.",
+          "arguments": []
+        }
+      },
+      "save-money": {
+        "statement": "save-money",
+        "text": "I should prefer the cheaper option when the options are otherwise equal.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "save-money",
+          "text": "I should prefer the cheaper option when the options are otherwise equal.",
+          "arguments": []
+        }
+      },
+      "rain-often": {
+        "statement": "rain-often",
+        "text": "It rains often where I live.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "rain-often",
+          "text": "It rains often where I live.",
+          "arguments": []
+        }
+      },
+      "rain-unpleasant": {
+        "statement": "rain-unpleasant",
+        "text": "Walking in the rain without a raincoat is unpleasant.",
+        "direction": "up",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "rain-unpleasant",
+          "text": "Walking in the rain without a raincoat is unpleasant.",
+          "arguments": []
+        }
+      },
+      "need-raincoat": {
+        "statement": "need-raincoat",
+        "text": "I should own a good raincoat.",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "exercise-good",
+            "walk-is-exercise",
+            "health-matters",
+            "commute-30",
+            "walk-commute",
+            "car-costs",
+            "save-money",
+            "rain-often",
+            "rain-unpleasant",
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "walk-for-money",
+            "raincoat",
+            "reports-confirm-knowledge",
+            "knowledge-vouches-reports",
+            "commute-from-reports"
+          ]
+        },
+        "sccs": [
+          [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        ],
+        "tree": {
+          "statement": "need-raincoat",
+          "text": "I should own a good raincoat.",
+          "arguments": [
+            {
+              "argument": "raincoat",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "walk-commute",
+                  "text": "I should walk to work.",
+                  "truncated": true
+                },
+                {
+                  "statement": "rain-often",
+                  "text": "It rains often where I live."
+                },
+                {
+                  "statement": "rain-unpleasant",
+                  "text": "Walking in the rain without a raincoat is unpleasant."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "self-knowledge": {
+        "statement": "self-knowledge",
+        "text": "My assessments of my own habits are accurate.",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            "reports-confirm-knowledge",
+            "knowledge-vouches-reports"
+          ]
+        },
+        "sccs": [
+          [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        ],
+        "tree": {
+          "statement": "self-knowledge",
+          "text": "My assessments of my own habits are accurate.",
+          "scc": [
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            {
+              "argument": "reports-confirm-knowledge",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "habit-reports",
+                  "text": "My reports about how I spend my time have matched outside observation.",
+                  "scc": [
+                    "self-knowledge",
+                    "habit-reports"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "habit-reports": {
+        "statement": "habit-reports",
+        "text": "My reports about how I spend my time have matched outside observation.",
+        "direction": "up",
+        "closure": {
+          "statements": [
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            "reports-confirm-knowledge",
+            "knowledge-vouches-reports"
+          ]
+        },
+        "sccs": [
+          [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        ],
+        "tree": {
+          "statement": "habit-reports",
+          "text": "My reports about how I spend my time have matched outside observation.",
+          "scc": [
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            {
+              "argument": "knowledge-vouches-reports",
+              "co_conclusions": [],
+              "premises": [
+                {
+                  "statement": "self-knowledge",
+                  "text": "My assessments of my own habits are accurate.",
+                  "scc": [
+                    "self-knowledge",
+                    "habit-reports"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "supports_depth_1": {
+      "exercise-good": {
+        "statement": "exercise-good",
+        "text": "Regular physical activity improves long-term health.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "walk-commute",
+            "need-raincoat"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "exercise-good",
+          "text": "Regular physical activity improves long-term health.",
+          "arguments": [
+            {
+              "argument": "walk-for-health",
+              "rule": "practical syllogism",
+              "co_premises": [
+                "walk-is-exercise",
+                "health-matters",
+                "commute-30"
+              ],
+              "conclusions": [
+                {
+                  "statement": "walk-commute",
+                  "text": "I should walk to work.",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "walk-is-exercise": {
+        "statement": "walk-is-exercise",
+        "text": "Walking for thirty minutes a day counts as regular physical activity.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "walk-commute",
+            "need-raincoat"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "walk-is-exercise",
+          "text": "Walking for thirty minutes a day counts as regular physical activity.",
+          "arguments": [
+            {
+              "argument": "walk-for-health",
+              "rule": "practical syllogism",
+              "co_premises": [
+                "exercise-good",
+                "health-matters",
+                "commute-30"
+              ],
+              "conclusions": [
+                {
+                  "statement": "walk-commute",
+                  "text": "I should walk to work.",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "health-matters": {
+        "statement": "health-matters",
+        "text": "I should act to protect my long-term health.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "walk-commute",
+            "need-raincoat"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "health-matters",
+          "text": "I should act to protect my long-term health.",
+          "arguments": [
+            {
+              "argument": "walk-for-health",
+              "rule": "practical syllogism",
+              "co_premises": [
+                "exercise-good",
+                "walk-is-exercise",
+                "commute-30"
+              ],
+              "conclusions": [
+                {
+                  "statement": "walk-commute",
+                  "text": "I should walk to work.",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "commute-30": {
+        "statement": "commute-30",
+        "text": "My commute takes about thirty minutes on foot.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "walk-commute",
+            "need-raincoat"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "commute-30",
+          "text": "My commute takes about thirty minutes on foot.",
+          "arguments": [
+            {
+              "argument": "walk-for-health",
+              "rule": "practical syllogism",
+              "co_premises": [
+                "exercise-good",
+                "walk-is-exercise",
+                "health-matters"
+              ],
+              "conclusions": [
+                {
+                  "statement": "walk-commute",
+                  "text": "I should walk to work.",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "walk-commute": {
+        "statement": "walk-commute",
+        "text": "I should walk to work.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "need-raincoat"
+          ],
+          "arguments": [
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "walk-commute",
+          "text": "I should walk to work.",
+          "arguments": [
+            {
+              "argument": "raincoat",
+              "co_premises": [
+                "rain-often",
+                "rain-unpleasant"
+              ],
+              "conclusions": [
+                {
+                  "statement": "need-raincoat",
+                  "text": "I should own a good raincoat."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "car-costs": {
+        "statement": "car-costs",
+        "text": "Driving to work costs more than walking.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "walk-commute",
+            "need-raincoat"
+          ],
+          "arguments": [
+            "walk-for-money",
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "car-costs",
+          "text": "Driving to work costs more than walking.",
+          "arguments": [
+            {
+              "argument": "walk-for-money",
+              "co_premises": [
+                "save-money"
+              ],
+              "conclusions": [
+                {
+                  "statement": "walk-commute",
+                  "text": "I should walk to work.",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "save-money": {
+        "statement": "save-money",
+        "text": "I should prefer the cheaper option when the options are otherwise equal.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "walk-commute",
+            "need-raincoat"
+          ],
+          "arguments": [
+            "walk-for-money",
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "save-money",
+          "text": "I should prefer the cheaper option when the options are otherwise equal.",
+          "arguments": [
+            {
+              "argument": "walk-for-money",
+              "co_premises": [
+                "car-costs"
+              ],
+              "conclusions": [
+                {
+                  "statement": "walk-commute",
+                  "text": "I should walk to work.",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "rain-often": {
+        "statement": "rain-often",
+        "text": "It rains often where I live.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "need-raincoat"
+          ],
+          "arguments": [
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "rain-often",
+          "text": "It rains often where I live.",
+          "arguments": [
+            {
+              "argument": "raincoat",
+              "co_premises": [
+                "walk-commute",
+                "rain-unpleasant"
+              ],
+              "conclusions": [
+                {
+                  "statement": "need-raincoat",
+                  "text": "I should own a good raincoat."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "rain-unpleasant": {
+        "statement": "rain-unpleasant",
+        "text": "Walking in the rain without a raincoat is unpleasant.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "need-raincoat"
+          ],
+          "arguments": [
+            "raincoat"
+          ]
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "rain-unpleasant",
+          "text": "Walking in the rain without a raincoat is unpleasant.",
+          "arguments": [
+            {
+              "argument": "raincoat",
+              "co_premises": [
+                "walk-commute",
+                "rain-often"
+              ],
+              "conclusions": [
+                {
+                  "statement": "need-raincoat",
+                  "text": "I should own a good raincoat."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "need-raincoat": {
+        "statement": "need-raincoat",
+        "text": "I should own a good raincoat.",
+        "direction": "down",
+        "closure": {
+          "statements": [],
+          "arguments": []
+        },
+        "sccs": [],
+        "tree": {
+          "statement": "need-raincoat",
+          "text": "I should own a good raincoat.",
+          "arguments": []
+        }
+      },
+      "self-knowledge": {
+        "statement": "self-knowledge",
+        "text": "My assessments of my own habits are accurate.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "commute-30",
+            "walk-commute",
+            "need-raincoat",
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "raincoat",
+            "reports-confirm-knowledge",
+            "knowledge-vouches-reports",
+            "commute-from-reports"
+          ]
+        },
+        "sccs": [
+          [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        ],
+        "tree": {
+          "statement": "self-knowledge",
+          "text": "My assessments of my own habits are accurate.",
+          "scc": [
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            {
+              "argument": "knowledge-vouches-reports",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "habit-reports",
+                  "text": "My reports about how I spend my time have matched outside observation.",
+                  "scc": [
+                    "self-knowledge",
+                    "habit-reports"
+                  ],
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "habit-reports": {
+        "statement": "habit-reports",
+        "text": "My reports about how I spend my time have matched outside observation.",
+        "direction": "down",
+        "closure": {
+          "statements": [
+            "commute-30",
+            "walk-commute",
+            "need-raincoat",
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            "walk-for-health",
+            "raincoat",
+            "reports-confirm-knowledge",
+            "knowledge-vouches-reports",
+            "commute-from-reports"
+          ]
+        },
+        "sccs": [
+          [
+            "self-knowledge",
+            "habit-reports"
+          ]
+        ],
+        "tree": {
+          "statement": "habit-reports",
+          "text": "My reports about how I spend my time have matched outside observation.",
+          "scc": [
+            "self-knowledge",
+            "habit-reports"
+          ],
+          "arguments": [
+            {
+              "argument": "reports-confirm-knowledge",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "self-knowledge",
+                  "text": "My assessments of my own habits are accurate.",
+                  "scc": [
+                    "self-knowledge",
+                    "habit-reports"
+                  ],
+                  "truncated": true
+                }
+              ]
+            },
+            {
+              "argument": "commute-from-reports",
+              "co_premises": [],
+              "conclusions": [
+                {
+                  "statement": "commute-30",
+                  "text": "My commute takes about thirty minutes on foot.",
+                  "truncated": true
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "a": "chain",
+  "b": "chain-plus",
+  "expected": {
+    "a": "chain",
+    "b": "chain-plus",
+    "statements": {
+      "identical": [
+        {
+          "a": "a",
+          "b": "a",
+          "just_id": "f3f9719bf5bfc17b53fe358f854f3418132e5907e028aea157f1a45ff8e4c471"
+        },
+        {
+          "a": "b",
+          "b": "b",
+          "just_id": "d9d457651ee93b413e11e4f55636ffa4fcfc93ff3c4a47cf4e86d62f4bb92e9d"
+        },
+        {
+          "a": "c",
+          "b": "c",
+          "just_id": "2d363994d4779b0e725a7caf25c35f30fda23f23c98f70ece70574d908d7ec50"
+        },
+        {
+          "a": "d",
+          "b": "d",
+          "just_id": "f2be2dbe60850f6bb2c469fff3476e0571cf56c81266226e35371a8d8c09b6e6"
+        }
+      ],
+      "rejustified": [
+        {
+          "a": "e",
+          "b": "e",
+          "prop_id": "cfc161bee70e7d80f98a2e8a5059c2ff72b16c6771eafd094360be3960c8b95e",
+          "text": "E"
+        }
+      ],
+      "added": [
+        {
+          "id": "g",
+          "text": "G",
+          "mode": "is"
+        }
+      ],
+      "removed": [
+        {
+          "id": "f",
+          "text": "F",
+          "mode": "is"
+        }
+      ]
+    },
+    "arguments": {
+      "identical": [
+        {
+          "a": "ab-c",
+          "b": "ab-c",
+          "arg_hash": "166a0ca205e772241a8c9be94f5c94e621b55885f59333d7a88e20a4abc933c5"
+        },
+        {
+          "a": "cd-e",
+          "b": "cd-e",
+          "arg_hash": "c9d3098e50f9d16b44751a949c89b1058c5dc0ea3ddc2943c0d7bd267c0960f2"
+        }
+      ],
+      "added": [
+        {
+          "id": "g-e",
+          "premises": [
+            "g"
+          ],
+          "conclusions": [
+            "e"
+          ]
+        }
+      ],
+      "removed": [
+        {
+          "id": "f-e",
+          "premises": [
+            "f"
+          ],
+          "conclusions": [
+            "e"
+          ]
+        }
+      ]
+    },
+    "summary": {
+      "statements": {
+        "identical": 4,
+        "rejustified": 1,
+        "added": 1,
+        "removed": 1
+      },
+      "arguments": {
+        "identical": 2,
+        "added": 1,
+        "removed": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "a": "chain",
+  "b": "chain-edited-leaf",
+  "expected": {
+    "a": "chain",
+    "b": "chain-edited-leaf",
+    "statements": {
+      "identical": [
+        {
+          "a": "b",
+          "b": "b",
+          "just_id": "d9d457651ee93b413e11e4f55636ffa4fcfc93ff3c4a47cf4e86d62f4bb92e9d"
+        },
+        {
+          "a": "d",
+          "b": "d",
+          "just_id": "f2be2dbe60850f6bb2c469fff3476e0571cf56c81266226e35371a8d8c09b6e6"
+        },
+        {
+          "a": "f",
+          "b": "f",
+          "just_id": "5c097c4a7a365919f6e2a648e82f18cd4354599c341fadd9afee59e43d6b2536"
+        }
+      ],
+      "rejustified": [
+        {
+          "a": "c",
+          "b": "c",
+          "prop_id": "50cf819c49b3a871c46b5020e5e759d528802571208567474bff73a62647762d",
+          "text": "C"
+        },
+        {
+          "a": "e",
+          "b": "e",
+          "prop_id": "cfc161bee70e7d80f98a2e8a5059c2ff72b16c6771eafd094360be3960c8b95e",
+          "text": "E"
+        }
+      ],
+      "added": [
+        {
+          "id": "a",
+          "text": "A (edited)",
+          "mode": "is"
+        }
+      ],
+      "removed": [
+        {
+          "id": "a",
+          "text": "A",
+          "mode": "is"
+        }
+      ]
+    },
+    "arguments": {
+      "identical": [
+        {
+          "a": "f-e",
+          "b": "f-e",
+          "arg_hash": "64a0e07bbd0d2e95ec0e453b63deba44613a62d85c6cbede9daf9d1a544a4539"
+        }
+      ],
+      "added": [
+        {
+          "id": "ab-c",
+          "premises": [
+            "a",
+            "b"
+          ],
+          "conclusions": [
+            "c"
+          ]
+        },
+        {
+          "id": "cd-e",
+          "premises": [
+            "c",
+            "d"
+          ],
+          "conclusions": [
+            "e"
+          ]
+        }
+      ],
+      "removed": [
+        {
+          "id": "ab-c",
+          "premises": [
+            "a",
+            "b"
+          ],
+          "conclusions": [
+            "c"
+          ]
+        },
+        {
+          "id": "cd-e",
+          "premises": [
+            "c",
+            "d"
+          ],
+          "conclusions": [
+            "e"
+          ]
+        }
+      ]
+    },
+    "summary": {
+      "statements": {
+        "identical": 3,
+        "rejustified": 2,
+        "added": 1,
+        "removed": 1
+      },
+      "arguments": {
+        "identical": 1,
+        "added": 2,
+        "removed": 2
+      }
+    }
+  }
+}

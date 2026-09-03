@@ -1,0 +1,136 @@
+{
+  "a": "cycle",
+  "b": "pure-cycle",
+  "expected": {
+    "a": "cycle",
+    "b": "pure-cycle",
+    "statements": {
+      "identical": [],
+      "rejustified": [
+        {
+          "a": "x",
+          "b": "x",
+          "prop_id": "e60afb45ef3ef161a25ac099fb31029e63d82b53369fed601936841626559c7b",
+          "text": "X"
+        },
+        {
+          "a": "y",
+          "b": "y",
+          "prop_id": "b4f07363fc2d26e3f7db56d266fea0b8250541db48c86e0cd015f1f93f46b551",
+          "text": "Y"
+        },
+        {
+          "a": "q",
+          "b": "q",
+          "prop_id": "fd914ec637c2161d8a152db747778562710b7105a061f135fa2c0f1ecd236675",
+          "text": "Q"
+        }
+      ],
+      "added": [],
+      "removed": [
+        {
+          "id": "p",
+          "text": "P",
+          "mode": "is"
+        },
+        {
+          "id": "z",
+          "text": "Z",
+          "mode": "is"
+        }
+      ]
+    },
+    "arguments": {
+      "identical": [],
+      "added": [
+        {
+          "id": "x-y",
+          "premises": [
+            "x"
+          ],
+          "conclusions": [
+            "y"
+          ]
+        },
+        {
+          "id": "y-x",
+          "premises": [
+            "y"
+          ],
+          "conclusions": [
+            "x"
+          ]
+        },
+        {
+          "id": "y-q",
+          "premises": [
+            "y"
+          ],
+          "conclusions": [
+            "q"
+          ]
+        }
+      ],
+      "removed": [
+        {
+          "id": "p-x",
+          "premises": [
+            "p"
+          ],
+          "conclusions": [
+            "x"
+          ]
+        },
+        {
+          "id": "x-y",
+          "premises": [
+            "x"
+          ],
+          "conclusions": [
+            "y"
+          ]
+        },
+        {
+          "id": "y-z",
+          "premises": [
+            "y"
+          ],
+          "conclusions": [
+            "z"
+          ]
+        },
+        {
+          "id": "z-x",
+          "premises": [
+            "z"
+          ],
+          "conclusions": [
+            "x"
+          ]
+        },
+        {
+          "id": "z-q",
+          "premises": [
+            "z"
+          ],
+          "conclusions": [
+            "q"
+          ]
+        }
+      ]
+    },
+    "summary": {
+      "statements": {
+        "identical": 0,
+        "rejustified": 3,
+        "added": 0,
+        "removed": 2
+      },
+      "arguments": {
+        "identical": 0,
+        "added": 3,
+        "removed": 5
+      }
+    }
+  }
+}

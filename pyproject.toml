@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "worldview-core"
+version = "0.1.0"
+description = "A portable JSON format for worldviews: statements connected by argument hyperedges. Validator, identity hashing, structural queries, and diff."
+readme = "README.md"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{ name = "Stephen Acomb" }]
+keywords = ["argumentation", "hypergraph", "epistemology", "json-schema"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = []
+
+[project.optional-dependencies]
+schema = ["jsonschema>=4.18"]
+dev = ["pytest>=8", "jsonschema>=4.18"]
+
+[project.scripts]
+worldview = "worldview_core.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/stephenacomb/worldview_hypergraph"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+worldview_core = ["worldview-core.schema.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
