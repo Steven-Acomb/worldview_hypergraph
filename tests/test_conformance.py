@@ -13,7 +13,7 @@ from pathlib import Path
 import pytest
 
 from worldview_core import H, Worldview, canon, compute_identities, diff, validate_dict
-from worldview_core import foundations, rests_on, sccs, supports, well_founded
+from worldview_core import foundations, lint_all, plan, rests_on, sccs, supports, to_dot, to_mermaid, well_founded
 
 VECTORS = Path(__file__).parent.parent / "conformance" / "vectors"
 
@@ -63,6 +63,22 @@ def test_diff(path):
     wa = Worldview.from_dict(a["input"], source=v["a"])
     wb = Worldview.from_dict(b["input"], source=v["b"])
     assert diff(wa, wb) == v["expected"]
+
+
+@pytest.mark.parametrize("path", _cases("extras"), ids=lambda p: p.stem)
+def test_extras(path):
+    v = _load(path)
+    case = _load(VECTORS / "cases" / f"{v['name']}.json")
+    wv = Worldview.from_dict(case["input"], source=v["name"])
+    exp = v["expected"]
+    for sid, runs in exp["plan"].items():
+        for run in runs:
+            assert plan(wv, sid, run["given"]) == run["result"], (sid, run["given"])
+    assert lint_all(wv) == exp["lint_all"]
+    assert to_dot(wv) == exp["dot"]
+    assert to_dot(wv, ids=False, wrap=20, rankdir="TB") == exp["dot_no_ids_tb"]
+    assert to_mermaid(wv) == exp["mermaid"]
+    assert to_mermaid(wv, ids=False, wrap=20, direction="TB") == exp["mermaid_no_ids_tb"]
 
 
 def test_primitives():

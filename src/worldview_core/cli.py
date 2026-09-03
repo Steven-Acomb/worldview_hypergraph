@@ -15,9 +15,11 @@ from typing import Any
 from . import __version__
 from .diff import diff
 from .errors import LoadError, UnknownIdError, ValidationError
+from .export import to_dot, to_mermaid
 from .identity import compute_identities
+from .lint import duplicates, empty_justifications, lint_all, unused
 from .model import Worldview, load, read_json
-from .queries import foundations, rests_on, sccs, supports, well_founded
+from .queries import foundations, plan, rests_on, sccs, supports, well_founded
 from .validate import schema, validate_dict
 
 EXIT_OK = 0
@@ -156,6 +158,44 @@ def cmd_supports(args) -> int:
     return _cmd_closure(args, supports, up=False)
 
 
+def _split_ids(values: list[str] | None) -> list[str]:
+    out: list[str] = []
+    for v in values or []:
+        out.extend(x for x in v.split(",") if x)
+    return out
+
+
+def cmd_plan(args) -> int:
+    wv = _load(args.file)
+    given = _split_ids(args.given)
+    try:
+        data = plan(wv, args.id, given)
+    except UnknownIdError as e:
+        sys.stderr.write(f"error: {e}\n")
+        return EXIT_USAGE
+
+    def text(d):
+        print(f"to reach {d['statement']}: {d['text']}")
+        if d["given"]:
+            print(f"given ({len(d['given'])}): {', '.join(d['given'])}")
+        if not d["must_establish"] and not d["must_grant"]:
+            print("nothing to establish: the target is already given")
+        if d["must_grant"]:
+            print(f"the audience must grant ({len(d['must_grant'])} foundations):")
+            for s in d["must_grant"]:
+                print(f"  {s['id']}: {s['text']}")
+        if d["must_establish"]:
+            print(f"must be established ({len(d['must_establish'])}):")
+            for s in d["must_establish"]:
+                print(f"  {s['id']}: {s['text']}  [via {', '.join(s['via'])}]")
+        if d["sccs"]:
+            for comp in d["sccs"]:
+                print("cycle: " + ", ".join(comp))
+
+    _emit(data, args.json, text)
+    return EXIT_OK
+
+
 def cmd_foundations(args) -> int:
     wv = _load(args.file)
     data = foundations(wv)
@@ -203,6 +243,78 @@ def cmd_lint_well_founded(args) -> int:
                 print(f"  {sid}: {wv.statement(sid).text}")
 
     _emit(data, args.json, text)
+    return EXIT_OK
+
+
+def cmd_lint_duplicates(args) -> int:
+    wv = _load(args.file)
+    data = duplicates(wv)
+
+    def text(d):
+        if not d:
+            print("no duplicate propositions")
+        for g in d:
+            print(f"{', '.join(g['ids'])} [{g['mode']}]: {g['text']}")
+
+    _emit(data, args.json, text)
+    return EXIT_OK
+
+
+def cmd_lint_unused(args) -> int:
+    wv = _load(args.file)
+    data = unused(wv)
+
+    def text(d):
+        if not d:
+            print("every statement takes part in some argument")
+        for sid in d:
+            print(f"{sid}: {wv.statement(sid).text}")
+
+    _emit(data, args.json, text)
+    return EXIT_OK
+
+
+def cmd_lint_empty_justifications(args) -> int:
+    wv = _load(args.file)
+    data = empty_justifications(wv)
+
+    def text(d):
+        if not d:
+            print("every argument has a justification")
+        for aid in d:
+            a = wv.argument(aid)
+            print(f"{aid}: {', '.join(a.premises) or '(none)'} => {', '.join(a.conclusions)}")
+
+    _emit(data, args.json, text)
+    return EXIT_OK
+
+
+def cmd_lint_all(args) -> int:
+    wv = _load(args.file)
+    data = lint_all(wv)
+
+    def text(d):
+        wf = d["well_founded"]
+        print(f"well-founded: {len(wf['ungrounded'])} ungrounded" + (f" ({', '.join(wf['ungrounded'])})" if wf["ungrounded"] else ""))
+        print(f"duplicates: {len(d['duplicates'])} group(s)" + (" (" + "; ".join(", ".join(g["ids"]) for g in d["duplicates"]) + ")" if d["duplicates"] else ""))
+        print(f"unused statements: {len(d['unused'])}" + (f" ({', '.join(d['unused'])})" if d["unused"] else ""))
+        print(f"empty justifications: {len(d['empty_justifications'])}" + (f" ({', '.join(d['empty_justifications'])})" if d["empty_justifications"] else ""))
+
+    _emit(data, args.json, text)
+    return EXIT_OK
+
+
+def cmd_export(args) -> int:
+    wv = _load(args.file)
+    if args.format == "dot":
+        out = to_dot(wv, ids=not args.no_ids, wrap=args.wrap, rankdir=args.direction)
+    else:
+        out = to_mermaid(wv, ids=not args.no_ids, wrap=args.wrap, direction=args.direction)
+    if args.output:
+        with open(args.output, "w", encoding="utf-8", newline="\n") as f:
+            f.write(out)
+    else:
+        sys.stdout.write(out)
     return EXIT_OK
 
 
@@ -277,15 +389,35 @@ def build_parser() -> argparse.ArgumentParser:
     sp = add("sccs", cmd_sccs, "Cyclic strongly connected components (size > 1 or self-loop).")
     sp.add_argument("file")
 
+    sp = add("plan", cmd_plan, "What must be established to reach a statement, given what the audience accepts.")
+    sp.add_argument("file")
+    sp.add_argument("id", help="target statement id")
+    sp.add_argument("--given", action="append", metavar="IDS", help="statement ids the audience already accepts (comma-separated; repeatable)")
+
     lint = add("lint", None, "Optional, informational checks.")
     lint_sub = lint.add_subparsers(dest="lint_command", required=True)
-    sp = lint_sub.add_parser("well-founded", help="Statements not grounded in any foundation.")
-    sp.set_defaults(fn=cmd_lint_well_founded)
-    sp.add_argument("file")
+    for name, fn, help_ in (
+        ("well-founded", cmd_lint_well_founded, "Statements not grounded in any foundation."),
+        ("duplicates", cmd_lint_duplicates, "Statements that are the same proposition under different ids."),
+        ("unused", cmd_lint_unused, "Statements that appear in no argument."),
+        ("empty-justifications", cmd_lint_empty_justifications, "Arguments with a blank justification."),
+        ("all", cmd_lint_all, "Run every lint."),
+    ):
+        sp = lint_sub.add_parser(name, help=help_, description=help_)
+        sp.set_defaults(fn=fn)
+        sp.add_argument("file")
 
     sp = add("diff", cmd_diff, "Match statements and arguments across two files by identity.")
     sp.add_argument("a")
     sp.add_argument("b")
+
+    sp = add("export", cmd_export, "Export the hypergraph as Graphviz DOT or Mermaid.")
+    sp.add_argument("file")
+    sp.add_argument("--format", choices=["dot", "mermaid"], default="dot")
+    sp.add_argument("-o", "--output", help="write to this file instead of stdout")
+    sp.add_argument("--no-ids", action="store_true", help="omit local ids from labels")
+    sp.add_argument("--wrap", type=int, default=36, help="wrap statement text at this many characters")
+    sp.add_argument("--direction", default="LR", help="layout direction: LR, TB, RL, BT")
 
     add("schema", cmd_schema, "Print the JSON Schema for the format.")
     return p

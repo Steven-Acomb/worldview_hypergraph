@@ -94,6 +94,35 @@ tree linear in the size of the closure and makes cycles finite. A foundation (fo
 rests-on) or a terminal statement (for supports) has an empty `arguments` array. A
 node cut off by the depth limit has `truncated` only if it had something to expand.
 
+## plan
+
+Argument planning: what has to be established to reach a target statement, given
+the statements an audience already accepts. The upstream walk stops at given
+statements.
+
+```json
+{
+  "statement": "<target id>",
+  "text": "<text>",
+  "given": ["<id>", ...],                 // given statements actually reached
+  "must_establish": [ {"id": "<id>", "text": "<text>", "via": ["<argument id>", ...]}, ... ],
+  "must_grant":     [ {"id": "<id>", "text": "<text>"}, ... ],
+  "arguments": ["<argument id>", ...],
+  "sccs": [ ["<id>", ...], ... ],
+  "tree": <node>
+}
+```
+
+- `must_grant` lists foundations reached that are not given: nothing in the worldview
+  argues for them, so the audience has to accept them as premises.
+- `must_establish` lists every other statement reached that is not given, including
+  the target itself unless it is a foundation, with the arguments available for it.
+- `tree` is the rests-on tree pruned at given statements; a given leaf is
+  `{"statement", "text", "given": true}` (plus `scc` when applicable) and is never
+  expanded. Given statements outside the target's closure are not reported.
+- If the target itself is given, every list is empty and `tree` is the single given
+  leaf.
+
 ## lint well-founded
 
 ```json
@@ -105,6 +134,31 @@ node cut off by the depth limit has `truncated` only if it had something to expa
 ```
 
 Grounded is the least fixed point described in [FORMAT.md](FORMAT.md) section 8.
+
+## lint duplicates, lint unused, lint empty-justifications, lint all
+
+```json
+// duplicates: groups of statements that are the same proposition
+[ {"prop_id": "<hex>", "text": "<canonical text>", "mode": "is|ought", "ids": ["<id>", ...]}, ... ]
+
+// unused: statements in no argument
+["<id>", ...]
+
+// empty-justifications: arguments whose justification canonicalizes to ""
+["<argument id>", ...]
+
+// all
+{"well_founded": {...}, "duplicates": [...], "unused": [...], "empty_justifications": [...]}
+```
+
+## export
+
+`export --format dot|mermaid` writes text, not JSON: Graphviz DOT or a Mermaid
+`flowchart`. Statements are boxes (an `ought` statement has a double border in DOT
+and the `ought` class in Mermaid); arguments are diamonds labelled with their id and
+rule; edges run premise → argument → conclusion. Options: `--no-ids`, `--wrap N`,
+`--direction LR|TB|RL|BT`, `-o FILE`. Node names are positional (`s0`, `a3`), labels
+carry the ids, so any id is safe.
 
 ## ids
 

@@ -100,18 +100,17 @@ def supports(wv: Worldview, sid: str, depth: int | None = None, graph: Graph | N
     return _closure_report(g, sid, depth, direction="down")
 
 
-def _closure_report(g: Graph, sid: str, depth: int | None, direction: str) -> dict[str, Any]:
+def _closure_report(
+    g: Graph, sid: str, depth: int | None, direction: str, stop: frozenset[str] = frozenset()
+) -> dict[str, Any]:
     up = direction == "up"
-    reach = g.upstream(sid) if up else g.downstream(sid)
+    reach = g.upstream(sid, stop) if up else g.downstream(sid, stop)
     arg_ids: set[str] = set()
     for s in reach | {sid}:
+        if s in stop and s != sid:
+            continue  # a stop statement is a leaf: its own arguments are not walked
         for aid in g.incoming[s] if up else g.outgoing[s]:
-            a = g.arguments[aid]
-            # An argument is in the closure if it is wholly on the relevant side.
-            if up and set(a.conclusions) & (reach | {sid}):
-                arg_ids.add(aid)
-            elif not up and set(a.premises) & (reach | {sid}):
-                arg_ids.add(aid)
+            arg_ids.add(aid)
 
     scc_of = g.scc_of()
     comps = g.sccs()
@@ -125,6 +124,9 @@ def _closure_report(g: Graph, sid: str, depth: int | None, direction: str) -> di
         comp = comps[scc_of[s]]
         if g.is_cyclic_component(comp):
             n["scc"] = list(comp)
+        if s in stop and s != sid:
+            n["given"] = True
+            return n
         if s in expanded:
             n["seen"] = True
             return n
@@ -159,6 +161,61 @@ def _closure_report(g: Graph, sid: str, depth: int | None, direction: str) -> di
         },
         "sccs": cyclic,
         "tree": node(sid, 0),
+    }
+
+
+# -------------------------------------------------------------------- plan
+
+
+def plan(wv: Worldview, sid: str, given: list[str] | tuple[str, ...] = (), graph: Graph | None = None) -> dict[str, Any]:
+    """Argument planning: what must be established to reach ``sid``?
+
+    ``given`` is the set of statements the audience already accepts.  The
+    upstream walk from the target stops at any given statement.  Every
+    other statement reached is either a foundation, which the audience
+    will have to **grant** (nothing in the worldview argues for it), or a
+    supported statement that must be **established** by one of its
+    incoming arguments.  The ``tree`` is the rests-on tree pruned at the
+    given statements (leaves marked ``"given": true``).
+
+    If the target itself is given there is nothing to do.
+    """
+    g = _graph(wv, graph)
+    _require(g, sid)
+    for x in given:
+        _require(g, x)
+    stop = frozenset(given)
+    text = g.statements[sid].text
+    if sid in stop:
+        return {
+            "statement": sid,
+            "text": text,
+            "given": [sid],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {"statement": sid, "text": text, "given": True},
+        }
+    rep = _closure_report(g, sid, None, "up", stop)
+    reached = set(rep["closure"]["statements"]) | {sid}
+    return {
+        "statement": sid,
+        "text": text,
+        "given": [s for s in g.statements if s in stop and s in reached],
+        "must_establish": [
+            {"id": s, "text": g.statements[s].text, "via": list(g.incoming[s])}
+            for s in g.statements
+            if s in reached and s not in stop and not g.is_foundation(s)
+        ],
+        "must_grant": [
+            {"id": s, "text": g.statements[s].text}
+            for s in g.statements
+            if s in reached and s not in stop and g.is_foundation(s)
+        ],
+        "arguments": rep["closure"]["arguments"],
+        "sccs": rep["sccs"],
+        "tree": rep["tree"],
     }
 
 

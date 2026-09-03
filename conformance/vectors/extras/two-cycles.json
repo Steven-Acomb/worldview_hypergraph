@@ -1,0 +1,2544 @@
+{
+  "name": "two-cycles",
+  "expected": {
+    "plan": {
+      "a": [
+        {
+          "given": [],
+          "result": {
+            "statement": "a",
+            "text": "A",
+            "given": [],
+            "must_establish": [
+              {
+                "id": "a",
+                "text": "A",
+                "via": [
+                  "r-a",
+                  "b-a"
+                ]
+              },
+              {
+                "id": "b",
+                "text": "B",
+                "via": [
+                  "a-b"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "root",
+                "text": "Root"
+              }
+            ],
+            "arguments": [
+              "r-a",
+              "a-b",
+              "b-a"
+            ],
+            "sccs": [
+              [
+                "a",
+                "b"
+              ]
+            ],
+            "tree": {
+              "statement": "a",
+              "text": "A",
+              "scc": [
+                "a",
+                "b"
+              ],
+              "arguments": [
+                {
+                  "argument": "r-a",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "root",
+                      "text": "Root",
+                      "arguments": []
+                    }
+                  ]
+                },
+                {
+                  "argument": "b-a",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "b",
+                      "text": "B",
+                      "scc": [
+                        "a",
+                        "b"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "a-b",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "a",
+                              "text": "A",
+                              "scc": [
+                                "a",
+                                "b"
+                              ],
+                              "seen": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "root"
+          ],
+          "result": {
+            "statement": "a",
+            "text": "A",
+            "given": [
+              "root"
+            ],
+            "must_establish": [
+              {
+                "id": "a",
+                "text": "A",
+                "via": [
+                  "r-a",
+                  "b-a"
+                ]
+              },
+              {
+                "id": "b",
+                "text": "B",
+                "via": [
+                  "a-b"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "r-a",
+              "a-b",
+              "b-a"
+            ],
+            "sccs": [
+              [
+                "a",
+                "b"
+              ]
+            ],
+            "tree": {
+              "statement": "a",
+              "text": "A",
+              "scc": [
+                "a",
+                "b"
+              ],
+              "arguments": [
+                {
+                  "argument": "r-a",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "root",
+                      "text": "Root",
+                      "given": true
+                    }
+                  ]
+                },
+                {
+                  "argument": "b-a",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "b",
+                      "text": "B",
+                      "scc": [
+                        "a",
+                        "b"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "a-b",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "a",
+                              "text": "A",
+                              "scc": [
+                                "a",
+                                "b"
+                              ],
+                              "seen": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "a"
+          ],
+          "result": {
+            "statement": "a",
+            "text": "A",
+            "given": [
+              "a"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "a",
+              "text": "A",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [
+            "a"
+          ],
+          "result": {
+            "statement": "a",
+            "text": "A",
+            "given": [
+              "a"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "a",
+              "text": "A",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [
+            "a",
+            "b",
+            "root"
+          ],
+          "result": {
+            "statement": "a",
+            "text": "A",
+            "given": [
+              "a"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "a",
+              "text": "A",
+              "given": true
+            }
+          }
+        }
+      ],
+      "b": [
+        {
+          "given": [],
+          "result": {
+            "statement": "b",
+            "text": "B",
+            "given": [],
+            "must_establish": [
+              {
+                "id": "a",
+                "text": "A",
+                "via": [
+                  "r-a",
+                  "b-a"
+                ]
+              },
+              {
+                "id": "b",
+                "text": "B",
+                "via": [
+                  "a-b"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "root",
+                "text": "Root"
+              }
+            ],
+            "arguments": [
+              "r-a",
+              "a-b",
+              "b-a"
+            ],
+            "sccs": [
+              [
+                "a",
+                "b"
+              ]
+            ],
+            "tree": {
+              "statement": "b",
+              "text": "B",
+              "scc": [
+                "a",
+                "b"
+              ],
+              "arguments": [
+                {
+                  "argument": "a-b",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "a",
+                      "text": "A",
+                      "scc": [
+                        "a",
+                        "b"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "r-a",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "root",
+                              "text": "Root",
+                              "arguments": []
+                            }
+                          ]
+                        },
+                        {
+                          "argument": "b-a",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "b",
+                              "text": "B",
+                              "scc": [
+                                "a",
+                                "b"
+                              ],
+                              "seen": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "root"
+          ],
+          "result": {
+            "statement": "b",
+            "text": "B",
+            "given": [
+              "root"
+            ],
+            "must_establish": [
+              {
+                "id": "a",
+                "text": "A",
+                "via": [
+                  "r-a",
+                  "b-a"
+                ]
+              },
+              {
+                "id": "b",
+                "text": "B",
+                "via": [
+                  "a-b"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "r-a",
+              "a-b",
+              "b-a"
+            ],
+            "sccs": [
+              [
+                "a",
+                "b"
+              ]
+            ],
+            "tree": {
+              "statement": "b",
+              "text": "B",
+              "scc": [
+                "a",
+                "b"
+              ],
+              "arguments": [
+                {
+                  "argument": "a-b",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "a",
+                      "text": "A",
+                      "scc": [
+                        "a",
+                        "b"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "r-a",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "root",
+                              "text": "Root",
+                              "given": true
+                            }
+                          ]
+                        },
+                        {
+                          "argument": "b-a",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "b",
+                              "text": "B",
+                              "scc": [
+                                "a",
+                                "b"
+                              ],
+                              "seen": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "a"
+          ],
+          "result": {
+            "statement": "b",
+            "text": "B",
+            "given": [
+              "a"
+            ],
+            "must_establish": [
+              {
+                "id": "b",
+                "text": "B",
+                "via": [
+                  "a-b"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "a-b"
+            ],
+            "sccs": [
+              [
+                "a",
+                "b"
+              ]
+            ],
+            "tree": {
+              "statement": "b",
+              "text": "B",
+              "scc": [
+                "a",
+                "b"
+              ],
+              "arguments": [
+                {
+                  "argument": "a-b",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "a",
+                      "text": "A",
+                      "scc": [
+                        "a",
+                        "b"
+                      ],
+                      "given": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "b"
+          ],
+          "result": {
+            "statement": "b",
+            "text": "B",
+            "given": [
+              "b"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "b",
+              "text": "B",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [
+            "a",
+            "b",
+            "root"
+          ],
+          "result": {
+            "statement": "b",
+            "text": "B",
+            "given": [
+              "b"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "b",
+              "text": "B",
+              "given": true
+            }
+          }
+        }
+      ],
+      "c": [
+        {
+          "given": [],
+          "result": {
+            "statement": "c",
+            "text": "C",
+            "given": [],
+            "must_establish": [
+              {
+                "id": "a",
+                "text": "A",
+                "via": [
+                  "r-a",
+                  "b-a"
+                ]
+              },
+              {
+                "id": "b",
+                "text": "B",
+                "via": [
+                  "a-b"
+                ]
+              },
+              {
+                "id": "c",
+                "text": "C",
+                "via": [
+                  "b-c",
+                  "d-c"
+                ]
+              },
+              {
+                "id": "d",
+                "text": "D",
+                "via": [
+                  "c-d",
+                  "d-d"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "root",
+                "text": "Root"
+              }
+            ],
+            "arguments": [
+              "r-a",
+              "a-b",
+              "b-a",
+              "b-c",
+              "c-d",
+              "d-c",
+              "d-d"
+            ],
+            "sccs": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "c",
+                "d"
+              ]
+            ],
+            "tree": {
+              "statement": "c",
+              "text": "C",
+              "scc": [
+                "c",
+                "d"
+              ],
+              "arguments": [
+                {
+                  "argument": "b-c",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "b",
+                      "text": "B",
+                      "scc": [
+                        "a",
+                        "b"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "a-b",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "a",
+                              "text": "A",
+                              "scc": [
+                                "a",
+                                "b"
+                              ],
+                              "arguments": [
+                                {
+                                  "argument": "r-a",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "root",
+                                      "text": "Root",
+                                      "arguments": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "argument": "b-a",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "b",
+                                      "text": "B",
+                                      "scc": [
+                                        "a",
+                                        "b"
+                                      ],
+                                      "seen": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "argument": "d-c",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "c-d",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "c",
+                              "text": "C",
+                              "scc": [
+                                "c",
+                                "d"
+                              ],
+                              "seen": true
+                            }
+                          ]
+                        },
+                        {
+                          "argument": "d-d",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "d",
+                              "text": "D",
+                              "scc": [
+                                "c",
+                                "d"
+                              ],
+                              "seen": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "root"
+          ],
+          "result": {
+            "statement": "c",
+            "text": "C",
+            "given": [
+              "root"
+            ],
+            "must_establish": [
+              {
+                "id": "a",
+                "text": "A",
+                "via": [
+                  "r-a",
+                  "b-a"
+                ]
+              },
+              {
+                "id": "b",
+                "text": "B",
+                "via": [
+                  "a-b"
+                ]
+              },
+              {
+                "id": "c",
+                "text": "C",
+                "via": [
+                  "b-c",
+                  "d-c"
+                ]
+              },
+              {
+                "id": "d",
+                "text": "D",
+                "via": [
+                  "c-d",
+                  "d-d"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "r-a",
+              "a-b",
+              "b-a",
+              "b-c",
+              "c-d",
+              "d-c",
+              "d-d"
+            ],
+            "sccs": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "c",
+                "d"
+              ]
+            ],
+            "tree": {
+              "statement": "c",
+              "text": "C",
+              "scc": [
+                "c",
+                "d"
+              ],
+              "arguments": [
+                {
+                  "argument": "b-c",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "b",
+                      "text": "B",
+                      "scc": [
+                        "a",
+                        "b"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "a-b",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "a",
+                              "text": "A",
+                              "scc": [
+                                "a",
+                                "b"
+                              ],
+                              "arguments": [
+                                {
+                                  "argument": "r-a",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "root",
+                                      "text": "Root",
+                                      "given": true
+                                    }
+                                  ]
+                                },
+                                {
+                                  "argument": "b-a",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "b",
+                                      "text": "B",
+                                      "scc": [
+                                        "a",
+                                        "b"
+                                      ],
+                                      "seen": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "argument": "d-c",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "c-d",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "c",
+                              "text": "C",
+                              "scc": [
+                                "c",
+                                "d"
+                              ],
+                              "seen": true
+                            }
+                          ]
+                        },
+                        {
+                          "argument": "d-d",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "d",
+                              "text": "D",
+                              "scc": [
+                                "c",
+                                "d"
+                              ],
+                              "seen": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "a"
+          ],
+          "result": {
+            "statement": "c",
+            "text": "C",
+            "given": [
+              "a"
+            ],
+            "must_establish": [
+              {
+                "id": "b",
+                "text": "B",
+                "via": [
+                  "a-b"
+                ]
+              },
+              {
+                "id": "c",
+                "text": "C",
+                "via": [
+                  "b-c",
+                  "d-c"
+                ]
+              },
+              {
+                "id": "d",
+                "text": "D",
+                "via": [
+                  "c-d",
+                  "d-d"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "a-b",
+              "b-c",
+              "c-d",
+              "d-c",
+              "d-d"
+            ],
+            "sccs": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "c",
+                "d"
+              ]
+            ],
+            "tree": {
+              "statement": "c",
+              "text": "C",
+              "scc": [
+                "c",
+                "d"
+              ],
+              "arguments": [
+                {
+                  "argument": "b-c",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "b",
+                      "text": "B",
+                      "scc": [
+                        "a",
+                        "b"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "a-b",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "a",
+                              "text": "A",
+                              "scc": [
+                                "a",
+                                "b"
+                              ],
+                              "given": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "argument": "d-c",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "c-d",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "c",
+                              "text": "C",
+                              "scc": [
+                                "c",
+                                "d"
+                              ],
+                              "seen": true
+                            }
+                          ]
+                        },
+                        {
+                          "argument": "d-d",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "d",
+                              "text": "D",
+                              "scc": [
+                                "c",
+                                "d"
+                              ],
+                              "seen": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "c"
+          ],
+          "result": {
+            "statement": "c",
+            "text": "C",
+            "given": [
+              "c"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "c",
+              "text": "C",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [
+            "a",
+            "b",
+            "c"
+          ],
+          "result": {
+            "statement": "c",
+            "text": "C",
+            "given": [
+              "c"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "c",
+              "text": "C",
+              "given": true
+            }
+          }
+        }
+      ],
+      "d": [
+        {
+          "given": [],
+          "result": {
+            "statement": "d",
+            "text": "D",
+            "given": [],
+            "must_establish": [
+              {
+                "id": "a",
+                "text": "A",
+                "via": [
+                  "r-a",
+                  "b-a"
+                ]
+              },
+              {
+                "id": "b",
+                "text": "B",
+                "via": [
+                  "a-b"
+                ]
+              },
+              {
+                "id": "c",
+                "text": "C",
+                "via": [
+                  "b-c",
+                  "d-c"
+                ]
+              },
+              {
+                "id": "d",
+                "text": "D",
+                "via": [
+                  "c-d",
+                  "d-d"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "root",
+                "text": "Root"
+              }
+            ],
+            "arguments": [
+              "r-a",
+              "a-b",
+              "b-a",
+              "b-c",
+              "c-d",
+              "d-c",
+              "d-d"
+            ],
+            "sccs": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "c",
+                "d"
+              ]
+            ],
+            "tree": {
+              "statement": "d",
+              "text": "D",
+              "scc": [
+                "c",
+                "d"
+              ],
+              "arguments": [
+                {
+                  "argument": "c-d",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "c",
+                      "text": "C",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "b-c",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "b",
+                              "text": "B",
+                              "scc": [
+                                "a",
+                                "b"
+                              ],
+                              "arguments": [
+                                {
+                                  "argument": "a-b",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "a",
+                                      "text": "A",
+                                      "scc": [
+                                        "a",
+                                        "b"
+                                      ],
+                                      "arguments": [
+                                        {
+                                          "argument": "r-a",
+                                          "co_conclusions": [],
+                                          "premises": [
+                                            {
+                                              "statement": "root",
+                                              "text": "Root",
+                                              "arguments": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "argument": "b-a",
+                                          "co_conclusions": [],
+                                          "premises": [
+                                            {
+                                              "statement": "b",
+                                              "text": "B",
+                                              "scc": [
+                                                "a",
+                                                "b"
+                                              ],
+                                              "seen": true
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "argument": "d-c",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "d",
+                              "text": "D",
+                              "scc": [
+                                "c",
+                                "d"
+                              ],
+                              "seen": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "argument": "d-d",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "seen": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "root"
+          ],
+          "result": {
+            "statement": "d",
+            "text": "D",
+            "given": [
+              "root"
+            ],
+            "must_establish": [
+              {
+                "id": "a",
+                "text": "A",
+                "via": [
+                  "r-a",
+                  "b-a"
+                ]
+              },
+              {
+                "id": "b",
+                "text": "B",
+                "via": [
+                  "a-b"
+                ]
+              },
+              {
+                "id": "c",
+                "text": "C",
+                "via": [
+                  "b-c",
+                  "d-c"
+                ]
+              },
+              {
+                "id": "d",
+                "text": "D",
+                "via": [
+                  "c-d",
+                  "d-d"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "r-a",
+              "a-b",
+              "b-a",
+              "b-c",
+              "c-d",
+              "d-c",
+              "d-d"
+            ],
+            "sccs": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "c",
+                "d"
+              ]
+            ],
+            "tree": {
+              "statement": "d",
+              "text": "D",
+              "scc": [
+                "c",
+                "d"
+              ],
+              "arguments": [
+                {
+                  "argument": "c-d",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "c",
+                      "text": "C",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "b-c",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "b",
+                              "text": "B",
+                              "scc": [
+                                "a",
+                                "b"
+                              ],
+                              "arguments": [
+                                {
+                                  "argument": "a-b",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "a",
+                                      "text": "A",
+                                      "scc": [
+                                        "a",
+                                        "b"
+                                      ],
+                                      "arguments": [
+                                        {
+                                          "argument": "r-a",
+                                          "co_conclusions": [],
+                                          "premises": [
+                                            {
+                                              "statement": "root",
+                                              "text": "Root",
+                                              "given": true
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "argument": "b-a",
+                                          "co_conclusions": [],
+                                          "premises": [
+                                            {
+                                              "statement": "b",
+                                              "text": "B",
+                                              "scc": [
+                                                "a",
+                                                "b"
+                                              ],
+                                              "seen": true
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "argument": "d-c",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "d",
+                              "text": "D",
+                              "scc": [
+                                "c",
+                                "d"
+                              ],
+                              "seen": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "argument": "d-d",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "seen": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "a"
+          ],
+          "result": {
+            "statement": "d",
+            "text": "D",
+            "given": [
+              "a"
+            ],
+            "must_establish": [
+              {
+                "id": "b",
+                "text": "B",
+                "via": [
+                  "a-b"
+                ]
+              },
+              {
+                "id": "c",
+                "text": "C",
+                "via": [
+                  "b-c",
+                  "d-c"
+                ]
+              },
+              {
+                "id": "d",
+                "text": "D",
+                "via": [
+                  "c-d",
+                  "d-d"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "a-b",
+              "b-c",
+              "c-d",
+              "d-c",
+              "d-d"
+            ],
+            "sccs": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "c",
+                "d"
+              ]
+            ],
+            "tree": {
+              "statement": "d",
+              "text": "D",
+              "scc": [
+                "c",
+                "d"
+              ],
+              "arguments": [
+                {
+                  "argument": "c-d",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "c",
+                      "text": "C",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "b-c",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "b",
+                              "text": "B",
+                              "scc": [
+                                "a",
+                                "b"
+                              ],
+                              "arguments": [
+                                {
+                                  "argument": "a-b",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "a",
+                                      "text": "A",
+                                      "scc": [
+                                        "a",
+                                        "b"
+                                      ],
+                                      "given": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "argument": "d-c",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "d",
+                              "text": "D",
+                              "scc": [
+                                "c",
+                                "d"
+                              ],
+                              "seen": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "argument": "d-d",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "seen": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "d"
+          ],
+          "result": {
+            "statement": "d",
+            "text": "D",
+            "given": [
+              "d"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "d",
+              "text": "D",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [
+            "a",
+            "b",
+            "c"
+          ],
+          "result": {
+            "statement": "d",
+            "text": "D",
+            "given": [
+              "c"
+            ],
+            "must_establish": [
+              {
+                "id": "d",
+                "text": "D",
+                "via": [
+                  "c-d",
+                  "d-d"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "c-d",
+              "d-d"
+            ],
+            "sccs": [
+              [
+                "c",
+                "d"
+              ]
+            ],
+            "tree": {
+              "statement": "d",
+              "text": "D",
+              "scc": [
+                "c",
+                "d"
+              ],
+              "arguments": [
+                {
+                  "argument": "c-d",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "c",
+                      "text": "C",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "given": true
+                    }
+                  ]
+                },
+                {
+                  "argument": "d-d",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "seen": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "e": [
+        {
+          "given": [],
+          "result": {
+            "statement": "e",
+            "text": "E",
+            "given": [],
+            "must_establish": [
+              {
+                "id": "a",
+                "text": "A",
+                "via": [
+                  "r-a",
+                  "b-a"
+                ]
+              },
+              {
+                "id": "b",
+                "text": "B",
+                "via": [
+                  "a-b"
+                ]
+              },
+              {
+                "id": "c",
+                "text": "C",
+                "via": [
+                  "b-c",
+                  "d-c"
+                ]
+              },
+              {
+                "id": "d",
+                "text": "D",
+                "via": [
+                  "c-d",
+                  "d-d"
+                ]
+              },
+              {
+                "id": "e",
+                "text": "E",
+                "via": [
+                  "cd-e"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "root",
+                "text": "Root"
+              }
+            ],
+            "arguments": [
+              "r-a",
+              "a-b",
+              "b-a",
+              "b-c",
+              "c-d",
+              "d-c",
+              "d-d",
+              "cd-e"
+            ],
+            "sccs": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "c",
+                "d"
+              ]
+            ],
+            "tree": {
+              "statement": "e",
+              "text": "E",
+              "arguments": [
+                {
+                  "argument": "cd-e",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "c",
+                      "text": "C",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "b-c",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "b",
+                              "text": "B",
+                              "scc": [
+                                "a",
+                                "b"
+                              ],
+                              "arguments": [
+                                {
+                                  "argument": "a-b",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "a",
+                                      "text": "A",
+                                      "scc": [
+                                        "a",
+                                        "b"
+                                      ],
+                                      "arguments": [
+                                        {
+                                          "argument": "r-a",
+                                          "co_conclusions": [],
+                                          "premises": [
+                                            {
+                                              "statement": "root",
+                                              "text": "Root",
+                                              "arguments": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "argument": "b-a",
+                                          "co_conclusions": [],
+                                          "premises": [
+                                            {
+                                              "statement": "b",
+                                              "text": "B",
+                                              "scc": [
+                                                "a",
+                                                "b"
+                                              ],
+                                              "seen": true
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "argument": "d-c",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "d",
+                              "text": "D",
+                              "scc": [
+                                "c",
+                                "d"
+                              ],
+                              "arguments": [
+                                {
+                                  "argument": "c-d",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "c",
+                                      "text": "C",
+                                      "scc": [
+                                        "c",
+                                        "d"
+                                      ],
+                                      "seen": true
+                                    }
+                                  ]
+                                },
+                                {
+                                  "argument": "d-d",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "d",
+                                      "text": "D",
+                                      "scc": [
+                                        "c",
+                                        "d"
+                                      ],
+                                      "seen": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "seen": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "root"
+          ],
+          "result": {
+            "statement": "e",
+            "text": "E",
+            "given": [
+              "root"
+            ],
+            "must_establish": [
+              {
+                "id": "a",
+                "text": "A",
+                "via": [
+                  "r-a",
+                  "b-a"
+                ]
+              },
+              {
+                "id": "b",
+                "text": "B",
+                "via": [
+                  "a-b"
+                ]
+              },
+              {
+                "id": "c",
+                "text": "C",
+                "via": [
+                  "b-c",
+                  "d-c"
+                ]
+              },
+              {
+                "id": "d",
+                "text": "D",
+                "via": [
+                  "c-d",
+                  "d-d"
+                ]
+              },
+              {
+                "id": "e",
+                "text": "E",
+                "via": [
+                  "cd-e"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "r-a",
+              "a-b",
+              "b-a",
+              "b-c",
+              "c-d",
+              "d-c",
+              "d-d",
+              "cd-e"
+            ],
+            "sccs": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "c",
+                "d"
+              ]
+            ],
+            "tree": {
+              "statement": "e",
+              "text": "E",
+              "arguments": [
+                {
+                  "argument": "cd-e",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "c",
+                      "text": "C",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "b-c",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "b",
+                              "text": "B",
+                              "scc": [
+                                "a",
+                                "b"
+                              ],
+                              "arguments": [
+                                {
+                                  "argument": "a-b",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "a",
+                                      "text": "A",
+                                      "scc": [
+                                        "a",
+                                        "b"
+                                      ],
+                                      "arguments": [
+                                        {
+                                          "argument": "r-a",
+                                          "co_conclusions": [],
+                                          "premises": [
+                                            {
+                                              "statement": "root",
+                                              "text": "Root",
+                                              "given": true
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "argument": "b-a",
+                                          "co_conclusions": [],
+                                          "premises": [
+                                            {
+                                              "statement": "b",
+                                              "text": "B",
+                                              "scc": [
+                                                "a",
+                                                "b"
+                                              ],
+                                              "seen": true
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "argument": "d-c",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "d",
+                              "text": "D",
+                              "scc": [
+                                "c",
+                                "d"
+                              ],
+                              "arguments": [
+                                {
+                                  "argument": "c-d",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "c",
+                                      "text": "C",
+                                      "scc": [
+                                        "c",
+                                        "d"
+                                      ],
+                                      "seen": true
+                                    }
+                                  ]
+                                },
+                                {
+                                  "argument": "d-d",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "d",
+                                      "text": "D",
+                                      "scc": [
+                                        "c",
+                                        "d"
+                                      ],
+                                      "seen": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "seen": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "a"
+          ],
+          "result": {
+            "statement": "e",
+            "text": "E",
+            "given": [
+              "a"
+            ],
+            "must_establish": [
+              {
+                "id": "b",
+                "text": "B",
+                "via": [
+                  "a-b"
+                ]
+              },
+              {
+                "id": "c",
+                "text": "C",
+                "via": [
+                  "b-c",
+                  "d-c"
+                ]
+              },
+              {
+                "id": "d",
+                "text": "D",
+                "via": [
+                  "c-d",
+                  "d-d"
+                ]
+              },
+              {
+                "id": "e",
+                "text": "E",
+                "via": [
+                  "cd-e"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "a-b",
+              "b-c",
+              "c-d",
+              "d-c",
+              "d-d",
+              "cd-e"
+            ],
+            "sccs": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "c",
+                "d"
+              ]
+            ],
+            "tree": {
+              "statement": "e",
+              "text": "E",
+              "arguments": [
+                {
+                  "argument": "cd-e",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "c",
+                      "text": "C",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "b-c",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "b",
+                              "text": "B",
+                              "scc": [
+                                "a",
+                                "b"
+                              ],
+                              "arguments": [
+                                {
+                                  "argument": "a-b",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "a",
+                                      "text": "A",
+                                      "scc": [
+                                        "a",
+                                        "b"
+                                      ],
+                                      "given": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "argument": "d-c",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "d",
+                              "text": "D",
+                              "scc": [
+                                "c",
+                                "d"
+                              ],
+                              "arguments": [
+                                {
+                                  "argument": "c-d",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "c",
+                                      "text": "C",
+                                      "scc": [
+                                        "c",
+                                        "d"
+                                      ],
+                                      "seen": true
+                                    }
+                                  ]
+                                },
+                                {
+                                  "argument": "d-d",
+                                  "co_conclusions": [],
+                                  "premises": [
+                                    {
+                                      "statement": "d",
+                                      "text": "D",
+                                      "scc": [
+                                        "c",
+                                        "d"
+                                      ],
+                                      "seen": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "seen": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "e"
+          ],
+          "result": {
+            "statement": "e",
+            "text": "E",
+            "given": [
+              "e"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "e",
+              "text": "E",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [
+            "a",
+            "b",
+            "c"
+          ],
+          "result": {
+            "statement": "e",
+            "text": "E",
+            "given": [
+              "c"
+            ],
+            "must_establish": [
+              {
+                "id": "d",
+                "text": "D",
+                "via": [
+                  "c-d",
+                  "d-d"
+                ]
+              },
+              {
+                "id": "e",
+                "text": "E",
+                "via": [
+                  "cd-e"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "c-d",
+              "d-d",
+              "cd-e"
+            ],
+            "sccs": [
+              [
+                "c",
+                "d"
+              ]
+            ],
+            "tree": {
+              "statement": "e",
+              "text": "E",
+              "arguments": [
+                {
+                  "argument": "cd-e",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "c",
+                      "text": "C",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "given": true
+                    },
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "scc": [
+                        "c",
+                        "d"
+                      ],
+                      "arguments": [
+                        {
+                          "argument": "c-d",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "c",
+                              "text": "C",
+                              "scc": [
+                                "c",
+                                "d"
+                              ],
+                              "given": true
+                            }
+                          ]
+                        },
+                        {
+                          "argument": "d-d",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "d",
+                              "text": "D",
+                              "scc": [
+                                "c",
+                                "d"
+                              ],
+                              "seen": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "root": [
+        {
+          "given": [],
+          "result": {
+            "statement": "root",
+            "text": "Root",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "root",
+                "text": "Root"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "root",
+              "text": "Root",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "root"
+          ],
+          "result": {
+            "statement": "root",
+            "text": "Root",
+            "given": [
+              "root"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "root",
+              "text": "Root",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "root",
+            "text": "Root",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "root",
+                "text": "Root"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "root",
+              "text": "Root",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "root"
+          ],
+          "result": {
+            "statement": "root",
+            "text": "Root",
+            "given": [
+              "root"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "root",
+              "text": "Root",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "root",
+            "text": "Root",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "root",
+                "text": "Root"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "root",
+              "text": "Root",
+              "arguments": []
+            }
+          }
+        }
+      ]
+    },
+    "lint_all": {
+      "well_founded": {
+        "foundations": [
+          "root"
+        ],
+        "grounded": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "root"
+        ],
+        "ungrounded": []
+      },
+      "duplicates": [],
+      "unused": [],
+      "empty_justifications": []
+    },
+    "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  s0 [shape=box, style=rounded, label=\"a\\nA\"];\n  s1 [shape=box, style=rounded, label=\"b\\nB\"];\n  s2 [shape=box, style=rounded, label=\"c\\nC\"];\n  s3 [shape=box, style=rounded, label=\"d\\nD\"];\n  s4 [shape=box, style=rounded, label=\"e\\nE\"];\n  s5 [shape=box, style=rounded, label=\"root\\nRoot\"];\n  a0 [shape=diamond, fontsize=8, label=\"r-a\"];\n  a1 [shape=diamond, fontsize=8, label=\"a-b\"];\n  a2 [shape=diamond, fontsize=8, label=\"b-a\"];\n  a3 [shape=diamond, fontsize=8, label=\"b-c\"];\n  a4 [shape=diamond, fontsize=8, label=\"c-d\"];\n  a5 [shape=diamond, fontsize=8, label=\"d-c\"];\n  a6 [shape=diamond, fontsize=8, label=\"d-d\"];\n  a7 [shape=diamond, fontsize=8, label=\"cd-e\"];\n  s5 -> a0;\n  a0 -> s0;\n  s0 -> a1;\n  a1 -> s1;\n  s1 -> a2;\n  a2 -> s0;\n  s1 -> a3;\n  a3 -> s2;\n  s2 -> a4;\n  a4 -> s3;\n  s3 -> a5;\n  a5 -> s2;\n  s3 -> a6;\n  a6 -> s3;\n  s2 -> a7;\n  s3 -> a7;\n  a7 -> s4;\n}\n",
+    "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  s0 [shape=box, style=rounded, label=\"A\"];\n  s1 [shape=box, style=rounded, label=\"B\"];\n  s2 [shape=box, style=rounded, label=\"C\"];\n  s3 [shape=box, style=rounded, label=\"D\"];\n  s4 [shape=box, style=rounded, label=\"E\"];\n  s5 [shape=box, style=rounded, label=\"Root\"];\n  a0 [shape=diamond, fontsize=8, label=\"\"];\n  a1 [shape=diamond, fontsize=8, label=\"\"];\n  a2 [shape=diamond, fontsize=8, label=\"\"];\n  a3 [shape=diamond, fontsize=8, label=\"\"];\n  a4 [shape=diamond, fontsize=8, label=\"\"];\n  a5 [shape=diamond, fontsize=8, label=\"\"];\n  a6 [shape=diamond, fontsize=8, label=\"\"];\n  a7 [shape=diamond, fontsize=8, label=\"\"];\n  s5 -> a0;\n  a0 -> s0;\n  s0 -> a1;\n  a1 -> s1;\n  s1 -> a2;\n  a2 -> s0;\n  s1 -> a3;\n  a3 -> s2;\n  s2 -> a4;\n  a4 -> s3;\n  s3 -> a5;\n  a5 -> s2;\n  s3 -> a6;\n  a6 -> s3;\n  s2 -> a7;\n  s3 -> a7;\n  a7 -> s4;\n}\n",
+    "mermaid": "flowchart LR\n  s0[\"a<br/>A\"]\n  s1[\"b<br/>B\"]\n  s2[\"c<br/>C\"]\n  s3[\"d<br/>D\"]\n  s4[\"e<br/>E\"]\n  s5[\"root<br/>Root\"]\n  a0{{\"r-a\"}}\n  a1{{\"a-b\"}}\n  a2{{\"b-a\"}}\n  a3{{\"b-c\"}}\n  a4{{\"c-d\"}}\n  a5{{\"d-c\"}}\n  a6{{\"d-d\"}}\n  a7{{\"cd-e\"}}\n  s5 --> a0\n  a0 --> s0\n  s0 --> a1\n  a1 --> s1\n  s1 --> a2\n  a2 --> s0\n  s1 --> a3\n  a3 --> s2\n  s2 --> a4\n  a4 --> s3\n  s3 --> a5\n  a5 --> s2\n  s3 --> a6\n  a6 --> s3\n  s2 --> a7\n  s3 --> a7\n  a7 --> s4\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n",
+    "mermaid_no_ids_tb": "flowchart TB\n  s0[\"A\"]\n  s1[\"B\"]\n  s2[\"C\"]\n  s3[\"D\"]\n  s4[\"E\"]\n  s5[\"Root\"]\n  a0{{\" \"}}\n  a1{{\" \"}}\n  a2{{\" \"}}\n  a3{{\" \"}}\n  a4{{\" \"}}\n  a5{{\" \"}}\n  a6{{\" \"}}\n  a7{{\" \"}}\n  s5 --> a0\n  a0 --> s0\n  s0 --> a1\n  a1 --> s1\n  s1 --> a2\n  a2 --> s0\n  s1 --> a3\n  a3 --> s2\n  s2 --> a4\n  a4 --> s3\n  s3 --> a5\n  a5 --> s2\n  s3 --> a6\n  a6 --> s3\n  s2 --> a7\n  s3 --> a7\n  a7 --> s4\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n"
+  }
+}

@@ -18,10 +18,12 @@ Typical use::
 from .canon import H, canon
 from .diff import diff
 from .errors import LoadError, UnknownIdError, ValidationError, WorldviewError
+from .export import to_dot, to_mermaid
 from .graph import Graph
 from .identity import Identities, compute_identities, prop_id
+from .lint import duplicates, empty_justifications, lint_all, unused
 from .model import FORMAT, FORMAT_VERSION, Argument, Statement, Worldview, load, loads
-from .queries import foundations, rests_on, sccs, supports, well_founded
+from .queries import foundations, plan, rests_on, sccs, supports, well_founded
 from .validate import schema, validate_dict, validate_with_jsonschema
 
 __version__ = "0.1.0"
@@ -43,14 +45,21 @@ __all__ = [
     "canon",
     "compute_identities",
     "diff",
+    "duplicates",
+    "empty_justifications",
     "foundations",
+    "lint_all",
     "load",
     "loads",
+    "plan",
     "prop_id",
     "rests_on",
     "schema",
     "sccs",
     "supports",
+    "to_dot",
+    "to_mermaid",
+    "unused",
     "validate_dict",
     "validate_with_jsonschema",
     "well_founded",

@@ -1,0 +1,521 @@
+{
+  "name": "duplicate-props",
+  "expected": {
+    "plan": {
+      "x1": [
+        {
+          "given": [],
+          "result": {
+            "statement": "x1",
+            "text": "X",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "x1",
+                "text": "X"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "x1",
+              "text": "X",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "x1",
+            "x2"
+          ],
+          "result": {
+            "statement": "x1",
+            "text": "X",
+            "given": [
+              "x1"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "x1",
+              "text": "X",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "x1",
+            "text": "X",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "x1",
+                "text": "X"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "x1",
+              "text": "X",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "x1"
+          ],
+          "result": {
+            "statement": "x1",
+            "text": "X",
+            "given": [
+              "x1"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "x1",
+              "text": "X",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "x1",
+            "text": "X",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "x1",
+                "text": "X"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "x1",
+              "text": "X",
+              "arguments": []
+            }
+          }
+        }
+      ],
+      "x2": [
+        {
+          "given": [],
+          "result": {
+            "statement": "x2",
+            "text": "X",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "x2",
+                "text": "X"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "x2",
+              "text": "X",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "x1",
+            "x2"
+          ],
+          "result": {
+            "statement": "x2",
+            "text": "X",
+            "given": [
+              "x2"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "x2",
+              "text": "X",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "x2",
+            "text": "X",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "x2",
+                "text": "X"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "x2",
+              "text": "X",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "x2"
+          ],
+          "result": {
+            "statement": "x2",
+            "text": "X",
+            "given": [
+              "x2"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "x2",
+              "text": "X",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "x2",
+            "text": "X",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "x2",
+                "text": "X"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "x2",
+              "text": "X",
+              "arguments": []
+            }
+          }
+        }
+      ],
+      "y": [
+        {
+          "given": [],
+          "result": {
+            "statement": "y",
+            "text": "Y",
+            "given": [],
+            "must_establish": [
+              {
+                "id": "y",
+                "text": "Y",
+                "via": [
+                  "a",
+                  "b"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "x1",
+                "text": "X"
+              },
+              {
+                "id": "x2",
+                "text": "X"
+              }
+            ],
+            "arguments": [
+              "a",
+              "b"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "y",
+              "text": "Y",
+              "arguments": [
+                {
+                  "argument": "a",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "x1",
+                      "text": "X",
+                      "arguments": []
+                    }
+                  ]
+                },
+                {
+                  "argument": "b",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "x2",
+                      "text": "X",
+                      "arguments": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "x1",
+            "x2"
+          ],
+          "result": {
+            "statement": "y",
+            "text": "Y",
+            "given": [
+              "x1",
+              "x2"
+            ],
+            "must_establish": [
+              {
+                "id": "y",
+                "text": "Y",
+                "via": [
+                  "a",
+                  "b"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "a",
+              "b"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "y",
+              "text": "Y",
+              "arguments": [
+                {
+                  "argument": "a",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "x1",
+                      "text": "X",
+                      "given": true
+                    }
+                  ]
+                },
+                {
+                  "argument": "b",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "x2",
+                      "text": "X",
+                      "given": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "y",
+            "text": "Y",
+            "given": [],
+            "must_establish": [
+              {
+                "id": "y",
+                "text": "Y",
+                "via": [
+                  "a",
+                  "b"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "x1",
+                "text": "X"
+              },
+              {
+                "id": "x2",
+                "text": "X"
+              }
+            ],
+            "arguments": [
+              "a",
+              "b"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "y",
+              "text": "Y",
+              "arguments": [
+                {
+                  "argument": "a",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "x1",
+                      "text": "X",
+                      "arguments": []
+                    }
+                  ]
+                },
+                {
+                  "argument": "b",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "x2",
+                      "text": "X",
+                      "arguments": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "y"
+          ],
+          "result": {
+            "statement": "y",
+            "text": "Y",
+            "given": [
+              "y"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "y",
+              "text": "Y",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [
+            "x1",
+            "x2"
+          ],
+          "result": {
+            "statement": "y",
+            "text": "Y",
+            "given": [
+              "x1",
+              "x2"
+            ],
+            "must_establish": [
+              {
+                "id": "y",
+                "text": "Y",
+                "via": [
+                  "a",
+                  "b"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "a",
+              "b"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "y",
+              "text": "Y",
+              "arguments": [
+                {
+                  "argument": "a",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "x1",
+                      "text": "X",
+                      "given": true
+                    }
+                  ]
+                },
+                {
+                  "argument": "b",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "x2",
+                      "text": "X",
+                      "given": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "lint_all": {
+      "well_founded": {
+        "foundations": [
+          "x1",
+          "x2"
+        ],
+        "grounded": [
+          "x1",
+          "x2",
+          "y"
+        ],
+        "ungrounded": []
+      },
+      "duplicates": [
+        {
+          "prop_id": "e60afb45ef3ef161a25ac099fb31029e63d82b53369fed601936841626559c7b",
+          "text": "X",
+          "mode": "is",
+          "ids": [
+            "x1",
+            "x2"
+          ]
+        }
+      ],
+      "unused": [],
+      "empty_justifications": []
+    },
+    "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  s0 [shape=box, style=rounded, label=\"x1\\nX\"];\n  s1 [shape=box, style=rounded, label=\"x2\\nX\"];\n  s2 [shape=box, style=rounded, label=\"y\\nY\"];\n  a0 [shape=diamond, fontsize=8, label=\"a\"];\n  a1 [shape=diamond, fontsize=8, label=\"b\"];\n  s0 -> a0;\n  a0 -> s2;\n  s1 -> a1;\n  a1 -> s2;\n}\n",
+    "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  s0 [shape=box, style=rounded, label=\"X\"];\n  s1 [shape=box, style=rounded, label=\"X\"];\n  s2 [shape=box, style=rounded, label=\"Y\"];\n  a0 [shape=diamond, fontsize=8, label=\"\"];\n  a1 [shape=diamond, fontsize=8, label=\"\"];\n  s0 -> a0;\n  a0 -> s2;\n  s1 -> a1;\n  a1 -> s2;\n}\n",
+    "mermaid": "flowchart LR\n  s0[\"x1<br/>X\"]\n  s1[\"x2<br/>X\"]\n  s2[\"y<br/>Y\"]\n  a0{{\"a\"}}\n  a1{{\"b\"}}\n  s0 --> a0\n  a0 --> s2\n  s1 --> a1\n  a1 --> s2\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n",
+    "mermaid_no_ids_tb": "flowchart TB\n  s0[\"X\"]\n  s1[\"X\"]\n  s2[\"Y\"]\n  a0{{\" \"}}\n  a1{{\" \"}}\n  s0 --> a0\n  a0 --> s2\n  s1 --> a1\n  a1 --> s2\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "empty",
+  "expected": {
+    "plan": {},
+    "lint_all": {
+      "well_founded": {
+        "foundations": [],
+        "grounded": [],
+        "ungrounded": []
+      },
+      "duplicates": [],
+      "unused": [],
+      "empty_justifications": []
+    },
+    "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n}\n",
+    "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n}\n",
+    "mermaid": "flowchart LR\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n",
+    "mermaid_no_ids_tb": "flowchart TB\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n"
+  }
+}

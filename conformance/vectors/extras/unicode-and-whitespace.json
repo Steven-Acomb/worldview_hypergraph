@@ -1,0 +1,1186 @@
+{
+  "name": "unicode-and-whitespace",
+  "expected": {
+    "plan": {
+      "nfc": [
+        {
+          "given": [],
+          "result": {
+            "statement": "nfc",
+            "text": "café au lait",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "nfc",
+                "text": "café au lait"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "nfc",
+              "text": "café au lait",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "nfc",
+            "nfd"
+          ],
+          "result": {
+            "statement": "nfc",
+            "text": "café au lait",
+            "given": [
+              "nfc"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "nfc",
+              "text": "café au lait",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "nfc",
+            "text": "café au lait",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "nfc",
+                "text": "café au lait"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "nfc",
+              "text": "café au lait",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "nfc"
+          ],
+          "result": {
+            "statement": "nfc",
+            "text": "café au lait",
+            "given": [
+              "nfc"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "nfc",
+              "text": "café au lait",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "nfc",
+            "text": "café au lait",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "nfc",
+                "text": "café au lait"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "nfc",
+              "text": "café au lait",
+              "arguments": []
+            }
+          }
+        }
+      ],
+      "nfd": [
+        {
+          "given": [],
+          "result": {
+            "statement": "nfd",
+            "text": "café au lait",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "nfd",
+                "text": "café au lait"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "nfd",
+              "text": "café au lait",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "nfc",
+            "nfd"
+          ],
+          "result": {
+            "statement": "nfd",
+            "text": "café au lait",
+            "given": [
+              "nfd"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "nfd",
+              "text": "café au lait",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "nfd",
+            "text": "café au lait",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "nfd",
+                "text": "café au lait"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "nfd",
+              "text": "café au lait",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "nfd"
+          ],
+          "result": {
+            "statement": "nfd",
+            "text": "café au lait",
+            "given": [
+              "nfd"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "nfd",
+              "text": "café au lait",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "nfd",
+            "text": "café au lait",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "nfd",
+                "text": "café au lait"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "nfd",
+              "text": "café au lait",
+              "arguments": []
+            }
+          }
+        }
+      ],
+      "ws": [
+        {
+          "given": [],
+          "result": {
+            "statement": "ws",
+            "text": "  Il   pleut\tsouvent\n ici  ",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "ws",
+                "text": "  Il   pleut\tsouvent\n ici  "
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ws",
+              "text": "  Il   pleut\tsouvent\n ici  ",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "nfc",
+            "nfd"
+          ],
+          "result": {
+            "statement": "ws",
+            "text": "  Il   pleut\tsouvent\n ici  ",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "ws",
+                "text": "  Il   pleut\tsouvent\n ici  "
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ws",
+              "text": "  Il   pleut\tsouvent\n ici  ",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "ws",
+            "text": "  Il   pleut\tsouvent\n ici  ",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "ws",
+                "text": "  Il   pleut\tsouvent\n ici  "
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ws",
+              "text": "  Il   pleut\tsouvent\n ici  ",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "ws"
+          ],
+          "result": {
+            "statement": "ws",
+            "text": "  Il   pleut\tsouvent\n ici  ",
+            "given": [
+              "ws"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ws",
+              "text": "  Il   pleut\tsouvent\n ici  ",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "ws",
+            "text": "  Il   pleut\tsouvent\n ici  ",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "ws",
+                "text": "  Il   pleut\tsouvent\n ici  "
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ws",
+              "text": "  Il   pleut\tsouvent\n ici  ",
+              "arguments": []
+            }
+          }
+        }
+      ],
+      "ws2": [
+        {
+          "given": [],
+          "result": {
+            "statement": "ws2",
+            "text": "Il pleut souvent ici",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "ws2",
+                "text": "Il pleut souvent ici"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ws2",
+              "text": "Il pleut souvent ici",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "nfc",
+            "nfd"
+          ],
+          "result": {
+            "statement": "ws2",
+            "text": "Il pleut souvent ici",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "ws2",
+                "text": "Il pleut souvent ici"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ws2",
+              "text": "Il pleut souvent ici",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "ws2",
+            "text": "Il pleut souvent ici",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "ws2",
+                "text": "Il pleut souvent ici"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ws2",
+              "text": "Il pleut souvent ici",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "ws2"
+          ],
+          "result": {
+            "statement": "ws2",
+            "text": "Il pleut souvent ici",
+            "given": [
+              "ws2"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ws2",
+              "text": "Il pleut souvent ici",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "ws2",
+            "text": "Il pleut souvent ici",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "ws2",
+                "text": "Il pleut souvent ici"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ws2",
+              "text": "Il pleut souvent ici",
+              "arguments": []
+            }
+          }
+        }
+      ],
+      "case": [
+        {
+          "given": [],
+          "result": {
+            "statement": "case",
+            "text": "Il Pleut Souvent Ici",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "case",
+                "text": "Il Pleut Souvent Ici"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "case",
+              "text": "Il Pleut Souvent Ici",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "nfc",
+            "nfd"
+          ],
+          "result": {
+            "statement": "case",
+            "text": "Il Pleut Souvent Ici",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "case",
+                "text": "Il Pleut Souvent Ici"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "case",
+              "text": "Il Pleut Souvent Ici",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "case",
+            "text": "Il Pleut Souvent Ici",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "case",
+                "text": "Il Pleut Souvent Ici"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "case",
+              "text": "Il Pleut Souvent Ici",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "case"
+          ],
+          "result": {
+            "statement": "case",
+            "text": "Il Pleut Souvent Ici",
+            "given": [
+              "case"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "case",
+              "text": "Il Pleut Souvent Ici",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "case",
+            "text": "Il Pleut Souvent Ici",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "case",
+                "text": "Il Pleut Souvent Ici"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "case",
+              "text": "Il Pleut Souvent Ici",
+              "arguments": []
+            }
+          }
+        }
+      ],
+      "ought": [
+        {
+          "given": [],
+          "result": {
+            "statement": "ought",
+            "text": "Il pleut souvent ici",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "ought",
+                "text": "Il pleut souvent ici"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ought",
+              "text": "Il pleut souvent ici",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "nfc",
+            "nfd"
+          ],
+          "result": {
+            "statement": "ought",
+            "text": "Il pleut souvent ici",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "ought",
+                "text": "Il pleut souvent ici"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ought",
+              "text": "Il pleut souvent ici",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "ought",
+            "text": "Il pleut souvent ici",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "ought",
+                "text": "Il pleut souvent ici"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ought",
+              "text": "Il pleut souvent ici",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "ought"
+          ],
+          "result": {
+            "statement": "ought",
+            "text": "Il pleut souvent ici",
+            "given": [
+              "ought"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ought",
+              "text": "Il pleut souvent ici",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "ought",
+            "text": "Il pleut souvent ici",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "ought",
+                "text": "Il pleut souvent ici"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "ought",
+              "text": "Il pleut souvent ici",
+              "arguments": []
+            }
+          }
+        }
+      ],
+      "emoji": [
+        {
+          "given": [],
+          "result": {
+            "statement": "emoji",
+            "text": "Snow ☃ is cold 🥶",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "emoji",
+                "text": "Snow ☃ is cold 🥶"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "emoji",
+              "text": "Snow ☃ is cold 🥶",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "nfc",
+            "nfd"
+          ],
+          "result": {
+            "statement": "emoji",
+            "text": "Snow ☃ is cold 🥶",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "emoji",
+                "text": "Snow ☃ is cold 🥶"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "emoji",
+              "text": "Snow ☃ is cold 🥶",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "emoji",
+            "text": "Snow ☃ is cold 🥶",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "emoji",
+                "text": "Snow ☃ is cold 🥶"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "emoji",
+              "text": "Snow ☃ is cold 🥶",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "emoji"
+          ],
+          "result": {
+            "statement": "emoji",
+            "text": "Snow ☃ is cold 🥶",
+            "given": [
+              "emoji"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "emoji",
+              "text": "Snow ☃ is cold 🥶",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "emoji",
+            "text": "Snow ☃ is cold 🥶",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "emoji",
+                "text": "Snow ☃ is cold 🥶"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "emoji",
+              "text": "Snow ☃ is cold 🥶",
+              "arguments": []
+            }
+          }
+        }
+      ],
+      "c": [
+        {
+          "given": [],
+          "result": {
+            "statement": "c",
+            "text": "Conclusion",
+            "given": [],
+            "must_establish": [
+              {
+                "id": "c",
+                "text": "Conclusion",
+                "via": [
+                  "j1",
+                  "j2"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "nfc",
+                "text": "café au lait"
+              },
+              {
+                "id": "nfd",
+                "text": "café au lait"
+              },
+              {
+                "id": "ws",
+                "text": "  Il   pleut\tsouvent\n ici  "
+              },
+              {
+                "id": "ws2",
+                "text": "Il pleut souvent ici"
+              }
+            ],
+            "arguments": [
+              "j1",
+              "j2"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "c",
+              "text": "Conclusion",
+              "arguments": [
+                {
+                  "argument": "j1",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "nfc",
+                      "text": "café au lait",
+                      "arguments": []
+                    },
+                    {
+                      "statement": "ws",
+                      "text": "  Il   pleut\tsouvent\n ici  ",
+                      "arguments": []
+                    }
+                  ]
+                },
+                {
+                  "argument": "j2",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "nfd",
+                      "text": "café au lait",
+                      "arguments": []
+                    },
+                    {
+                      "statement": "ws2",
+                      "text": "Il pleut souvent ici",
+                      "arguments": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "nfc",
+            "nfd"
+          ],
+          "result": {
+            "statement": "c",
+            "text": "Conclusion",
+            "given": [
+              "nfc",
+              "nfd"
+            ],
+            "must_establish": [
+              {
+                "id": "c",
+                "text": "Conclusion",
+                "via": [
+                  "j1",
+                  "j2"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "ws",
+                "text": "  Il   pleut\tsouvent\n ici  "
+              },
+              {
+                "id": "ws2",
+                "text": "Il pleut souvent ici"
+              }
+            ],
+            "arguments": [
+              "j1",
+              "j2"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "c",
+              "text": "Conclusion",
+              "arguments": [
+                {
+                  "argument": "j1",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "nfc",
+                      "text": "café au lait",
+                      "given": true
+                    },
+                    {
+                      "statement": "ws",
+                      "text": "  Il   pleut\tsouvent\n ici  ",
+                      "arguments": []
+                    }
+                  ]
+                },
+                {
+                  "argument": "j2",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "nfd",
+                      "text": "café au lait",
+                      "given": true
+                    },
+                    {
+                      "statement": "ws2",
+                      "text": "Il pleut souvent ici",
+                      "arguments": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "c",
+            "text": "Conclusion",
+            "given": [],
+            "must_establish": [
+              {
+                "id": "c",
+                "text": "Conclusion",
+                "via": [
+                  "j1",
+                  "j2"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "nfc",
+                "text": "café au lait"
+              },
+              {
+                "id": "nfd",
+                "text": "café au lait"
+              },
+              {
+                "id": "ws",
+                "text": "  Il   pleut\tsouvent\n ici  "
+              },
+              {
+                "id": "ws2",
+                "text": "Il pleut souvent ici"
+              }
+            ],
+            "arguments": [
+              "j1",
+              "j2"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "c",
+              "text": "Conclusion",
+              "arguments": [
+                {
+                  "argument": "j1",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "nfc",
+                      "text": "café au lait",
+                      "arguments": []
+                    },
+                    {
+                      "statement": "ws",
+                      "text": "  Il   pleut\tsouvent\n ici  ",
+                      "arguments": []
+                    }
+                  ]
+                },
+                {
+                  "argument": "j2",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "nfd",
+                      "text": "café au lait",
+                      "arguments": []
+                    },
+                    {
+                      "statement": "ws2",
+                      "text": "Il pleut souvent ici",
+                      "arguments": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "c"
+          ],
+          "result": {
+            "statement": "c",
+            "text": "Conclusion",
+            "given": [
+              "c"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "c",
+              "text": "Conclusion",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [
+            "nfc",
+            "nfd",
+            "ws"
+          ],
+          "result": {
+            "statement": "c",
+            "text": "Conclusion",
+            "given": [
+              "nfc",
+              "nfd",
+              "ws"
+            ],
+            "must_establish": [
+              {
+                "id": "c",
+                "text": "Conclusion",
+                "via": [
+                  "j1",
+                  "j2"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "ws2",
+                "text": "Il pleut souvent ici"
+              }
+            ],
+            "arguments": [
+              "j1",
+              "j2"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "c",
+              "text": "Conclusion",
+              "arguments": [
+                {
+                  "argument": "j1",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "nfc",
+                      "text": "café au lait",
+                      "given": true
+                    },
+                    {
+                      "statement": "ws",
+                      "text": "  Il   pleut\tsouvent\n ici  ",
+                      "given": true
+                    }
+                  ]
+                },
+                {
+                  "argument": "j2",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "nfd",
+                      "text": "café au lait",
+                      "given": true
+                    },
+                    {
+                      "statement": "ws2",
+                      "text": "Il pleut souvent ici",
+                      "arguments": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "lint_all": {
+      "well_founded": {
+        "foundations": [
+          "nfc",
+          "nfd",
+          "ws",
+          "ws2",
+          "case",
+          "ought",
+          "emoji"
+        ],
+        "grounded": [
+          "nfc",
+          "nfd",
+          "ws",
+          "ws2",
+          "case",
+          "ought",
+          "emoji",
+          "c"
+        ],
+        "ungrounded": []
+      },
+      "duplicates": [
+        {
+          "prop_id": "27cbf1dfbe32fd67a655a1aab96fcac5c0dd19532dfd5c151f4ef615e7a20e61",
+          "text": "café au lait",
+          "mode": "is",
+          "ids": [
+            "nfc",
+            "nfd"
+          ]
+        },
+        {
+          "prop_id": "ec263acd2fc7a769e3736b8bd5524d884326debbc614da06d27743d47189912e",
+          "text": "Il pleut souvent ici",
+          "mode": "is",
+          "ids": [
+            "ws",
+            "ws2"
+          ]
+        }
+      ],
+      "unused": [
+        "case",
+        "ought",
+        "emoji"
+      ],
+      "empty_justifications": []
+    },
+    "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  s0 [shape=box, style=rounded, label=\"nfc\\ncafé au lait\"];\n  s1 [shape=box, style=rounded, label=\"nfd\\ncafé au lait\"];\n  s2 [shape=box, style=rounded, label=\"ws\\n  Il   pleut    souvent  ici\"];\n  s3 [shape=box, style=rounded, label=\"ws2\\nIl pleut souvent ici\"];\n  s4 [shape=box, style=rounded, label=\"case\\nIl Pleut Souvent Ici\"];\n  s5 [shape=box, style=rounded, label=\"ought\\nIl pleut souvent ici\", peripheries=2];\n  s6 [shape=box, style=rounded, label=\"emoji\\nSnow ☃ is cold 🥶\"];\n  s7 [shape=box, style=rounded, label=\"c\\nConclusion\"];\n  a0 [shape=diamond, fontsize=8, label=\"j1\"];\n  a1 [shape=diamond, fontsize=8, label=\"j2\"];\n  s0 -> a0;\n  s2 -> a0;\n  a0 -> s7;\n  s1 -> a1;\n  s3 -> a1;\n  a1 -> s7;\n}\n",
+    "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  s0 [shape=box, style=rounded, label=\"café au lait\"];\n  s1 [shape=box, style=rounded, label=\"café au lait\"];\n  s2 [shape=box, style=rounded, label=\"  Il   pleut\\nsouvent  ici\"];\n  s3 [shape=box, style=rounded, label=\"Il pleut souvent ici\"];\n  s4 [shape=box, style=rounded, label=\"Il Pleut Souvent Ici\"];\n  s5 [shape=box, style=rounded, label=\"Il pleut souvent ici\", peripheries=2];\n  s6 [shape=box, style=rounded, label=\"Snow ☃ is cold 🥶\"];\n  s7 [shape=box, style=rounded, label=\"Conclusion\"];\n  a0 [shape=diamond, fontsize=8, label=\"\"];\n  a1 [shape=diamond, fontsize=8, label=\"\"];\n  s0 -> a0;\n  s2 -> a0;\n  a0 -> s7;\n  s1 -> a1;\n  s3 -> a1;\n  a1 -> s7;\n}\n",
+    "mermaid": "flowchart LR\n  s0[\"nfc<br/>café au lait\"]\n  s1[\"nfd<br/>café au lait\"]\n  s2[\"ws<br/>  Il   pleut    souvent  ici\"]\n  s3[\"ws2<br/>Il pleut souvent ici\"]\n  s4[\"case<br/>Il Pleut Souvent Ici\"]\n  s5[\"ought<br/>Il pleut souvent ici\"]\n  s6[\"emoji<br/>Snow ☃ is cold 🥶\"]\n  s7[\"c<br/>Conclusion\"]\n  a0{{\"j1\"}}\n  a1{{\"j2\"}}\n  s0 --> a0\n  s2 --> a0\n  a0 --> s7\n  s1 --> a1\n  s3 --> a1\n  a1 --> s7\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n  class s5 ought;\n",
+    "mermaid_no_ids_tb": "flowchart TB\n  s0[\"café au lait\"]\n  s1[\"café au lait\"]\n  s2[\"  Il   pleut<br/>souvent  ici\"]\n  s3[\"Il pleut souvent ici\"]\n  s4[\"Il Pleut Souvent Ici\"]\n  s5[\"Il pleut souvent ici\"]\n  s6[\"Snow ☃ is cold 🥶\"]\n  s7[\"Conclusion\"]\n  a0{{\" \"}}\n  a1{{\" \"}}\n  s0 --> a0\n  s2 --> a0\n  a0 --> s7\n  s1 --> a1\n  s3 --> a1\n  a1 --> s7\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n  class s5 ought;\n"
+  }
+}

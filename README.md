@@ -229,9 +229,12 @@ or an unknown id.
 | `supports <file> <id> [--depth N]` | Downstream closure: what this statement contributes to, per outgoing argument, with the co-premises of each. |
 | `foundations <file>` | Statements with no incoming argument. |
 | `sccs <file>` | Cyclic strongly connected components (size > 1 or self-loop), with the arguments inside and on the boundary of each. |
+| `plan <file> <id> [--given a,b,...]` | Argument planning: given what an audience already accepts, which foundations they must still grant and which statements must be established, with the arguments available for each. |
 | `lint well-founded <file>` | Optional, informational: statements not grounded in any foundation. |
+| `lint duplicates`, `lint unused`, `lint empty-justifications`, `lint all` | More optional lints: the same proposition under several ids; statements in no argument; arguments with a blank justification. |
 | `ids <file>` | `prop_id` and `just_id` for every statement, `arg_hash` for every argument. |
 | `diff <a> <b>` | Match statements across two files by identity. Four buckets: **identical** (`just_id` matches), **rejustified** (`prop_id` matches, `just_id` does not), **added**, **removed**. Arguments are matched by `arg_hash`. |
+| `export <file> --format dot\|mermaid` | The hypergraph as Graphviz DOT or a Mermaid flowchart, for pictures. |
 | `schema` | Print the JSON Schema. |
 
 In `rests-on` and `supports` output, each statement is expanded once. A later
@@ -255,6 +258,7 @@ returns plain dicts and lists.
 ```python
 from worldview_core import load, validate_dict, compute_identities
 from worldview_core import rests_on, supports, foundations, sccs, well_founded, diff
+from worldview_core import plan, lint_all, to_dot, to_mermaid
 
 wv = load("examples/walking-to-work.json")        # raises LoadError / ValidationError
 problems = validate_dict(raw_dict)                # [] if valid, else list of strings
@@ -266,7 +270,9 @@ ids.arg_hash["walk-for-health"]
 ids.scc_of("habit-reports")                       # ['self-knowledge', 'habit-reports'] or None
 
 rests_on(wv, "need-raincoat", depth=2)            # same dict the CLI prints as JSON
+plan(wv, "need-raincoat", given=["walk-commute"])  # what an audience must still grant
 diff(wv, load("examples/walking-to-work-fork.json"))
+to_mermaid(wv)                                    # picture source
 ```
 
 `Worldview`, `Statement`, and `Argument` are plain dataclasses mirroring the JSON;

@@ -1,0 +1,1072 @@
+{
+  "name": "chain-renamed",
+  "expected": {
+    "plan": {
+      "f": [
+        {
+          "given": [],
+          "result": {
+            "statement": "f",
+            "text": "F",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "f",
+                "text": "F"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "f",
+              "text": "F",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "f",
+            "d"
+          ],
+          "result": {
+            "statement": "f",
+            "text": "F",
+            "given": [
+              "f"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "f",
+              "text": "F",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "f",
+            "text": "F",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "f",
+                "text": "F"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "f",
+              "text": "F",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "f"
+          ],
+          "result": {
+            "statement": "f",
+            "text": "F",
+            "given": [
+              "f"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "f",
+              "text": "F",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "f",
+            "text": "F",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "f",
+                "text": "F"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "f",
+              "text": "F",
+              "arguments": []
+            }
+          }
+        }
+      ],
+      "epsilon": [
+        {
+          "given": [],
+          "result": {
+            "statement": "epsilon",
+            "text": "E",
+            "given": [],
+            "must_establish": [
+              {
+                "id": "epsilon",
+                "text": "E",
+                "via": [
+                  "arg-f-e",
+                  "arg-cd-e"
+                ]
+              },
+              {
+                "id": "gamma",
+                "text": "C",
+                "via": [
+                  "arg-ab-c"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "f",
+                "text": "F"
+              },
+              {
+                "id": "d",
+                "text": "D"
+              },
+              {
+                "id": "b",
+                "text": "B"
+              },
+              {
+                "id": "alpha",
+                "text": "A"
+              }
+            ],
+            "arguments": [
+              "arg-f-e",
+              "arg-cd-e",
+              "arg-ab-c"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "epsilon",
+              "text": "E",
+              "arguments": [
+                {
+                  "argument": "arg-f-e",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "f",
+                      "text": "F",
+                      "arguments": []
+                    }
+                  ]
+                },
+                {
+                  "argument": "arg-cd-e",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "gamma",
+                      "text": "C",
+                      "arguments": [
+                        {
+                          "argument": "arg-ab-c",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "alpha",
+                              "text": "A",
+                              "arguments": []
+                            },
+                            {
+                              "statement": "b",
+                              "text": "B",
+                              "arguments": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "arguments": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "f",
+            "d"
+          ],
+          "result": {
+            "statement": "epsilon",
+            "text": "E",
+            "given": [
+              "f",
+              "d"
+            ],
+            "must_establish": [
+              {
+                "id": "epsilon",
+                "text": "E",
+                "via": [
+                  "arg-f-e",
+                  "arg-cd-e"
+                ]
+              },
+              {
+                "id": "gamma",
+                "text": "C",
+                "via": [
+                  "arg-ab-c"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "b",
+                "text": "B"
+              },
+              {
+                "id": "alpha",
+                "text": "A"
+              }
+            ],
+            "arguments": [
+              "arg-f-e",
+              "arg-cd-e",
+              "arg-ab-c"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "epsilon",
+              "text": "E",
+              "arguments": [
+                {
+                  "argument": "arg-f-e",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "f",
+                      "text": "F",
+                      "given": true
+                    }
+                  ]
+                },
+                {
+                  "argument": "arg-cd-e",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "gamma",
+                      "text": "C",
+                      "arguments": [
+                        {
+                          "argument": "arg-ab-c",
+                          "co_conclusions": [],
+                          "premises": [
+                            {
+                              "statement": "alpha",
+                              "text": "A",
+                              "arguments": []
+                            },
+                            {
+                              "statement": "b",
+                              "text": "B",
+                              "arguments": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "given": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "gamma"
+          ],
+          "result": {
+            "statement": "epsilon",
+            "text": "E",
+            "given": [
+              "gamma"
+            ],
+            "must_establish": [
+              {
+                "id": "epsilon",
+                "text": "E",
+                "via": [
+                  "arg-f-e",
+                  "arg-cd-e"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "f",
+                "text": "F"
+              },
+              {
+                "id": "d",
+                "text": "D"
+              }
+            ],
+            "arguments": [
+              "arg-f-e",
+              "arg-cd-e"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "epsilon",
+              "text": "E",
+              "arguments": [
+                {
+                  "argument": "arg-f-e",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "f",
+                      "text": "F",
+                      "arguments": []
+                    }
+                  ]
+                },
+                {
+                  "argument": "arg-cd-e",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "gamma",
+                      "text": "C",
+                      "given": true
+                    },
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "arguments": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "epsilon"
+          ],
+          "result": {
+            "statement": "epsilon",
+            "text": "E",
+            "given": [
+              "epsilon"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "epsilon",
+              "text": "E",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [
+            "f",
+            "d",
+            "gamma"
+          ],
+          "result": {
+            "statement": "epsilon",
+            "text": "E",
+            "given": [
+              "f",
+              "d",
+              "gamma"
+            ],
+            "must_establish": [
+              {
+                "id": "epsilon",
+                "text": "E",
+                "via": [
+                  "arg-f-e",
+                  "arg-cd-e"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "arg-f-e",
+              "arg-cd-e"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "epsilon",
+              "text": "E",
+              "arguments": [
+                {
+                  "argument": "arg-f-e",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "f",
+                      "text": "F",
+                      "given": true
+                    }
+                  ]
+                },
+                {
+                  "argument": "arg-cd-e",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "gamma",
+                      "text": "C",
+                      "given": true
+                    },
+                    {
+                      "statement": "d",
+                      "text": "D",
+                      "given": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "d": [
+        {
+          "given": [],
+          "result": {
+            "statement": "d",
+            "text": "D",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "d",
+                "text": "D"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "d",
+              "text": "D",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "f",
+            "d"
+          ],
+          "result": {
+            "statement": "d",
+            "text": "D",
+            "given": [
+              "d"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "d",
+              "text": "D",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "d",
+            "text": "D",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "d",
+                "text": "D"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "d",
+              "text": "D",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "d"
+          ],
+          "result": {
+            "statement": "d",
+            "text": "D",
+            "given": [
+              "d"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "d",
+              "text": "D",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "d",
+            "text": "D",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "d",
+                "text": "D"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "d",
+              "text": "D",
+              "arguments": []
+            }
+          }
+        }
+      ],
+      "gamma": [
+        {
+          "given": [],
+          "result": {
+            "statement": "gamma",
+            "text": "C",
+            "given": [],
+            "must_establish": [
+              {
+                "id": "gamma",
+                "text": "C",
+                "via": [
+                  "arg-ab-c"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "b",
+                "text": "B"
+              },
+              {
+                "id": "alpha",
+                "text": "A"
+              }
+            ],
+            "arguments": [
+              "arg-ab-c"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "gamma",
+              "text": "C",
+              "arguments": [
+                {
+                  "argument": "arg-ab-c",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "alpha",
+                      "text": "A",
+                      "arguments": []
+                    },
+                    {
+                      "statement": "b",
+                      "text": "B",
+                      "arguments": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "f",
+            "d"
+          ],
+          "result": {
+            "statement": "gamma",
+            "text": "C",
+            "given": [],
+            "must_establish": [
+              {
+                "id": "gamma",
+                "text": "C",
+                "via": [
+                  "arg-ab-c"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "b",
+                "text": "B"
+              },
+              {
+                "id": "alpha",
+                "text": "A"
+              }
+            ],
+            "arguments": [
+              "arg-ab-c"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "gamma",
+              "text": "C",
+              "arguments": [
+                {
+                  "argument": "arg-ab-c",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "alpha",
+                      "text": "A",
+                      "arguments": []
+                    },
+                    {
+                      "statement": "b",
+                      "text": "B",
+                      "arguments": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "gamma",
+            "text": "C",
+            "given": [],
+            "must_establish": [
+              {
+                "id": "gamma",
+                "text": "C",
+                "via": [
+                  "arg-ab-c"
+                ]
+              }
+            ],
+            "must_grant": [
+              {
+                "id": "b",
+                "text": "B"
+              },
+              {
+                "id": "alpha",
+                "text": "A"
+              }
+            ],
+            "arguments": [
+              "arg-ab-c"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "gamma",
+              "text": "C",
+              "arguments": [
+                {
+                  "argument": "arg-ab-c",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "alpha",
+                      "text": "A",
+                      "arguments": []
+                    },
+                    {
+                      "statement": "b",
+                      "text": "B",
+                      "arguments": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "given": [
+            "gamma"
+          ],
+          "result": {
+            "statement": "gamma",
+            "text": "C",
+            "given": [
+              "gamma"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "gamma",
+              "text": "C",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [
+            "b",
+            "alpha"
+          ],
+          "result": {
+            "statement": "gamma",
+            "text": "C",
+            "given": [
+              "b",
+              "alpha"
+            ],
+            "must_establish": [
+              {
+                "id": "gamma",
+                "text": "C",
+                "via": [
+                  "arg-ab-c"
+                ]
+              }
+            ],
+            "must_grant": [],
+            "arguments": [
+              "arg-ab-c"
+            ],
+            "sccs": [],
+            "tree": {
+              "statement": "gamma",
+              "text": "C",
+              "arguments": [
+                {
+                  "argument": "arg-ab-c",
+                  "co_conclusions": [],
+                  "premises": [
+                    {
+                      "statement": "alpha",
+                      "text": "A",
+                      "given": true
+                    },
+                    {
+                      "statement": "b",
+                      "text": "B",
+                      "given": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "b": [
+        {
+          "given": [],
+          "result": {
+            "statement": "b",
+            "text": "B",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "b",
+                "text": "B"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "b",
+              "text": "B",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "f",
+            "d"
+          ],
+          "result": {
+            "statement": "b",
+            "text": "B",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "b",
+                "text": "B"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "b",
+              "text": "B",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "b",
+            "text": "B",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "b",
+                "text": "B"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "b",
+              "text": "B",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "b"
+          ],
+          "result": {
+            "statement": "b",
+            "text": "B",
+            "given": [
+              "b"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "b",
+              "text": "B",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "b",
+            "text": "B",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "b",
+                "text": "B"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "b",
+              "text": "B",
+              "arguments": []
+            }
+          }
+        }
+      ],
+      "alpha": [
+        {
+          "given": [],
+          "result": {
+            "statement": "alpha",
+            "text": "A",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "alpha",
+                "text": "A"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "alpha",
+              "text": "A",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "f",
+            "d"
+          ],
+          "result": {
+            "statement": "alpha",
+            "text": "A",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "alpha",
+                "text": "A"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "alpha",
+              "text": "A",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "alpha",
+            "text": "A",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "alpha",
+                "text": "A"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "alpha",
+              "text": "A",
+              "arguments": []
+            }
+          }
+        },
+        {
+          "given": [
+            "alpha"
+          ],
+          "result": {
+            "statement": "alpha",
+            "text": "A",
+            "given": [
+              "alpha"
+            ],
+            "must_establish": [],
+            "must_grant": [],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "alpha",
+              "text": "A",
+              "given": true
+            }
+          }
+        },
+        {
+          "given": [],
+          "result": {
+            "statement": "alpha",
+            "text": "A",
+            "given": [],
+            "must_establish": [],
+            "must_grant": [
+              {
+                "id": "alpha",
+                "text": "A"
+              }
+            ],
+            "arguments": [],
+            "sccs": [],
+            "tree": {
+              "statement": "alpha",
+              "text": "A",
+              "arguments": []
+            }
+          }
+        }
+      ]
+    },
+    "lint_all": {
+      "well_founded": {
+        "foundations": [
+          "f",
+          "d",
+          "b",
+          "alpha"
+        ],
+        "grounded": [
+          "f",
+          "epsilon",
+          "d",
+          "gamma",
+          "b",
+          "alpha"
+        ],
+        "ungrounded": []
+      },
+      "duplicates": [],
+      "unused": [],
+      "empty_justifications": []
+    },
+    "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  label=\"chain\"; labelloc=t;\n  s0 [shape=box, style=rounded, label=\"f\\nF\"];\n  s1 [shape=box, style=rounded, label=\"epsilon\\nE\", peripheries=2];\n  s2 [shape=box, style=rounded, label=\"d\\nD\"];\n  s3 [shape=box, style=rounded, label=\"gamma\\nC\"];\n  s4 [shape=box, style=rounded, label=\"b\\nB\"];\n  s5 [shape=box, style=rounded, label=\"alpha\\nA\"];\n  a0 [shape=diamond, fontsize=8, label=\"arg-f-e\"];\n  a1 [shape=diamond, fontsize=8, label=\"arg-cd-e\"];\n  a2 [shape=diamond, fontsize=8, label=\"arg-ab-c\"];\n  s0 -> a0;\n  a0 -> s1;\n  s3 -> a1;\n  s2 -> a1;\n  a1 -> s1;\n  s5 -> a2;\n  s4 -> a2;\n  a2 -> s3;\n}\n",
+    "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  label=\"chain\"; labelloc=t;\n  s0 [shape=box, style=rounded, label=\"F\"];\n  s1 [shape=box, style=rounded, label=\"E\", peripheries=2];\n  s2 [shape=box, style=rounded, label=\"D\"];\n  s3 [shape=box, style=rounded, label=\"C\"];\n  s4 [shape=box, style=rounded, label=\"B\"];\n  s5 [shape=box, style=rounded, label=\"A\"];\n  a0 [shape=diamond, fontsize=8, label=\"\"];\n  a1 [shape=diamond, fontsize=8, label=\"\"];\n  a2 [shape=diamond, fontsize=8, label=\"\"];\n  s0 -> a0;\n  a0 -> s1;\n  s3 -> a1;\n  s2 -> a1;\n  a1 -> s1;\n  s5 -> a2;\n  s4 -> a2;\n  a2 -> s3;\n}\n",
+    "mermaid": "flowchart LR\n  s0[\"f<br/>F\"]\n  s1[\"epsilon<br/>E\"]\n  s2[\"d<br/>D\"]\n  s3[\"gamma<br/>C\"]\n  s4[\"b<br/>B\"]\n  s5[\"alpha<br/>A\"]\n  a0{{\"arg-f-e\"}}\n  a1{{\"arg-cd-e\"}}\n  a2{{\"arg-ab-c\"}}\n  s0 --> a0\n  a0 --> s1\n  s3 --> a1\n  s2 --> a1\n  a1 --> s1\n  s5 --> a2\n  s4 --> a2\n  a2 --> s3\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n  class s1 ought;\n",
+    "mermaid_no_ids_tb": "flowchart TB\n  s0[\"F\"]\n  s1[\"E\"]\n  s2[\"D\"]\n  s3[\"C\"]\n  s4[\"B\"]\n  s5[\"A\"]\n  a0{{\" \"}}\n  a1{{\" \"}}\n  a2{{\" \"}}\n  s0 --> a0\n  a0 --> s1\n  s3 --> a1\n  s2 --> a1\n  a1 --> s1\n  s5 --> a2\n  s4 --> a2\n  a2 --> s3\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n  class s1 ought;\n"
+  }
+}

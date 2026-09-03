@@ -28,6 +28,11 @@ Vector kinds
 
 ``diffs/<name>.json``
     Pairs of case names and the expected diff between them.
+
+``extras/<name>.json``
+    Later additions kept separate so that older ports keep passing the
+    core vectors: ``plan`` with several ``given`` sets, the extra lints,
+    and the DOT and Mermaid exports.
 """
 
 from __future__ import annotations
@@ -48,9 +53,13 @@ from worldview_core import (  # noqa: E402
     compute_identities,
     diff,
     foundations,
+    lint_all,
+    plan,
     rests_on,
     sccs,
     supports,
+    to_dot,
+    to_mermaid,
     validate_dict,
     well_founded,
 )
@@ -389,6 +398,27 @@ def expected_for(data, name):
     }
 
 
+def extras_for(data, name):
+    wv = Worldview.from_dict(data, source=name)
+    all_ids = wv.statement_ids()
+    probe = all_ids if len(all_ids) <= 15 else all_ids[:2] + all_ids[-1:]
+    founds = [f["id"] for f in foundations(wv)]
+    plans = {}
+    for sid in probe:
+        closure = rests_on(wv, sid)["closure"]["statements"]
+        mids = [s for s in closure if s not in founds]
+        given_sets = [[], founds[:2], mids[:1], [sid], closure[:3]]
+        plans[sid] = [{"given": g, "result": plan(wv, sid, g)} for g in given_sets]
+    return {
+        "plan": plans,
+        "lint_all": lint_all(wv),
+        "dot": to_dot(wv),
+        "dot_no_ids_tb": to_dot(wv, ids=False, wrap=20, rankdir="TB"),
+        "mermaid": to_mermaid(wv),
+        "mermaid_no_ids_tb": to_mermaid(wv, ids=False, wrap=20, direction="TB"),
+    }
+
+
 def dump(path: Path, data) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
@@ -408,6 +438,7 @@ def main() -> None:
         problems = validate_dict(data)
         assert not problems, (name, problems)
         dump(OUT / "cases" / f"{name}.json", {"name": name, "input": data, "expected": expected_for(data, name)})
+        dump(OUT / "extras" / f"{name}.json", {"name": name, "expected": extras_for(data, name)})
 
     for name, data in invalid_cases().items():
         assert validate_dict(data), name

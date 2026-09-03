@@ -135,16 +135,20 @@ class Graph:
 
     # ---------------------------------------------------------- reachability
 
-    def upstream(self, sid: str) -> set[str]:
-        """All statements from which ``sid`` is reachable (excluding itself unless cyclic)."""
-        return self._reach(sid, self.pred)
+    def upstream(self, sid: str, stop: frozenset[str] | set[str] = frozenset()) -> set[str]:
+        """All statements from which ``sid`` is reachable (excluding itself unless cyclic).
 
-    def downstream(self, sid: str) -> set[str]:
+        Statements in ``stop`` are reached but not expanded: the walk does
+        not continue past them.
+        """
+        return self._reach(sid, self.pred, stop)
+
+    def downstream(self, sid: str, stop: frozenset[str] | set[str] = frozenset()) -> set[str]:
         """All statements reachable from ``sid`` (excluding itself unless cyclic)."""
-        return self._reach(sid, self.succ)
+        return self._reach(sid, self.succ, stop)
 
     @staticmethod
-    def _reach(start: str, adj: dict[str, set[str]]) -> set[str]:
+    def _reach(start: str, adj: dict[str, set[str]], stop: frozenset[str] | set[str] = frozenset()) -> set[str]:
         seen: set[str] = set()
         todo = list(adj[start])
         while todo:
@@ -152,5 +156,7 @@ class Graph:
             if v in seen:
                 continue
             seen.add(v)
+            if v in stop:
+                continue
             todo.extend(adj[v] - seen)
         return seen
