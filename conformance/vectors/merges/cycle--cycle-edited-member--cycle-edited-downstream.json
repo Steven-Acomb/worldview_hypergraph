@@ -1,0 +1,110 @@
+{
+  "base": "cycle",
+  "ours": "cycle-edited-member",
+  "theirs": "cycle-edited-downstream",
+  "expected": {
+    "merged": {
+      "format": "worldview-core",
+      "version": "0.1",
+      "name": "cycle",
+      "statements": [
+        {
+          "id": "p",
+          "text": "P",
+          "mode": "is"
+        },
+        {
+          "id": "x",
+          "text": "X",
+          "mode": "is"
+        },
+        {
+          "id": "y",
+          "text": "Y (edited)",
+          "mode": "is"
+        },
+        {
+          "id": "z",
+          "text": "Z",
+          "mode": "is"
+        },
+        {
+          "id": "q",
+          "text": "Q (edited)",
+          "mode": "is"
+        }
+      ],
+      "arguments": [
+        {
+          "id": "p-x",
+          "premises": [
+            "p"
+          ],
+          "conclusions": [
+            "x"
+          ],
+          "justification": "p gives x"
+        },
+        {
+          "id": "x-y",
+          "premises": [
+            "x"
+          ],
+          "conclusions": [
+            "y"
+          ],
+          "justification": "x gives y"
+        },
+        {
+          "id": "y-z",
+          "premises": [
+            "y"
+          ],
+          "conclusions": [
+            "z"
+          ],
+          "justification": "y gives z"
+        },
+        {
+          "id": "z-x",
+          "premises": [
+            "z"
+          ],
+          "conclusions": [
+            "x"
+          ],
+          "justification": "z gives x"
+        },
+        {
+          "id": "z-q",
+          "premises": [
+            "z"
+          ],
+          "conclusions": [
+            "q"
+          ],
+          "justification": "z gives q"
+        }
+      ]
+    },
+    "conflicts": [],
+    "summary": {
+      "statements": {
+        "kept": 3,
+        "added_ours": 0,
+        "added_theirs": 0,
+        "added_both": 0,
+        "removed": 0,
+        "changed": 2
+      },
+      "arguments": {
+        "kept": 5,
+        "added_ours": 0,
+        "added_theirs": 0,
+        "added_both": 0,
+        "removed": 0,
+        "changed": 0
+      }
+    }
+  }
+}

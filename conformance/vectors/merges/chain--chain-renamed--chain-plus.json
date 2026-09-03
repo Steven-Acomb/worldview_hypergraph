@@ -1,0 +1,124 @@
+{
+  "base": "chain",
+  "ours": "chain-renamed",
+  "theirs": "chain-plus",
+  "expected": {
+    "merged": {
+      "format": "worldview-core",
+      "version": "0.1",
+      "name": "chain",
+      "statements": [
+        {
+          "id": "b",
+          "text": "B",
+          "mode": "is"
+        },
+        {
+          "id": "d",
+          "text": "D",
+          "mode": "is"
+        },
+        {
+          "id": "epsilon",
+          "text": "E",
+          "mode": "ought"
+        },
+        {
+          "id": "gamma",
+          "text": "C",
+          "mode": "is"
+        },
+        {
+          "id": "alpha",
+          "text": "A",
+          "mode": "is"
+        },
+        {
+          "id": "g",
+          "text": "G",
+          "mode": "is"
+        }
+      ],
+      "arguments": [
+        {
+          "id": "arg-cd-e",
+          "premises": [
+            "gamma",
+            "d"
+          ],
+          "conclusions": [
+            "epsilon"
+          ],
+          "justification": "c and d give e"
+        },
+        {
+          "id": "arg-ab-c",
+          "premises": [
+            "alpha",
+            "b"
+          ],
+          "conclusions": [
+            "gamma"
+          ],
+          "justification": "a and b give c"
+        }
+      ]
+    },
+    "conflicts": [
+      {
+        "kind": "dangling",
+        "id": "arg-f-e",
+        "missing": [
+          "f"
+        ],
+        "argument": {
+          "id": "arg-f-e",
+          "premises": [
+            "f"
+          ],
+          "conclusions": [
+            "epsilon"
+          ],
+          "justification": "f alone gives e"
+        },
+        "resolution": "dropped argument"
+      },
+      {
+        "kind": "dangling",
+        "id": "g-e",
+        "missing": [
+          "e"
+        ],
+        "argument": {
+          "id": "g-e",
+          "premises": [
+            "g"
+          ],
+          "conclusions": [
+            "e"
+          ],
+          "justification": "g gives e"
+        },
+        "resolution": "dropped argument"
+      }
+    ],
+    "summary": {
+      "statements": {
+        "kept": 2,
+        "added_ours": 3,
+        "added_theirs": 1,
+        "added_both": 0,
+        "removed": 4,
+        "changed": 0
+      },
+      "arguments": {
+        "kept": 0,
+        "added_ours": 3,
+        "added_theirs": 1,
+        "added_both": 0,
+        "removed": 3,
+        "changed": 0
+      }
+    }
+  }
+}

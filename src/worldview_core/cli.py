@@ -18,8 +18,11 @@ from .errors import LoadError, UnknownIdError, ValidationError
 from .export import to_dot, to_mermaid
 from .identity import compute_identities
 from .lint import duplicates, empty_justifications, lint_all, unused
+from .merge import merge
 from .model import Worldview, load, read_json
+from .present import present
 from .queries import foundations, plan, rests_on, sccs, supports, well_founded
+from .stats import stats
 from .validate import schema, validate_dict
 
 EXIT_OK = 0
@@ -318,6 +321,75 @@ def cmd_export(args) -> int:
     return EXIT_OK
 
 
+def cmd_present(args) -> int:
+    wv = _load(args.file)
+    try:
+        md = present(wv, args.id, given=_split_ids(args.given), depth=args.depth)
+    except UnknownIdError as e:
+        sys.stderr.write(f"error: {e}\n")
+        return EXIT_USAGE
+    if args.json:
+        json.dump({"statement": args.id, "markdown": md}, sys.stdout, indent=2, ensure_ascii=False)
+        sys.stdout.write("\n")
+    elif args.output:
+        with open(args.output, "w", encoding="utf-8", newline="\n") as f:
+            f.write(md)
+    else:
+        sys.stdout.write(md)
+    return EXIT_OK
+
+
+def cmd_stats(args) -> int:
+    wv = _load(args.file)
+    data = stats(wv)
+
+    def text(d):
+        print(f"statements: {d['statements']} ({d['modes']['is']} is, {d['modes']['ought']} ought)")
+        print(f"arguments: {d['arguments']} (premises {d['premises']['min']}-{d['premises']['max']}, mean {d['premises']['mean']}; "
+              f"conclusions {d['conclusions']['min']}-{d['conclusions']['max']}; {d['zero_premise_arguments']} with no premises)")
+        print(f"foundations: {d['foundations']}   terminals: {d['terminals']}   unused: {d['unused']}   ungrounded: {d['ungrounded']}")
+        print(f"cycles: {d['cycles']} (largest {d['largest_cycle']}, {d['statements_in_cycles']} statements in cycles)")
+        print(f"longest chain of arguments: {d['longest_chain']}")
+        if d["most_supporting"]:
+            print("most supporting: " + ", ".join(f"{x['id']} ({x['downstream']})" for x in d["most_supporting"]))
+        if d["most_supported"]:
+            print("most supported: " + ", ".join(f"{x['id']} ({x['upstream']})" for x in d["most_supported"]))
+
+    _emit(data, args.json, text)
+    return EXIT_OK
+
+
+def cmd_merge(args) -> int:
+    base, ours, theirs = _load(args.base), _load(args.ours), _load(args.theirs)
+    data = merge(base, ours, theirs)
+    conflicts = data["conflicts"]
+
+    def text(d):
+        s, a = d["summary"]["statements"], d["summary"]["arguments"]
+        print(f"statements: {s['kept']} kept, {s['changed']} changed, {s['added_ours']}+{s['added_theirs']}+{s['added_both']} added (ours+theirs+both), {s['removed']} removed")
+        print(f"arguments: {a['kept']} kept, {a['changed']} changed, {a['added_ours']}+{a['added_theirs']}+{a['added_both']} added, {a['removed']} removed")
+        if conflicts:
+            print(f"{len(conflicts)} conflict(s):")
+            for c in conflicts:
+                if c["kind"] == "dangling":
+                    print(f"  dangling {c['id']}: references missing {', '.join(c['missing'])} ({c['resolution']})")
+                else:
+                    print(f"  {c['kind']} {c['id']}: changed on both sides ({c['resolution']})")
+        else:
+            print("no conflicts")
+
+    _emit(data, args.json, text)
+    if args.output and (not conflicts or args.force):
+        with open(args.output, "w", encoding="utf-8", newline="\n") as f:
+            json.dump(data["merged"], f, indent=2, ensure_ascii=False)
+            f.write("\n")
+        if not args.json:
+            print(f"wrote {args.output}")
+    elif args.output:
+        sys.stderr.write(f"not writing {args.output}: conflicts (use --force to write the ours-wins result)\n")
+    return EXIT_INVALID if conflicts else EXIT_OK
+
+
 def cmd_diff(args) -> int:
     a, b = _load(args.a), _load(args.b)
     data = diff(a, b)
@@ -407,9 +479,26 @@ def build_parser() -> argparse.ArgumentParser:
         sp.set_defaults(fn=fn)
         sp.add_argument("file")
 
+    sp = add("present", cmd_present, "Render the full case for a statement as Markdown.")
+    sp.add_argument("file")
+    sp.add_argument("id", help="statement id")
+    sp.add_argument("--given", action="append", metavar="IDS", help="statement ids the audience already accepts (comma-separated; repeatable)")
+    sp.add_argument("--depth", type=int, default=None, help="max argument hops to expand (ignored with --given)")
+    sp.add_argument("-o", "--output", help="write Markdown to this file")
+
+    sp = add("stats", cmd_stats, "Descriptive statistics of the hypergraph.")
+    sp.add_argument("file")
+
     sp = add("diff", cmd_diff, "Match statements and arguments across two files by identity.")
     sp.add_argument("a")
     sp.add_argument("b")
+
+    sp = add("merge", cmd_merge, "Three-way merge: combine two lines of edits from a common base. Exit 1 on conflicts.")
+    sp.add_argument("base")
+    sp.add_argument("ours")
+    sp.add_argument("theirs")
+    sp.add_argument("-o", "--output", help="write the merged worldview here (only if conflict-free, or with --force)")
+    sp.add_argument("--force", action="store_true", help="write the output even with conflicts (ours wins)")
 
     sp = add("export", cmd_export, "Export the hypergraph as Graphviz DOT or Mermaid.")
     sp.add_argument("file")

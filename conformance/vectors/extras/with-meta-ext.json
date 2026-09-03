@@ -1071,6 +1071,97 @@
       "unused": [],
       "empty_justifications": []
     },
+    "stats": {
+      "statements": 6,
+      "arguments": 3,
+      "modes": {
+        "is": 5,
+        "ought": 1
+      },
+      "foundations": 4,
+      "terminals": 1,
+      "unused": 0,
+      "ungrounded": 0,
+      "cycles": 0,
+      "largest_cycle": 0,
+      "statements_in_cycles": 0,
+      "premises": {
+        "min": 1,
+        "max": 2,
+        "mean": 1.667
+      },
+      "conclusions": {
+        "min": 1,
+        "max": 1,
+        "mean": 1.0
+      },
+      "zero_premise_arguments": 0,
+      "longest_chain": 2,
+      "most_supporting": [
+        {
+          "id": "a",
+          "downstream": 2
+        },
+        {
+          "id": "b",
+          "downstream": 2
+        },
+        {
+          "id": "c",
+          "downstream": 1
+        },
+        {
+          "id": "d",
+          "downstream": 1
+        },
+        {
+          "id": "f",
+          "downstream": 1
+        }
+      ],
+      "most_supported": [
+        {
+          "id": "e",
+          "upstream": 5
+        },
+        {
+          "id": "c",
+          "upstream": 2
+        }
+      ]
+    },
+    "present": {
+      "a": {
+        "plain": "# A\n\n`a` · is\n\n## The case\n\n- **A** (`a`, is) — *foundation*\n\n## Foundations reached\n\n- `a`: A\n",
+        "depth_1": "# A\n\n`a` · is\n\n## The case\n\n- **A** (`a`, is) — *foundation*\n\n## Foundations reached\n\n- `a`: A\n",
+        "given": {
+          "given": [
+            "a"
+          ],
+          "markdown": "# A\n\n`a` · is\n\nTaken as given: `a`.\n\n## The case\n\n- **A** (`a`, is) — *given*\n\n## What the audience must grant\n\nNothing: every foundation reached is already given.\n"
+        }
+      },
+      "b": {
+        "plain": "# B\n\n`b` · is\n\n## The case\n\n- **B** (`b`, is) — *foundation*\n\n## Foundations reached\n\n- `b`: B\n",
+        "depth_1": "# B\n\n`b` · is\n\n## The case\n\n- **B** (`b`, is) — *foundation*\n\n## Foundations reached\n\n- `b`: B\n",
+        "given": {
+          "given": [
+            "a"
+          ],
+          "markdown": "# B\n\n`b` · is\n\nTaken as given: nothing in this statement's closure.\n\n## The case\n\n- **B** (`b`, is) — *foundation*\n\n## What the audience must grant\n\n- `b`: B\n"
+        }
+      },
+      "c": {
+        "plain": "# C\n\n`c` · is\n\n## The case\n\n- **C** (`c`, is)\n  - via `ab-c` [modus ponens]: a and b give c\n    - **A** (`a`, is) — *foundation*\n    - **B** (`b`, is) — *foundation*\n\n## Foundations reached\n\n- `a`: A\n- `b`: B\n",
+        "depth_1": "# C\n\n`c` · is\n\n## The case\n\n- **C** (`c`, is)\n  - via `ab-c` [modus ponens]: a and b give c\n    - **A** (`a`, is)\n    - **B** (`b`, is)\n\n## Foundations reached\n\n- `a`: A\n- `b`: B\n",
+        "given": {
+          "given": [
+            "a"
+          ],
+          "markdown": "# C\n\n`c` · is\n\nTaken as given: `a`.\n\n## The case\n\n- **C** (`c`, is)\n  - via `ab-c` [modus ponens]: a and b give c\n    - **A** (`a`, is) — *given*\n    - **B** (`b`, is) — *foundation*\n\n## What the audience must grant\n\n- `b`: B\n"
+        }
+      }
+    },
     "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  label=\"chain\"; labelloc=t;\n  s0 [shape=box, style=rounded, label=\"a\\nA\"];\n  s1 [shape=box, style=rounded, label=\"b\\nB\"];\n  s2 [shape=box, style=rounded, label=\"c\\nC\"];\n  s3 [shape=box, style=rounded, label=\"d\\nD\"];\n  s4 [shape=box, style=rounded, label=\"e\\nE\", peripheries=2];\n  s5 [shape=box, style=rounded, label=\"f\\nF\"];\n  a0 [shape=diamond, fontsize=8, label=\"ab-c\\nmodus ponens\"];\n  a1 [shape=diamond, fontsize=8, label=\"cd-e\"];\n  a2 [shape=diamond, fontsize=8, label=\"f-e\"];\n  s0 -> a0;\n  s1 -> a0;\n  a0 -> s2;\n  s2 -> a1;\n  s3 -> a1;\n  a1 -> s4;\n  s5 -> a2;\n  a2 -> s4;\n}\n",
     "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  label=\"chain\"; labelloc=t;\n  s0 [shape=box, style=rounded, label=\"A\"];\n  s1 [shape=box, style=rounded, label=\"B\"];\n  s2 [shape=box, style=rounded, label=\"C\"];\n  s3 [shape=box, style=rounded, label=\"D\"];\n  s4 [shape=box, style=rounded, label=\"E\", peripheries=2];\n  s5 [shape=box, style=rounded, label=\"F\"];\n  a0 [shape=diamond, fontsize=8, label=\"modus ponens\"];\n  a1 [shape=diamond, fontsize=8, label=\"\"];\n  a2 [shape=diamond, fontsize=8, label=\"\"];\n  s0 -> a0;\n  s1 -> a0;\n  a0 -> s2;\n  s2 -> a1;\n  s3 -> a1;\n  a1 -> s4;\n  s5 -> a2;\n  a2 -> s4;\n}\n",
     "mermaid": "flowchart LR\n  s0[\"a<br/>A\"]\n  s1[\"b<br/>B\"]\n  s2[\"c<br/>C\"]\n  s3[\"d<br/>D\"]\n  s4[\"e<br/>E\"]\n  s5[\"f<br/>F\"]\n  a0{{\"ab-c<br/>modus ponens\"}}\n  a1{{\"cd-e\"}}\n  a2{{\"f-e\"}}\n  s0 --> a0\n  s1 --> a0\n  a0 --> s2\n  s2 --> a1\n  s3 --> a1\n  a1 --> s4\n  s5 --> a2\n  a2 --> s4\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n  class s4 ought;\n",

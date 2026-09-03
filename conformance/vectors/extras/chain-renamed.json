@@ -1064,6 +1064,97 @@
       "unused": [],
       "empty_justifications": []
     },
+    "stats": {
+      "statements": 6,
+      "arguments": 3,
+      "modes": {
+        "is": 5,
+        "ought": 1
+      },
+      "foundations": 4,
+      "terminals": 1,
+      "unused": 0,
+      "ungrounded": 0,
+      "cycles": 0,
+      "largest_cycle": 0,
+      "statements_in_cycles": 0,
+      "premises": {
+        "min": 1,
+        "max": 2,
+        "mean": 1.667
+      },
+      "conclusions": {
+        "min": 1,
+        "max": 1,
+        "mean": 1.0
+      },
+      "zero_premise_arguments": 0,
+      "longest_chain": 2,
+      "most_supporting": [
+        {
+          "id": "b",
+          "downstream": 2
+        },
+        {
+          "id": "alpha",
+          "downstream": 2
+        },
+        {
+          "id": "f",
+          "downstream": 1
+        },
+        {
+          "id": "d",
+          "downstream": 1
+        },
+        {
+          "id": "gamma",
+          "downstream": 1
+        }
+      ],
+      "most_supported": [
+        {
+          "id": "epsilon",
+          "upstream": 5
+        },
+        {
+          "id": "gamma",
+          "upstream": 2
+        }
+      ]
+    },
+    "present": {
+      "f": {
+        "plain": "# F\n\n`f` · is\n\n## The case\n\n- **F** (`f`, is) — *foundation*\n\n## Foundations reached\n\n- `f`: F\n",
+        "depth_1": "# F\n\n`f` · is\n\n## The case\n\n- **F** (`f`, is) — *foundation*\n\n## Foundations reached\n\n- `f`: F\n",
+        "given": {
+          "given": [
+            "f"
+          ],
+          "markdown": "# F\n\n`f` · is\n\nTaken as given: `f`.\n\n## The case\n\n- **F** (`f`, is) — *given*\n\n## What the audience must grant\n\nNothing: every foundation reached is already given.\n"
+        }
+      },
+      "epsilon": {
+        "plain": "# E\n\n`epsilon` · ought\n\n## The case\n\n- **E** (`epsilon`, ought)\n  - via `arg-f-e`: f alone gives e\n    - **F** (`f`, is) — *foundation*\n  - via `arg-cd-e`: c and d give e\n    - **C** (`gamma`, is)\n      - via `arg-ab-c`: a and b give c\n        - **A** (`alpha`, is) — *foundation*\n        - **B** (`b`, is) — *foundation*\n    - **D** (`d`, is) — *foundation*\n\n## Foundations reached\n\n- `f`: F\n- `d`: D\n- `b`: B\n- `alpha`: A\n",
+        "depth_1": "# E\n\n`epsilon` · ought\n\n## The case\n\n- **E** (`epsilon`, ought)\n  - via `arg-f-e`: f alone gives e\n    - **F** (`f`, is)\n  - via `arg-cd-e`: c and d give e\n    - **C** (`gamma`, is) — *not expanded further*\n    - **D** (`d`, is)\n\n## Foundations reached\n\n- `f`: F\n- `d`: D\n- `b`: B\n- `alpha`: A\n",
+        "given": {
+          "given": [
+            "f"
+          ],
+          "markdown": "# E\n\n`epsilon` · ought\n\nTaken as given: `f`.\n\n## The case\n\n- **E** (`epsilon`, ought)\n  - via `arg-f-e`: f alone gives e\n    - **F** (`f`, is) — *given*\n  - via `arg-cd-e`: c and d give e\n    - **C** (`gamma`, is)\n      - via `arg-ab-c`: a and b give c\n        - **A** (`alpha`, is) — *foundation*\n        - **B** (`b`, is) — *foundation*\n    - **D** (`d`, is) — *foundation*\n\n## What the audience must grant\n\n- `d`: D\n- `b`: B\n- `alpha`: A\n"
+        }
+      },
+      "d": {
+        "plain": "# D\n\n`d` · is\n\n## The case\n\n- **D** (`d`, is) — *foundation*\n\n## Foundations reached\n\n- `d`: D\n",
+        "depth_1": "# D\n\n`d` · is\n\n## The case\n\n- **D** (`d`, is) — *foundation*\n\n## Foundations reached\n\n- `d`: D\n",
+        "given": {
+          "given": [
+            "f"
+          ],
+          "markdown": "# D\n\n`d` · is\n\nTaken as given: nothing in this statement's closure.\n\n## The case\n\n- **D** (`d`, is) — *foundation*\n\n## What the audience must grant\n\n- `d`: D\n"
+        }
+      }
+    },
     "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  label=\"chain\"; labelloc=t;\n  s0 [shape=box, style=rounded, label=\"f\\nF\"];\n  s1 [shape=box, style=rounded, label=\"epsilon\\nE\", peripheries=2];\n  s2 [shape=box, style=rounded, label=\"d\\nD\"];\n  s3 [shape=box, style=rounded, label=\"gamma\\nC\"];\n  s4 [shape=box, style=rounded, label=\"b\\nB\"];\n  s5 [shape=box, style=rounded, label=\"alpha\\nA\"];\n  a0 [shape=diamond, fontsize=8, label=\"arg-f-e\"];\n  a1 [shape=diamond, fontsize=8, label=\"arg-cd-e\"];\n  a2 [shape=diamond, fontsize=8, label=\"arg-ab-c\"];\n  s0 -> a0;\n  a0 -> s1;\n  s3 -> a1;\n  s2 -> a1;\n  a1 -> s1;\n  s5 -> a2;\n  s4 -> a2;\n  a2 -> s3;\n}\n",
     "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  label=\"chain\"; labelloc=t;\n  s0 [shape=box, style=rounded, label=\"F\"];\n  s1 [shape=box, style=rounded, label=\"E\", peripheries=2];\n  s2 [shape=box, style=rounded, label=\"D\"];\n  s3 [shape=box, style=rounded, label=\"C\"];\n  s4 [shape=box, style=rounded, label=\"B\"];\n  s5 [shape=box, style=rounded, label=\"A\"];\n  a0 [shape=diamond, fontsize=8, label=\"\"];\n  a1 [shape=diamond, fontsize=8, label=\"\"];\n  a2 [shape=diamond, fontsize=8, label=\"\"];\n  s0 -> a0;\n  a0 -> s1;\n  s3 -> a1;\n  s2 -> a1;\n  a1 -> s1;\n  s5 -> a2;\n  s4 -> a2;\n  a2 -> s3;\n}\n",
     "mermaid": "flowchart LR\n  s0[\"f<br/>F\"]\n  s1[\"epsilon<br/>E\"]\n  s2[\"d<br/>D\"]\n  s3[\"gamma<br/>C\"]\n  s4[\"b<br/>B\"]\n  s5[\"alpha<br/>A\"]\n  a0{{\"arg-f-e\"}}\n  a1{{\"arg-cd-e\"}}\n  a2{{\"arg-ab-c\"}}\n  s0 --> a0\n  a0 --> s1\n  s3 --> a1\n  s2 --> a1\n  a1 --> s1\n  s5 --> a2\n  s4 --> a2\n  a2 --> s3\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n  class s1 ought;\n",

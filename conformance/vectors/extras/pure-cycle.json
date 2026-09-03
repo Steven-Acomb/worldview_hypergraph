@@ -832,6 +832,83 @@
       "unused": [],
       "empty_justifications": []
     },
+    "stats": {
+      "statements": 3,
+      "arguments": 3,
+      "modes": {
+        "is": 3,
+        "ought": 0
+      },
+      "foundations": 0,
+      "terminals": 1,
+      "unused": 0,
+      "ungrounded": 3,
+      "cycles": 1,
+      "largest_cycle": 2,
+      "statements_in_cycles": 2,
+      "premises": {
+        "min": 1,
+        "max": 1,
+        "mean": 1.0
+      },
+      "conclusions": {
+        "min": 1,
+        "max": 1,
+        "mean": 1.0
+      },
+      "zero_premise_arguments": 0,
+      "longest_chain": 1,
+      "most_supporting": [
+        {
+          "id": "x",
+          "downstream": 3
+        },
+        {
+          "id": "y",
+          "downstream": 3
+        }
+      ],
+      "most_supported": [
+        {
+          "id": "x",
+          "upstream": 2
+        },
+        {
+          "id": "y",
+          "upstream": 2
+        },
+        {
+          "id": "q",
+          "upstream": 2
+        }
+      ]
+    },
+    "present": {
+      "x": {
+        "plain": "# X\n\n`x` · is · in cycle: `x`, `y`\n\n## The case\n\n- **X** (`x`, is)\n  - via `y-x`: because\n    - **Y** (`y`, is)\n      - via `x-y`: because\n        - **X** (`x`, is) — *see above*\n\n## Foundations reached\n\nNone: every statement in the closure has an argument for it (the closure is cyclic).\n\n## Cycles involved\n\n- `x`, `y`\n",
+        "depth_1": "# X\n\n`x` · is · in cycle: `x`, `y`\n\n## The case\n\n- **X** (`x`, is)\n  - via `y-x`: because\n    - **Y** (`y`, is) — *not expanded further*\n\n## Foundations reached\n\nNone: every statement in the closure has an argument for it (the closure is cyclic).\n\n## Cycles involved\n\n- `x`, `y`\n",
+        "given": {
+          "given": [],
+          "markdown": "# X\n\n`x` · is · in cycle: `x`, `y`\n\n## The case\n\n- **X** (`x`, is)\n  - via `y-x`: because\n    - **Y** (`y`, is)\n      - via `x-y`: because\n        - **X** (`x`, is) — *see above*\n\n## Foundations reached\n\nNone: every statement in the closure has an argument for it (the closure is cyclic).\n\n## Cycles involved\n\n- `x`, `y`\n"
+        }
+      },
+      "y": {
+        "plain": "# Y\n\n`y` · is · in cycle: `x`, `y`\n\n## The case\n\n- **Y** (`y`, is)\n  - via `x-y`: because\n    - **X** (`x`, is)\n      - via `y-x`: because\n        - **Y** (`y`, is) — *see above*\n\n## Foundations reached\n\nNone: every statement in the closure has an argument for it (the closure is cyclic).\n\n## Cycles involved\n\n- `x`, `y`\n",
+        "depth_1": "# Y\n\n`y` · is · in cycle: `x`, `y`\n\n## The case\n\n- **Y** (`y`, is)\n  - via `x-y`: because\n    - **X** (`x`, is) — *not expanded further*\n\n## Foundations reached\n\nNone: every statement in the closure has an argument for it (the closure is cyclic).\n\n## Cycles involved\n\n- `x`, `y`\n",
+        "given": {
+          "given": [],
+          "markdown": "# Y\n\n`y` · is · in cycle: `x`, `y`\n\n## The case\n\n- **Y** (`y`, is)\n  - via `x-y`: because\n    - **X** (`x`, is)\n      - via `y-x`: because\n        - **Y** (`y`, is) — *see above*\n\n## Foundations reached\n\nNone: every statement in the closure has an argument for it (the closure is cyclic).\n\n## Cycles involved\n\n- `x`, `y`\n"
+        }
+      },
+      "q": {
+        "plain": "# Q\n\n`q` · is\n\n## The case\n\n- **Q** (`q`, is)\n  - via `y-q`: because\n    - **Y** (`y`, is)\n      - via `x-y`: because\n        - **X** (`x`, is)\n          - via `y-x`: because\n            - **Y** (`y`, is) — *see above*\n\n## Foundations reached\n\nNone: every statement in the closure has an argument for it (the closure is cyclic).\n\n## Cycles involved\n\n- `x`, `y`\n",
+        "depth_1": "# Q\n\n`q` · is\n\n## The case\n\n- **Q** (`q`, is)\n  - via `y-q`: because\n    - **Y** (`y`, is) — *not expanded further*\n\n## Foundations reached\n\nNone: every statement in the closure has an argument for it (the closure is cyclic).\n\n## Cycles involved\n\n- `x`, `y`\n",
+        "given": {
+          "given": [],
+          "markdown": "# Q\n\n`q` · is\n\n## The case\n\n- **Q** (`q`, is)\n  - via `y-q`: because\n    - **Y** (`y`, is)\n      - via `x-y`: because\n        - **X** (`x`, is)\n          - via `y-x`: because\n            - **Y** (`y`, is) — *see above*\n\n## Foundations reached\n\nNone: every statement in the closure has an argument for it (the closure is cyclic).\n\n## Cycles involved\n\n- `x`, `y`\n"
+        }
+      }
+    },
     "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  s0 [shape=box, style=rounded, label=\"x\\nX\"];\n  s1 [shape=box, style=rounded, label=\"y\\nY\"];\n  s2 [shape=box, style=rounded, label=\"q\\nQ\"];\n  a0 [shape=diamond, fontsize=8, label=\"x-y\"];\n  a1 [shape=diamond, fontsize=8, label=\"y-x\"];\n  a2 [shape=diamond, fontsize=8, label=\"y-q\"];\n  s0 -> a0;\n  a0 -> s1;\n  s1 -> a1;\n  a1 -> s0;\n  s1 -> a2;\n  a2 -> s2;\n}\n",
     "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  s0 [shape=box, style=rounded, label=\"X\"];\n  s1 [shape=box, style=rounded, label=\"Y\"];\n  s2 [shape=box, style=rounded, label=\"Q\"];\n  a0 [shape=diamond, fontsize=8, label=\"\"];\n  a1 [shape=diamond, fontsize=8, label=\"\"];\n  a2 [shape=diamond, fontsize=8, label=\"\"];\n  s0 -> a0;\n  a0 -> s1;\n  s1 -> a1;\n  a1 -> s0;\n  s1 -> a2;\n  a2 -> s2;\n}\n",
     "mermaid": "flowchart LR\n  s0[\"x<br/>X\"]\n  s1[\"y<br/>Y\"]\n  s2[\"q<br/>Q\"]\n  a0{{\"x-y\"}}\n  a1{{\"y-x\"}}\n  a2{{\"y-q\"}}\n  s0 --> a0\n  a0 --> s1\n  s1 --> a1\n  a1 --> s0\n  s1 --> a2\n  a2 --> s2\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n",

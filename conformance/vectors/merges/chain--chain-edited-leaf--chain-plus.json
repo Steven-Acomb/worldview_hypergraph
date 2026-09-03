@@ -1,0 +1,97 @@
+{
+  "base": "chain",
+  "ours": "chain-edited-leaf",
+  "theirs": "chain-plus",
+  "expected": {
+    "merged": {
+      "format": "worldview-core",
+      "version": "0.1",
+      "name": "chain",
+      "statements": [
+        {
+          "id": "a",
+          "text": "A (edited)",
+          "mode": "is"
+        },
+        {
+          "id": "b",
+          "text": "B",
+          "mode": "is"
+        },
+        {
+          "id": "c",
+          "text": "C",
+          "mode": "is"
+        },
+        {
+          "id": "d",
+          "text": "D",
+          "mode": "is"
+        },
+        {
+          "id": "e",
+          "text": "E",
+          "mode": "ought"
+        },
+        {
+          "id": "g",
+          "text": "G",
+          "mode": "is"
+        }
+      ],
+      "arguments": [
+        {
+          "id": "ab-c",
+          "premises": [
+            "a",
+            "b"
+          ],
+          "conclusions": [
+            "c"
+          ],
+          "justification": "a and b give c"
+        },
+        {
+          "id": "cd-e",
+          "premises": [
+            "c",
+            "d"
+          ],
+          "conclusions": [
+            "e"
+          ],
+          "justification": "c and d give e"
+        },
+        {
+          "id": "g-e",
+          "premises": [
+            "g"
+          ],
+          "conclusions": [
+            "e"
+          ],
+          "justification": "g gives e"
+        }
+      ]
+    },
+    "conflicts": [],
+    "summary": {
+      "statements": {
+        "kept": 4,
+        "added_ours": 0,
+        "added_theirs": 1,
+        "added_both": 0,
+        "removed": 1,
+        "changed": 1
+      },
+      "arguments": {
+        "kept": 2,
+        "added_ours": 0,
+        "added_theirs": 1,
+        "added_both": 0,
+        "removed": 1,
+        "changed": 0
+      }
+    }
+  }
+}

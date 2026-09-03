@@ -13,7 +13,7 @@ from pathlib import Path
 import pytest
 
 from worldview_core import H, Worldview, canon, compute_identities, diff, validate_dict
-from worldview_core import foundations, lint_all, plan, rests_on, sccs, supports, to_dot, to_mermaid, well_founded
+from worldview_core import foundations, lint_all, merge, plan, present, rests_on, sccs, stats, supports, to_dot, to_mermaid, well_founded
 
 VECTORS = Path(__file__).parent.parent / "conformance" / "vectors"
 
@@ -75,10 +75,25 @@ def test_extras(path):
         for run in runs:
             assert plan(wv, sid, run["given"]) == run["result"], (sid, run["given"])
     assert lint_all(wv) == exp["lint_all"]
+    assert stats(wv) == exp["stats"]
+    for sid, runs in exp["present"].items():
+        assert present(wv, sid) == runs["plain"], sid
+        assert present(wv, sid, depth=1) == runs["depth_1"], sid
+        assert present(wv, sid, given=runs["given"]["given"]) == runs["given"]["markdown"], sid
     assert to_dot(wv) == exp["dot"]
     assert to_dot(wv, ids=False, wrap=20, rankdir="TB") == exp["dot_no_ids_tb"]
     assert to_mermaid(wv) == exp["mermaid"]
     assert to_mermaid(wv, ids=False, wrap=20, direction="TB") == exp["mermaid_no_ids_tb"]
+
+
+@pytest.mark.parametrize("path", _cases("merges"), ids=lambda p: p.stem)
+def test_merge(path):
+    v = _load(path)
+    wvs = []
+    for role in ("base", "ours", "theirs"):
+        case = _load(VECTORS / "cases" / f"{v[role]}.json")
+        wvs.append(Worldview.from_dict(case["input"], source=v[role]))
+    assert merge(*wvs) == v["expected"]
 
 
 def test_primitives():

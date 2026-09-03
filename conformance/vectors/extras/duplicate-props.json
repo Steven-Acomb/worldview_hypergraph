@@ -513,6 +513,81 @@
       "unused": [],
       "empty_justifications": []
     },
+    "stats": {
+      "statements": 3,
+      "arguments": 2,
+      "modes": {
+        "is": 3,
+        "ought": 0
+      },
+      "foundations": 2,
+      "terminals": 1,
+      "unused": 0,
+      "ungrounded": 0,
+      "cycles": 0,
+      "largest_cycle": 0,
+      "statements_in_cycles": 0,
+      "premises": {
+        "min": 1,
+        "max": 1,
+        "mean": 1.0
+      },
+      "conclusions": {
+        "min": 1,
+        "max": 1,
+        "mean": 1.0
+      },
+      "zero_premise_arguments": 0,
+      "longest_chain": 1,
+      "most_supporting": [
+        {
+          "id": "x1",
+          "downstream": 1
+        },
+        {
+          "id": "x2",
+          "downstream": 1
+        }
+      ],
+      "most_supported": [
+        {
+          "id": "y",
+          "upstream": 2
+        }
+      ]
+    },
+    "present": {
+      "x1": {
+        "plain": "# X\n\n`x1` · is\n\n## The case\n\n- **X** (`x1`, is) — *foundation*\n\n## Foundations reached\n\n- `x1`: X\n",
+        "depth_1": "# X\n\n`x1` · is\n\n## The case\n\n- **X** (`x1`, is) — *foundation*\n\n## Foundations reached\n\n- `x1`: X\n",
+        "given": {
+          "given": [
+            "x1"
+          ],
+          "markdown": "# X\n\n`x1` · is\n\nTaken as given: `x1`.\n\n## The case\n\n- **X** (`x1`, is) — *given*\n\n## What the audience must grant\n\nNothing: every foundation reached is already given.\n"
+        }
+      },
+      "x2": {
+        "plain": "# X\n\n`x2` · is\n\n## The case\n\n- **X** (`x2`, is) — *foundation*\n\n## Foundations reached\n\n- `x2`: X\n",
+        "depth_1": "# X\n\n`x2` · is\n\n## The case\n\n- **X** (`x2`, is) — *foundation*\n\n## Foundations reached\n\n- `x2`: X\n",
+        "given": {
+          "given": [
+            "x1"
+          ],
+          "markdown": "# X\n\n`x2` · is\n\nTaken as given: nothing in this statement's closure.\n\n## The case\n\n- **X** (`x2`, is) — *foundation*\n\n## What the audience must grant\n\n- `x2`: X\n"
+        }
+      },
+      "y": {
+        "plain": "# Y\n\n`y` · is\n\n## The case\n\n- **Y** (`y`, is)\n  - via `a`: because\n    - **X** (`x1`, is) — *foundation*\n  - via `b`: because\n    - **X** (`x2`, is) — *foundation*\n\n## Foundations reached\n\n- `x1`: X\n- `x2`: X\n",
+        "depth_1": "# Y\n\n`y` · is\n\n## The case\n\n- **Y** (`y`, is)\n  - via `a`: because\n    - **X** (`x1`, is)\n  - via `b`: because\n    - **X** (`x2`, is)\n\n## Foundations reached\n\n- `x1`: X\n- `x2`: X\n",
+        "given": {
+          "given": [
+            "x1"
+          ],
+          "markdown": "# Y\n\n`y` · is\n\nTaken as given: `x1`.\n\n## The case\n\n- **Y** (`y`, is)\n  - via `a`: because\n    - **X** (`x1`, is) — *given*\n  - via `b`: because\n    - **X** (`x2`, is) — *foundation*\n\n## What the audience must grant\n\n- `x2`: X\n"
+        }
+      }
+    },
     "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  s0 [shape=box, style=rounded, label=\"x1\\nX\"];\n  s1 [shape=box, style=rounded, label=\"x2\\nX\"];\n  s2 [shape=box, style=rounded, label=\"y\\nY\"];\n  a0 [shape=diamond, fontsize=8, label=\"a\"];\n  a1 [shape=diamond, fontsize=8, label=\"b\"];\n  s0 -> a0;\n  a0 -> s2;\n  s1 -> a1;\n  a1 -> s2;\n}\n",
     "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  s0 [shape=box, style=rounded, label=\"X\"];\n  s1 [shape=box, style=rounded, label=\"X\"];\n  s2 [shape=box, style=rounded, label=\"Y\"];\n  a0 [shape=diamond, fontsize=8, label=\"\"];\n  a1 [shape=diamond, fontsize=8, label=\"\"];\n  s0 -> a0;\n  a0 -> s2;\n  s1 -> a1;\n  a1 -> s2;\n}\n",
     "mermaid": "flowchart LR\n  s0[\"x1<br/>X\"]\n  s1[\"x2<br/>X\"]\n  s2[\"y<br/>Y\"]\n  a0{{\"a\"}}\n  a1{{\"b\"}}\n  s0 --> a0\n  a0 --> s2\n  s1 --> a1\n  a1 --> s2\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n",

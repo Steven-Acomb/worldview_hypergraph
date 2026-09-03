@@ -325,6 +325,67 @@
       "unused": [],
       "empty_justifications": []
     },
+    "stats": {
+      "statements": 2,
+      "arguments": 1,
+      "modes": {
+        "is": 2,
+        "ought": 0
+      },
+      "foundations": 1,
+      "terminals": 1,
+      "unused": 0,
+      "ungrounded": 0,
+      "cycles": 0,
+      "largest_cycle": 0,
+      "statements_in_cycles": 0,
+      "premises": {
+        "min": 1,
+        "max": 1,
+        "mean": 1.0
+      },
+      "conclusions": {
+        "min": 1,
+        "max": 1,
+        "mean": 1.0
+      },
+      "zero_premise_arguments": 0,
+      "longest_chain": 1,
+      "most_supporting": [
+        {
+          "id": "x",
+          "downstream": 1
+        }
+      ],
+      "most_supported": [
+        {
+          "id": "y",
+          "upstream": 1
+        }
+      ]
+    },
+    "present": {
+      "x": {
+        "plain": "# X\n\n`x` · is\n\n## The case\n\n- **X** (`x`, is) — *foundation*\n\n## Foundations reached\n\n- `x`: X\n",
+        "depth_1": "# X\n\n`x` · is\n\n## The case\n\n- **X** (`x`, is) — *foundation*\n\n## Foundations reached\n\n- `x`: X\n",
+        "given": {
+          "given": [
+            "x"
+          ],
+          "markdown": "# X\n\n`x` · is\n\nTaken as given: `x`.\n\n## The case\n\n- **X** (`x`, is) — *given*\n\n## What the audience must grant\n\nNothing: every foundation reached is already given.\n"
+        }
+      },
+      "y": {
+        "plain": "# Y\n\n`y` · is\n\n## The case\n\n- **Y** (`y`, is)\n  - via `a`: because\n    - **X** (`x`, is) — *foundation*\n\n## Foundations reached\n\n- `x`: X\n",
+        "depth_1": "# Y\n\n`y` · is\n\n## The case\n\n- **Y** (`y`, is)\n  - via `a`: because\n    - **X** (`x`, is)\n\n## Foundations reached\n\n- `x`: X\n",
+        "given": {
+          "given": [
+            "x"
+          ],
+          "markdown": "# Y\n\n`y` · is\n\nTaken as given: `x`.\n\n## The case\n\n- **Y** (`y`, is)\n  - via `a`: because\n    - **X** (`x`, is) — *given*\n\n## What the audience must grant\n\nNothing: every foundation reached is already given.\n"
+        }
+      }
+    },
     "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  s0 [shape=box, style=rounded, label=\"x\\nX\"];\n  s1 [shape=box, style=rounded, label=\"y\\nY\"];\n  a0 [shape=diamond, fontsize=8, label=\"a\"];\n  s0 -> a0;\n  a0 -> s1;\n}\n",
     "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  s0 [shape=box, style=rounded, label=\"X\"];\n  s1 [shape=box, style=rounded, label=\"Y\"];\n  a0 [shape=diamond, fontsize=8, label=\"\"];\n  s0 -> a0;\n  a0 -> s1;\n}\n",
     "mermaid": "flowchart LR\n  s0[\"x<br/>X\"]\n  s1[\"y<br/>Y\"]\n  a0{{\"a\"}}\n  s0 --> a0\n  a0 --> s1\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n",

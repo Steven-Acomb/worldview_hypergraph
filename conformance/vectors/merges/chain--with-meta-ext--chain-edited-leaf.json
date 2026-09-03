@@ -1,0 +1,151 @@
+{
+  "base": "chain",
+  "ours": "with-meta-ext",
+  "theirs": "chain-edited-leaf",
+  "expected": {
+    "merged": {
+      "format": "worldview-core",
+      "version": "0.1",
+      "name": "chain",
+      "meta": {
+        "author": "someone"
+      },
+      "ext": {
+        "defeasible": {
+          "semantics": "grounded"
+        }
+      },
+      "statements": [
+        {
+          "id": "a",
+          "text": "A",
+          "mode": "is",
+          "meta": {
+            "role": "axiom"
+          },
+          "ext": {
+            "bayes": {
+              "prior": 0.3
+            }
+          }
+        },
+        {
+          "id": "b",
+          "text": "B",
+          "mode": "is"
+        },
+        {
+          "id": "c",
+          "text": "C",
+          "mode": "is"
+        },
+        {
+          "id": "d",
+          "text": "D",
+          "mode": "is"
+        },
+        {
+          "id": "e",
+          "text": "E",
+          "mode": "ought"
+        },
+        {
+          "id": "f",
+          "text": "F",
+          "mode": "is"
+        }
+      ],
+      "arguments": [
+        {
+          "id": "ab-c",
+          "premises": [
+            "a",
+            "b"
+          ],
+          "conclusions": [
+            "c"
+          ],
+          "justification": "a and b give c",
+          "rule": "modus ponens",
+          "meta": {
+            "n": 1
+          },
+          "ext": {
+            "defeasible": {
+              "kind": "inductive"
+            }
+          }
+        },
+        {
+          "id": "cd-e",
+          "premises": [
+            "c",
+            "d"
+          ],
+          "conclusions": [
+            "e"
+          ],
+          "justification": "c and d give e"
+        },
+        {
+          "id": "f-e",
+          "premises": [
+            "f"
+          ],
+          "conclusions": [
+            "e"
+          ],
+          "justification": "f alone gives e"
+        }
+      ]
+    },
+    "conflicts": [
+      {
+        "kind": "statement",
+        "id": "a",
+        "base": {
+          "id": "a",
+          "text": "A",
+          "mode": "is"
+        },
+        "ours": {
+          "id": "a",
+          "text": "A",
+          "mode": "is",
+          "meta": {
+            "role": "axiom"
+          },
+          "ext": {
+            "bayes": {
+              "prior": 0.3
+            }
+          }
+        },
+        "theirs": {
+          "id": "a",
+          "text": "A (edited)",
+          "mode": "is"
+        },
+        "resolution": "kept ours"
+      }
+    ],
+    "summary": {
+      "statements": {
+        "kept": 5,
+        "added_ours": 0,
+        "added_theirs": 0,
+        "added_both": 0,
+        "removed": 0,
+        "changed": 1
+      },
+      "arguments": {
+        "kept": 2,
+        "added_ours": 0,
+        "added_theirs": 0,
+        "added_both": 0,
+        "removed": 0,
+        "changed": 1
+      }
+    }
+  }
+}

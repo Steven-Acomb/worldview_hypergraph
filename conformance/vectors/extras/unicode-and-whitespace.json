@@ -1178,6 +1178,89 @@
       ],
       "empty_justifications": []
     },
+    "stats": {
+      "statements": 8,
+      "arguments": 2,
+      "modes": {
+        "is": 7,
+        "ought": 1
+      },
+      "foundations": 7,
+      "terminals": 4,
+      "unused": 3,
+      "ungrounded": 0,
+      "cycles": 0,
+      "largest_cycle": 0,
+      "statements_in_cycles": 0,
+      "premises": {
+        "min": 2,
+        "max": 2,
+        "mean": 2.0
+      },
+      "conclusions": {
+        "min": 1,
+        "max": 1,
+        "mean": 1.0
+      },
+      "zero_premise_arguments": 0,
+      "longest_chain": 1,
+      "most_supporting": [
+        {
+          "id": "nfc",
+          "downstream": 1
+        },
+        {
+          "id": "nfd",
+          "downstream": 1
+        },
+        {
+          "id": "ws",
+          "downstream": 1
+        },
+        {
+          "id": "ws2",
+          "downstream": 1
+        }
+      ],
+      "most_supported": [
+        {
+          "id": "c",
+          "upstream": 4
+        }
+      ]
+    },
+    "present": {
+      "nfc": {
+        "plain": "# café au lait\n\n`nfc` · is\n\n## The case\n\n- **café au lait** (`nfc`, is) — *foundation*\n\n## Foundations reached\n\n- `nfc`: café au lait\n",
+        "depth_1": "# café au lait\n\n`nfc` · is\n\n## The case\n\n- **café au lait** (`nfc`, is) — *foundation*\n\n## Foundations reached\n\n- `nfc`: café au lait\n",
+        "given": {
+          "given": [
+            "nfc"
+          ],
+          "markdown": "# café au lait\n\n`nfc` · is\n\nTaken as given: `nfc`.\n\n## The case\n\n- **café au lait** (`nfc`, is) — *given*\n\n## What the audience must grant\n\nNothing: every foundation reached is already given.\n"
+        }
+      },
+      "nfd": {
+        "plain": "# café au lait\n\n`nfd` · is\n\n## The case\n\n- **café au lait** (`nfd`, is) — *foundation*\n\n## Foundations reached\n\n- `nfd`: café au lait\n",
+        "depth_1": "# café au lait\n\n`nfd` · is\n\n## The case\n\n- **café au lait** (`nfd`, is) — *foundation*\n\n## Foundations reached\n\n- `nfd`: café au lait\n",
+        "given": {
+          "given": [
+            "nfc"
+          ],
+          "markdown": "# café au lait\n\n`nfd` · is\n\nTaken as given: nothing in this statement's closure.\n\n## The case\n\n- **café au lait** (`nfd`, is) — *foundation*\n\n## What the audience must grant\n\n- `nfd`: café au lait\n"
+        }
+      },
+      "ws": {
+        "plain": "# Il pleut souvent ici\n\n`ws` · is\n\n## The case\n\n- **Il pleut souvent ici** (`ws`, is) — *foundation*\n\n## Foundations reached\n\n- `ws`: Il pleut souvent ici\n",
+        "depth_1": "# Il pleut souvent ici\n\n`ws` · is\n\n## The case\n\n- **Il pleut souvent ici** (`ws`, is) — *foundation*\n\n## Foundations reached\n\n- `ws`: Il pleut souvent ici\n",
+        "given": {
+          "given": [
+            "nfc"
+          ],
+          "markdown": "# Il pleut souvent ici\n\n`ws` · is\n\nTaken as given: nothing in this statement's closure.\n\n## The case\n\n- **Il pleut souvent ici** (`ws`, is) — *foundation*\n\n## What the audience must grant\n\n- `ws`: Il pleut souvent ici\n"
+        }
+      }
+    },
     "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  s0 [shape=box, style=rounded, label=\"nfc\\ncafé au lait\"];\n  s1 [shape=box, style=rounded, label=\"nfd\\ncafé au lait\"];\n  s2 [shape=box, style=rounded, label=\"ws\\n  Il   pleut    souvent  ici\"];\n  s3 [shape=box, style=rounded, label=\"ws2\\nIl pleut souvent ici\"];\n  s4 [shape=box, style=rounded, label=\"case\\nIl Pleut Souvent Ici\"];\n  s5 [shape=box, style=rounded, label=\"ought\\nIl pleut souvent ici\", peripheries=2];\n  s6 [shape=box, style=rounded, label=\"emoji\\nSnow ☃ is cold 🥶\"];\n  s7 [shape=box, style=rounded, label=\"c\\nConclusion\"];\n  a0 [shape=diamond, fontsize=8, label=\"j1\"];\n  a1 [shape=diamond, fontsize=8, label=\"j2\"];\n  s0 -> a0;\n  s2 -> a0;\n  a0 -> s7;\n  s1 -> a1;\n  s3 -> a1;\n  a1 -> s7;\n}\n",
     "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  s0 [shape=box, style=rounded, label=\"café au lait\"];\n  s1 [shape=box, style=rounded, label=\"café au lait\"];\n  s2 [shape=box, style=rounded, label=\"  Il   pleut\\nsouvent  ici\"];\n  s3 [shape=box, style=rounded, label=\"Il pleut souvent ici\"];\n  s4 [shape=box, style=rounded, label=\"Il Pleut Souvent Ici\"];\n  s5 [shape=box, style=rounded, label=\"Il pleut souvent ici\", peripheries=2];\n  s6 [shape=box, style=rounded, label=\"Snow ☃ is cold 🥶\"];\n  s7 [shape=box, style=rounded, label=\"Conclusion\"];\n  a0 [shape=diamond, fontsize=8, label=\"\"];\n  a1 [shape=diamond, fontsize=8, label=\"\"];\n  s0 -> a0;\n  s2 -> a0;\n  a0 -> s7;\n  s1 -> a1;\n  s3 -> a1;\n  a1 -> s7;\n}\n",
     "mermaid": "flowchart LR\n  s0[\"nfc<br/>café au lait\"]\n  s1[\"nfd<br/>café au lait\"]\n  s2[\"ws<br/>  Il   pleut    souvent  ici\"]\n  s3[\"ws2<br/>Il pleut souvent ici\"]\n  s4[\"case<br/>Il Pleut Souvent Ici\"]\n  s5[\"ought<br/>Il pleut souvent ici\"]\n  s6[\"emoji<br/>Snow ☃ is cold 🥶\"]\n  s7[\"c<br/>Conclusion\"]\n  a0{{\"j1\"}}\n  a1{{\"j2\"}}\n  s0 --> a0\n  s2 --> a0\n  a0 --> s7\n  s1 --> a1\n  s3 --> a1\n  a1 --> s7\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n  class s5 ought;\n",

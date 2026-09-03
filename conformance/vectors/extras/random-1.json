@@ -12152,6 +12152,109 @@
       "unused": [],
       "empty_justifications": []
     },
+    "stats": {
+      "statements": 12,
+      "arguments": 10,
+      "modes": {
+        "is": 9,
+        "ought": 3
+      },
+      "foundations": 3,
+      "terminals": 1,
+      "unused": 0,
+      "ungrounded": 0,
+      "cycles": 1,
+      "largest_cycle": 7,
+      "statements_in_cycles": 7,
+      "premises": {
+        "min": 0,
+        "max": 2,
+        "mean": 1.5
+      },
+      "conclusions": {
+        "min": 1,
+        "max": 2,
+        "mean": 1.4
+      },
+      "zero_premise_arguments": 1,
+      "longest_chain": 2,
+      "most_supporting": [
+        {
+          "id": "s0",
+          "downstream": 8
+        },
+        {
+          "id": "s1",
+          "downstream": 8
+        },
+        {
+          "id": "s2",
+          "downstream": 8
+        },
+        {
+          "id": "s3",
+          "downstream": 8
+        },
+        {
+          "id": "s4",
+          "downstream": 8
+        }
+      ],
+      "most_supported": [
+        {
+          "id": "s0",
+          "upstream": 11
+        },
+        {
+          "id": "s2",
+          "upstream": 11
+        },
+        {
+          "id": "s5",
+          "upstream": 11
+        },
+        {
+          "id": "s6",
+          "upstream": 11
+        },
+        {
+          "id": "s7",
+          "upstream": 11
+        }
+      ]
+    },
+    "present": {
+      "s0": {
+        "plain": "# Night roads drive.\n\n`s0` · is · in cycle: `s0`, `s2`, `s5`, `s6`, `s8`, `s9`, `s10`\n\n## The case\n\n- **Night roads drive.** (`s0`, is)\n  - via `a2` (jointly concludes `s4`): justification 5\n    - *no premises*\n  - via `a9`: justification 4\n    - **Late visible rain!** (`s5`, is)\n      - via `a1` (jointly concludes `s7`): justification 5\n        - **Roads visible slowly visible!** (`s8`, ought)\n          - via `a0` (jointly concludes `s10`): justification 0\n            - **Coffee stars late slippery roads** (`s1`, is) — *foundation*\n          - via `a4`: justification 4\n            - **Night roads slowly.** (`s3`, is) — *foundation*\n            - **Night roads drive.** (`s0`, is) — *see above*\n          - via `a8`: justification 3\n            - **Late visible rain!** (`s5`, is) — *see above*\n            - **Cold stars slippery drive drive!** (`s9`, is)\n              - via `a5`: justification 2\n                - **Coffee cold slippery slowly slippery!** (`s6`, is)\n                  - via `a6`: justification 5\n                    - **Stars cold.** (`s4`, is)\n                      - via `a2` (jointly concludes `s0`): justification 5\n                        - *no premises*\n                    - **Late night rain coffee slippery visible** (`s10`, is)\n                      - via `a0` (jointly concludes `s8`): justification 0\n                        - **Coffee stars late slippery roads** (`s1`, is) — *see above*\n                      - via `a3` (jointly concludes `s2`): justification 1\n                        - **Cold stars slippery drive drive!** (`s9`, is) — *see above*\n                        - **Slowly cold visible!** (`s11`, ought) — *foundation*\n                  - via `a7`: justification 0\n                    - **Late night rain visible coffee** (`s2`, ought)\n                      - via `a3` (jointly concludes `s10`): justification 1\n                        - **Cold stars slippery drive drive!** (`s9`, is) — *see above*\n                        - **Slowly cold visible!** (`s11`, ought) — *see above*\n                    - **Roads visible slowly visible!** (`s8`, ought) — *see above*\n    - **Coffee cold slippery slowly slippery!** (`s6`, is) — *see above*\n\n## Foundations reached\n\n- `s1`: Coffee stars late slippery roads\n- `s3`: Night roads slowly.\n- `s11`: Slowly cold visible!\n\n## Cycles involved\n\n- `s0`, `s2`, `s5`, `s6`, `s8`, `s9`, `s10`\n",
+        "depth_1": "# Night roads drive.\n\n`s0` · is · in cycle: `s0`, `s2`, `s5`, `s6`, `s8`, `s9`, `s10`\n\n## The case\n\n- **Night roads drive.** (`s0`, is)\n  - via `a2` (jointly concludes `s4`): justification 5\n    - *no premises*\n  - via `a9`: justification 4\n    - **Late visible rain!** (`s5`, is) — *not expanded further*\n    - **Coffee cold slippery slowly slippery!** (`s6`, is) — *not expanded further*\n\n## Foundations reached\n\n- `s1`: Coffee stars late slippery roads\n- `s3`: Night roads slowly.\n- `s11`: Slowly cold visible!\n\n## Cycles involved\n\n- `s0`, `s2`, `s5`, `s6`, `s8`, `s9`, `s10`\n",
+        "given": {
+          "given": [
+            "s1"
+          ],
+          "markdown": "# Night roads drive.\n\n`s0` · is · in cycle: `s0`, `s2`, `s5`, `s6`, `s8`, `s9`, `s10`\n\nTaken as given: `s1`.\n\n## The case\n\n- **Night roads drive.** (`s0`, is)\n  - via `a2` (jointly concludes `s4`): justification 5\n    - *no premises*\n  - via `a9`: justification 4\n    - **Late visible rain!** (`s5`, is)\n      - via `a1` (jointly concludes `s7`): justification 5\n        - **Roads visible slowly visible!** (`s8`, ought)\n          - via `a0` (jointly concludes `s10`): justification 0\n            - **Coffee stars late slippery roads** (`s1`, is) — *given*\n          - via `a4`: justification 4\n            - **Night roads slowly.** (`s3`, is) — *foundation*\n            - **Night roads drive.** (`s0`, is) — *see above*\n          - via `a8`: justification 3\n            - **Late visible rain!** (`s5`, is) — *see above*\n            - **Cold stars slippery drive drive!** (`s9`, is)\n              - via `a5`: justification 2\n                - **Coffee cold slippery slowly slippery!** (`s6`, is)\n                  - via `a6`: justification 5\n                    - **Stars cold.** (`s4`, is)\n                      - via `a2` (jointly concludes `s0`): justification 5\n                        - *no premises*\n                    - **Late night rain coffee slippery visible** (`s10`, is)\n                      - via `a0` (jointly concludes `s8`): justification 0\n                        - **Coffee stars late slippery roads** (`s1`, is) — *given*\n                      - via `a3` (jointly concludes `s2`): justification 1\n                        - **Cold stars slippery drive drive!** (`s9`, is) — *see above*\n                        - **Slowly cold visible!** (`s11`, ought) — *foundation*\n                  - via `a7`: justification 0\n                    - **Late night rain visible coffee** (`s2`, ought)\n                      - via `a3` (jointly concludes `s10`): justification 1\n                        - **Cold stars slippery drive drive!** (`s9`, is) — *see above*\n                        - **Slowly cold visible!** (`s11`, ought) — *see above*\n                    - **Roads visible slowly visible!** (`s8`, ought) — *see above*\n    - **Coffee cold slippery slowly slippery!** (`s6`, is) — *see above*\n\n## What the audience must grant\n\n- `s3`: Night roads slowly.\n- `s11`: Slowly cold visible!\n\n## Cycles involved\n\n- `s0`, `s2`, `s5`, `s6`, `s8`, `s9`, `s10`\n"
+        }
+      },
+      "s1": {
+        "plain": "# Coffee stars late slippery roads\n\n`s1` · is\n\n## The case\n\n- **Coffee stars late slippery roads** (`s1`, is) — *foundation*\n\n## Foundations reached\n\n- `s1`: Coffee stars late slippery roads\n",
+        "depth_1": "# Coffee stars late slippery roads\n\n`s1` · is\n\n## The case\n\n- **Coffee stars late slippery roads** (`s1`, is) — *foundation*\n\n## Foundations reached\n\n- `s1`: Coffee stars late slippery roads\n",
+        "given": {
+          "given": [
+            "s1"
+          ],
+          "markdown": "# Coffee stars late slippery roads\n\n`s1` · is\n\nTaken as given: `s1`.\n\n## The case\n\n- **Coffee stars late slippery roads** (`s1`, is) — *given*\n\n## What the audience must grant\n\nNothing: every foundation reached is already given.\n"
+        }
+      },
+      "s2": {
+        "plain": "# Late night rain visible coffee\n\n`s2` · ought · in cycle: `s0`, `s2`, `s5`, `s6`, `s8`, `s9`, `s10`\n\n## The case\n\n- **Late night rain visible coffee** (`s2`, ought)\n  - via `a3` (jointly concludes `s10`): justification 1\n    - **Cold stars slippery drive drive!** (`s9`, is)\n      - via `a5`: justification 2\n        - **Coffee cold slippery slowly slippery!** (`s6`, is)\n          - via `a6`: justification 5\n            - **Stars cold.** (`s4`, is)\n              - via `a2` (jointly concludes `s0`): justification 5\n                - *no premises*\n            - **Late night rain coffee slippery visible** (`s10`, is)\n              - via `a0` (jointly concludes `s8`): justification 0\n                - **Coffee stars late slippery roads** (`s1`, is) — *foundation*\n              - via `a3` (jointly concludes `s2`): justification 1\n                - **Cold stars slippery drive drive!** (`s9`, is) — *see above*\n                - **Slowly cold visible!** (`s11`, ought) — *foundation*\n          - via `a7`: justification 0\n            - **Late night rain visible coffee** (`s2`, ought) — *see above*\n            - **Roads visible slowly visible!** (`s8`, ought)\n              - via `a0` (jointly concludes `s10`): justification 0\n                - **Coffee stars late slippery roads** (`s1`, is) — *see above*\n              - via `a4`: justification 4\n                - **Night roads slowly.** (`s3`, is) — *foundation*\n                - **Night roads drive.** (`s0`, is)\n                  - via `a2` (jointly concludes `s4`): justification 5\n                    - *no premises*\n                  - via `a9`: justification 4\n                    - **Late visible rain!** (`s5`, is)\n                      - via `a1` (jointly concludes `s7`): justification 5\n                        - **Roads visible slowly visible!** (`s8`, ought) — *see above*\n                    - **Coffee cold slippery slowly slippery!** (`s6`, is) — *see above*\n              - via `a8`: justification 3\n                - **Late visible rain!** (`s5`, is) — *see above*\n                - **Cold stars slippery drive drive!** (`s9`, is) — *see above*\n    - **Slowly cold visible!** (`s11`, ought) — *see above*\n\n## Foundations reached\n\n- `s1`: Coffee stars late slippery roads\n- `s3`: Night roads slowly.\n- `s11`: Slowly cold visible!\n\n## Cycles involved\n\n- `s0`, `s2`, `s5`, `s6`, `s8`, `s9`, `s10`\n",
+        "depth_1": "# Late night rain visible coffee\n\n`s2` · ought · in cycle: `s0`, `s2`, `s5`, `s6`, `s8`, `s9`, `s10`\n\n## The case\n\n- **Late night rain visible coffee** (`s2`, ought)\n  - via `a3` (jointly concludes `s10`): justification 1\n    - **Cold stars slippery drive drive!** (`s9`, is) — *not expanded further*\n    - **Slowly cold visible!** (`s11`, ought)\n\n## Foundations reached\n\n- `s1`: Coffee stars late slippery roads\n- `s3`: Night roads slowly.\n- `s11`: Slowly cold visible!\n\n## Cycles involved\n\n- `s0`, `s2`, `s5`, `s6`, `s8`, `s9`, `s10`\n",
+        "given": {
+          "given": [
+            "s1"
+          ],
+          "markdown": "# Late night rain visible coffee\n\n`s2` · ought · in cycle: `s0`, `s2`, `s5`, `s6`, `s8`, `s9`, `s10`\n\nTaken as given: `s1`.\n\n## The case\n\n- **Late night rain visible coffee** (`s2`, ought)\n  - via `a3` (jointly concludes `s10`): justification 1\n    - **Cold stars slippery drive drive!** (`s9`, is)\n      - via `a5`: justification 2\n        - **Coffee cold slippery slowly slippery!** (`s6`, is)\n          - via `a6`: justification 5\n            - **Stars cold.** (`s4`, is)\n              - via `a2` (jointly concludes `s0`): justification 5\n                - *no premises*\n            - **Late night rain coffee slippery visible** (`s10`, is)\n              - via `a0` (jointly concludes `s8`): justification 0\n                - **Coffee stars late slippery roads** (`s1`, is) — *given*\n              - via `a3` (jointly concludes `s2`): justification 1\n                - **Cold stars slippery drive drive!** (`s9`, is) — *see above*\n                - **Slowly cold visible!** (`s11`, ought) — *foundation*\n          - via `a7`: justification 0\n            - **Late night rain visible coffee** (`s2`, ought) — *see above*\n            - **Roads visible slowly visible!** (`s8`, ought)\n              - via `a0` (jointly concludes `s10`): justification 0\n                - **Coffee stars late slippery roads** (`s1`, is) — *given*\n              - via `a4`: justification 4\n                - **Night roads slowly.** (`s3`, is) — *foundation*\n                - **Night roads drive.** (`s0`, is)\n                  - via `a2` (jointly concludes `s4`): justification 5\n                    - *no premises*\n                  - via `a9`: justification 4\n                    - **Late visible rain!** (`s5`, is)\n                      - via `a1` (jointly concludes `s7`): justification 5\n                        - **Roads visible slowly visible!** (`s8`, ought) — *see above*\n                    - **Coffee cold slippery slowly slippery!** (`s6`, is) — *see above*\n              - via `a8`: justification 3\n                - **Late visible rain!** (`s5`, is) — *see above*\n                - **Cold stars slippery drive drive!** (`s9`, is) — *see above*\n    - **Slowly cold visible!** (`s11`, ought) — *see above*\n\n## What the audience must grant\n\n- `s3`: Night roads slowly.\n- `s11`: Slowly cold visible!\n\n## Cycles involved\n\n- `s0`, `s2`, `s5`, `s6`, `s8`, `s9`, `s10`\n"
+        }
+      }
+    },
     "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  label=\"random-1\"; labelloc=t;\n  s0 [shape=box, style=rounded, label=\"s0\\nNight roads drive.\"];\n  s1 [shape=box, style=rounded, label=\"s1\\nCoffee stars late slippery roads\"];\n  s2 [shape=box, style=rounded, label=\"s2\\nLate night rain visible coffee\", peripheries=2];\n  s3 [shape=box, style=rounded, label=\"s3\\nNight roads slowly.\"];\n  s4 [shape=box, style=rounded, label=\"s4\\nStars cold.\"];\n  s5 [shape=box, style=rounded, label=\"s5\\nLate visible rain!\"];\n  s6 [shape=box, style=rounded, label=\"s6\\nCoffee cold slippery slowly\\nslippery!\"];\n  s7 [shape=box, style=rounded, label=\"s7\\nDrive rain late cold stars.\"];\n  s8 [shape=box, style=rounded, label=\"s8\\nRoads visible slowly visible!\", peripheries=2];\n  s9 [shape=box, style=rounded, label=\"s9\\nCold stars slippery drive drive!\"];\n  s10 [shape=box, style=rounded, label=\"s10\\nLate night rain coffee slippery\\nvisible\"];\n  s11 [shape=box, style=rounded, label=\"s11\\nSlowly cold visible!\", peripheries=2];\n  a0 [shape=diamond, fontsize=8, label=\"a0\"];\n  a1 [shape=diamond, fontsize=8, label=\"a1\"];\n  a2 [shape=diamond, fontsize=8, label=\"a2\"];\n  a3 [shape=diamond, fontsize=8, label=\"a3\"];\n  a4 [shape=diamond, fontsize=8, label=\"a4\"];\n  a5 [shape=diamond, fontsize=8, label=\"a5\"];\n  a6 [shape=diamond, fontsize=8, label=\"a6\"];\n  a7 [shape=diamond, fontsize=8, label=\"a7\"];\n  a8 [shape=diamond, fontsize=8, label=\"a8\"];\n  a9 [shape=diamond, fontsize=8, label=\"a9\"];\n  s1 -> a0;\n  a0 -> s10;\n  a0 -> s8;\n  s8 -> a1;\n  a1 -> s5;\n  a1 -> s7;\n  a2 -> s0;\n  a2 -> s4;\n  s9 -> a3;\n  s11 -> a3;\n  a3 -> s10;\n  a3 -> s2;\n  s3 -> a4;\n  s0 -> a4;\n  a4 -> s8;\n  s6 -> a5;\n  a5 -> s9;\n  s4 -> a6;\n  s10 -> a6;\n  a6 -> s6;\n  s2 -> a7;\n  s8 -> a7;\n  a7 -> s6;\n  s5 -> a8;\n  s9 -> a8;\n  a8 -> s8;\n  s5 -> a9;\n  s6 -> a9;\n  a9 -> s0;\n}\n",
     "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  label=\"random-1\"; labelloc=t;\n  s0 [shape=box, style=rounded, label=\"Night roads drive.\"];\n  s1 [shape=box, style=rounded, label=\"Coffee stars late\\nslippery roads\"];\n  s2 [shape=box, style=rounded, label=\"Late night rain\\nvisible coffee\", peripheries=2];\n  s3 [shape=box, style=rounded, label=\"Night roads slowly.\"];\n  s4 [shape=box, style=rounded, label=\"Stars cold.\"];\n  s5 [shape=box, style=rounded, label=\"Late visible rain!\"];\n  s6 [shape=box, style=rounded, label=\"Coffee cold slippery\\nslowly slippery!\"];\n  s7 [shape=box, style=rounded, label=\"Drive rain late cold\\nstars.\"];\n  s8 [shape=box, style=rounded, label=\"Roads visible slowly\\nvisible!\", peripheries=2];\n  s9 [shape=box, style=rounded, label=\"Cold stars slippery\\ndrive drive!\"];\n  s10 [shape=box, style=rounded, label=\"Late night rain\\ncoffee slippery\\nvisible\"];\n  s11 [shape=box, style=rounded, label=\"Slowly cold visible!\", peripheries=2];\n  a0 [shape=diamond, fontsize=8, label=\"\"];\n  a1 [shape=diamond, fontsize=8, label=\"\"];\n  a2 [shape=diamond, fontsize=8, label=\"\"];\n  a3 [shape=diamond, fontsize=8, label=\"\"];\n  a4 [shape=diamond, fontsize=8, label=\"\"];\n  a5 [shape=diamond, fontsize=8, label=\"\"];\n  a6 [shape=diamond, fontsize=8, label=\"\"];\n  a7 [shape=diamond, fontsize=8, label=\"\"];\n  a8 [shape=diamond, fontsize=8, label=\"\"];\n  a9 [shape=diamond, fontsize=8, label=\"\"];\n  s1 -> a0;\n  a0 -> s10;\n  a0 -> s8;\n  s8 -> a1;\n  a1 -> s5;\n  a1 -> s7;\n  a2 -> s0;\n  a2 -> s4;\n  s9 -> a3;\n  s11 -> a3;\n  a3 -> s10;\n  a3 -> s2;\n  s3 -> a4;\n  s0 -> a4;\n  a4 -> s8;\n  s6 -> a5;\n  a5 -> s9;\n  s4 -> a6;\n  s10 -> a6;\n  a6 -> s6;\n  s2 -> a7;\n  s8 -> a7;\n  a7 -> s6;\n  s5 -> a8;\n  s9 -> a8;\n  a8 -> s8;\n  s5 -> a9;\n  s6 -> a9;\n  a9 -> s0;\n}\n",
     "mermaid": "flowchart LR\n  s0[\"s0<br/>Night roads drive.\"]\n  s1[\"s1<br/>Coffee stars late slippery roads\"]\n  s2[\"s2<br/>Late night rain visible coffee\"]\n  s3[\"s3<br/>Night roads slowly.\"]\n  s4[\"s4<br/>Stars cold.\"]\n  s5[\"s5<br/>Late visible rain!\"]\n  s6[\"s6<br/>Coffee cold slippery slowly<br/>slippery!\"]\n  s7[\"s7<br/>Drive rain late cold stars.\"]\n  s8[\"s8<br/>Roads visible slowly visible!\"]\n  s9[\"s9<br/>Cold stars slippery drive drive!\"]\n  s10[\"s10<br/>Late night rain coffee slippery<br/>visible\"]\n  s11[\"s11<br/>Slowly cold visible!\"]\n  a0{{\"a0\"}}\n  a1{{\"a1\"}}\n  a2{{\"a2\"}}\n  a3{{\"a3\"}}\n  a4{{\"a4\"}}\n  a5{{\"a5\"}}\n  a6{{\"a6\"}}\n  a7{{\"a7\"}}\n  a8{{\"a8\"}}\n  a9{{\"a9\"}}\n  s1 --> a0\n  a0 --> s10\n  a0 --> s8\n  s8 --> a1\n  a1 --> s5\n  a1 --> s7\n  a2 --> s0\n  a2 --> s4\n  s9 --> a3\n  s11 --> a3\n  a3 --> s10\n  a3 --> s2\n  s3 --> a4\n  s0 --> a4\n  a4 --> s8\n  s6 --> a5\n  a5 --> s9\n  s4 --> a6\n  s10 --> a6\n  a6 --> s6\n  s2 --> a7\n  s8 --> a7\n  a7 --> s6\n  s5 --> a8\n  s9 --> a8\n  a8 --> s8\n  s5 --> a9\n  s6 --> a9\n  a9 --> s0\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n  class s2,s8,s11 ought;\n",

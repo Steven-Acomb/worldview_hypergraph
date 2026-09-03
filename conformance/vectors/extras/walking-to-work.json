@@ -3059,6 +3059,109 @@
       "unused": [],
       "empty_justifications": []
     },
+    "stats": {
+      "statements": 12,
+      "arguments": 6,
+      "modes": {
+        "is": 8,
+        "ought": 4
+      },
+      "foundations": 7,
+      "terminals": 1,
+      "unused": 0,
+      "ungrounded": 3,
+      "cycles": 1,
+      "largest_cycle": 2,
+      "statements_in_cycles": 2,
+      "premises": {
+        "min": 1,
+        "max": 4,
+        "mean": 2.0
+      },
+      "conclusions": {
+        "min": 1,
+        "max": 1,
+        "mean": 1.0
+      },
+      "zero_premise_arguments": 0,
+      "longest_chain": 3,
+      "most_supporting": [
+        {
+          "id": "self-knowledge",
+          "downstream": 5
+        },
+        {
+          "id": "habit-reports",
+          "downstream": 5
+        },
+        {
+          "id": "exercise-good",
+          "downstream": 2
+        },
+        {
+          "id": "walk-is-exercise",
+          "downstream": 2
+        },
+        {
+          "id": "health-matters",
+          "downstream": 2
+        }
+      ],
+      "most_supported": [
+        {
+          "id": "need-raincoat",
+          "upstream": 11
+        },
+        {
+          "id": "walk-commute",
+          "upstream": 8
+        },
+        {
+          "id": "commute-30",
+          "upstream": 2
+        },
+        {
+          "id": "self-knowledge",
+          "upstream": 2
+        },
+        {
+          "id": "habit-reports",
+          "upstream": 2
+        }
+      ]
+    },
+    "present": {
+      "exercise-good": {
+        "plain": "# Regular physical activity improves long-term health.\n\n`exercise-good` · is\n\n## The case\n\n- **Regular physical activity improves long-term health.** (`exercise-good`, is) — *foundation*\n\n## Foundations reached\n\n- `exercise-good`: Regular physical activity improves long-term health.\n",
+        "depth_1": "# Regular physical activity improves long-term health.\n\n`exercise-good` · is\n\n## The case\n\n- **Regular physical activity improves long-term health.** (`exercise-good`, is) — *foundation*\n\n## Foundations reached\n\n- `exercise-good`: Regular physical activity improves long-term health.\n",
+        "given": {
+          "given": [
+            "exercise-good"
+          ],
+          "markdown": "# Regular physical activity improves long-term health.\n\n`exercise-good` · is\n\nTaken as given: `exercise-good`.\n\n## The case\n\n- **Regular physical activity improves long-term health.** (`exercise-good`, is) — *given*\n\n## What the audience must grant\n\nNothing: every foundation reached is already given.\n"
+        }
+      },
+      "walk-is-exercise": {
+        "plain": "# Walking for thirty minutes a day counts as regular physical activity.\n\n`walk-is-exercise` · is\n\n## The case\n\n- **Walking for thirty minutes a day counts as regular physical activity.** (`walk-is-exercise`, is) — *foundation*\n\n## Foundations reached\n\n- `walk-is-exercise`: Walking for thirty minutes a day counts as regular physical activity.\n",
+        "depth_1": "# Walking for thirty minutes a day counts as regular physical activity.\n\n`walk-is-exercise` · is\n\n## The case\n\n- **Walking for thirty minutes a day counts as regular physical activity.** (`walk-is-exercise`, is) — *foundation*\n\n## Foundations reached\n\n- `walk-is-exercise`: Walking for thirty minutes a day counts as regular physical activity.\n",
+        "given": {
+          "given": [
+            "exercise-good"
+          ],
+          "markdown": "# Walking for thirty minutes a day counts as regular physical activity.\n\n`walk-is-exercise` · is\n\nTaken as given: nothing in this statement's closure.\n\n## The case\n\n- **Walking for thirty minutes a day counts as regular physical activity.** (`walk-is-exercise`, is) — *foundation*\n\n## What the audience must grant\n\n- `walk-is-exercise`: Walking for thirty minutes a day counts as regular physical activity.\n"
+        }
+      },
+      "health-matters": {
+        "plain": "# I should act to protect my long-term health.\n\n`health-matters` · ought\n\n## The case\n\n- **I should act to protect my long-term health.** (`health-matters`, ought) — *foundation*\n\n## Foundations reached\n\n- `health-matters`: I should act to protect my long-term health.\n",
+        "depth_1": "# I should act to protect my long-term health.\n\n`health-matters` · ought\n\n## The case\n\n- **I should act to protect my long-term health.** (`health-matters`, ought) — *foundation*\n\n## Foundations reached\n\n- `health-matters`: I should act to protect my long-term health.\n",
+        "given": {
+          "given": [
+            "exercise-good"
+          ],
+          "markdown": "# I should act to protect my long-term health.\n\n`health-matters` · ought\n\nTaken as given: nothing in this statement's closure.\n\n## The case\n\n- **I should act to protect my long-term health.** (`health-matters`, ought) — *foundation*\n\n## What the audience must grant\n\n- `health-matters`: I should act to protect my long-term health.\n"
+        }
+      }
+    },
     "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  label=\"Walking to work\"; labelloc=t;\n  s0 [shape=box, style=rounded, label=\"exercise-good\\nRegular physical activity improves\\nlong-term health.\"];\n  s1 [shape=box, style=rounded, label=\"walk-is-exercise\\nWalking for thirty minutes a day\\ncounts as regular physical activity.\"];\n  s2 [shape=box, style=rounded, label=\"health-matters\\nI should act to protect my long-term\\nhealth.\", peripheries=2];\n  s3 [shape=box, style=rounded, label=\"commute-30\\nMy commute takes about thirty\\nminutes on foot.\"];\n  s4 [shape=box, style=rounded, label=\"walk-commute\\nI should walk to work.\", peripheries=2];\n  s5 [shape=box, style=rounded, label=\"car-costs\\nDriving to work costs more than\\nwalking.\"];\n  s6 [shape=box, style=rounded, label=\"save-money\\nI should prefer the cheaper option\\nwhen the options are otherwise\\nequal.\", peripheries=2];\n  s7 [shape=box, style=rounded, label=\"rain-often\\nIt rains often where I live.\"];\n  s8 [shape=box, style=rounded, label=\"rain-unpleasant\\nWalking in the rain without a\\nraincoat is unpleasant.\"];\n  s9 [shape=box, style=rounded, label=\"need-raincoat\\nI should own a good raincoat.\", peripheries=2];\n  s10 [shape=box, style=rounded, label=\"self-knowledge\\nMy assessments of my own habits are\\naccurate.\"];\n  s11 [shape=box, style=rounded, label=\"habit-reports\\nMy reports about how I spend my time\\nhave matched outside observation.\"];\n  a0 [shape=diamond, fontsize=8, label=\"walk-for-health\\npractical syllogism\"];\n  a1 [shape=diamond, fontsize=8, label=\"walk-for-money\"];\n  a2 [shape=diamond, fontsize=8, label=\"raincoat\"];\n  a3 [shape=diamond, fontsize=8, label=\"reports-confirm-knowledge\"];\n  a4 [shape=diamond, fontsize=8, label=\"knowledge-vouches-reports\"];\n  a5 [shape=diamond, fontsize=8, label=\"commute-from-reports\"];\n  s0 -> a0;\n  s1 -> a0;\n  s2 -> a0;\n  s3 -> a0;\n  a0 -> s4;\n  s5 -> a1;\n  s6 -> a1;\n  a1 -> s4;\n  s4 -> a2;\n  s7 -> a2;\n  s8 -> a2;\n  a2 -> s9;\n  s11 -> a3;\n  a3 -> s10;\n  s10 -> a4;\n  a4 -> s11;\n  s11 -> a5;\n  a5 -> s3;\n}\n",
     "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  label=\"Walking to work\"; labelloc=t;\n  s0 [shape=box, style=rounded, label=\"Regular physical\\nactivity improves\\nlong-term health.\"];\n  s1 [shape=box, style=rounded, label=\"Walking for thirty\\nminutes a day counts\\nas regular physical\\nactivity.\"];\n  s2 [shape=box, style=rounded, label=\"I should act to\\nprotect my long-term\\nhealth.\", peripheries=2];\n  s3 [shape=box, style=rounded, label=\"My commute takes\\nabout thirty minutes\\non foot.\"];\n  s4 [shape=box, style=rounded, label=\"I should walk to\\nwork.\", peripheries=2];\n  s5 [shape=box, style=rounded, label=\"Driving to work\\ncosts more than\\nwalking.\"];\n  s6 [shape=box, style=rounded, label=\"I should prefer the\\ncheaper option when\\nthe options are\\notherwise equal.\", peripheries=2];\n  s7 [shape=box, style=rounded, label=\"It rains often where\\nI live.\"];\n  s8 [shape=box, style=rounded, label=\"Walking in the rain\\nwithout a raincoat\\nis unpleasant.\"];\n  s9 [shape=box, style=rounded, label=\"I should own a good\\nraincoat.\", peripheries=2];\n  s10 [shape=box, style=rounded, label=\"My assessments of my\\nown habits are\\naccurate.\"];\n  s11 [shape=box, style=rounded, label=\"My reports about how\\nI spend my time have\\nmatched outside\\nobservation.\"];\n  a0 [shape=diamond, fontsize=8, label=\"practical syllogism\"];\n  a1 [shape=diamond, fontsize=8, label=\"\"];\n  a2 [shape=diamond, fontsize=8, label=\"\"];\n  a3 [shape=diamond, fontsize=8, label=\"\"];\n  a4 [shape=diamond, fontsize=8, label=\"\"];\n  a5 [shape=diamond, fontsize=8, label=\"\"];\n  s0 -> a0;\n  s1 -> a0;\n  s2 -> a0;\n  s3 -> a0;\n  a0 -> s4;\n  s5 -> a1;\n  s6 -> a1;\n  a1 -> s4;\n  s4 -> a2;\n  s7 -> a2;\n  s8 -> a2;\n  a2 -> s9;\n  s11 -> a3;\n  a3 -> s10;\n  s10 -> a4;\n  a4 -> s11;\n  s11 -> a5;\n  a5 -> s3;\n}\n",
     "mermaid": "flowchart LR\n  s0[\"exercise-good<br/>Regular physical activity improves<br/>long-term health.\"]\n  s1[\"walk-is-exercise<br/>Walking for thirty minutes a day<br/>counts as regular physical activity.\"]\n  s2[\"health-matters<br/>I should act to protect my long-term<br/>health.\"]\n  s3[\"commute-30<br/>My commute takes about thirty<br/>minutes on foot.\"]\n  s4[\"walk-commute<br/>I should walk to work.\"]\n  s5[\"car-costs<br/>Driving to work costs more than<br/>walking.\"]\n  s6[\"save-money<br/>I should prefer the cheaper option<br/>when the options are otherwise<br/>equal.\"]\n  s7[\"rain-often<br/>It rains often where I live.\"]\n  s8[\"rain-unpleasant<br/>Walking in the rain without a<br/>raincoat is unpleasant.\"]\n  s9[\"need-raincoat<br/>I should own a good raincoat.\"]\n  s10[\"self-knowledge<br/>My assessments of my own habits are<br/>accurate.\"]\n  s11[\"habit-reports<br/>My reports about how I spend my time<br/>have matched outside observation.\"]\n  a0{{\"walk-for-health<br/>practical syllogism\"}}\n  a1{{\"walk-for-money\"}}\n  a2{{\"raincoat\"}}\n  a3{{\"reports-confirm-knowledge\"}}\n  a4{{\"knowledge-vouches-reports\"}}\n  a5{{\"commute-from-reports\"}}\n  s0 --> a0\n  s1 --> a0\n  s2 --> a0\n  s3 --> a0\n  a0 --> s4\n  s5 --> a1\n  s6 --> a1\n  a1 --> s4\n  s4 --> a2\n  s7 --> a2\n  s8 --> a2\n  a2 --> s9\n  s11 --> a3\n  a3 --> s10\n  s10 --> a4\n  a4 --> s11\n  s11 --> a5\n  a5 --> s3\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n  class s2,s4,s6,s9 ought;\n",

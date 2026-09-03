@@ -151,6 +151,64 @@ Grounded is the least fixed point described in [FORMAT.md](FORMAT.md) section 8.
 {"well_founded": {...}, "duplicates": [...], "unused": [...], "empty_justifications": [...]}
 ```
 
+## present
+
+`present <file> <id> [--given ...] [--depth N]` writes Markdown, not JSON (with
+`--json` it is wrapped as `{"statement", "markdown"}`). The document has a title (the
+statement text), a tag line (id, mode, cycle membership), "The case" as a nested list
+mirroring the rests-on tree with each argument's justification inline, then either
+"Foundations reached" or, with `--given`, "What the audience must grant", and
+"Cycles involved" when relevant. Leaves are marked *foundation*, *given*, *see above*,
+or *not expanded further*.
+
+## stats
+
+```json
+{
+  "statements": n, "arguments": n,
+  "modes": {"is": n, "ought": n},
+  "foundations": n, "terminals": n, "unused": n, "ungrounded": n,
+  "cycles": n, "largest_cycle": n, "statements_in_cycles": n,
+  "premises":    {"min": n, "max": n, "mean": x},
+  "conclusions": {"min": n, "max": n, "mean": x},
+  "zero_premise_arguments": n,
+  "longest_chain": n,
+  "most_supporting": [ {"id": "<id>", "downstream": n}, ... ],
+  "most_supported":  [ {"id": "<id>", "upstream": n}, ... ]
+}
+```
+
+`terminals` are statements no argument uses as a premise. `longest_chain` is the
+largest number of arguments on a path through the condensation (a cycle counts as
+one step). `mean` is rounded to three decimals. The top lists hold up to five
+entries with non-zero counts, ties broken by file order.
+
+## merge
+
+Three-way merge of two lines of edits from a common base. Entries are matched by
+local id and compared by content (statements: canonical text, mode, meta, ext;
+arguments: premise set, conclusion set, canonical justification, rule, meta, ext).
+If both sides agree, or only one side changed, the change is taken; if both changed
+differently it is a conflict and ours wins in the output.
+
+```json
+{
+  "merged": <worldview document>,
+  "conflicts": [
+    {"kind": "statement|argument|header", "id": "<id>", "base": ..., "ours": ..., "theirs": ..., "resolution": "kept ours|kept theirs"},
+    {"kind": "dangling", "id": "<argument id>", "missing": ["<id>", ...], "argument": {...}, "resolution": "dropped argument"}
+  ],
+  "summary": {
+    "statements": {"kept": n, "changed": n, "added_ours": n, "added_theirs": n, "added_both": n, "removed": n},
+    "arguments":  {"kept": n, "changed": n, "added_ours": n, "added_theirs": n, "added_both": n, "removed": n}
+  }
+}
+```
+
+Order in `merged`: base order, then additions from ours, then from theirs. The CLI
+exits 1 when there are conflicts and writes `-o` only when conflict-free or with
+`--force`.
+
 ## export
 
 `export --format dot|mermaid` writes text, not JSON: Graphviz DOT or a Mermaid

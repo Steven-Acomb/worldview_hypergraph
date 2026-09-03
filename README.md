@@ -232,8 +232,11 @@ or an unknown id.
 | `plan <file> <id> [--given a,b,...]` | Argument planning: given what an audience already accepts, which foundations they must still grant and which statements must be established, with the arguments available for each. |
 | `lint well-founded <file>` | Optional, informational: statements not grounded in any foundation. |
 | `lint duplicates`, `lint unused`, `lint empty-justifications`, `lint all` | More optional lints: the same proposition under several ids; statements in no argument; arguments with a blank justification. |
+| `present <file> <id> [--given ...]` | The full case for a statement as a Markdown document: every argument with its justification, down to the foundations. |
+| `stats <file>` | Counts, cycle sizes, longest chain of arguments, most supporting and most supported statements. |
 | `ids <file>` | `prop_id` and `just_id` for every statement, `arg_hash` for every argument. |
 | `diff <a> <b>` | Match statements across two files by identity. Four buckets: **identical** (`just_id` matches), **rejustified** (`prop_id` matches, `just_id` does not), **added**, **removed**. Arguments are matched by `arg_hash`. |
+| `merge <base> <ours> <theirs> [-o out]` | Three-way merge of two forks of one worldview, by local id and content. Exit 1 on conflicts. |
 | `export <file> --format dot\|mermaid` | The hypergraph as Graphviz DOT or a Mermaid flowchart, for pictures. |
 | `schema` | Print the JSON Schema. |
 
@@ -271,7 +274,10 @@ ids.scc_of("habit-reports")                       # ['self-knowledge', 'habit-re
 
 rests_on(wv, "need-raincoat", depth=2)            # same dict the CLI prints as JSON
 plan(wv, "need-raincoat", given=["walk-commute"])  # what an audience must still grant
+present(wv, "need-raincoat")                      # Markdown: the whole case, foundations up
 diff(wv, load("examples/walking-to-work-fork.json"))
+merge(base, ours, theirs)                         # three-way merge of two forks
+stats(wv)
 to_mermaid(wv)                                    # picture source
 ```
 

@@ -913,6 +913,109 @@
       ],
       "empty_justifications": []
     },
+    "stats": {
+      "statements": 25,
+      "arguments": 30,
+      "modes": {
+        "is": 14,
+        "ought": 11
+      },
+      "foundations": 6,
+      "terminals": 5,
+      "unused": 1,
+      "ungrounded": 2,
+      "cycles": 1,
+      "largest_cycle": 5,
+      "statements_in_cycles": 5,
+      "premises": {
+        "min": 0,
+        "max": 3,
+        "mean": 1.267
+      },
+      "conclusions": {
+        "min": 1,
+        "max": 2,
+        "mean": 1.3
+      },
+      "zero_premise_arguments": 10,
+      "longest_chain": 7,
+      "most_supporting": [
+        {
+          "id": "s1",
+          "downstream": 14
+        },
+        {
+          "id": "s3",
+          "downstream": 13
+        },
+        {
+          "id": "s5",
+          "downstream": 13
+        },
+        {
+          "id": "s18",
+          "downstream": 13
+        },
+        {
+          "id": "s0",
+          "downstream": 12
+        }
+      ],
+      "most_supported": [
+        {
+          "id": "s12",
+          "upstream": 19
+        },
+        {
+          "id": "s4",
+          "upstream": 18
+        },
+        {
+          "id": "s11",
+          "upstream": 18
+        },
+        {
+          "id": "s13",
+          "upstream": 18
+        },
+        {
+          "id": "s15",
+          "upstream": 18
+        }
+      ]
+    },
+    "present": {
+      "s0": {
+        "plain": "# Roads roads\n\n`s0` · is\n\n## The case\n\n- **Roads roads** (`s0`, is)\n  - via `a13`: justification 4\n    - *no premises*\n  - via `a16` (jointly concludes `s11`): justification 4\n    - **Wet slippery slippery rain wet slowly.** (`s5`, is)\n      - via `a5`: justification 1\n        - **Drive night slippery night.** (`s1`, ought)\n          - via `a28` (jointly concludes `s24`): justification 5\n            - *no premises*\n    - **Cold coffee cold drive.** (`s3`, is)\n      - via `a1`: justification 0\n        - *no premises*\n      - via `a11`: justification 0\n        - *no premises*\n  - via `a21`: justification 2\n    - **Stars rain roads.** (`s18`, is) — *foundation*\n\n## Foundations reached\n\n- `s18`: Stars rain roads.\n",
+        "depth_1": "# Roads roads\n\n`s0` · is\n\n## The case\n\n- **Roads roads** (`s0`, is)\n  - via `a13`: justification 4\n    - *no premises*\n  - via `a16` (jointly concludes `s11`): justification 4\n    - **Wet slippery slippery rain wet slowly.** (`s5`, is) — *not expanded further*\n    - **Cold coffee cold drive.** (`s3`, is) — *not expanded further*\n  - via `a21`: justification 2\n    - **Stars rain roads.** (`s18`, is)\n\n## Foundations reached\n\n- `s18`: Stars rain roads.\n",
+        "given": {
+          "given": [
+            "s10"
+          ],
+          "markdown": "# Roads roads\n\n`s0` · is\n\nTaken as given: nothing in this statement's closure.\n\n## The case\n\n- **Roads roads** (`s0`, is)\n  - via `a13`: justification 4\n    - *no premises*\n  - via `a16` (jointly concludes `s11`): justification 4\n    - **Wet slippery slippery rain wet slowly.** (`s5`, is)\n      - via `a5`: justification 1\n        - **Drive night slippery night.** (`s1`, ought)\n          - via `a28` (jointly concludes `s24`): justification 5\n            - *no premises*\n    - **Cold coffee cold drive.** (`s3`, is)\n      - via `a1`: justification 0\n        - *no premises*\n      - via `a11`: justification 0\n        - *no premises*\n  - via `a21`: justification 2\n    - **Stars rain roads.** (`s18`, is) — *foundation*\n\n## What the audience must grant\n\n- `s18`: Stars rain roads.\n"
+        }
+      },
+      "s1": {
+        "plain": "# Drive night slippery night.\n\n`s1` · ought\n\n## The case\n\n- **Drive night slippery night.** (`s1`, ought)\n  - via `a28` (jointly concludes `s24`): justification 5\n    - *no premises*\n\n## Foundations reached\n\nNone: every statement in the closure has an argument for it (the closure is cyclic).\n",
+        "depth_1": "# Drive night slippery night.\n\n`s1` · ought\n\n## The case\n\n- **Drive night slippery night.** (`s1`, ought)\n  - via `a28` (jointly concludes `s24`): justification 5\n    - *no premises*\n\n## Foundations reached\n\nNone: every statement in the closure has an argument for it (the closure is cyclic).\n",
+        "given": {
+          "given": [
+            "s10"
+          ],
+          "markdown": "# Drive night slippery night.\n\n`s1` · ought\n\nTaken as given: nothing in this statement's closure.\n\n## The case\n\n- **Drive night slippery night.** (`s1`, ought)\n  - via `a28` (jointly concludes `s24`): justification 5\n    - *no premises*\n\n## What the audience must grant\n\nNothing: every foundation reached is already given.\n"
+        }
+      },
+      "s24": {
+        "plain": "# Coffee cold night visible.\n\n`s24` · is\n\n## The case\n\n- **Coffee cold night visible.** (`s24`, is)\n  - via `a12`: justification 1\n    - *no premises*\n  - via `a23`: justification 3\n    - *no premises*\n  - via `a28` (jointly concludes `s1`): justification 5\n    - *no premises*\n\n## Foundations reached\n\nNone: every statement in the closure has an argument for it (the closure is cyclic).\n",
+        "depth_1": "# Coffee cold night visible.\n\n`s24` · is\n\n## The case\n\n- **Coffee cold night visible.** (`s24`, is)\n  - via `a12`: justification 1\n    - *no premises*\n  - via `a23`: justification 3\n    - *no premises*\n  - via `a28` (jointly concludes `s1`): justification 5\n    - *no premises*\n\n## Foundations reached\n\nNone: every statement in the closure has an argument for it (the closure is cyclic).\n",
+        "given": {
+          "given": [
+            "s10"
+          ],
+          "markdown": "# Coffee cold night visible.\n\n`s24` · is\n\nTaken as given: nothing in this statement's closure.\n\n## The case\n\n- **Coffee cold night visible.** (`s24`, is)\n  - via `a12`: justification 1\n    - *no premises*\n  - via `a23`: justification 3\n    - *no premises*\n  - via `a28` (jointly concludes `s1`): justification 5\n    - *no premises*\n\n## What the audience must grant\n\nNothing: every foundation reached is already given.\n"
+        }
+      }
+    },
     "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  label=\"random-2\"; labelloc=t;\n  s0 [shape=box, style=rounded, label=\"s0\\nRoads roads\"];\n  s1 [shape=box, style=rounded, label=\"s1\\nDrive night slippery night.\", peripheries=2];\n  s2 [shape=box, style=rounded, label=\"s2\\nLate stars late!\", peripheries=2];\n  s3 [shape=box, style=rounded, label=\"s3\\nCold coffee cold drive.\"];\n  s4 [shape=box, style=rounded, label=\"s4\\nCoffee slowly late late!\"];\n  s5 [shape=box, style=rounded, label=\"s5\\nWet slippery slippery rain wet\\nslowly.\"];\n  s6 [shape=box, style=rounded, label=\"s6\\nCold slowly cold stars cold wet\"];\n  s7 [shape=box, style=rounded, label=\"s7\\nSlowly night slowly slowly coffee\\nwet\", peripheries=2];\n  s8 [shape=box, style=rounded, label=\"s8\\nStars cold slippery coffee drive\", peripheries=2];\n  s9 [shape=box, style=rounded, label=\"s9\\nSlowly stars coffee coffee slowly\\nnight!\", peripheries=2];\n  s10 [shape=box, style=rounded, label=\"s10\\nCoffee stars slippery slowly\\nvisible.\", peripheries=2];\n  s11 [shape=box, style=rounded, label=\"s11\\nCoffee drive drive visible!\", peripheries=2];\n  s12 [shape=box, style=rounded, label=\"s12\\nCold stars night night late drive!\"];\n  s13 [shape=box, style=rounded, label=\"s13\\nCold slowly stars night roads\", peripheries=2];\n  s14 [shape=box, style=rounded, label=\"s14\\nSlippery visible.\"];\n  s15 [shape=box, style=rounded, label=\"s15\\nStars rain drive night slippery\\nstars.\", peripheries=2];\n  s16 [shape=box, style=rounded, label=\"s16\\nDrive slippery slippery.\"];\n  s17 [shape=box, style=rounded, label=\"s17\\nRain slowly\"];\n  s18 [shape=box, style=rounded, label=\"s18\\nStars rain roads.\"];\n  s19 [shape=box, style=rounded, label=\"s19\\nRain visible.\"];\n  s20 [shape=box, style=rounded, label=\"s20\\nWet wet visible wet!\", peripheries=2];\n  s21 [shape=box, style=rounded, label=\"s21\\nLate night.\"];\n  s22 [shape=box, style=rounded, label=\"s22\\nRain rain slowly!\", peripheries=2];\n  s23 [shape=box, style=rounded, label=\"s23\\nDrive slowly\"];\n  s24 [shape=box, style=rounded, label=\"s24\\nCoffee cold night visible.\"];\n  a0 [shape=diamond, fontsize=8, label=\"a0\"];\n  a1 [shape=diamond, fontsize=8, label=\"a1\"];\n  a2 [shape=diamond, fontsize=8, label=\"a2\"];\n  a3 [shape=diamond, fontsize=8, label=\"a3\"];\n  a4 [shape=diamond, fontsize=8, label=\"a4\"];\n  a5 [shape=diamond, fontsize=8, label=\"a5\"];\n  a6 [shape=diamond, fontsize=8, label=\"a6\"];\n  a7 [shape=diamond, fontsize=8, label=\"a7\"];\n  a8 [shape=diamond, fontsize=8, label=\"a8\"];\n  a9 [shape=diamond, fontsize=8, label=\"a9\"];\n  a10 [shape=diamond, fontsize=8, label=\"a10\"];\n  a11 [shape=diamond, fontsize=8, label=\"a11\"];\n  a12 [shape=diamond, fontsize=8, label=\"a12\"];\n  a13 [shape=diamond, fontsize=8, label=\"a13\"];\n  a14 [shape=diamond, fontsize=8, label=\"a14\"];\n  a15 [shape=diamond, fontsize=8, label=\"a15\"];\n  a16 [shape=diamond, fontsize=8, label=\"a16\"];\n  a17 [shape=diamond, fontsize=8, label=\"a17\"];\n  a18 [shape=diamond, fontsize=8, label=\"a18\"];\n  a19 [shape=diamond, fontsize=8, label=\"a19\"];\n  a20 [shape=diamond, fontsize=8, label=\"a20\"];\n  a21 [shape=diamond, fontsize=8, label=\"a21\"];\n  a22 [shape=diamond, fontsize=8, label=\"a22\"];\n  a23 [shape=diamond, fontsize=8, label=\"a23\"];\n  a24 [shape=diamond, fontsize=8, label=\"a24\"];\n  a25 [shape=diamond, fontsize=8, label=\"a25\"];\n  a26 [shape=diamond, fontsize=8, label=\"a26\"];\n  a27 [shape=diamond, fontsize=8, label=\"a27\"];\n  a28 [shape=diamond, fontsize=8, label=\"a28\"];\n  a29 [shape=diamond, fontsize=8, label=\"a29\"];\n  s19 -> a0;\n  s22 -> a0;\n  a0 -> s15;\n  a1 -> s3;\n  s4 -> a2;\n  s16 -> a2;\n  a2 -> s15;\n  a2 -> s16;\n  s10 -> a3;\n  a3 -> s8;\n  s20 -> a4;\n  s0 -> a4;\n  a4 -> s21;\n  s1 -> a5;\n  a5 -> s5;\n  a6 -> s20;\n  a6 -> s7;\n  s1 -> a7;\n  s7 -> a7;\n  s22 -> a7;\n  a7 -> s2;\n  a7 -> s8;\n  s7 -> a8;\n  s19 -> a8;\n  a8 -> s8;\n  s8 -> a9;\n  s16 -> a9;\n  a9 -> s4;\n  s13 -> a10;\n  s5 -> a10;\n  a10 -> s16;\n  a11 -> s3;\n  a12 -> s24;\n  a13 -> s0;\n  s14 -> a14;\n  s9 -> a14;\n  s17 -> a14;\n  a14 -> s6;\n  a14 -> s21;\n  s13 -> a15;\n  s16 -> a15;\n  s0 -> a15;\n  a15 -> s13;\n  s5 -> a16;\n  s3 -> a16;\n  a16 -> s11;\n  a16 -> s0;\n  a17 -> s9;\n  s9 -> a18;\n  a18 -> s21;\n  a19 -> s9;\n  s0 -> a20;\n  s14 -> a20;\n  s1 -> a20;\n  a20 -> s20;\n  a20 -> s15;\n  s18 -> a21;\n  a21 -> s0;\n  a22 -> s9;\n  a23 -> s24;\n  s3 -> a24;\n  a24 -> s12;\n  s4 -> a25;\n  s24 -> a25;\n  a25 -> s12;\n  s3 -> a26;\n  a26 -> s2;\n  s20 -> a27;\n  a27 -> s6;\n  a27 -> s22;\n  a28 -> s24;\n  a28 -> s1;\n  s15 -> a29;\n  s9 -> a29;\n  s11 -> a29;\n  a29 -> s4;\n  a29 -> s11;\n}\n",
     "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  label=\"random-2\"; labelloc=t;\n  s0 [shape=box, style=rounded, label=\"Roads roads\"];\n  s1 [shape=box, style=rounded, label=\"Drive night slippery\\nnight.\", peripheries=2];\n  s2 [shape=box, style=rounded, label=\"Late stars late!\", peripheries=2];\n  s3 [shape=box, style=rounded, label=\"Cold coffee cold\\ndrive.\"];\n  s4 [shape=box, style=rounded, label=\"Coffee slowly late\\nlate!\"];\n  s5 [shape=box, style=rounded, label=\"Wet slippery\\nslippery rain wet\\nslowly.\"];\n  s6 [shape=box, style=rounded, label=\"Cold slowly cold\\nstars cold wet\"];\n  s7 [shape=box, style=rounded, label=\"Slowly night slowly\\nslowly coffee wet\", peripheries=2];\n  s8 [shape=box, style=rounded, label=\"Stars cold slippery\\ncoffee drive\", peripheries=2];\n  s9 [shape=box, style=rounded, label=\"Slowly stars coffee\\ncoffee slowly night!\", peripheries=2];\n  s10 [shape=box, style=rounded, label=\"Coffee stars\\nslippery slowly\\nvisible.\", peripheries=2];\n  s11 [shape=box, style=rounded, label=\"Coffee drive drive\\nvisible!\", peripheries=2];\n  s12 [shape=box, style=rounded, label=\"Cold stars night\\nnight late drive!\"];\n  s13 [shape=box, style=rounded, label=\"Cold slowly stars\\nnight roads\", peripheries=2];\n  s14 [shape=box, style=rounded, label=\"Slippery visible.\"];\n  s15 [shape=box, style=rounded, label=\"Stars rain drive\\nnight slippery\\nstars.\", peripheries=2];\n  s16 [shape=box, style=rounded, label=\"Drive slippery\\nslippery.\"];\n  s17 [shape=box, style=rounded, label=\"Rain slowly\"];\n  s18 [shape=box, style=rounded, label=\"Stars rain roads.\"];\n  s19 [shape=box, style=rounded, label=\"Rain visible.\"];\n  s20 [shape=box, style=rounded, label=\"Wet wet visible wet!\", peripheries=2];\n  s21 [shape=box, style=rounded, label=\"Late night.\"];\n  s22 [shape=box, style=rounded, label=\"Rain rain slowly!\", peripheries=2];\n  s23 [shape=box, style=rounded, label=\"Drive slowly\"];\n  s24 [shape=box, style=rounded, label=\"Coffee cold night\\nvisible.\"];\n  a0 [shape=diamond, fontsize=8, label=\"\"];\n  a1 [shape=diamond, fontsize=8, label=\"\"];\n  a2 [shape=diamond, fontsize=8, label=\"\"];\n  a3 [shape=diamond, fontsize=8, label=\"\"];\n  a4 [shape=diamond, fontsize=8, label=\"\"];\n  a5 [shape=diamond, fontsize=8, label=\"\"];\n  a6 [shape=diamond, fontsize=8, label=\"\"];\n  a7 [shape=diamond, fontsize=8, label=\"\"];\n  a8 [shape=diamond, fontsize=8, label=\"\"];\n  a9 [shape=diamond, fontsize=8, label=\"\"];\n  a10 [shape=diamond, fontsize=8, label=\"\"];\n  a11 [shape=diamond, fontsize=8, label=\"\"];\n  a12 [shape=diamond, fontsize=8, label=\"\"];\n  a13 [shape=diamond, fontsize=8, label=\"\"];\n  a14 [shape=diamond, fontsize=8, label=\"\"];\n  a15 [shape=diamond, fontsize=8, label=\"\"];\n  a16 [shape=diamond, fontsize=8, label=\"\"];\n  a17 [shape=diamond, fontsize=8, label=\"\"];\n  a18 [shape=diamond, fontsize=8, label=\"\"];\n  a19 [shape=diamond, fontsize=8, label=\"\"];\n  a20 [shape=diamond, fontsize=8, label=\"\"];\n  a21 [shape=diamond, fontsize=8, label=\"\"];\n  a22 [shape=diamond, fontsize=8, label=\"\"];\n  a23 [shape=diamond, fontsize=8, label=\"\"];\n  a24 [shape=diamond, fontsize=8, label=\"\"];\n  a25 [shape=diamond, fontsize=8, label=\"\"];\n  a26 [shape=diamond, fontsize=8, label=\"\"];\n  a27 [shape=diamond, fontsize=8, label=\"\"];\n  a28 [shape=diamond, fontsize=8, label=\"\"];\n  a29 [shape=diamond, fontsize=8, label=\"\"];\n  s19 -> a0;\n  s22 -> a0;\n  a0 -> s15;\n  a1 -> s3;\n  s4 -> a2;\n  s16 -> a2;\n  a2 -> s15;\n  a2 -> s16;\n  s10 -> a3;\n  a3 -> s8;\n  s20 -> a4;\n  s0 -> a4;\n  a4 -> s21;\n  s1 -> a5;\n  a5 -> s5;\n  a6 -> s20;\n  a6 -> s7;\n  s1 -> a7;\n  s7 -> a7;\n  s22 -> a7;\n  a7 -> s2;\n  a7 -> s8;\n  s7 -> a8;\n  s19 -> a8;\n  a8 -> s8;\n  s8 -> a9;\n  s16 -> a9;\n  a9 -> s4;\n  s13 -> a10;\n  s5 -> a10;\n  a10 -> s16;\n  a11 -> s3;\n  a12 -> s24;\n  a13 -> s0;\n  s14 -> a14;\n  s9 -> a14;\n  s17 -> a14;\n  a14 -> s6;\n  a14 -> s21;\n  s13 -> a15;\n  s16 -> a15;\n  s0 -> a15;\n  a15 -> s13;\n  s5 -> a16;\n  s3 -> a16;\n  a16 -> s11;\n  a16 -> s0;\n  a17 -> s9;\n  s9 -> a18;\n  a18 -> s21;\n  a19 -> s9;\n  s0 -> a20;\n  s14 -> a20;\n  s1 -> a20;\n  a20 -> s20;\n  a20 -> s15;\n  s18 -> a21;\n  a21 -> s0;\n  a22 -> s9;\n  a23 -> s24;\n  s3 -> a24;\n  a24 -> s12;\n  s4 -> a25;\n  s24 -> a25;\n  a25 -> s12;\n  s3 -> a26;\n  a26 -> s2;\n  s20 -> a27;\n  a27 -> s6;\n  a27 -> s22;\n  a28 -> s24;\n  a28 -> s1;\n  s15 -> a29;\n  s9 -> a29;\n  s11 -> a29;\n  a29 -> s4;\n  a29 -> s11;\n}\n",
     "mermaid": "flowchart LR\n  s0[\"s0<br/>Roads roads\"]\n  s1[\"s1<br/>Drive night slippery night.\"]\n  s2[\"s2<br/>Late stars late!\"]\n  s3[\"s3<br/>Cold coffee cold drive.\"]\n  s4[\"s4<br/>Coffee slowly late late!\"]\n  s5[\"s5<br/>Wet slippery slippery rain wet<br/>slowly.\"]\n  s6[\"s6<br/>Cold slowly cold stars cold wet\"]\n  s7[\"s7<br/>Slowly night slowly slowly coffee<br/>wet\"]\n  s8[\"s8<br/>Stars cold slippery coffee drive\"]\n  s9[\"s9<br/>Slowly stars coffee coffee slowly<br/>night!\"]\n  s10[\"s10<br/>Coffee stars slippery slowly<br/>visible.\"]\n  s11[\"s11<br/>Coffee drive drive visible!\"]\n  s12[\"s12<br/>Cold stars night night late drive!\"]\n  s13[\"s13<br/>Cold slowly stars night roads\"]\n  s14[\"s14<br/>Slippery visible.\"]\n  s15[\"s15<br/>Stars rain drive night slippery<br/>stars.\"]\n  s16[\"s16<br/>Drive slippery slippery.\"]\n  s17[\"s17<br/>Rain slowly\"]\n  s18[\"s18<br/>Stars rain roads.\"]\n  s19[\"s19<br/>Rain visible.\"]\n  s20[\"s20<br/>Wet wet visible wet!\"]\n  s21[\"s21<br/>Late night.\"]\n  s22[\"s22<br/>Rain rain slowly!\"]\n  s23[\"s23<br/>Drive slowly\"]\n  s24[\"s24<br/>Coffee cold night visible.\"]\n  a0{{\"a0\"}}\n  a1{{\"a1\"}}\n  a2{{\"a2\"}}\n  a3{{\"a3\"}}\n  a4{{\"a4\"}}\n  a5{{\"a5\"}}\n  a6{{\"a6\"}}\n  a7{{\"a7\"}}\n  a8{{\"a8\"}}\n  a9{{\"a9\"}}\n  a10{{\"a10\"}}\n  a11{{\"a11\"}}\n  a12{{\"a12\"}}\n  a13{{\"a13\"}}\n  a14{{\"a14\"}}\n  a15{{\"a15\"}}\n  a16{{\"a16\"}}\n  a17{{\"a17\"}}\n  a18{{\"a18\"}}\n  a19{{\"a19\"}}\n  a20{{\"a20\"}}\n  a21{{\"a21\"}}\n  a22{{\"a22\"}}\n  a23{{\"a23\"}}\n  a24{{\"a24\"}}\n  a25{{\"a25\"}}\n  a26{{\"a26\"}}\n  a27{{\"a27\"}}\n  a28{{\"a28\"}}\n  a29{{\"a29\"}}\n  s19 --> a0\n  s22 --> a0\n  a0 --> s15\n  a1 --> s3\n  s4 --> a2\n  s16 --> a2\n  a2 --> s15\n  a2 --> s16\n  s10 --> a3\n  a3 --> s8\n  s20 --> a4\n  s0 --> a4\n  a4 --> s21\n  s1 --> a5\n  a5 --> s5\n  a6 --> s20\n  a6 --> s7\n  s1 --> a7\n  s7 --> a7\n  s22 --> a7\n  a7 --> s2\n  a7 --> s8\n  s7 --> a8\n  s19 --> a8\n  a8 --> s8\n  s8 --> a9\n  s16 --> a9\n  a9 --> s4\n  s13 --> a10\n  s5 --> a10\n  a10 --> s16\n  a11 --> s3\n  a12 --> s24\n  a13 --> s0\n  s14 --> a14\n  s9 --> a14\n  s17 --> a14\n  a14 --> s6\n  a14 --> s21\n  s13 --> a15\n  s16 --> a15\n  s0 --> a15\n  a15 --> s13\n  s5 --> a16\n  s3 --> a16\n  a16 --> s11\n  a16 --> s0\n  a17 --> s9\n  s9 --> a18\n  a18 --> s21\n  a19 --> s9\n  s0 --> a20\n  s14 --> a20\n  s1 --> a20\n  a20 --> s20\n  a20 --> s15\n  s18 --> a21\n  a21 --> s0\n  a22 --> s9\n  a23 --> s24\n  s3 --> a24\n  a24 --> s12\n  s4 --> a25\n  s24 --> a25\n  a25 --> s12\n  s3 --> a26\n  a26 --> s2\n  s20 --> a27\n  a27 --> s6\n  a27 --> s22\n  a28 --> s24\n  a28 --> s1\n  s15 --> a29\n  s9 --> a29\n  s11 --> a29\n  a29 --> s4\n  a29 --> s11\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n  class s1,s2,s7,s8,s9,s10,s11,s13,s15,s20,s22 ought;\n",

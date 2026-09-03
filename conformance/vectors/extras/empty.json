@@ -12,6 +12,36 @@
       "unused": [],
       "empty_justifications": []
     },
+    "stats": {
+      "statements": 0,
+      "arguments": 0,
+      "modes": {
+        "is": 0,
+        "ought": 0
+      },
+      "foundations": 0,
+      "terminals": 0,
+      "unused": 0,
+      "ungrounded": 0,
+      "cycles": 0,
+      "largest_cycle": 0,
+      "statements_in_cycles": 0,
+      "premises": {
+        "min": 0,
+        "max": 0,
+        "mean": 0.0
+      },
+      "conclusions": {
+        "min": 0,
+        "max": 0,
+        "mean": 0.0
+      },
+      "zero_premise_arguments": 0,
+      "longest_chain": 0,
+      "most_supporting": [],
+      "most_supported": []
+    },
+    "present": {},
     "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n}\n",
     "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n}\n",
     "mermaid": "flowchart LR\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n",

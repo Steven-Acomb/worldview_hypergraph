@@ -54,9 +54,12 @@ from worldview_core import (  # noqa: E402
     diff,
     foundations,
     lint_all,
+    merge,
     plan,
+    present,
     rests_on,
     sccs,
+    stats,
     supports,
     to_dot,
     to_mermaid,
@@ -409,14 +412,35 @@ def extras_for(data, name):
         mids = [s for s in closure if s not in founds]
         given_sets = [[], founds[:2], mids[:1], [sid], closure[:3]]
         plans[sid] = [{"given": g, "result": plan(wv, sid, g)} for g in given_sets]
+    presents = {}
+    for sid in probe[:3]:
+        presents[sid] = {
+            "plain": present(wv, sid),
+            "depth_1": present(wv, sid, depth=1),
+            "given": {"given": founds[:1], "markdown": present(wv, sid, given=founds[:1])},
+        }
     return {
         "plan": plans,
         "lint_all": lint_all(wv),
+        "stats": stats(wv),
+        "present": presents,
         "dot": to_dot(wv),
         "dot_no_ids_tb": to_dot(wv, ids=False, wrap=20, rankdir="TB"),
         "mermaid": to_mermaid(wv),
         "mermaid_no_ids_tb": to_mermaid(wv, ids=False, wrap=20, direction="TB"),
     }
+
+
+MERGES = [
+    ("chain", "chain-edited-leaf", "chain-plus"),
+    ("chain", "chain-renamed", "chain-plus"),
+    ("chain", "chain-edited-leaf", "chain-edited-leaf"),
+    ("chain", "with-meta-ext", "chain-edited-leaf"),
+    ("cycle", "cycle-edited-member", "cycle-edited-downstream"),
+    ("walking-to-work", "walking-to-work-fork", "walking-to-work"),
+    ("walking-to-work", "walking-to-work-fork", "walking-to-work-fork"),
+    ("empty", "chain", "cycle"),
+]
 
 
 def dump(path: Path, data) -> None:
@@ -449,13 +473,18 @@ def main() -> None:
         wb = Worldview.from_dict(inputs[b], source=b)
         dump(OUT / "diffs" / f"{a}--{b}.json", {"a": a, "b": b, "expected": diff(wa, wb)})
 
+    for base, ours, theirs in MERGES:
+        wb_, wo, wt = (Worldview.from_dict(inputs[n], source=n) for n in (base, ours, theirs))
+        dump(OUT / "merges" / f"{base}--{ours}--{theirs}.json",
+             {"base": base, "ours": ours, "theirs": theirs, "expected": merge(wb_, wo, wt)})
+
     prims = {
         "canon": [{"input": t, "output": canon(t)} for t in PRIMITIVES["canon"]],
         "H": [{"parts": parts, "output": H(*parts)} for parts in PRIMITIVES["H"]],
     }
     dump(OUT / "primitives.json", prims)
 
-    n = len(inputs) + len(invalid_cases()) + len(DIFFS)
+    n = 2 * len(inputs) + len(invalid_cases()) + len(DIFFS) + len(MERGES)
     print(f"wrote {n} vector files + primitives to {OUT}")
 
 

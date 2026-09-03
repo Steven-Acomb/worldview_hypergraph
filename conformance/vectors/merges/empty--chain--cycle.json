@@ -1,0 +1,181 @@
+{
+  "base": "empty",
+  "ours": "chain",
+  "theirs": "cycle",
+  "expected": {
+    "merged": {
+      "format": "worldview-core",
+      "version": "0.1",
+      "name": "chain",
+      "statements": [
+        {
+          "id": "a",
+          "text": "A",
+          "mode": "is"
+        },
+        {
+          "id": "b",
+          "text": "B",
+          "mode": "is"
+        },
+        {
+          "id": "c",
+          "text": "C",
+          "mode": "is"
+        },
+        {
+          "id": "d",
+          "text": "D",
+          "mode": "is"
+        },
+        {
+          "id": "e",
+          "text": "E",
+          "mode": "ought"
+        },
+        {
+          "id": "f",
+          "text": "F",
+          "mode": "is"
+        },
+        {
+          "id": "p",
+          "text": "P",
+          "mode": "is"
+        },
+        {
+          "id": "x",
+          "text": "X",
+          "mode": "is"
+        },
+        {
+          "id": "y",
+          "text": "Y",
+          "mode": "is"
+        },
+        {
+          "id": "z",
+          "text": "Z",
+          "mode": "is"
+        },
+        {
+          "id": "q",
+          "text": "Q",
+          "mode": "is"
+        }
+      ],
+      "arguments": [
+        {
+          "id": "ab-c",
+          "premises": [
+            "a",
+            "b"
+          ],
+          "conclusions": [
+            "c"
+          ],
+          "justification": "a and b give c"
+        },
+        {
+          "id": "cd-e",
+          "premises": [
+            "c",
+            "d"
+          ],
+          "conclusions": [
+            "e"
+          ],
+          "justification": "c and d give e"
+        },
+        {
+          "id": "f-e",
+          "premises": [
+            "f"
+          ],
+          "conclusions": [
+            "e"
+          ],
+          "justification": "f alone gives e"
+        },
+        {
+          "id": "p-x",
+          "premises": [
+            "p"
+          ],
+          "conclusions": [
+            "x"
+          ],
+          "justification": "p gives x"
+        },
+        {
+          "id": "x-y",
+          "premises": [
+            "x"
+          ],
+          "conclusions": [
+            "y"
+          ],
+          "justification": "x gives y"
+        },
+        {
+          "id": "y-z",
+          "premises": [
+            "y"
+          ],
+          "conclusions": [
+            "z"
+          ],
+          "justification": "y gives z"
+        },
+        {
+          "id": "z-x",
+          "premises": [
+            "z"
+          ],
+          "conclusions": [
+            "x"
+          ],
+          "justification": "z gives x"
+        },
+        {
+          "id": "z-q",
+          "premises": [
+            "z"
+          ],
+          "conclusions": [
+            "q"
+          ],
+          "justification": "z gives q"
+        }
+      ]
+    },
+    "conflicts": [
+      {
+        "kind": "header",
+        "id": "name",
+        "base": null,
+        "ours": "chain",
+        "theirs": "cycle",
+        "resolution": "kept ours"
+      }
+    ],
+    "summary": {
+      "statements": {
+        "kept": 0,
+        "added_ours": 6,
+        "added_theirs": 5,
+        "added_both": 0,
+        "removed": 0,
+        "changed": 0
+      },
+      "arguments": {
+        "kept": 0,
+        "added_ours": 3,
+        "added_theirs": 5,
+        "added_both": 0,
+        "removed": 0,
+        "changed": 0
+      }
+    }
+  }
+}

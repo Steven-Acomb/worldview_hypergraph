@@ -1699,6 +1699,101 @@
       "unused": [],
       "empty_justifications": []
     },
+    "stats": {
+      "statements": 5,
+      "arguments": 5,
+      "modes": {
+        "is": 5,
+        "ought": 0
+      },
+      "foundations": 1,
+      "terminals": 1,
+      "unused": 0,
+      "ungrounded": 0,
+      "cycles": 1,
+      "largest_cycle": 3,
+      "statements_in_cycles": 3,
+      "premises": {
+        "min": 1,
+        "max": 1,
+        "mean": 1.0
+      },
+      "conclusions": {
+        "min": 1,
+        "max": 1,
+        "mean": 1.0
+      },
+      "zero_premise_arguments": 0,
+      "longest_chain": 2,
+      "most_supporting": [
+        {
+          "id": "p",
+          "downstream": 4
+        },
+        {
+          "id": "x",
+          "downstream": 4
+        },
+        {
+          "id": "y",
+          "downstream": 4
+        },
+        {
+          "id": "z",
+          "downstream": 4
+        }
+      ],
+      "most_supported": [
+        {
+          "id": "x",
+          "upstream": 4
+        },
+        {
+          "id": "y",
+          "upstream": 4
+        },
+        {
+          "id": "z",
+          "upstream": 4
+        },
+        {
+          "id": "q",
+          "upstream": 4
+        }
+      ]
+    },
+    "present": {
+      "p": {
+        "plain": "# P\n\n`p` · is\n\n## The case\n\n- **P** (`p`, is) — *foundation*\n\n## Foundations reached\n\n- `p`: P\n",
+        "depth_1": "# P\n\n`p` · is\n\n## The case\n\n- **P** (`p`, is) — *foundation*\n\n## Foundations reached\n\n- `p`: P\n",
+        "given": {
+          "given": [
+            "p"
+          ],
+          "markdown": "# P\n\n`p` · is\n\nTaken as given: `p`.\n\n## The case\n\n- **P** (`p`, is) — *given*\n\n## What the audience must grant\n\nNothing: every foundation reached is already given.\n"
+        }
+      },
+      "x": {
+        "plain": "# X\n\n`x` · is · in cycle: `x`, `y`, `z`\n\n## The case\n\n- **X** (`x`, is)\n  - via `p-x`: p gives x\n    - **P** (`p`, is) — *foundation*\n  - via `z-x`: z gives x\n    - **Z** (`z`, is)\n      - via `y-z`: y gives z\n        - **Y** (`y`, is)\n          - via `x-y`: x gives y\n            - **X** (`x`, is) — *see above*\n\n## Foundations reached\n\n- `p`: P\n\n## Cycles involved\n\n- `x`, `y`, `z`\n",
+        "depth_1": "# X\n\n`x` · is · in cycle: `x`, `y`, `z`\n\n## The case\n\n- **X** (`x`, is)\n  - via `p-x`: p gives x\n    - **P** (`p`, is)\n  - via `z-x`: z gives x\n    - **Z** (`z`, is) — *not expanded further*\n\n## Foundations reached\n\n- `p`: P\n\n## Cycles involved\n\n- `x`, `y`, `z`\n",
+        "given": {
+          "given": [
+            "p"
+          ],
+          "markdown": "# X\n\n`x` · is · in cycle: `x`, `y`, `z`\n\nTaken as given: `p`.\n\n## The case\n\n- **X** (`x`, is)\n  - via `p-x`: p gives x\n    - **P** (`p`, is) — *given*\n  - via `z-x`: z gives x\n    - **Z** (`z`, is)\n      - via `y-z`: y gives z\n        - **Y** (`y`, is)\n          - via `x-y`: x gives y\n            - **X** (`x`, is) — *see above*\n\n## What the audience must grant\n\nNothing: every foundation reached is already given.\n\n## Cycles involved\n\n- `x`, `y`, `z`\n"
+        }
+      },
+      "y": {
+        "plain": "# Y\n\n`y` · is · in cycle: `x`, `y`, `z`\n\n## The case\n\n- **Y** (`y`, is)\n  - via `x-y`: x gives y\n    - **X** (`x`, is)\n      - via `p-x`: p gives x\n        - **P** (`p`, is) — *foundation*\n      - via `z-x`: z gives x\n        - **Z** (`z`, is)\n          - via `y-z`: y gives z\n            - **Y** (`y`, is) — *see above*\n\n## Foundations reached\n\n- `p`: P\n\n## Cycles involved\n\n- `x`, `y`, `z`\n",
+        "depth_1": "# Y\n\n`y` · is · in cycle: `x`, `y`, `z`\n\n## The case\n\n- **Y** (`y`, is)\n  - via `x-y`: x gives y\n    - **X** (`x`, is) — *not expanded further*\n\n## Foundations reached\n\n- `p`: P\n\n## Cycles involved\n\n- `x`, `y`, `z`\n",
+        "given": {
+          "given": [
+            "p"
+          ],
+          "markdown": "# Y\n\n`y` · is · in cycle: `x`, `y`, `z`\n\nTaken as given: `p`.\n\n## The case\n\n- **Y** (`y`, is)\n  - via `x-y`: x gives y\n    - **X** (`x`, is)\n      - via `p-x`: p gives x\n        - **P** (`p`, is) — *given*\n      - via `z-x`: z gives x\n        - **Z** (`z`, is)\n          - via `y-z`: y gives z\n            - **Y** (`y`, is) — *see above*\n\n## What the audience must grant\n\nNothing: every foundation reached is already given.\n\n## Cycles involved\n\n- `x`, `y`, `z`\n"
+        }
+      }
+    },
     "dot": "digraph worldview {\n  rankdir=LR;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  label=\"cycle\"; labelloc=t;\n  s0 [shape=box, style=rounded, label=\"p\\nP\"];\n  s1 [shape=box, style=rounded, label=\"x\\nX\"];\n  s2 [shape=box, style=rounded, label=\"y\\nY\"];\n  s3 [shape=box, style=rounded, label=\"z\\nZ\"];\n  s4 [shape=box, style=rounded, label=\"q\\nQ\"];\n  a0 [shape=diamond, fontsize=8, label=\"p-x\"];\n  a1 [shape=diamond, fontsize=8, label=\"x-y\"];\n  a2 [shape=diamond, fontsize=8, label=\"y-z\"];\n  a3 [shape=diamond, fontsize=8, label=\"z-x\"];\n  a4 [shape=diamond, fontsize=8, label=\"z-q\"];\n  s0 -> a0;\n  a0 -> s1;\n  s1 -> a1;\n  a1 -> s2;\n  s2 -> a2;\n  a2 -> s3;\n  s3 -> a3;\n  a3 -> s1;\n  s3 -> a4;\n  a4 -> s4;\n}\n",
     "dot_no_ids_tb": "digraph worldview {\n  rankdir=TB;\n  node [fontname=\"Helvetica\", fontsize=10];\n  edge [arrowsize=0.7];\n  label=\"cycle\"; labelloc=t;\n  s0 [shape=box, style=rounded, label=\"P\"];\n  s1 [shape=box, style=rounded, label=\"X\"];\n  s2 [shape=box, style=rounded, label=\"Y\"];\n  s3 [shape=box, style=rounded, label=\"Z\"];\n  s4 [shape=box, style=rounded, label=\"Q\"];\n  a0 [shape=diamond, fontsize=8, label=\"\"];\n  a1 [shape=diamond, fontsize=8, label=\"\"];\n  a2 [shape=diamond, fontsize=8, label=\"\"];\n  a3 [shape=diamond, fontsize=8, label=\"\"];\n  a4 [shape=diamond, fontsize=8, label=\"\"];\n  s0 -> a0;\n  a0 -> s1;\n  s1 -> a1;\n  a1 -> s2;\n  s2 -> a2;\n  a2 -> s3;\n  s3 -> a3;\n  a3 -> s1;\n  s3 -> a4;\n  a4 -> s4;\n}\n",
     "mermaid": "flowchart LR\n  s0[\"p<br/>P\"]\n  s1[\"x<br/>X\"]\n  s2[\"y<br/>Y\"]\n  s3[\"z<br/>Z\"]\n  s4[\"q<br/>Q\"]\n  a0{{\"p-x\"}}\n  a1{{\"x-y\"}}\n  a2{{\"y-z\"}}\n  a3{{\"z-x\"}}\n  a4{{\"z-q\"}}\n  s0 --> a0\n  a0 --> s1\n  s1 --> a1\n  a1 --> s2\n  s2 --> a2\n  a2 --> s3\n  s3 --> a3\n  a3 --> s1\n  s3 --> a4\n  a4 --> s4\n  classDef ought stroke-width:3px,stroke-dasharray:4 2;\n",

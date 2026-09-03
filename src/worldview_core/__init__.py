@@ -22,8 +22,11 @@ from .export import to_dot, to_mermaid
 from .graph import Graph
 from .identity import Identities, compute_identities, prop_id
 from .lint import duplicates, empty_justifications, lint_all, unused
+from .merge import merge
 from .model import FORMAT, FORMAT_VERSION, Argument, Statement, Worldview, load, loads
+from .present import present
 from .queries import foundations, plan, rests_on, sccs, supports, well_founded
+from .stats import stats
 from .validate import schema, validate_dict, validate_with_jsonschema
 
 __version__ = "0.1.0"
@@ -51,11 +54,14 @@ __all__ = [
     "lint_all",
     "load",
     "loads",
+    "merge",
     "plan",
+    "present",
     "prop_id",
     "rests_on",
     "schema",
     "sccs",
+    "stats",
     "supports",
     "to_dot",
     "to_mermaid",
