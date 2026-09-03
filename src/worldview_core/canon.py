@@ -26,11 +26,16 @@ from collections.abc import Iterable
 #: implementation in every language agrees.  It equals Python's
 #: ``str.isspace`` set: Unicode categories Zs, Zl, Zp plus the ASCII and
 #: Latin-1 control characters with bidi class WS, B, or S.  U+FEFF (BOM /
-#: zero-width no-break space) is deliberately *not* whitespace.
+#: zero-width no-break space) and U+200B (zero-width space) are
+#: deliberately *not* whitespace.
 WHITESPACE = (
-    "\t\n\x0b\x0c\r \x1c\x1d\x1e\x1f\x85\xa0 "
-    "           "
-    "    　"
+    "\u0009\u000a\u000b\u000c\u000d\u0020"  # TAB LF VT FF CR SPACE
+    "\u001c\u001d\u001e\u001f"  # file/group/record/unit separators
+    "\u0085\u00a0"  # NEL, NO-BREAK SPACE
+    "\u1680"  # OGHAM SPACE MARK
+    "\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a"  # EN QUAD .. HAIR SPACE
+    "\u2028\u2029"  # LINE SEPARATOR, PARAGRAPH SEPARATOR
+    "\u202f\u205f\u3000"  # NARROW NBSP, MEDIUM MATHEMATICAL SPACE, IDEOGRAPHIC SPACE
 )
 
 _WS_CLASS = "[" + "".join(f"\\u{ord(c):04x}" for c in WHITESPACE) + "]"
@@ -58,6 +63,11 @@ def H(*parts: str | Iterable[str]) -> str:
     so lists of different lengths can never be confused with one
     another or with their neighbours.  Callers are responsible for
     sorting iterables whose order is not meaningful.
+
+    Encoding, byte for byte: for each part in order, if it is a string
+    ``s`` feed ``f"{len(utf8(s))}:" + utf8(s) + ","``; if it is a list of
+    ``n`` strings feed the string ``f"#{n}"`` the same way, then each
+    element the same way.
     """
     h = hashlib.sha256()
     for part in parts:

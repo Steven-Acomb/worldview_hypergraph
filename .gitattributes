@@ -1,0 +1,8 @@
+# Keep every text file LF in the repository and in working copies on all
+# platforms, so hashes of fixtures and vectors never depend on the OS.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
