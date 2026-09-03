@@ -1,0 +1,63 @@
+# Publishes the TypeScript SDK (sdk/typescript) to npm when a ts-vX.Y.Z tag
+# is pushed. The tag must equal the version in sdk/typescript/package.json.
+#
+# Authentication uses the NPM_TOKEN repository secret (an npm granular access
+# token allowed to publish the package, with "bypass 2FA" so CI can use it).
+# id-token: write lets npm attach a provenance attestation signed through
+# GitHub's OIDC provider. npm checks that package.json's "repository" field
+# points at this repository, so keep it as
+# https://github.com/Steven-Acomb/worldview_hypergraph with
+# "directory": "sdk/typescript".
+
+name: Publish to npm
+
+on:
+  push:
+    tags:
+      - "ts-v*"
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    name: worldview-core (npm)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: sdk/typescript
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+          cache: npm
+          cache-dependency-path: sdk/typescript/package-lock.json
+
+      - name: Tag matches package.json version
+        run: |
+          pkg="$(node -p "require('./package.json').version")"
+          tag="${GITHUB_REF_NAME#ts-v}"
+          if [ "$pkg" != "$tag" ]; then
+            echo "::error::tag ts-v$tag does not match sdk/typescript/package.json version $pkg"
+            exit 1
+          fi
+          echo "publishing version $pkg"
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm test
+
+      - name: Publish
+        run: npm publish --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

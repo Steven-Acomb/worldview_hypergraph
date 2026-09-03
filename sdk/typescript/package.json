@@ -1,0 +1,58 @@
+{
+  "name": "worldview-core",
+  "version": "0.1.0",
+  "description": "A portable JSON format for worldviews: statements connected by arguments (directed hyperedges). TypeScript port of the reference implementation with identical hashes.",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Steven-Acomb/worldview_hypergraph.git",
+    "directory": "sdk/typescript"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "worldview": "./bin/worldview.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "node scripts/clean.mjs",
+    "typecheck": "tsc -p tsconfig.test.json",
+    "sync-schema": "node scripts/sync-schema.mjs",
+    "pretest": "npm run build",
+    "test": "vitest run",
+    "fuzz": "npm run build && node scripts/fuzz.mjs",
+    "prepack": "node scripts/copy-license.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "worldview",
+    "argument",
+    "hypergraph",
+    "json",
+    "schema"
+  ],
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  }
+}

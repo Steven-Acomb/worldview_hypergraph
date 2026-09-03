@@ -1,0 +1,7 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+# copied from the repository root by `npm run prepack`
+/LICENSE
+*.tgz
