@@ -28,6 +28,8 @@ import { Toolbar } from "./views/toolbar.js";
 const LARGE_DOCUMENT_NODES = 600;
 const NARROW_PX = 1000;
 const BASE = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
+/** Single-file builds (vite.single.config.ts) ship the examples inline instead of fetching them. */
+const INLINE_EXAMPLES = import.meta.env.VITE_INLINE_EXAMPLES === "1";
 
 const SHORTCUTS: Array<[string, string]> = [
   ["Ctrl+N", "New document (some browsers reserve this key; use the toolbar then)"],
@@ -330,11 +332,13 @@ export class App {
       },
       listExamples() {
         if (!app.examplesPromise) {
-          app.examplesPromise = fetch(`${BASE}examples/index.json`, { cache: "no-cache" })
-            .then((r) => {
-              if (!r.ok) throw new Error(`HTTP ${r.status}`);
-              return r.json() as Promise<ExampleEntry[]>;
-            })
+          const source: Promise<ExampleEntry[]> = INLINE_EXAMPLES
+            ? import("./generated/examples.js").then((m) => m.index as ExampleEntry[])
+            : fetch(`${BASE}examples/index.json`, { cache: "no-cache" }).then((r) => {
+                if (!r.ok) throw new Error(`HTTP ${r.status}`);
+                return r.json() as Promise<ExampleEntry[]>;
+              });
+          app.examplesPromise = source
             .then((list) => (Array.isArray(list) ? list.filter((e) => e && typeof e.file === "string") : []))
             .catch((e: unknown) => {
               app.examplesPromise = null;
@@ -344,9 +348,16 @@ export class App {
         return app.examplesPromise;
       },
       async fetchExample(file: string) {
-        const r = await fetch(`${BASE}examples/${encodeURIComponent(file)}`, { cache: "no-cache" });
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        const data: unknown = await r.json();
+        let data: unknown;
+        if (INLINE_EXAMPLES) {
+          const m = await import("./generated/examples.js");
+          data = m.files[file];
+          if (data === undefined) throw new Error("not bundled");
+        } else {
+          const r = await fetch(`${BASE}examples/${encodeURIComponent(file)}`, { cache: "no-cache" });
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          data = await r.json();
+        }
         const problems = validateDict(data);
         if (problems.length) throw new Error(`${file} is not a valid worldview: ${problems[0]}`);
         return data as WorldviewDocument;

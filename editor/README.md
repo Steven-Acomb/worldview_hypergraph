@@ -145,6 +145,24 @@ the repository with "GitHub Actions" as the source (see `HUMAN_TODO.md`).
 The build is fully static: HTML, JS, CSS, and the example files. There is no server
 component.
 
+## Single-file build
+
+`npm run build:single` produces a self-contained copy of the editor with the script,
+the styles, and all five bundled examples inlined into one HTML file. Nothing is
+fetched at runtime, so it works from a `file://` URL, a USB stick, an email
+attachment, or any static host that will serve a single page.
+
+- `dist-single/index.html` is a complete document, roughly 480 kB. Double-click it.
+- `dist-single/artifact.html` is the same page with the outer
+  `<!doctype>`/`<html>`/`<head>`/`<body>` wrapper stripped, for hosts that supply
+  their own document skeleton.
+
+The difference from the normal build is one flag: `vite.single.config.ts` defines
+`VITE_INLINE_EXAMPLES=1`, which makes `app.ts` import the examples from
+`src/generated/examples.ts` (written by `scripts/copy-examples.mjs`) instead of
+fetching `examples/index.json`. Both generated directories are gitignored, so a fresh
+clone regenerates them on the first build.
+
 ## Layout of the source
 
 ```
