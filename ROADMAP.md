@@ -44,6 +44,15 @@ Last updated 2026-09-03.
 
 ## Planned
 
+- **Editor: redesign the interface from scratch, with Steve piloting.** The current
+  UI was generated in one pass and looks it: it demonstrates that every piece works
+  (the SDK, the graph layout, the inspector, diff, autosave) but the visual design
+  and the interaction model were never actually designed. The value of what exists is
+  that it proves the shape of the problem, so a real design can start from evidence
+  rather than guesses. Do this one interactively, deciding the layout, the visual
+  language, and what belongs on screen together, instead of generating a whole UI
+  unattended. The store, derived data, and graph-layout modules are worth keeping;
+  everything under `editor/src/views/` and `styles.css` is replaceable.
 - **Defeasible extension** (`ext.defeasible`): argument kinds, attack relations
   (rebut, undercut), acceptability semantics. Separate package.
 - **Bayesian extension** (`ext.bayes`): priors on statements, factors on arguments,
