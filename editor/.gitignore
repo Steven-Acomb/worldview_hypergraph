@@ -1,0 +1,5 @@
+node_modules/
+dist/
+# generated at build time by scripts/copy-examples.mjs from ../examples/*.json
+public/examples/
+*.tsbuildinfo
