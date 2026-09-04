@@ -1,0 +1,11 @@
+# Part One: health
+
+[1.1] Regular physical activity improves long-term health, and walking for thirty minutes a day counts as regular physical activity.
+
+[1.2] I should act to protect my long-term health. My commute takes about thirty minutes on foot.
+
+# Part Two: money
+
+[2.1] Regular physical activity improves long-term health, as I said above; I will not repeat the reasons here.
+
+[2.2] Driving to work costs more than walking, and I prefer the cheaper option when the options are otherwise equal. So I should walk to work.

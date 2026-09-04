@@ -1,0 +1,21 @@
+*** START OF A SMALL TEST DOCUMENT ***
+
+# Section One
+
+[I.1] Good sense is the most equally distributed thing in the world. Everyone thinks they have enough of it, and even those hardest to please in everything else do not want more of it than they have.
+
+[I.2] The diversity of our opinions does not come from some people being more reasonable than others, but only from our conducting our thoughts along different paths and not attending to the same things.
+
+[I.3] It is not enough to have a good mind; the main thing is to apply it well. The greatest minds are capable of the greatest vices as well as the greatest virtues.
+
+# Section Two
+
+[II.1] Because our senses sometimes deceive us, I decided to suppose that nothing is such as they lead us to imagine it to be.
+
+[II.2] Because some people make mistakes in reasoning, even about the simplest matters of geometry, I rejected as unsound all the reasonings I had previously taken for demonstrations.
+
+[II.3] But immediately afterwards I noticed that while I was trying to think everything false, it was necessary that I, who was thinking this, was something. I think, therefore I am, and this truth is so firm that I accept it as the first principle of the philosophy I was seeking.
+
+*** END OF THE SMALL TEST DOCUMENT ***
+
+This trailing block imitates licence text: it has no tag and must be skipped.
