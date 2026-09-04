@@ -2,6 +2,7 @@
 
 | document | audience |
 |---|---|
+| [GETTING_STARTED.md](GETTING_STARTED.md) | New users: from a clone to querying, editing, diffing, and extracting a worldview in ten minutes. |
 | [FORMAT.md](FORMAT.md) | Anyone writing or reading worldview files: the normative meaning of every field and the validity rules. |
 | [IDENTITY.md](IDENTITY.md) | Implementers: the byte-level specification of canonicalization and the three content-derived identities, with worked values. |
 | [QUERIES.md](QUERIES.md) | Tool authors: the exact shapes returned by every query and by `diff`. |
