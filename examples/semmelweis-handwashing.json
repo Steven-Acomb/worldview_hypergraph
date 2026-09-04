@@ -1,0 +1,192 @@
+{
+  "format": "worldview-core",
+  "version": "0.1",
+  "name": "Semmelweis on childbed fever (1847)",
+  "description": "Ignaz Semmelweis's case that chlorine handwashing prevents puerperal fever, as he could have stated it in 1847, with the assumptions his inference rested on made explicit. Written to show how a scientific argument looks in this format: observations as foundations, a mechanism that is assumed rather than observed, and a practical ought at the end. Nothing here is an endorsement of the historical details as exact.",
+  "meta": {
+    "note": "Statements are in Semmelweis's first person. meta.role marks observations, hypotheses, assumptions, and rules. Modern germ theory is deliberately absent: the point is what his argument rested on at the time.",
+    "sources": "Semmelweis, Die Aetiologie, der Begriff und die Prophylaxis des Kindbettfiebers (1861), recounting the 1847 events; secondary accounts."
+  },
+  "statements": [
+    {
+      "id": "clinic1-mortality-high",
+      "text": "In the First Clinic, where medical students deliver, mothers die of childbed fever far more often than in the Second Clinic, where midwives deliver.",
+      "mode": "is",
+      "meta": { "role": "observation" }
+    },
+    {
+      "id": "same-city-same-women",
+      "text": "The two clinics admit women from the same population, alternating by day of the week.",
+      "mode": "is",
+      "meta": { "role": "observation" }
+    },
+    {
+      "id": "difference-is-in-clinics",
+      "text": "The cause of the extra deaths lies in something done differently in the First Clinic, not in the women.",
+      "mode": "is",
+      "meta": { "role": "hypothesis" }
+    },
+    {
+      "id": "street-births-survive",
+      "text": "Women who give birth in the street on the way to the hospital rarely develop the fever.",
+      "mode": "is",
+      "meta": { "role": "observation" }
+    },
+    {
+      "id": "students-dissect",
+      "text": "Medical students and their teachers come to the delivery ward straight from dissecting corpses.",
+      "mode": "is",
+      "meta": { "role": "observation" }
+    },
+    {
+      "id": "midwives-do-not-dissect",
+      "text": "Midwives never handle corpses.",
+      "mode": "is",
+      "meta": { "role": "observation" }
+    },
+    {
+      "id": "kolletschka-died",
+      "text": "My colleague Kolletschka died of a disease with the same course as childbed fever after a student's scalpel cut him during an autopsy.",
+      "mode": "is",
+      "meta": { "role": "observation" }
+    },
+    {
+      "id": "same-symptoms-same-cause",
+      "text": "Diseases with the same course have the same cause.",
+      "mode": "is",
+      "meta": { "role": "assumption", "note": "A general principle Semmelweis relied on and never argued for. It is what lets the Kolletschka case bear on the mothers." }
+    },
+    {
+      "id": "cadaverous-particles",
+      "text": "Some matter from corpses, carried on the hands, causes the fever when it enters the body.",
+      "mode": "is",
+      "meta": { "role": "hypothesis", "note": "The mechanism. Not observed; inferred. Bacteria were unknown to him." }
+    },
+    {
+      "id": "hands-carry-matter",
+      "text": "Ordinary washing with soap does not remove the cadaverous smell, so it does not remove the matter.",
+      "mode": "is",
+      "meta": { "role": "assumption", "note": "Smell was his only indicator of the matter's presence." }
+    },
+    {
+      "id": "chlorine-removes-smell",
+      "text": "Washing in chlorinated lime removes the cadaverous smell from the hands.",
+      "mode": "is",
+      "meta": { "role": "observation" }
+    },
+    {
+      "id": "smell-tracks-matter",
+      "text": "Where the smell goes, the matter goes.",
+      "mode": "is",
+      "meta": { "role": "assumption", "note": "Hidden premise linking the smell test to the causal agent." }
+    },
+    {
+      "id": "chlorine-removes-matter",
+      "text": "Washing in chlorinated lime removes the cadaverous matter from the hands.",
+      "mode": "is",
+      "meta": { "role": "conclusion" }
+    },
+    {
+      "id": "washing-would-prevent",
+      "text": "If every examiner washed in chlorinated lime before examining a mother, the fever in the First Clinic would fall to the Second Clinic's level.",
+      "mode": "is",
+      "meta": { "role": "prediction" }
+    },
+    {
+      "id": "mortality-fell",
+      "text": "After I required chlorine washing in May 1847, mortality in the First Clinic fell to the level of the Second Clinic within months.",
+      "mode": "is",
+      "meta": { "role": "observation" }
+    },
+    {
+      "id": "no-other-change",
+      "text": "Nothing else about the First Clinic changed in those months.",
+      "mode": "is",
+      "meta": { "role": "assumption", "note": "The uncontrolled-experiment assumption; the weakest point of the case as stated." }
+    },
+    {
+      "id": "washing-prevents",
+      "text": "Chlorine handwashing before examinations prevents childbed fever.",
+      "mode": "is",
+      "meta": { "role": "conclusion" }
+    },
+    {
+      "id": "doctors-transmit",
+      "text": "We physicians have been carrying the cause of death to the mothers on our own hands.",
+      "mode": "is",
+      "meta": { "role": "conclusion" }
+    },
+    {
+      "id": "preventable-deaths-must-be-prevented",
+      "text": "A physician must adopt any practice that prevents deaths among his patients.",
+      "mode": "ought",
+      "meta": { "role": "principle" }
+    },
+    {
+      "id": "must-wash",
+      "text": "Every physician and student must wash in chlorinated lime before examining a mother.",
+      "mode": "ought",
+      "meta": { "role": "conclusion" }
+    }
+  ],
+  "arguments": [
+    {
+      "id": "cause-in-clinic",
+      "premises": ["clinic1-mortality-high", "same-city-same-women"],
+      "conclusions": ["difference-is-in-clinics"],
+      "justification": "If the same women, assigned by the calendar, die at different rates in the two clinics, the difference cannot be in the women; it must be in what each clinic does to them.",
+      "rule": "method of difference",
+      "meta": { "note": "Mill's method of difference, before Mill's name was attached to it in this context." }
+    },
+    {
+      "id": "street-births",
+      "premises": ["street-births-survive", "clinic1-mortality-high"],
+      "conclusions": ["difference-is-in-clinics"],
+      "justification": "Women who avoid the clinic's examinations altogether are safer than those examined in it, which again points at something done during the examinations.",
+      "rule": "method of difference",
+      "meta": { "note": "An independent second argument for the same conclusion. It stays separate rather than being merged into the first." }
+    },
+    {
+      "id": "kolletschka-analogy",
+      "premises": ["kolletschka-died", "same-symptoms-same-cause"],
+      "conclusions": ["cadaverous-particles"],
+      "justification": "Kolletschka's disease ran the course of childbed fever and was caused by corpse matter entering a wound; by the principle that the same course means the same cause, corpse matter entering the body is what causes the fever in mothers too.",
+      "rule": "analogy"
+    },
+    {
+      "id": "who-carries-it",
+      "premises": ["cadaverous-particles", "students-dissect", "midwives-do-not-dissect", "difference-is-in-clinics"],
+      "conclusions": ["doctors-transmit"],
+      "justification": "The agent comes from corpses; the First Clinic's examiners handle corpses and the Second Clinic's do not; the difference between the clinics is what the examiners do. So the examiners' hands are the route.",
+      "rule": "inference to the best explanation"
+    },
+    {
+      "id": "chlorine-works-on-matter",
+      "premises": ["chlorine-removes-smell", "smell-tracks-matter", "hands-carry-matter"],
+      "conclusions": ["chlorine-removes-matter"],
+      "justification": "Soap leaves the smell and therefore the matter; chlorine removes the smell, and the matter travels with the smell; so chlorine removes the matter."
+    },
+    {
+      "id": "prediction",
+      "premises": ["doctors-transmit", "chlorine-removes-matter"],
+      "conclusions": ["washing-would-prevent"],
+      "justification": "If the hands carry the cause and chlorine washing clears the hands of it, then chlorine washing before every examination should stop the transmission.",
+      "rule": "modus ponens"
+    },
+    {
+      "id": "confirmation",
+      "premises": ["washing-would-prevent", "mortality-fell", "no-other-change"],
+      "conclusions": ["washing-prevents"],
+      "justification": "The prediction was made, the practice was introduced, mortality fell as predicted, and nothing else changed. The fall is therefore due to the washing.",
+      "rule": "hypothetico-deductive confirmation",
+      "meta": { "note": "Confirmation, not proof: the argument is only as strong as the assumption that nothing else changed." }
+    },
+    {
+      "id": "duty",
+      "premises": ["washing-prevents", "preventable-deaths-must-be-prevented"],
+      "conclusions": ["must-wash"],
+      "justification": "Washing prevents the deaths, and a physician must adopt what prevents deaths; therefore every examiner must wash.",
+      "rule": "practical syllogism"
+    }
+  ]
+}
