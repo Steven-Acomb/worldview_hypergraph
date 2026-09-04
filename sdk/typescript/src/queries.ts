@@ -115,6 +115,8 @@ export interface ClosureNode {
   text: string;
   /** Members of the cyclic component this statement belongs to, if any. */
   scc?: string[];
+  /** (plan only) The audience already accepts this statement; it is never expanded. */
+  given?: true;
   /** This statement was already expanded earlier in the tree. */
   seen?: true;
   /** Expansion was cut off by the depth limit. */
@@ -170,22 +172,23 @@ export function supports(wv: Worldview, sid: string, depth?: number | null, grap
   return closureReport(g, sid, depth ?? null, "down");
 }
 
-function closureReport(g: Graph, sid: string, depth: number | null, direction: Direction): ClosureReport {
+const NO_STOP: ReadonlySet<string> = new Set();
+
+function closureReport(
+  g: Graph,
+  sid: string,
+  depth: number | null,
+  direction: Direction,
+  stop: ReadonlySet<string> = NO_STOP,
+): ClosureReport {
   const up = direction === "up";
-  const reach = up ? g.upstream(sid) : g.downstream(sid);
+  const reach = up ? g.upstream(sid, stop) : g.downstream(sid, stop);
   const reachPlus = new Set(reach);
   reachPlus.add(sid);
   const argIds = new Set<string>();
   for (const s of reachPlus) {
-    for (const aid of up ? g.incomingOf(s) : g.outgoingOf(s)) {
-      const a = g.argument(aid);
-      // An argument is in the closure if it is wholly on the relevant side.
-      if (up && a.conclusions.some((c) => reachPlus.has(c))) {
-        argIds.add(aid);
-      } else if (!up && a.premises.some((p) => reachPlus.has(p))) {
-        argIds.add(aid);
-      }
-    }
+    if (stop.has(s) && s !== sid) continue; // a stop statement is a leaf: its own arguments are not walked
+    for (const aid of up ? g.incomingOf(s) : g.outgoingOf(s)) argIds.add(aid);
   }
 
   const sccOf = g.sccOf();
@@ -207,6 +210,10 @@ function closureReport(g: Graph, sid: string, depth: number | null, direction: D
     const comp = comps[sccOf.get(s) as number] as string[];
     if (g.isCyclicComponent(comp)) {
       n.scc = [...comp];
+    }
+    if (stop.has(s) && s !== sid) {
+      n.given = true;
+      return n;
     }
     if (expanded.has(s)) {
       n.seen = true;
@@ -261,6 +268,93 @@ function closureReport(g: Graph, sid: string, depth: number | null, direction: D
     closure: { statements: closureStatements, arguments: closureArguments },
     sccs: cyclic,
     tree: node(sid, 0),
+  };
+}
+
+// ------------------------------------------------------------------ plan
+
+/** One entry of {@link PlanReport.must_establish}. */
+export interface MustEstablishEntry {
+  id: string;
+  text: string;
+  /** The arguments concluding this statement, file order. */
+  via: string[];
+}
+
+/** One entry of {@link PlanReport.must_grant}. */
+export interface MustGrantEntry {
+  id: string;
+  text: string;
+}
+
+/** The result of {@link plan}. */
+export interface PlanReport {
+  statement: string;
+  text: string;
+  /** The given statements actually reached from the target, file order. */
+  given: string[];
+  /** Reached statements that are neither given nor foundations, with the arguments available for each. */
+  must_establish: MustEstablishEntry[];
+  /** Reached foundations that are not given: the audience has to accept them as premises. */
+  must_grant: MustGrantEntry[];
+  /** Every argument in the pruned closure, file order. */
+  arguments: string[];
+  /** Every cyclic component that the target or its pruned closure belongs to. */
+  sccs: string[][];
+  /** The rests-on tree pruned at given statements (leaves marked `given: true`). */
+  tree: ClosureNode;
+}
+
+/**
+ * Argument planning: what must be established to reach `sid`?
+ *
+ * `given` is the set of statements the audience already accepts.  The
+ * upstream walk from the target stops at any given statement.  Every other
+ * statement reached is either a foundation, which the audience will have
+ * to **grant** (nothing in the worldview argues for it), or a supported
+ * statement that must be **established** by one of its incoming arguments.
+ * The `tree` is the rests-on tree pruned at the given statements (leaves
+ * marked `"given": true`).
+ *
+ * If the target itself is given there is nothing to do.
+ *
+ * Throws {@link UnknownIdError} if `sid` or any given id is not a statement.
+ */
+export function plan(wv: Worldview, sid: string, given: readonly string[] = [], graph?: Graph): PlanReport {
+  const g = graphOf(wv, graph);
+  requireStatement(g, sid);
+  for (const x of given) requireStatement(g, x);
+  const stop = new Set(given);
+  const text = g.statement(sid).text;
+  if (stop.has(sid)) {
+    return {
+      statement: sid,
+      text,
+      given: [sid],
+      must_establish: [],
+      must_grant: [],
+      arguments: [],
+      sccs: [],
+      tree: { statement: sid, text, given: true },
+    };
+  }
+  const rep = closureReport(g, sid, null, "up", stop);
+  const reached = new Set(rep.closure.statements);
+  reached.add(sid);
+  const ids = [...g.statements.keys()];
+  return {
+    statement: sid,
+    text,
+    given: ids.filter((s) => stop.has(s) && reached.has(s)),
+    must_establish: ids
+      .filter((s) => reached.has(s) && !stop.has(s) && !g.isFoundation(s))
+      .map((s) => ({ id: s, text: g.statement(s).text, via: [...g.incomingOf(s)] })),
+    must_grant: ids
+      .filter((s) => reached.has(s) && !stop.has(s) && g.isFoundation(s))
+      .map((s) => ({ id: s, text: g.statement(s).text })),
+    arguments: rep.closure.arguments,
+    sccs: rep.sccs,
+    tree: rep.tree,
   };
 }
 

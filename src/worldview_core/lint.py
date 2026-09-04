@@ -43,6 +43,26 @@ def empty_justifications(wv: Worldview) -> list[str]:
     return [a.id for a in wv.arguments if canon(a.justification) == ""]
 
 
+def is_ought_gaps(wv: Worldview) -> list[dict[str, Any]]:
+    """Arguments that conclude an ``ought`` from ``is`` premises alone.
+
+    Hume's observation: no set of purely descriptive premises entails a
+    normative conclusion without a normative premise somewhere.  This
+    lint lists every argument with at least one ``ought`` conclusion and
+    no ``ought`` premise (including zero-premise arguments).  It is a
+    structural flag, not a verdict: the author may hold a bridge
+    principle they have not written down, which is exactly the kind of
+    hidden assumption the format exists to surface.
+    """
+    mode = {s.id: s.mode for s in wv.statements}
+    out = []
+    for a in wv.arguments:
+        oughts = [c for c in a.conclusions if mode[c] == "ought"]
+        if oughts and not any(mode[p] == "ought" for p in a.premises):
+            out.append({"argument": a.id, "ought_conclusions": oughts, "premises": list(a.premises)})
+    return out
+
+
 def lint_all(wv: Worldview) -> dict[str, Any]:
     g = Graph.build(wv)
     return {
@@ -50,4 +70,5 @@ def lint_all(wv: Worldview) -> dict[str, Any]:
         "duplicates": duplicates(wv, compute_identities(wv, g)),
         "unused": unused(wv, g),
         "empty_justifications": empty_justifications(wv),
+        "is_ought_gaps": is_ought_gaps(wv),
     }

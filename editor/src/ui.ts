@@ -114,6 +114,29 @@ export async function copyText(text: string): Promise<boolean> {
   }
 }
 
+/** Toggle the selected look of a list row (class + aria-selected). */
+export function markSelected(el: HTMLElement | undefined, on: boolean): void {
+  if (!el) return;
+  el.classList.toggle("selected", on);
+  el.setAttribute("aria-selected", String(on));
+}
+
+const NON_TEXT_INPUT_TYPES = new Set(["button", "checkbox", "color", "file", "image", "radio", "range", "reset", "submit"]);
+
+/**
+ * True for elements where keystrokes are text entry (text-like inputs,
+ * textareas, selects, contenteditable), so that single-key shortcuts must
+ * not fire.  A focused checkbox, radio, range, or button is not text entry.
+ */
+export function isTextEntry(el: Element | null): el is HTMLElement {
+  if (!el) return false;
+  const tag = el.tagName;
+  if (tag === "TEXTAREA" || tag === "SELECT") return true;
+  if ((el as HTMLElement).isContentEditable) return true;
+  if (tag === "INPUT") return !NON_TEXT_INPUT_TYPES.has((el as HTMLInputElement).type.toLowerCase());
+  return false;
+}
+
 /** Format a count with a noun. */
 export function plural(n: number, noun: string): string {
   return `${n} ${noun}${n === 1 ? "" : "s"}`;

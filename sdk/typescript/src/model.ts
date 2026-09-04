@@ -108,32 +108,47 @@ export function worldviewFromDict(data: WorldviewDocument, source?: string): Wor
   return wv;
 }
 
-/** The JSON form of a Worldview.  Round-trips a parsed file exactly. */
+/** The JSON form of a statement: a copy with the keys in file order (`id`, `text`, `mode`, `meta`, `ext`). */
+export function statementToDict(s: Statement): Statement {
+  const out: Statement = { id: s.id, text: s.text, mode: s.mode };
+  if (s.meta !== undefined) out.meta = s.meta;
+  if (s.ext !== undefined) out.ext = s.ext;
+  return out;
+}
+
+/** The JSON form of an argument: a copy with the keys in file order. */
+export function argumentToDict(a: Argument): Argument {
+  const out: Argument = {
+    id: a.id,
+    premises: [...a.premises],
+    conclusions: [...a.conclusions],
+    justification: a.justification,
+  };
+  if (a.rule !== undefined) out.rule = a.rule;
+  if (a.meta !== undefined) out.meta = a.meta;
+  if (a.ext !== undefined) out.ext = a.ext;
+  return out;
+}
+
+/**
+ * The JSON form of a Worldview.  Round-trips a parsed file exactly, with the
+ * keys in the order the Python `Worldview.to_dict()` emits them (`format`,
+ * `version`, `name`, `description`, `meta`, `ext`, `statements`,
+ * `arguments`), so `JSON.stringify` of the result matches the reference CLI.
+ */
 export function worldviewToDict(wv: Worldview): WorldviewDocument {
-  const d: WorldviewDocument = { format: FORMAT, version: wv.version, statements: [], arguments: [] };
-  if (wv.name !== undefined) d.name = wv.name;
-  if (wv.description !== undefined) d.description = wv.description;
-  if (wv.meta !== undefined) d.meta = wv.meta;
-  if (wv.ext !== undefined) d.ext = wv.ext;
-  d.statements = wv.statements.map((s): Statement => {
-    const out: Statement = { id: s.id, text: s.text, mode: s.mode };
-    if (s.meta !== undefined) out.meta = s.meta;
-    if (s.ext !== undefined) out.ext = s.ext;
-    return out;
-  });
-  d.arguments = wv.arguments.map((a): Argument => {
-    const out: Argument = {
-      id: a.id,
-      premises: [...a.premises],
-      conclusions: [...a.conclusions],
-      justification: a.justification,
-    };
-    if (a.rule !== undefined) out.rule = a.rule;
-    if (a.meta !== undefined) out.meta = a.meta;
-    if (a.ext !== undefined) out.ext = a.ext;
-    return out;
-  });
-  return d;
+  const head: Partial<WorldviewDocument> = { format: FORMAT, version: wv.version };
+  if (wv.name !== undefined) head.name = wv.name;
+  if (wv.description !== undefined) head.description = wv.description;
+  if (wv.meta !== undefined) head.meta = wv.meta;
+  if (wv.ext !== undefined) head.ext = wv.ext;
+  return {
+    ...head,
+    format: FORMAT,
+    version: wv.version,
+    statements: wv.statements.map(statementToDict),
+    arguments: wv.arguments.map(argumentToDict),
+  };
 }
 
 /**

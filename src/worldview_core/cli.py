@@ -17,7 +17,7 @@ from .diff import diff
 from .errors import LoadError, UnknownIdError, ValidationError
 from .export import to_dot, to_mermaid
 from .identity import compute_identities
-from .lint import duplicates, empty_justifications, lint_all, unused
+from .lint import duplicates, empty_justifications, is_ought_gaps, lint_all, unused
 from .merge import merge
 from .model import Worldview, load, read_json
 from .present import present
@@ -292,6 +292,20 @@ def cmd_lint_empty_justifications(args) -> int:
     return EXIT_OK
 
 
+def cmd_lint_is_ought(args) -> int:
+    wv = _load(args.file)
+    data = is_ought_gaps(wv)
+
+    def text(d):
+        if not d:
+            print("every ought conclusion has an ought premise behind it")
+        for g in d:
+            print(f"{g['argument']}: {', '.join(g['premises']) or '(no premises)'} => {', '.join(g['ought_conclusions'])}  [ought from is alone]")
+
+    _emit(data, args.json, text)
+    return EXIT_OK
+
+
 def cmd_lint_all(args) -> int:
     wv = _load(args.file)
     data = lint_all(wv)
@@ -302,6 +316,7 @@ def cmd_lint_all(args) -> int:
         print(f"duplicates: {len(d['duplicates'])} group(s)" + (" (" + "; ".join(", ".join(g["ids"]) for g in d["duplicates"]) + ")" if d["duplicates"] else ""))
         print(f"unused statements: {len(d['unused'])}" + (f" ({', '.join(d['unused'])})" if d["unused"] else ""))
         print(f"empty justifications: {len(d['empty_justifications'])}" + (f" ({', '.join(d['empty_justifications'])})" if d["empty_justifications"] else ""))
+        print(f"is-ought gaps: {len(d['is_ought_gaps'])}" + (f" ({', '.join(g['argument'] for g in d['is_ought_gaps'])})" if d["is_ought_gaps"] else ""))
 
     _emit(data, args.json, text)
     return EXIT_OK
@@ -473,6 +488,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("duplicates", cmd_lint_duplicates, "Statements that are the same proposition under different ids."),
         ("unused", cmd_lint_unused, "Statements that appear in no argument."),
         ("empty-justifications", cmd_lint_empty_justifications, "Arguments with a blank justification."),
+        ("is-ought", cmd_lint_is_ought, "Arguments that conclude an ought from is premises alone (Hume's gap)."),
         ("all", cmd_lint_all, "Run every lint."),
     ):
         sp = lint_sub.add_parser(name, help=help_, description=help_)

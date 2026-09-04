@@ -10,7 +10,7 @@
  */
 
 import type { FoundationEntry, SccEntry, WellFoundedReport, Worldview, WorldviewDocument } from "worldview-core";
-import { Graph, Identities, computeIdentities, foundations, sccs, validateDict, wellFounded, worldviewFromDict } from "worldview-core";
+import { Graph, Identities, computeIdentities, containsWhitespace, foundations, sccs, validateDict, wellFounded, worldviewFromDict } from "worldview-core";
 
 export interface Derived {
   /** Problems with the raw document; empty when valid. */
@@ -90,7 +90,7 @@ export function sanitize(doc: WorldviewDocument): WorldviewDocument | null {
   const seen = new Set<string>();
   const statements = [];
   for (const s of doc.statements) {
-    if (!s || typeof s.id !== "string" || !s.id || /\s/.test(s.id) || seen.has(s.id)) continue;
+    if (!s || typeof s.id !== "string" || !s.id || containsWhitespace(s.id) || seen.has(s.id)) continue;
     if (typeof s.text !== "string" || !s.text) continue;
     if (s.mode !== "is" && s.mode !== "ought") continue;
     seen.add(s.id);
@@ -102,7 +102,7 @@ export function sanitize(doc: WorldviewDocument): WorldviewDocument | null {
   const seenA = new Set<string>();
   const args = [];
   for (const a of doc.arguments) {
-    if (!a || typeof a.id !== "string" || !a.id || /\s/.test(a.id) || seenA.has(a.id)) continue;
+    if (!a || typeof a.id !== "string" || !a.id || containsWhitespace(a.id) || seenA.has(a.id)) continue;
     if (!Array.isArray(a.premises) || !Array.isArray(a.conclusions)) continue;
     const premises = [...new Set(a.premises.filter((p) => typeof p === "string" && seen.has(p)))];
     const conclusions = [...new Set(a.conclusions.filter((c) => typeof c === "string" && seen.has(c)))];

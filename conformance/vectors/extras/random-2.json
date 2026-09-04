@@ -911,7 +911,74 @@
       "unused": [
         "s23"
       ],
-      "empty_justifications": []
+      "empty_justifications": [],
+      "is_ought_gaps": [
+        {
+          "argument": "a2",
+          "ought_conclusions": [
+            "s15"
+          ],
+          "premises": [
+            "s4",
+            "s16"
+          ]
+        },
+        {
+          "argument": "a6",
+          "ought_conclusions": [
+            "s20",
+            "s7"
+          ],
+          "premises": []
+        },
+        {
+          "argument": "a16",
+          "ought_conclusions": [
+            "s11"
+          ],
+          "premises": [
+            "s5",
+            "s3"
+          ]
+        },
+        {
+          "argument": "a17",
+          "ought_conclusions": [
+            "s9"
+          ],
+          "premises": []
+        },
+        {
+          "argument": "a19",
+          "ought_conclusions": [
+            "s9"
+          ],
+          "premises": []
+        },
+        {
+          "argument": "a22",
+          "ought_conclusions": [
+            "s9"
+          ],
+          "premises": []
+        },
+        {
+          "argument": "a26",
+          "ought_conclusions": [
+            "s2"
+          ],
+          "premises": [
+            "s3"
+          ]
+        },
+        {
+          "argument": "a28",
+          "ought_conclusions": [
+            "s1"
+          ],
+          "premises": []
+        }
+      ]
     },
     "stats": {
       "statements": 25,

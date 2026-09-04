@@ -12150,7 +12150,38 @@
       },
       "duplicates": [],
       "unused": [],
-      "empty_justifications": []
+      "empty_justifications": [],
+      "is_ought_gaps": [
+        {
+          "argument": "a0",
+          "ought_conclusions": [
+            "s8"
+          ],
+          "premises": [
+            "s1"
+          ]
+        },
+        {
+          "argument": "a4",
+          "ought_conclusions": [
+            "s8"
+          ],
+          "premises": [
+            "s3",
+            "s0"
+          ]
+        },
+        {
+          "argument": "a8",
+          "ought_conclusions": [
+            "s8"
+          ],
+          "premises": [
+            "s5",
+            "s9"
+          ]
+        }
+      ]
     },
     "stats": {
       "statements": 12,

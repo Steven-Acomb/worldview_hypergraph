@@ -231,7 +231,7 @@ or an unknown id.
 | `sccs <file>` | Cyclic strongly connected components (size > 1 or self-loop), with the arguments inside and on the boundary of each. |
 | `plan <file> <id> [--given a,b,...]` | Argument planning: given what an audience already accepts, which foundations they must still grant and which statements must be established, with the arguments available for each. |
 | `lint well-founded <file>` | Optional, informational: statements not grounded in any foundation. |
-| `lint duplicates`, `lint unused`, `lint empty-justifications`, `lint all` | More optional lints: the same proposition under several ids; statements in no argument; arguments with a blank justification. |
+| `lint duplicates`, `lint unused`, `lint empty-justifications`, `lint is-ought`, `lint all` | More optional lints: the same proposition under several ids; statements in no argument; arguments with a blank justification; arguments deriving an `ought` from `is` premises alone. |
 | `present <file> <id> [--given ...]` | The full case for a statement as a Markdown document: every argument with its justification, down to the foundations. |
 | `stats <file>` | Counts, cycle sizes, longest chain of arguments, most supporting and most supported statements. |
 | `ids <file>` | `prop_id` and `just_id` for every statement, `arg_hash` for every argument. |

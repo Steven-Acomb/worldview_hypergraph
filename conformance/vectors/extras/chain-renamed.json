@@ -1062,7 +1062,28 @@
       },
       "duplicates": [],
       "unused": [],
-      "empty_justifications": []
+      "empty_justifications": [],
+      "is_ought_gaps": [
+        {
+          "argument": "arg-f-e",
+          "ought_conclusions": [
+            "epsilon"
+          ],
+          "premises": [
+            "f"
+          ]
+        },
+        {
+          "argument": "arg-cd-e",
+          "ought_conclusions": [
+            "epsilon"
+          ],
+          "premises": [
+            "gamma",
+            "d"
+          ]
+        }
+      ]
     },
     "stats": {
       "statements": 6,

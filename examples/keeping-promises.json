@@ -1,0 +1,125 @@
+{
+  "format": "worldview-core",
+  "version": "0.1",
+  "name": "Keeping promises",
+  "description": "A small moral code about promise-keeping, written to show how a normative worldview looks in this format. Every ought at the bottom rests on at least one ought foundation (a bridge principle), except one argument that is deliberately left deriving an ought from is-statements alone so that `worldview lint is-ought` has something to find.",
+  "meta": {
+    "note": "First person. meta.role marks principles (ought foundations), observations, and the one deliberate gap. Nothing here is an endorsement; it is a worked example."
+  },
+  "statements": [
+    {
+      "id": "promises-create-expectations",
+      "text": "When I promise something, the other person plans around my doing it.",
+      "mode": "is",
+      "meta": { "role": "observation" }
+    },
+    {
+      "id": "broken-promises-harm",
+      "text": "When I break a promise, the other person loses whatever they planned on.",
+      "mode": "is",
+      "meta": { "role": "observation" }
+    },
+    {
+      "id": "harm-principle",
+      "text": "I should not cause avoidable harm to people who trusted me.",
+      "mode": "ought",
+      "meta": { "role": "principle", "note": "A bridge principle: the ought that lets is-statements about harm yield an ought about promises." }
+    },
+    {
+      "id": "keep-promises",
+      "text": "I should keep my promises.",
+      "mode": "ought",
+      "meta": { "role": "conclusion" }
+    },
+    {
+      "id": "trust-is-fragile",
+      "text": "People stop relying on someone who has broken promises to them.",
+      "mode": "is",
+      "meta": { "role": "observation" }
+    },
+    {
+      "id": "reliance-is-valuable",
+      "text": "Being someone others can rely on makes my life and theirs go better.",
+      "mode": "is",
+      "meta": { "role": "observation" }
+    },
+    {
+      "id": "pursue-what-makes-life-better",
+      "text": "I should do what makes my life and others' lives go better, other things equal.",
+      "mode": "ought",
+      "meta": { "role": "principle" }
+    },
+    {
+      "id": "cannot-keep-all",
+      "text": "Sometimes I cannot keep a promise without doing something worse.",
+      "mode": "is",
+      "meta": { "role": "observation" }
+    },
+    {
+      "id": "ought-implies-can",
+      "text": "I am not obliged to do what I cannot do.",
+      "mode": "ought",
+      "meta": { "role": "principle" }
+    },
+    {
+      "id": "promise-carefully",
+      "text": "I should not make promises I foresee being unable to keep.",
+      "mode": "ought",
+      "meta": { "role": "conclusion" }
+    },
+    {
+      "id": "release-when-impossible",
+      "text": "When keeping a promise would require something worse, I should tell the other person as early as possible and ask to be released.",
+      "mode": "ought",
+      "meta": { "role": "conclusion" }
+    },
+    {
+      "id": "everyone-breaks-small-promises",
+      "text": "Almost everyone breaks small promises now and then.",
+      "mode": "is",
+      "meta": { "role": "observation" }
+    },
+    {
+      "id": "small-promises-optional",
+      "text": "I may break small promises when it is convenient.",
+      "mode": "ought",
+      "meta": { "role": "gap", "note": "Deliberately supported only by an is-statement. lint is-ought flags the argument; the hidden premise would be something like 'what almost everyone does is permissible', which, once written down, is easy to reject." }
+    }
+  ],
+  "arguments": [
+    {
+      "id": "from-harm",
+      "premises": ["promises-create-expectations", "broken-promises-harm", "harm-principle"],
+      "conclusions": ["keep-promises"],
+      "justification": "Promising makes someone rely on me; breaking the promise harms them through that reliance; and I should not harm those who trusted me. So I should keep my promises.",
+      "rule": "practical syllogism"
+    },
+    {
+      "id": "from-reliance",
+      "premises": ["trust-is-fragile", "reliance-is-valuable", "pursue-what-makes-life-better"],
+      "conclusions": ["keep-promises"],
+      "justification": "Breaking promises costs me the reliance of others, reliance is worth having for everyone involved, and I should pursue what makes lives go better. So I should keep my promises.",
+      "rule": "practical syllogism",
+      "meta": { "note": "A second, independent argument for the same conclusion. It stays separate so that either can be rejected without the other." }
+    },
+    {
+      "id": "careful-promising",
+      "premises": ["keep-promises", "cannot-keep-all"],
+      "conclusions": ["promise-carefully"],
+      "justification": "If I should keep my promises but some promises turn out to be unkeepable, I should avoid making the ones I can foresee being unable to keep."
+    },
+    {
+      "id": "release",
+      "premises": ["keep-promises", "cannot-keep-all", "ought-implies-can", "broken-promises-harm"],
+      "conclusions": ["release-when-impossible"],
+      "justification": "When keeping a promise is impossible without a worse wrong, I am not obliged to keep it; but the harm to the other person from being let down is reduced by warning them early and letting them re-plan. So I should tell them early and ask to be released."
+    },
+    {
+      "id": "everyone-does-it",
+      "premises": ["everyone-breaks-small-promises"],
+      "conclusions": ["small-promises-optional"],
+      "justification": "Almost everyone breaks small promises now and then, so it must be all right for me to do the same.",
+      "meta": { "note": "The deliberate is-ought gap. The unstated bridge premise is what the lint invites the author to write down or reject." }
+    }
+  ]
+}

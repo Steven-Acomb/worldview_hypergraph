@@ -1,0 +1,29 @@
+{
+  "name": "worldview-editor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Browser editor for worldview-core files: statements, arguments, hypergraph view, identities, diff. Entirely client-side.",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "scripts": {
+    "examples": "node scripts/copy-examples.mjs",
+    "dev": "npm run examples && vite",
+    "build": "npm run examples && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "e2e": "playwright test"
+  },
+  "dependencies": {
+    "@dagrejs/dagre": "^1.1.4",
+    "worldview-core": "file:../sdk/typescript"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.4.1",
+    "jsdom": "^26.1.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.1.0",
+    "vitest": "^3.2.0"
+  }
+}

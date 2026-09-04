@@ -13,6 +13,7 @@ worldview diff examples/walking-to-work.json examples/walking-to-work-fork.json
 |---|---|
 | `walking-to-work.json` | A twelve-statement everyday worldview: foundations, jointly consumed premises, two independent arguments for one conclusion, `is` and `ought`, and a two-statement cycle (a coherentist pair). |
 | `walking-to-work-fork.json` | The same worldview after three edits, to demonstrate `diff`: a reworded statement, a dropped argument, a new statement with its argument. |
+| `keeping-promises.json` | A small moral code: two independent arguments for keeping promises, each with an explicit `ought` bridge principle, two derived duties, and one argument deliberately deriving an `ought` from an `is` alone so that `worldview lint is-ought` has something to flag. |
 | `semmelweis-handwashing.json` | A scientific argument with its assumptions made explicit: Semmelweis's 1847 case that chlorine handwashing prevents childbed fever. Observations as foundations, an inferred mechanism, four `meta.role: assumption` statements the inference silently needs, a confirmation step, and a practical `ought` at the end. Try `worldview plan ... must-wash --given <the observations>` to see what an audience still has to grant. |
 | `descartes-discourse-on-method.json` | René Descartes, *A Discourse on the Method* (1637, Veitch translation), all six parts, extracted into statements and arguments with paragraph citations in `meta.source`. The companion `descartes-discourse-on-method.md` is a reader's guide. |
 

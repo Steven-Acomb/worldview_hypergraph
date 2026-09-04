@@ -217,23 +217,29 @@ export class Graph {
 
   // -------------------------------------------------------- reachability
 
-  /** All statements from which `sid` is reachable (excluding itself unless cyclic). */
-  upstream(sid: string): Set<string> {
-    return this.reach(sid, this.pred);
+  /**
+   * All statements from which `sid` is reachable (excluding itself unless cyclic).
+   *
+   * Statements in `stop` are reached but not expanded: the walk does not
+   * continue past them.
+   */
+  upstream(sid: string, stop?: ReadonlySet<string>): Set<string> {
+    return this.reach(sid, this.pred, stop);
   }
 
   /** All statements reachable from `sid` (excluding itself unless cyclic). */
-  downstream(sid: string): Set<string> {
-    return this.reach(sid, this.succ);
+  downstream(sid: string, stop?: ReadonlySet<string>): Set<string> {
+    return this.reach(sid, this.succ, stop);
   }
 
-  private reach(start: string, adj: Map<string, Set<string>>): Set<string> {
+  private reach(start: string, adj: Map<string, Set<string>>, stop?: ReadonlySet<string>): Set<string> {
     const seen = new Set<string>();
     const todo = [...must(adj, start, "statement")];
     while (todo.length > 0) {
       const v = todo.pop() as string;
       if (seen.has(v)) continue;
       seen.add(v);
+      if (stop !== undefined && stop.has(v)) continue;
       for (const w of must(adj, v, "statement")) {
         if (!seen.has(w)) todo.push(w);
       }

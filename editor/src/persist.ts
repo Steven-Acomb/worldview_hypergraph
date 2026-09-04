@@ -12,6 +12,23 @@ const PREFS_KEY = "worldview-editor:prefs:v1";
 const RECENT_LIMIT = 6;
 const RECENT_MAX_BYTES = 1_500_000;
 
+/**
+ * Bumped whenever the recent list is written (here or, via the storage
+ * event, in another tab), so views can refresh their copy only when it
+ * changed instead of parsing the whole list on every render.
+ */
+let revision = 0;
+
+export function recentsRevision(): number {
+  return revision;
+}
+
+if (typeof window !== "undefined" && typeof window.addEventListener === "function") {
+  window.addEventListener("storage", (e) => {
+    if (e.key === null || e.key === RECENT_KEY) revision++;
+  });
+}
+
 export interface SavedDoc {
   doc: WorldviewDocument;
   sourceName: string | null;
@@ -84,13 +101,13 @@ export function rememberRecent(doc: WorldviewDocument, sourceName: string | null
   };
   if (JSON.stringify(doc).length > RECENT_MAX_BYTES) return loadRecents();
   const list = [entry, ...loadRecents().filter((e) => e.key !== key)].slice(0, RECENT_LIMIT);
-  write(RECENT_KEY, list);
+  if (write(RECENT_KEY, list)) revision++;
   return list;
 }
 
 export function forgetRecent(key: string): RecentEntry[] {
   const list = loadRecents().filter((e) => e.key !== key);
-  write(RECENT_KEY, list);
+  if (write(RECENT_KEY, list)) revision++;
   return list;
 }
 

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { parseWorldviewJson, validateDict } from "worldview-core";
-import { Store, emptyDocument, serializeDocument } from "../src/store";
+import { parseWorldviewJson, validateDict, worldviewToDict } from "worldview-core";
+import { COALESCE_MS, Store, emptyDocument, serializeDocument } from "../src/store";
+import type { Selection } from "../src/store";
 import { derive } from "../src/derived";
 import { buildModel, focusSet, layoutModel } from "../src/graph/layout";
 
@@ -185,5 +186,106 @@ describe("graph model and layout", () => {
     doc.arguments.push({ id: "c-a", premises: ["c"], conclusions: ["a"], justification: "loop" });
     const l = layoutModel(buildModel(doc), "TB");
     expect(l.nodes.length).toBe(5);
+  });
+});
+
+describe("history details", () => {
+  it("coalesces bursts of edits with the same key into one undo step", () => {
+    const st = new Store(chain());
+    let t = 1000;
+    st.now = () => t;
+    st.updateStatement("a", { text: "A1" }, { coalesce: "statement:a:text" });
+    t += 300;
+    st.updateStatement("a", { text: "A12" }, { coalesce: "statement:a:text" });
+    t += 300;
+    st.updateStatement("a", { text: "A123" }, { coalesce: "statement:a:text" });
+    expect(st.doc.statements[0].text).toBe("A123");
+    st.undo();
+    expect(st.doc.statements[0].text).toBe("A");
+    expect(st.canUndo).toBe(false);
+    st.redo();
+    expect(st.doc.statements[0].text).toBe("A123");
+    // a pause longer than COALESCE_MS starts a new step
+    t += 300;
+    st.updateStatement("b", { text: "B1" }, { coalesce: "statement:b:text" });
+    t += COALESCE_MS + 1;
+    st.updateStatement("b", { text: "B12" }, { coalesce: "statement:b:text" });
+    st.undo();
+    expect(st.doc.statements[1].text).toBe("B1");
+    st.undo();
+    expect(st.doc.statements[1].text).toBe("B");
+    expect(st.doc.statements[0].text).toBe("A123");
+    // edits without a key are never merged, and a different key breaks the run
+    t += 100;
+    st.updateStatement("a", { text: "x" });
+    t += 100;
+    st.updateStatement("a", { text: "y" });
+    st.undo();
+    expect(st.doc.statements[0].text).toBe("x");
+    t += 100;
+    st.updateStatement("a", { text: "p" }, { coalesce: "statement:a:text" });
+    t += 100;
+    st.updateStatement("c", { text: "q" }, { coalesce: "statement:c:text" });
+    st.undo();
+    expect(st.doc.statements[2].text).toBe("C");
+    expect(st.doc.statements[0].text).toBe("p");
+  });
+
+  it("updates the selection before notifying on a rename and drops it when the target disappears", () => {
+    const st = new Store(chain());
+    const seen: Selection[] = [];
+    st.subscribe((s) => seen.push(s.selection ? { ...s.selection } : null));
+    st.select({ kind: "statement", id: "a" });
+    st.renameStatement("a", "alpha");
+    expect(seen).toEqual([
+      { kind: "statement", id: "a" },
+      { kind: "statement", id: "alpha" },
+    ]);
+    st.select({ kind: "argument", id: "ab-c" });
+    st.deleteStatement("c"); // the only conclusion of ab-c, so that argument goes too
+    expect(st.doc.arguments).toEqual([]);
+    expect(st.selection).toBeNull();
+    st.select({ kind: "statement", id: "alpha" });
+    st.deleteStatement("alpha");
+    expect(st.selection).toBeNull();
+  });
+
+  it("records no history for edits that change nothing", () => {
+    const st = new Store(chain());
+    st.moveStatement("a", -1);
+    st.moveArgument("ab-c", 1);
+    st.updateStatement("missing", { text: "x" });
+    st.deleteArgument("missing");
+    st.updateArgument("ab-c", { id: "ab-c", justification: "a and b give c" });
+    st.updateStatement("a", { mode: "is" });
+    st.setHeader({ name: "chain" });
+    expect(st.canUndo).toBe(false);
+    expect(st.version).toBe(0);
+    expect(st.dirty).toBe(false);
+  });
+
+  it("serializes through the SDK's canonical key order", () => {
+    const st = new Store({ ...chain(), ext: { x: {} }, description: "d" });
+    st.updateArgument("ab-c", { ext: { n: { k: 1 } }, meta: { m: 1 }, rule: "r" });
+    st.updateStatement("a", { ext: { n: {} }, meta: { m: 2 } });
+    const text = st.serialize();
+    const wv = parseWorldviewJson(text);
+    expect(text).toBe(JSON.stringify(worldviewToDict(wv), null, 2) + "\n");
+    const parsed = JSON.parse(text);
+    expect(Object.keys(parsed)).toEqual(["format", "version", "name", "description", "ext", "statements", "arguments"]);
+    expect(Object.keys(parsed.statements[0])).toEqual(["id", "text", "mode", "meta", "ext"]);
+    expect(Object.keys(parsed.arguments[0])).toEqual(["id", "premises", "conclusions", "justification", "rule", "meta", "ext"]);
+  });
+});
+
+describe("sanitize", () => {
+  it("uses the format's whitespace set for ids, not the JavaScript one", () => {
+    const doc = chain();
+    doc.statements.push({ id: "bad\u001cid", text: "x", mode: "is" }); // U+001C: whitespace to the format, not to /\s/
+    const d = derive(doc);
+    expect(d.problems.length).toBeGreaterThan(0);
+    expect(d.sanitized).toBe(true);
+    expect(d.graph).not.toBeNull();
+    expect(d.statementById.has("bad\u001cid")).toBe(false);
   });
 });

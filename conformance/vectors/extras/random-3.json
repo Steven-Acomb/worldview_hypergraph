@@ -12982,7 +12982,152 @@
         "s17",
         "s19"
       ],
-      "empty_justifications": []
+      "empty_justifications": [],
+      "is_ought_gaps": [
+        {
+          "argument": "a5",
+          "ought_conclusions": [
+            "s34"
+          ],
+          "premises": [
+            "s8"
+          ]
+        },
+        {
+          "argument": "a7",
+          "ought_conclusions": [
+            "s10"
+          ],
+          "premises": []
+        },
+        {
+          "argument": "a9",
+          "ought_conclusions": [
+            "s15"
+          ],
+          "premises": [
+            "s25",
+            "s3"
+          ]
+        },
+        {
+          "argument": "a12",
+          "ought_conclusions": [
+            "s4"
+          ],
+          "premises": []
+        },
+        {
+          "argument": "a13",
+          "ought_conclusions": [
+            "s32"
+          ],
+          "premises": []
+        },
+        {
+          "argument": "a15",
+          "ought_conclusions": [
+            "s23"
+          ],
+          "premises": [
+            "s24",
+            "s37"
+          ]
+        },
+        {
+          "argument": "a24",
+          "ought_conclusions": [
+            "s20"
+          ],
+          "premises": [
+            "s7",
+            "s33",
+            "s24"
+          ]
+        },
+        {
+          "argument": "a25",
+          "ought_conclusions": [
+            "s30"
+          ],
+          "premises": [
+            "s6",
+            "s37"
+          ]
+        },
+        {
+          "argument": "a32",
+          "ought_conclusions": [
+            "s11"
+          ],
+          "premises": []
+        },
+        {
+          "argument": "a33",
+          "ought_conclusions": [
+            "s23"
+          ],
+          "premises": [
+            "s29"
+          ]
+        },
+        {
+          "argument": "a37",
+          "ought_conclusions": [
+            "s30"
+          ],
+          "premises": [
+            "s6"
+          ]
+        },
+        {
+          "argument": "a41",
+          "ought_conclusions": [
+            "s30"
+          ],
+          "premises": []
+        },
+        {
+          "argument": "a45",
+          "ought_conclusions": [
+            "s15"
+          ],
+          "premises": []
+        },
+        {
+          "argument": "a48",
+          "ought_conclusions": [
+            "s11"
+          ],
+          "premises": []
+        },
+        {
+          "argument": "a53",
+          "ought_conclusions": [
+            "s34"
+          ],
+          "premises": [
+            "s31",
+            "s25"
+          ]
+        },
+        {
+          "argument": "a54",
+          "ought_conclusions": [
+            "s4"
+          ],
+          "premises": []
+        },
+        {
+          "argument": "a59",
+          "ought_conclusions": [
+            "s23"
+          ],
+          "premises": [
+            "s9"
+          ]
+        }
+      ]
     },
     "stats": {
       "statements": 40,

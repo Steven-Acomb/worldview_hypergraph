@@ -1176,7 +1176,8 @@
         "ought",
         "emoji"
       ],
-      "empty_justifications": []
+      "empty_justifications": [],
+      "is_ought_gaps": []
     },
     "stats": {
       "statements": 8,

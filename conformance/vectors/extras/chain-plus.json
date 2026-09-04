@@ -1063,7 +1063,28 @@
       },
       "duplicates": [],
       "unused": [],
-      "empty_justifications": []
+      "empty_justifications": [],
+      "is_ought_gaps": [
+        {
+          "argument": "cd-e",
+          "ought_conclusions": [
+            "e"
+          ],
+          "premises": [
+            "c",
+            "d"
+          ]
+        },
+        {
+          "argument": "g-e",
+          "ought_conclusions": [
+            "e"
+          ],
+          "premises": [
+            "g"
+          ]
+        }
+      ]
     },
     "stats": {
       "statements": 6,

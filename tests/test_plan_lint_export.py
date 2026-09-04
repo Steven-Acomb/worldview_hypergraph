@@ -117,7 +117,7 @@ def test_empty_justifications():
 
 def test_lint_all(cycle):
     out = lint_all(wv(cycle))
-    assert set(out) == {"well_founded", "duplicates", "unused", "empty_justifications"}
+    assert set(out) == {"well_founded", "duplicates", "unused", "empty_justifications", "is_ought_gaps"}
     assert out["well_founded"]["ungrounded"] == []
 
 

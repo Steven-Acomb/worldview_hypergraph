@@ -147,9 +147,16 @@ Grounded is the least fixed point described in [FORMAT.md](FORMAT.md) section 8.
 // empty-justifications: arguments whose justification canonicalizes to ""
 ["<argument id>", ...]
 
+// is-ought: arguments with an ought conclusion and no ought premise (Hume's gap)
+[ {"argument": "<id>", "ought_conclusions": ["<id>", ...], "premises": ["<id>", ...]}, ... ]
+
 // all
-{"well_founded": {...}, "duplicates": [...], "unused": [...], "empty_justifications": [...]}
+{"well_founded": {...}, "duplicates": [...], "unused": [...], "empty_justifications": [...], "is_ought_gaps": [...]}
 ```
+
+The is-ought lint is a structural flag, not a verdict: the author may hold a bridge
+principle they have not written down, which is exactly the hidden assumption the
+format exists to surface. Zero-premise arguments with an ought conclusion are listed.
 
 ## present
 

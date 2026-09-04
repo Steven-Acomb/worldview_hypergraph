@@ -21,7 +21,7 @@ from .errors import LoadError, UnknownIdError, ValidationError, WorldviewError
 from .export import to_dot, to_mermaid
 from .graph import Graph
 from .identity import Identities, compute_identities, prop_id
-from .lint import duplicates, empty_justifications, lint_all, unused
+from .lint import duplicates, empty_justifications, is_ought_gaps, lint_all, unused
 from .merge import merge
 from .model import FORMAT, FORMAT_VERSION, Argument, Statement, Worldview, load, loads
 from .present import present
@@ -51,6 +51,7 @@ __all__ = [
     "duplicates",
     "empty_justifications",
     "foundations",
+    "is_ought_gaps",
     "lint_all",
     "load",
     "loads",
