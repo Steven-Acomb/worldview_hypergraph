@@ -1,16 +1,14 @@
 # worldview-core
 
+[![CI](https://github.com/Steven-Acomb/worldview_hypergraph/actions/workflows/ci.yml/badge.svg)](https://github.com/Steven-Acomb/worldview_hypergraph/actions/workflows/ci.yml)
+
 A portable JSON format for representing a **worldview**: a set of natural-language
 **statements** connected by **arguments**, where an argument is a directed hyperedge
 that takes N premise statements and produces M conclusion statements.
 
-This repository holds the format's normative JSON Schema and a small, dependency-free
-Python reference implementation: a validator, content-derived identity hashing, a
-handful of structural queries, a diff, and a CLI that exposes all of it.
-
-The format is the product. Editors, LLM-assisted extraction from someone's writing,
-defeasible or Bayesian evaluators, and so on are downstream consumers (see
-[Extensions and sister projects](#extensions-and-sister-projects)).
+The format is the product. Everything else in this repository is a consumer of it: a
+Python reference implementation, a hash-identical TypeScript port, a browser editor,
+and an LLM-assisted extraction tool.
 
 ```
 $ worldview rests-on examples/walking-to-work.json need-raincoat
@@ -34,6 +32,57 @@ need-raincoat: I should own a good raincoat.
       rain-often: It rains often where I live.  [foundation]
       rain-unpleasant: Walking in the rain without a raincoat is unpleasant.  [foundation]
 ```
+
+Two independent arguments for walking to work, a coherentist pair reported as a cycle
+rather than rejected, and the whole thing bottoming out in statements nothing argues
+for. That is the entire model.
+
+## Sixty-second tour
+
+Neither package is published yet, so install from the repository:
+
+```
+python -m venv .venv
+.venv/Scripts/pip install -e ".[dev]"     # Windows;  .venv/bin/pip on macOS / Linux
+
+worldview validate examples/walking-to-work.json
+worldview stats examples/descartes-discourse-on-method.json
+worldview rests-on examples/walking-to-work.json need-raincoat
+worldview present examples/walking-to-work.json need-raincoat > case.md
+worldview diff examples/walking-to-work.json examples/walking-to-work-fork.json
+```
+
+[`docs/GETTING_STARTED.md`](docs/GETTING_STARTED.md) walks the same ground at more
+length, including the editor, the libraries, and the extraction tool.
+
+## What is in this repository
+
+| path | what it is | tests |
+|---|---|---|
+| [`src/worldview_core/`](src/worldview_core/) | Python reference implementation and the `worldview` CLI. No runtime dependencies. | 267 |
+| [`sdk/typescript/`](sdk/typescript/) | TypeScript and JavaScript port for Node and browsers, same hashes and the same CLI. No runtime dependencies. | 516 |
+| [`editor/`](editor/) | Browser editor built on the TypeScript SDK. Entirely client-side: no server, no accounts. | 56 + e2e |
+| [`tools/extract/`](tools/extract/) | `worldview-extract`: builds a worldview file from a text using the Claude API. | 107 |
+| [`conformance/`](conformance/) | Shared JSON vectors (22 cases, 27 invalid documents, 12 diffs, 8 merges, 22 extras, plus hashing primitives) that every implementation replays. | — |
+| [`examples/`](examples/) | Five worked worldviews and the public-domain source text one of them was built from. | — |
+| [`docs/`](docs/) | The format, identity, and query specifications, plus a getting-started guide. | — |
+
+The Python implementation is normative: when the two disagree, Python is right and the
+conformance vectors are regenerated from it.
+
+## Which entry point is for you
+
+- **Reading or writing a file by hand.** [`docs/FORMAT.md`](docs/FORMAT.md) is the
+  normative description of every field and rule.
+- **Editing visually.** `editor/` runs locally with `npm run dev`; see
+  [`editor/README.md`](editor/README.md). It is deployed to GitHub Pages once Pages is
+  enabled for the repository (see [`HUMAN_TODO.md`](HUMAN_TODO.md)).
+- **Calling a library.** Python or TypeScript, same operations and same results; see
+  [`sdk/README.md`](sdk/README.md) for the side-by-side API table.
+- **Building a worldview from someone's writing.** `worldview-extract`; see
+  [`tools/extract/README.md`](tools/extract/README.md). Needs an Anthropic API key.
+- **Porting to another language.** [`docs/IDENTITY.md`](docs/IDENTITY.md) specifies the
+  hashing byte for byte, and the conformance vectors prove a port correct.
 
 ## What the format can and cannot say
 
@@ -88,8 +137,8 @@ A worldview file is a JSON object:
 ```
 
 The normative definition is [`worldview-core.schema.json`](src/worldview_core/worldview-core.schema.json)
-(JSON Schema 2020-12). `worldview schema` prints it. Two full examples live in
-[`examples/`](examples/).
+(JSON Schema 2020-12); `worldview schema` prints it, and
+[`docs/FORMAT.md`](docs/FORMAT.md) explains every rule the schema cannot express.
 
 ### Header
 
@@ -153,74 +202,40 @@ go under `ext`, not alongside it.
 ## Identity: how two files are compared
 
 Local ids are only meaningful inside one file. To recognise the same statement across
-files, forks, and edits, the library computes two content-derived identities. Neither
-is ever stored in the file; both are computed on demand.
+files, forks, and edits, both implementations compute two content-derived identities.
+Neither is ever stored in the file; both are computed on demand.
 
-**Proposition id** identifies *what is being said*:
+- **Proposition id** identifies *what is being said*: a hash of the canonical text and
+  the mode. Two statements with the same canonical text and mode are the same
+  proposition, whatever their ids, files, or justifications.
+- **Justified-statement id** identifies *what is being said and why*: a hash of the
+  proposition id together with the hashes of every incoming argument, which in turn
+  cover their premises' justified ids. It encodes the statement's whole upstream
+  graph, so editing anything upstream changes it and editing anything downstream does
+  not. Like a git commit hash.
 
-```
-prop_id(s) = H( canon(s.text), s.mode )
-```
+The consequences are all intended: the same justification prose over different
+premises is a different argument; the same statement text under a different
+justification is the same proposition but a different justified statement; renaming
+local ids, reordering arrays, and editing `meta`, `ext`, or `rule` change nothing.
+Cycles would make the recursion loop, so strongly connected components are hashed as
+units, which means changing any member of a mutually-justifying cluster changes the
+identity of every member.
 
-Two statements with the same canonical text and mode are the same proposition,
-regardless of file, slug, or how they are justified.
+Canonicalization is literal by design: Unicode NFC, trim, collapse internal whitespace
+runs to one space, and nothing else. No case folding, no punctuation stripping, no
+stemming. Hashing is SHA-256 over a length-prefixed encoding, so different splits of
+the same characters can never collide.
 
-**Justified-statement id** identifies *what is being said and why*, recursively:
-
-```
-arg_hash(a) = H( canon(a.justification),
-                 sorted( just_id(p) for p in a.premises ),
-                 sorted( prop_id(c) for c in a.conclusions ) )
-
-just_id(s)  = H( prop_id(s), sorted( arg_hash(a) for a in incoming(s) ) )
-```
-
-A statement's justified id encodes its whole upstream graph. The consequences are
-all intended:
-
-- The same justification prose over different premises is a different argument.
-- The same statement text over a different justification is the same proposition but
-  a different justified statement.
-- Editing one upstream statement changes the justified id of everything downstream,
-  and nothing upstream. Like git.
-- Renaming local ids, reordering arrays, and editing `meta`, `ext`, or `rule` change
-  nothing.
-
-**Cycles** would make that recursion loop, so strongly connected components are hashed
-as units. For a cyclic component C (size > 1, or one statement with a self-loop):
-
-```
-arg_hash'(a)    = arg_hash(a), but with prop_id(p) instead of just_id(p)
-                  for premises p inside C
-scc_hash(C)     = H( sorted( prop_id(s) for s in C ),
-                     sorted( arg_hash'(a) for a in arguments concluding into C ) )
-just_id(s in C) = H( scc_hash(C), prop_id(s) )
-```
-
-Changing any member of a mutually-justifying cluster changes the identity of every
-member. That is correct: in such a cluster the justifications are shared. Editing a
-statement that merely *rests on* the cluster changes only itself and its downstream.
-
-**Canonicalization** (`canon`) is literal by design: Unicode NFC normalization, strip
-leading and trailing whitespace, collapse internal whitespace runs to one space. No
-case folding, no punctuation stripping, no stemming. "Whitespace" is a fixed list of
-code points (Unicode categories Zs, Zl, Zp plus the ASCII and Latin-1 separator
-controls), spelled out in `canon.py` so every implementation agrees; U+FEFF is not
-whitespace.
-
-**Hashing** is SHA-256 over a length-prefixed encoding of the parts, so different
-splits of the same characters can never collide. Every hash is 64 hex characters.
+[`docs/IDENTITY.md`](docs/IDENTITY.md) gives the exact byte-level specification with
+worked values; `conformance/vectors/` is its executable form.
 
 ## Command line
 
-```
-pip install .            # or: pip install -e ".[dev]" for development
-worldview --help
-```
-
-Every command takes `--json` (before the command name) for machine-readable output.
-Exit code 0 is success, 1 means the file is not a valid worldview, 2 is a usage error
-or an unknown id.
+Both implementations ship the same CLI with the same commands and the same `--json`
+output: `worldview` from the Python package, `node sdk/typescript/bin/worldview.js`
+from the SDK. `--json` goes before the command name. Exit code 0 is success, 1 means
+the file is not a valid worldview, 2 is a usage error or an unknown id.
 
 | command | meaning |
 |---|---|
@@ -230,22 +245,22 @@ or an unknown id.
 | `foundations <file>` | Statements with no incoming argument. |
 | `sccs <file>` | Cyclic strongly connected components (size > 1 or self-loop), with the arguments inside and on the boundary of each. |
 | `plan <file> <id> [--given a,b,...]` | Argument planning: given what an audience already accepts, which foundations they must still grant and which statements must be established, with the arguments available for each. |
-| `lint well-founded <file>` | Optional, informational: statements not grounded in any foundation. |
-| `lint duplicates`, `lint unused`, `lint empty-justifications`, `lint is-ought`, `lint all` | More optional lints: the same proposition under several ids; statements in no argument; arguments with a blank justification; arguments deriving an `ought` from `is` premises alone. |
 | `present <file> <id> [--given ...]` | The full case for a statement as a Markdown document: every argument with its justification, down to the foundations. |
 | `stats <file>` | Counts, cycle sizes, longest chain of arguments, most supporting and most supported statements. |
 | `ids <file>` | `prop_id` and `just_id` for every statement, `arg_hash` for every argument. |
 | `diff <a> <b>` | Match statements across two files by identity. Four buckets: **identical** (`just_id` matches), **rejustified** (`prop_id` matches, `just_id` does not), **added**, **removed**. Arguments are matched by `arg_hash`. |
 | `merge <base> <ours> <theirs> [-o out]` | Three-way merge of two forks of one worldview, by local id and content. Exit 1 on conflicts. |
 | `export <file> --format dot\|mermaid` | The hypergraph as Graphviz DOT or a Mermaid flowchart, for pictures. |
+| `lint well-founded` | Optional, informational: statements not grounded in any foundation. |
+| `lint duplicates`, `unused`, `empty-justifications`, `is-ought`, `all` | More optional lints: the same proposition under several ids; statements in no argument; arguments with a blank justification; arguments deriving an `ought` from `is` premises alone. |
 | `schema` | Print the JSON Schema. |
 
 In `rests-on` and `supports` output, each statement is expanded once. A later
 encounter of the same statement is a leaf marked "see above" (`"seen": true` in
-JSON). That keeps the output linear in the size of the closure and makes cycles finite.
-`--depth` limits how many argument hops are expanded; cut-off nodes are marked
-"depth limit" (`"truncated": true`). The flat closure in the JSON output is always
-complete regardless of depth.
+JSON). That keeps the output linear in the size of the closure and makes cycles
+finite. `--depth` limits how many argument hops are expanded; cut-off nodes are
+marked "depth limit" (`"truncated": true`). The flat closure in the JSON output is
+always complete regardless of depth.
 
 `lint well-founded` calls a statement *grounded* if it is a foundation, or if some
 argument concluding it has all of its premises grounded. This is the least fixed
@@ -253,49 +268,56 @@ point, so a statement whose only support runs through a cycle is ungrounded, and
 statement that needs two premises is ungrounded if either one is. A zero-premise
 argument grounds its conclusions.
 
+Every result shape is documented once, in [`docs/QUERIES.md`](docs/QUERIES.md).
+
 ## Library
 
-The CLI is a thin wrapper. Every operation is a function that takes a `Worldview` and
-returns plain dicts and lists.
+The CLI is a thin wrapper. Every operation is a function that takes a worldview and
+returns plain data.
 
 ```python
 from worldview_core import load, validate_dict, compute_identities
-from worldview_core import rests_on, supports, foundations, sccs, well_founded, diff
-from worldview_core import plan, lint_all, to_dot, to_mermaid
+from worldview_core import rests_on, supports, foundations, sccs, well_founded
+from worldview_core import plan, present, stats, diff, merge, lint_all, to_dot, to_mermaid
 
-wv = load("examples/walking-to-work.json")        # raises LoadError / ValidationError
-problems = validate_dict(raw_dict)                # [] if valid, else list of strings
+wv = load("examples/walking-to-work.json")         # raises LoadError / ValidationError
+problems = validate_dict(raw_dict)                 # [] if valid, else list of strings
 
 ids = compute_identities(wv)
-ids.prop_id["walk-commute"]                       # 64-hex proposition id
-ids.just_id["walk-commute"]                       # 64-hex justified-statement id
-ids.arg_hash["walk-for-health"]
-ids.scc_of("habit-reports")                       # ['self-knowledge', 'habit-reports'] or None
+ids.prop_id["walk-commute"]                        # 64-hex proposition id
+ids.just_id["walk-commute"]                        # 64-hex justified-statement id
+ids.scc_of("habit-reports")                        # ['self-knowledge', 'habit-reports'] or None
 
-rests_on(wv, "need-raincoat", depth=2)            # same dict the CLI prints as JSON
+rests_on(wv, "need-raincoat", depth=2)             # same dict the CLI prints as JSON
 plan(wv, "need-raincoat", given=["walk-commute"])  # what an audience must still grant
-present(wv, "need-raincoat")                      # Markdown: the whole case, foundations up
+present(wv, "need-raincoat")                       # Markdown: the whole case, foundations up
 diff(wv, load("examples/walking-to-work-fork.json"))
-merge(base, ours, theirs)                         # three-way merge of two forks
-stats(wv)
-to_mermaid(wv)                                    # picture source
+merge(base, ours, theirs)                          # three-way merge of two forks
+to_mermaid(wv)                                     # picture source
 ```
 
-`Worldview`, `Statement`, and `Argument` are plain dataclasses mirroring the JSON;
-`Worldview.to_dict()` round-trips a loaded file exactly. `Graph.build(wv)` exposes
-adjacency, `sccs()` in topological order, and reachability if you want to write your
-own queries.
+The same operations in TypeScript, in camelCase, for Node and browsers:
 
-The library has no runtime dependencies and is meant to be vendored. The hand-written
-validator mirrors the schema exactly; the test suite cross-checks the two with the
-`jsonschema` package.
+```ts
+import { parseWorldviewJson, restsOn, computeIdentities, plan, diff } from "worldview-core";
+
+const wv = parseWorldviewJson(text);
+restsOn(wv, "need-raincoat").closure;
+computeIdentities(wv).justId.get("need-raincoat");
+```
+
+`Worldview`, `Statement`, and `Argument` mirror the JSON exactly and round-trip a
+loaded file unchanged. `Graph.build(wv)` exposes adjacency, strongly connected
+components in topological order, and reachability, if you want to write your own
+queries. Neither library has runtime dependencies, and both are meant to be vendored.
 
 ## Decisions on open items
 
 These were left open in the design handoff and are decided here.
 
-- **Canonicalization** uses the default rules above: NFC, trim, collapse whitespace,
-  nothing else.
+- **Canonicalization** uses NFC, trim, and whitespace collapse, nothing else.
+  "Whitespace" is a fixed list of 29 code points spelled out in `canon.py` so every
+  implementation agrees; U+FEFF is not whitespace.
 - **`version`** is a simple `"major.minor"` string, not semver. There is no patch
   component because a format either changed meaning or it did not.
 - **Self-loops within one argument** (a premise that is also a conclusion of the same
@@ -311,36 +333,48 @@ These were left open in the design handoff and are decided here.
   as a premise are downstream and do not affect the component's identity.
 - **Duplicate propositions in one file** (two statements with the same text and mode)
   are permitted; `diff` matches them as a multiset.
+- **Text outputs are part of the conformance contract.** `present`, `export`, and the
+  CLI's `--json` are compared character for character between implementations.
 
 ## Extensions and sister projects
 
-The core reserves `ext` so sister projects can add data without changing what a file
+The core reserves `ext` so other projects can add data without changing what a file
 means. Each reads core files unchanged, adds its data under its own namespace, and
 ships its own evaluator. None of them modifies core semantics.
 
-- **Visual editor.** Reads and writes core files; any logic it needs comes from this
-  library.
-- **Extraction tool.** LLM-assisted: build a worldview file from a person's writing or
-  stated beliefs.
+Two consumers live in this repository and add no semantics of their own: the
+[editor](editor/), which gets everything it computes from the SDK, and the
+[extraction tool](tools/extract/), which only writes core files.
+
+Two are planned as separate packages:
+
 - **Defeasible extension** (`ext.defeasible`). Argument kinds (deductive, inductive,
   abductive, defeasible) and attack relations (rebut, undercut), evaluated with an
   acceptability semantics rather than reachability.
 - **Bayesian extension** (`ext.bayes`). Priors on statements, factors on arguments. The
   core hypergraph is already a factor graph.
 
-The full design rationale is in
-[`docs/handoff.md`](docs/handoff.md).
+The full design rationale is in [`docs/handoff.md`](docs/handoff.md).
+
+## Status
+
+Everything above works and is covered by tests. Nothing is published to PyPI or npm
+yet, and the editor is not yet deployed, because each needs a one-time account setup
+recorded in [`HUMAN_TODO.md`](HUMAN_TODO.md). [`ROADMAP.md`](ROADMAP.md) tracks what
+is built and what is next; [`CHANGELOG.md`](CHANGELOG.md) records changes.
 
 ## Development
 
 ```
 python -m venv .venv
-.venv/Scripts/pip install -e ".[dev]"     # Windows
-.venv/bin/pip install -e ".[dev]"         # macOS / Linux
+.venv/Scripts/pip install -e ".[dev]"     # Windows;  .venv/bin/pip on macOS / Linux
 python -m pytest
 ```
 
-Requires Python 3.11 or newer.
+Requires Python 3.11 or newer. The TypeScript SDK needs Node 18 or newer and the
+editor's build needs Node 20.19 or newer; CI runs Node 22.
+[`CONTRIBUTING.md`](CONTRIBUTING.md) has the per-component commands and explains how
+the conformance vectors are regenerated.
 
 ## License
 
