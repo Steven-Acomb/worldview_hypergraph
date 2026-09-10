@@ -16,7 +16,7 @@
     "e2e": "playwright test"
   },
   "dependencies": {
-    "@dagrejs/dagre": "^1.1.4",
+    "@dagrejs/dagre": "^3.1.1",
     "worldview-core": "file:../sdk/typescript"
   },
   "devDependencies": {
