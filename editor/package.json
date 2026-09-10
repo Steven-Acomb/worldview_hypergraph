@@ -20,7 +20,7 @@
     "worldview-core": "file:../sdk/typescript"
   },
   "devDependencies": {
-    "@playwright/test": "^1.62.1",
+    "@playwright/test": "^1.63.0",
     "@types/node": "^26.4.1",
     "jsdom": "^26.1.0",
     "typescript": "^5.9.0",
